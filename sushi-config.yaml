@@ -65,6 +65,18 @@ pages:
     title: Home
   index-cs.md:
     title: Domovská stránka
+  scope-and-content.md:
+    title: Scope and content
+  scope-and-content-cs.md:
+    title: Rozsah použití a obsah
+  examples.md:
+    title: Examples
+  examples-cs.md:
+    title: Příklady
+  logical-models.md:
+    title: Logical models
+  logical-models-cs.md:
+    title: Datová sada - logické modely
   artifacts.xml:
     title: Artifacts
   authors.md:
@@ -165,6 +177,15 @@ menu:
   Home:
     Home (en): index.html
     Home (cs): index-cs.html
+  Introduction:
+    Scope and content (en): scope-and-content.html
+    Scope and content (cs): scope-and-content-cs.html
+  Functional:
+    Logical models (en): logical-models.html
+    Logical models (cs): logical-models-cs.html
+  Implementation:
+    Examples (en): examples.html
+    Examples (cs): examples-cs.html
   About:
     Authors (en): authors.html
     Authors (cs): authors-cs.html
