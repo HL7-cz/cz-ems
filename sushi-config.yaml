@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.cz.empty
-canonical: https://hl7.cz/fhir/empty #!!change here!!
-name: HL7CzEmptyImplementationGuide
-title: HL7 Czech Empty Implementation Guide
-description: HL7 Czech Empty Implementation Guide
+id: hl7.fhir.cz.ems
+canonical: https://hl7.cz/fhir/ems #!!change here!!
+name: HL7CzEMSImplementationGuide
+title: HL7 Czech EMS Implementation Guide
+description: HL7 Czech EMS Implementation Guide
 status: draft # draft | active | retired | unknown
 version: 0.0.1
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -37,6 +37,7 @@ publisher:
 dependencies:
   hl7.fhir.uv.ips: 1.1.0
   hl7.fhir.cz.core: current
+  hl7.fhir.eu.base: 0.1.0-ballot
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -62,6 +63,8 @@ dependencies:
 pages:
   index.md:
     title: Home
+  artifacts.xml:
+    title: Artifacts
 # general-guidance.md:
 #   title: General Guidance
 # identifiers.md:
@@ -142,6 +145,8 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+
+  Artifacts: artifacts.html
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
@@ -231,7 +236,14 @@ menu:
 #     resources:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
-#
+groups:
+
+  czech-logical-model:
+    name:  Czech logical model (Informative)
+    description: Logical model in czech language. Informative for this version of the guide.
+    resources:
+      - StructureDefinition/LogAttachmentsCz
+      - StructureDefinition/LogPresentedFormCz
 #
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and
