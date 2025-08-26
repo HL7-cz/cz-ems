@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.cz.ems
-canonical: https://hl7.cz/fhir/ems #!!change here!!
+canonical: https://hl7.cz/fhir/cz-ems 
 name: HL7CzEMSImplementationGuide
 title: HL7 Czech EMS Implementation Guide
 description: HL7 Czech EMS Implementation Guide
