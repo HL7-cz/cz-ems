@@ -8,7 +8,7 @@ Usage: #definition
 * description = """CZ Emergency Medical Service Report Attachment Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/PresentedFormCz"
-* group[=].target = "https://hl7.org/fhir/R4/datatypes-definitions.html#Attachment"
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #PresentedForm
 * group[=].element[=].display = "A.4 - Presented Form"
 * group[=].element[=].target.code = #Composition.extension:relatedArtifact.document
