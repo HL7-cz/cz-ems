@@ -63,8 +63,26 @@ dependencies:
 pages:
   index.md:
     title: Home
+  index-cs.md:
+    title: Domovská stránka
   artifacts.xml:
     title: Artifacts
+  authors.md:
+    title: Authors
+  authors-cs.md:
+    title: Autoři
+  copyright.md:
+    title: Copyright
+  copyright-cs.md:
+    title: Autorská práva
+  dependencies.md:
+    title: Dependencies
+  dependencies-cs.md:
+    title: Závislosti
+  downloads.md:
+    title: Download
+  downloads-cs.md:
+    title: Download
 # general-guidance.md:
 #   title: General Guidance
 # identifiers.md:
@@ -144,8 +162,18 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: index.html
-
+  Home:
+    Home (en): index.html
+    Home (cs): index-cs.html
+  About:
+    Authors (en): authors.html
+    Authors (cs): authors-cs.html
+    Downloads (en): downloads.html
+    Downloads (cs): downloads-cs.html
+    Dependencies (en): dependencies.html
+    Dependencies (cs): dependencies-cs.html
+    Copyright (en): copyright.html
+    Copyright (cs): copyright-cs.html
   Artifacts: artifacts.html
 #  Guidance:
 #    General guidance: general-guidance.html

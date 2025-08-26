@@ -6,8 +6,8 @@ Title: "Composition (EMS CZ)"
 Description: "This profile defines how to represent Composition resource in HL7 FHIR for the scope of this guide."
 //-------------------------------------------------------------------------------------------
 
-* . ^short = "Emergency medical service composition"
-* . ^definition = "Emergency medical service composition. \r\nA composition is a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. \r\nWhile a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained."
+* . ^short = "Emergency medical service report composition"
+* . ^definition = "Emergency medical service report composition. \r\nA composition is a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. \r\nWhile a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained."
 
 * extension contains $event-basedOn named basedOn 0..*
 * extension[basedOn].valueReference only Reference ( Resource or ServiceRequest ) /// add profile
