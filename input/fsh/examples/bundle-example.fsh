@@ -90,7 +90,7 @@ Description: "EMS report"
 
 Instance: cz-example-composition
 InstanceOf: CZ_CompositionEms
-Description: "Example of Imaging order (Composition) including a RTG order"
+Description: "Example of EMS report (Composition)"
 Usage: #example
 * id = "da3f987f-2a08-431a-92e3-129d7689e465"
 * status = #final

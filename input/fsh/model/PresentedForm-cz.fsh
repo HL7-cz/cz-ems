@@ -3,7 +3,7 @@ Id: LogPresentedFormCz
 Title: "A.3 - Vizuální podoba dokumentu"
 Description: """Záznam o výjezdu - Záznamu o výjezdu ZZS (ZOV ZZS) čitelná lidským okem, je požadován PDF formát."""
 
-* presentedForm 1..* Base "A.3 - Vizuální podoba" """Vizuální podoba dokumentu"""
+* vizualniPodoba 1..* Base "A.3 - Vizuální podoba" """Vizuální podoba dokumentu"""
 * typObsahu 0..1 CodeableConcept "A.3.1 - Typ obsahu" """Typ obsahu - je  požadován MIME typ"""
 * jazyk 0..1 CodeableConcept "A.3.2 - Jazyk obsahu" """Jazyk obsahu - je požadována hodnata z HL7 valueset Languages"""
 * data 1..1 base64Binary "A.3.3 - Data obsahu" """Data v base64"""
