@@ -10,3 +10,4 @@ Alias: $CodeableConcept-uv-ips = http://hl7.org/fhir/uv/ips/StructureDefinition/
 
 // CodeSystems:
 Alias: $loinc =  http://loinc.org
+Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar

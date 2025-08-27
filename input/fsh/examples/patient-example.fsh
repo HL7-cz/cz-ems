@@ -3,6 +3,7 @@ InstanceOf: CZ_PatientCore
 Usage: #example
 Title: "Patient Mracena"
 Description: "Patient Mracena with contact information and practitioner"
+* id = "3b46c18c-7e07-4232-af3e-f710dec8e766"
 
 * identifier[RC][+].system = "https://ncez.mzcr.cz/fhir/sid/rcis"
 * identifier[RC][=].value = "2716126452"

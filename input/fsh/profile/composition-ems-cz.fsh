@@ -18,7 +18,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * extension[relatedArtifact].valueRelatedArtifact.type
   * ^example[0].label = "presented form"
   * ^example[0].valueCodeableConcept  = http://hl7.org/fhir/related-artifact-type#documentation
-  // ItT seems not appropriate as code... to be changed if this solution is used
 * extension[relatedArtifact].valueRelatedArtifact.document
 
 * identifier ^short = "EMS business identifier"
@@ -31,10 +30,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the hdr the subject is always the patient."
 
-// * encounter only Reference (Encounter)
-
-//* encounter only Reference (CZ_EncounterHdr)
 * encounter 1..1 
+* encounter only Reference(CZ_Encounter)
+  * ^short = "Context that defines the EMS Report"
 
 * date ^short = "EMS date"
 * author ^short = "Who and/or what authored the Emergency Medical Services"
@@ -51,11 +49,37 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 
 
-//* section 1..
+* section 1..
   // add invariant or text or section
 
-//* insert SectionSliceComRules (Sections composing the Emergency Medical Services,
-//        The root of the sections that make up the Emergency Medical Services composition.)
+* insert SectionSliceComRules (Sections composing the Emergency Medical Services,
+        The root of the sections that make up the Emergency Medical Services composition.)
 
-//* section.author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+* section.author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
+* obeys text-or-section
+
+* section contains
+    procedure 1..1 and
+    attachments 0..*
+
+///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
+* section[procedure]
+  * ^short = "Procedure"
+  * ^definition = "Procedure records the descriptions of the procedure with an extensive narrative and may include procedure site preparation, pertinent details related to measurements and markings, procedure times, instrumentation, and vital signs and other monitoring data."
+  * code = $loinc#29554-3
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  * entry 0..*
+//  * entry only Reference(CZ_ProcedureEms)
+
+* section[attachments]  // sekce obsahující referenci na DocumentReference
+  * ^short = "Attachments"
+  * code = $loinc#34109-9 //"Note - asi jen dočasný kód TODO: Najít vhodný kód"
+  * author only Reference(CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  * entry 1..*
+  * entry only Reference(CZ_Logo or DocumentReference)
+
+Invariant: text-or-section
+Description: "A Composition SHALL have either text, at least one section, or both."
+Expression: "text.exists() or section.exists()"
+Severity: #error
