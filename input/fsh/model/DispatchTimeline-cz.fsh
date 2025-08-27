@@ -1,5 +1,5 @@
 Logical: LogCzDispatchTimelineCz
-Id: LogCzDispatchTimelienCz
+Id: LogDispatchTimelineCz
 Title: "A.2.2 - Časová osa výjezdu (cz)"
 Description: """Záznam o výjezdu - Časová osa výjezdu - A.2.2 CZ"""
 

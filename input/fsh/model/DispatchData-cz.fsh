@@ -1,5 +1,5 @@
 Logical: LogCzDispatchDataCz
-Id: LogCzDispatchDataCz
+Id: LogDispatchDataCz
 Title: "A.2.1 - Údaje o výjezdu (cz)"
 Description: """Záznam o výjezdu - Údaje o výjezdu - A.2.1 CZ"""
 * identifikaceVyjezdu 1..1 Base "A.2.1.1 - Identifikace výjezdu" """Identifikace výjezdu"""

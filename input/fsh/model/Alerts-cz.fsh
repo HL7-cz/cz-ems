@@ -1,7 +1,7 @@
 Logical: LogCzAlertsCz
-Id: LogCzAlertsCz
+Id: LogAlertsCz
 Title: "A.2.4 - Urgentní informace (cz)"
-Description: """Zpráva o výjezdu - Urgentní informace"""
+Description: """Zpráva o výjezdu - Urgentní informace CZ"""
 
 * alergie 1..* Base "A.2.4.1 - Alergie a intolerance" """Záznam alergie a intolerance je povinný. U pacientů, bez alergie či intolerance je nutné tento fakt explicitně vyjádřit příslušným kódem."""
 * alergie.popis 0..1 string "A.2.4.1.1 - Popis alergie" """Textové doplnění informací volným textem. Je určeno pro zápis informací, které nelze zapsat strukturovaně."""
@@ -10,11 +10,11 @@ Description: """Zpráva o výjezdu - Urgentní informace"""
 * alergie.reakce 0..* CodeableConcept "A.2.4.1.4 - Reakce" """Dosud známé projevy reakce na expozici pacienta původci, textem nebo kódem, včetně možnosti uvést způsob expozice a závažnost projevu."""
 * alergie.riziko 0..1 CodeableConcept "A.2.4.1.5 - Riziko" """Stupeň závažnosti je definován jako „potenciální závažnost budoucích reakcí“. Stupeň závažnosti představuje klinické hodnocení nejhoršího scénáře budoucí reakce. Může být založeno na závažnosti minulých reakcí a na stupni ohrožení pacienta."""
 * alergie.pocatekProjevu 0..1 Base "A.2.4.1.6 - Počátek období projevu" """Datum nebo období, ve kterém byla alergie nebo jiná nežádoucí reakce zaznamenána či klinicky stanovena. Může to být přesné datum a čas nebo hrubý údaj o datu (například pouze rok nebo měsíc a rok) nebo vyjádření pomocí kódu věkové fáze (dětství, adolescence apod.), resp. časového intervalu (2001 - 2005 apod.)."""
-    * alergie.pocatekProjevu.datum 0..1 dateTime "Počátek období projevu - datum" """Datum počátku nežádoucí reakce (např. první výskyt)."""
-    * alergie.pocatekProjevu.kod 0..1 CodeableConcept "Počátek období projevu - kód" """Vyjádření počátku reakce kódem např. věkové skupiny."""
+  * datum 0..1 dateTime "Počátek období projevu - datum" """Datum počátku nežádoucí reakce (např. první výskyt)."""
+  * kod 0..1 CodeableConcept "Počátek období projevu - kód" """Vyjádření počátku reakce kódem např. věkové skupiny."""
 * alergie.konecProjevu 0..1 Base "A.2.4.1.7 - Konec období projevu" """Datum nebo období, ve kterém byly projevy alergie nebo jiné nežádoucí reakce potlačeny nebo klinicky vyloučeny."""
-    * alergie.konecProjevu.datum 0..1 dateTime "Konec období projevu - datum"
-    * alergie.konecProjevu.kod 0..1 CodeableConcept "Konec období projevu - kód"
+  * datum 0..1 dateTime "Konec období projevu - datum"
+  * kod 0..1 CodeableConcept "Konec období projevu - kód"
 * alergie.stav 0..1 CodeableConcept "A.2.4.1.8 - Stav" """„Klinický stav“ vyjadřuje aktuální stav dispozice pacienta k nežádoucí reakci."""
 * alergie.miraJistoty 0..1 CodeableConcept "A.2.4.1.9 - Míra jistoty" """Umožňuje vyjádřit míru jistoty zapisujícího lékaře ve vztahu k údajům uvedeným v modelu alergie."""
 * alergie.posledniProjev 0..1 dateTime "A.2.4.1.10 - Poslední projev" """Datum (a čas) poslední známé reakce (projevu)."""

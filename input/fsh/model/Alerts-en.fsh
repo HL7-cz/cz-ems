@@ -1,7 +1,7 @@
 Logical: LogAlertsCz
-Id: LogAlertsCz
+Id: AlertsCz
 Title: "A.2.4 - Alerts (en)"
-Description: """EMS Report - Alerts - A.2.4"""
+Description: """EMS Report - Alerts - A.2.4 EN"""
 
 * allergy 1..* Base "A.2.4.1 - Allergy and Intolerance" """A record of allergies and intolerances (primarily to be used for new allergies or intolerances that occurred during the hospital stay)."""
 * allergy.description 0..1 string "A.2.4.1.1 - Allergy description" """Textual description of the allergy or intolerance"""

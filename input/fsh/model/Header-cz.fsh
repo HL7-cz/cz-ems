@@ -1,7 +1,7 @@
-Logical: LogCzHeaderCz
-Id: LogHeaderEMSCz
-Title: "A.1 – Hlavička dokumentu"
-Description: "Zpráva o výjezdu - Struktura hlavičky zprávy o výjezdu podle tabulky části. "
+Logical: LogCzHeaderEmsCz
+Id: LogHeaderEmsCz
+Title: "A.1 – Hlavička dokumentu (cz)"
+Description: "Zpráva o výjezdu - Struktura hlavičky zprávy o výjezdu podle tabulky části. CZ"
 
 * pacient 1..1 Base "A.1.1 Identifikace pacienta" """Identifikace pacienta – křestní jméno, příjmení, datum narození, identifikátory, státní občanství, úřední pohlaví, komunikační jazyk."""
   * jmeno 1..* string "A.1.1.1 Křestní jméno" """Křestní jméno pacienta."""
@@ -30,6 +30,7 @@ Description: "Zpráva o výjezdu - Struktura hlavičky zprávy o výjezdu podle 
     * prijmeni 1..* string "A.1.2.4.5 Příjmení" """Příjmení kontaktní osoby."""
     * adresa 0..1 Address "A.1.2.4.6 Adresa kontaktní osoby" """Adresa kontaktní osoby."""
     * kontakt 0..* ContactPoint "A.1.2.4.7 Telekomunikační kontakt" """Telefon, e-mail apod."""
+
 * pojistovna 0..1 Base "A.1.3 Zdravotní pojištění" """Informace o pojištění pacienta."""
   * kodPojistovny 0..1 Identifier "A.1.3.1 Kód zdravotní pojišťovny" """Kód zdravotní pojišťovny."""
   * nazev 0..1 string "A.1.3.2 Název zdravotní pojišťovny" """Oficiální název pojišťovny."""
