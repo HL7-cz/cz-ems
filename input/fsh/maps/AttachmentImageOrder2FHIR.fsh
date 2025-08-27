@@ -13,7 +13,7 @@ Usage: #definition
 * group[=].element[=].display = "A.2.11.1 - Attachments EMS"
 * group[=].element[=].target.code = #CZ_Attachment
 * group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #relatedTo					
+* group[=].element[=].target.equivalence = #relatedto					
 * group[=].element[+].code = #AttachmentsCz.type
 * group[=].element[=].display = "A.2.11.1.1 - Attachment type"
 * group[=].element[=].target.code = #content.type					
