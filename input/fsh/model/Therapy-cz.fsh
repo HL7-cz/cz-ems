@@ -1,0 +1,21 @@
+Logical: LogCzTherapyEmsCz
+Id: LogTherapyEmsCz
+Title: "A.2.7 - Terapie"
+Description: "Zpráva o výjezdu ZZS - Terapie."
+
+* vykony 0..* Base "A.2.7.1 Výkony" """Zdravotnické výkony dle čísleníku ZZS."""
+  * nazev 1..1 CodeableConcept "A.2.7.1.1 Název výkonu" """Název výkonu dle číselníku ZZS."""
+  * datum 0..1 dateTime "A.2.7.1.2 Datum a čas provedení" """Datum a čas provedení výkonu."""
+* zdravotnickeProstredky 0..* Base "A.2.7.2 Zdravotnické prostředky" """Evidence použitých zdravotnických prostředků (PZT)."""
+  * popis 1..1 CodeableConcept "A.2.7.2.1 Popis zdravotnického prostředku" """Popis zdravotnického prostředku použitého při zásahu volným textem a/nebo kódem."""
+  * id 0..1 Identifier "A.2.7.2.2 Identifikátor prostředku" """Normalizovaný identifikátor, např. UDI, dle nařízení EU 2017/745."""
+* medikace 0..* Base "A.2.7.3 Medikace" """Medikamentózní léčba v průběhu ošetření."""
+  * kodSUKL 1..1 CodeableConcept "A.2.7.3.1 Kód SUKL" """Kód léčiva dle databáze SÚKL."""
+  * nazevLecivehoPripravku 1..1 string "A.2.7.3.2 Název léčivého přípravku" """Registrovaný název léčiva dle databáze léčivých přípravků."""
+  * skupinaATC 0..1 CodeableConcept "A.2.7.3.3 ATC skupina" """ATC skupina podaného léčiva."""
+  * aktivniLatky 0..* CodeableConcept "A.2.7.3.4 Aktivní látky" """Seznam aktivních látek v léčivu odvozený od záznamu HVLP nebo IVLP přípravku v databázi SUKL (DLP). Aktivní látky jsou uváděny názvem a případně také kódem DLP."""
+  * sila 0..* Quantity "A.2.7.3.5 Síla" """Síla aktivní léčivé látky obsažené v léčivém přípravku. Síla se vyjadřuje ve vztahu k jednotce podání. Např. 500mg v tabletě."""
+  * formaLeciva 0..1 CodeableConcept "A.2.7.3.6 Forma léčiva" """Léková forma obsažená v balení vyjádřená kódem. Např. Sirup, tableta apod."""
+  * podaneMnozstvi 0..1 Quantity "A.2.7.3.7 Dávkování" """Počet jednotek podání volným textem nebo formalizovaně."""
+  * cestaPodani 0..1 CodeableConcept "A.2.7.3.8 Cesta podání" """Cesta podání"""
+  * datumPodani 0..1 dateTime "A.2.7.3.9 Datum a čas podání" """Datum a čas podání."""
