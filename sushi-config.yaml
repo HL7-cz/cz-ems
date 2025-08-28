@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.cz.ems
-canonical: https://hl7.cz/fhir/cz-ems 
+canonical: https://hl7.cz/fhir/cz-ems
 name: HL7CzEMSImplementationGuide
 title: HL7 Czech EMS Implementation Guide
 description: HL7 Czech EMS Implementation Guide
@@ -113,35 +113,35 @@ pages:
 # partial list of allowed parameters see:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
-parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-#  special-url:
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-administrative-gender-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-contact-person-relation-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-drzar-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/nrzp-povolani-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/PassportNS-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-tab-ta
-#    - https://ncez.mzcr.cz/fhir/ValueSet/typ-registrujiciho-lekare-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/role-code-supplement
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/contact-role-supplement
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/snomed-supplement-service-type
-#    - http://ncez.mzcr.cz/fhir/StructureDefinition/address-point-cz
-# path-resource:
-#    - input/resources
-#    - fsh-generated/resources
-#  path-pages:
-#    - input/pagecontentinformation-reci
-#    - input/intro-notes
-#  path-tx-cache:
-#  expansion-parameter:
-#  rule-broken-links:
-#  generate-xml:
-#  generate-json:
-#  generate-turtle:
-#  html-template:
-#  active-tables: false
+parameters: #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  #  special-url:
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/cz-administrative-gender-vs
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/cz-contact-person-relation-vs
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/cz-drzar-vs
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/nrzp-povolani-vs
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/PassportNS-vs
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-tab-ta
+  #    - https://ncez.mzcr.cz/fhir/ValueSet/typ-registrujiciho-lekare-vs
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/role-code-supplement
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/contact-role-supplement
+  #    - https://ncez.mzcr.cz/fhir/CodeSystem/snomed-supplement-service-type
+  #    - http://ncez.mzcr.cz/fhir/StructureDefinition/address-point-cz
+  # path-resource:
+  #    - input/resources
+  #    - fsh-generated/resources
+  #  path-pages:
+  #    - input/pagecontentinformation-reci
+  #    - input/intro-notes
+  #  path-tx-cache:
+  #  expansion-parameter:
+  #  rule-broken-links:
+  #  generate-xml:
+  #  generate-json:
+  #  generate-turtle:
+  #  html-template:
+  #  active-tables: false
   apply-contact: true
   apply-jurisdiction: true
   apply-publisher: true
@@ -152,15 +152,15 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
   # excludejson: false
   # excludettl: true
   # excludemap: true
- # no-narrative:
- #   - Patient/example-targeted-provenance
- #   - Bundle/docref-example-1
+  # no-narrative:
+  #   - Patient/example-targeted-provenance
+  #   - Bundle/docref-example-1
   # no-validate:
   #   - '*/*'  # does not seems to work
   #   - 'StructureDefinition/*'
- # version-comparison:
- #    - 5.0.1
- #    - 4.0.0
+  # version-comparison:
+  #    - 5.0.1
+  #    - 4.0.0
 
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
@@ -199,7 +199,7 @@ menu:
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
-#  Artifacts: 
+#  Artifacts:
 #    Czech artifacts: artifacts.html
 #    Profiles and extensions: profiles-and-extensions.html
 #  About:
@@ -286,14 +286,25 @@ menu:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
 groups:
-
   czech-logical-model:
-    name:  Czech logical model (Informative)
+    name: Czech logical model (Informative)
     description: Logical model in czech language. Informative for this version of the guide.
     resources:
-      - StructureDefinition/LogAttachmentsCz
-      - StructureDefinition/LogPresentedFormCz
+      - StructureDefinition/LogEmsReportCz
+      - StructureDefinition/LogHeaderEmsCz
+      - StructureDefinition/LogDispatchDataCz
+      - StructureDefinition/LogDispatchTimelineCz
+      - StructureDefinition/LogPatientHistoryCz
+      - StructureDefinition/LogAlertsCz
+      - StructureDefinition/LogPresentingIllnessEmsCz
+      - StructureDefinition/LogObjectiveFindingsEmsCz
+      - StructureDefinition/LogDiagnostickySouhrnCz
+      - StructureDefinition/LogTherapyEmsCz
+      - StructureDefinition/LogRecommendationsCz
+      - StructureDefinition/LogEndOfCareCz
       - StructureDefinition/LogAttachmentsEmsCz
+      - StructureDefinition/LogPresentedFormCz
+      - StructureDefinition/LogAttachmentsCz
 #
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and
