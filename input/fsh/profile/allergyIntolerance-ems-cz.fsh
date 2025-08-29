@@ -1,4 +1,4 @@
-Profile: CZ_AllergyIntoleranceEMS
+Profile: CZ_AllergyIntoleranceEms
 Parent: cz-allergyIntolerance
 Id: cz-allergyIntolerance-ems
 Title: "Allergy Intolerance: (EMS CZ)"
