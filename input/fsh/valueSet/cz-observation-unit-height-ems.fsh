@@ -8,7 +8,6 @@ Description: "UCUM units for height"
 * ^date = "2024-01-01"
 * ^publisher = "NCEZ"
 * ^experimental = false
-* ^url = "https://hl7.cz/fhir/cz-ems/ValueSet/cz-observationUnitsHeight-vs"
 * ^experimental = false
 * $UCUM#m
 * $UCUM#cm

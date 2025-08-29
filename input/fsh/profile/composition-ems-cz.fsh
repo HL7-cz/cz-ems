@@ -61,6 +61,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section contains
     presentingIllness 0..1 and
+    clinicalCourseAndRecommendations 0..* and
     procedure 1..1 and
     attachments 0..*
 
@@ -72,6 +73,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * text 1..
 
+///////////////////////////////// ClinicalCourseAndRecommendations SECTION ///////////////////////////////////////
+* section[clinicalCourseAndRecommendations]
+  * ^short = "Clinical Course And Recommendations"
+  * ^definition = "EMS patient care report - version 3 Document NEMSIS"
+  * code = $loinc#67796-3
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  * entry 0..*
+  * entry only Reference(CZ_ProcedureEms)
 
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
