@@ -61,12 +61,23 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section contains
     presentingIllness 0..1 and
+    objectiveFindings 0..* and
     clinicalCourseAndRecommendations 0..* and
     procedure 1..1 and
     diagnosticSummary 0..1 and
-    dispatch 1..1 and
-    timeline 1..1 and
+    dispatch 0..1 and
+    timeline 0..1 and
     attachments 0..*
+
+///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
+* section[objectiveFindings]
+  * ^short = "Physical findings note"
+  * ^definition = "Physical findings note"
+  * code = $loinc#29545-1
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  //* text 1..
+  * entry 0..*
+  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFHdr or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms)
 
 ///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
 * section[dispatch]

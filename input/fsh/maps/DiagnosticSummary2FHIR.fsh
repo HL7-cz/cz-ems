@@ -6,7 +6,7 @@ Usage: #definition
 * title = "EMS diagnostic summary Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """eHN EMS Diagnostic summary Model to this guide Map"""
+* description = """CZ EMS Diagnostic summary Model to this guide Map"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogDiagnosticSummary"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-condition-ems"

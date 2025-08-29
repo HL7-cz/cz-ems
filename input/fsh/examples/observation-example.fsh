@@ -4,6 +4,8 @@ Usage: #example
 Title: "BMI of patient"
 Description: "Example instance for BMI observation using the CZ_ObservationBMIHdr profile."
 * status = #final
+* category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category.coding.code = #vital-signs
 * code.coding = $sct#60621009
 * subject = Reference(cz-examplebase-patient)
 * performer = Reference(practitionerEms)
@@ -11,6 +13,7 @@ Description: "Example instance for BMI observation using the CZ_ObservationBMIHd
 * valueQuantity.unit = "kg/m2"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #kg/m2
+* effectiveDateTime = 2020-06-01
 
 
 Instance: ExampleBodyWeightEms
@@ -19,13 +22,15 @@ Usage: #example
 Title: "Body weight of patient"
 Description: "Example of body weight of Patient Mracena"
 * subject = Reference(cz-examplebase-patient)
-* category.coding = $sct#27113001
+* category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category.coding.code = #vital-signs
 * code.coding = $sct#424927000
 * valueQuantity.value = 66
 * valueQuantity.unit = "kg"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #kg
 * status = #final
+* effectiveDateTime = 2020-06-01
 * performer = Reference(practitionerEms)
 
 
@@ -35,11 +40,13 @@ Usage: #example
 Title: "Body height of patient"
 Description: "Example of body height of Patient Mracena"
 * subject = Reference(cz-examplebase-patient)
-* category.coding = $sct#1153637007
+* category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category.coding.code = #vital-signs
 * code.coding = $sct#1162418000
 * valueQuantity.value = 165
 * valueQuantity.unit = "cm"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #cm
 * status = #final
+* effectiveDateTime = 2020-06-01
 * performer = Reference(practitionerEms)
