@@ -17,3 +17,4 @@ Alias: $dlp_lecprip = https://hl7.cz/fhir/core/ValueSet/cz-dlplecivepripravky-vs
 Alias: $loinc =  http://loinc.org
 Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $sct =  http://snomed.info/sct
+Alias: $UCUM = http://unitsofmeasure.org
