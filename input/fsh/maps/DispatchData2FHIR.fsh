@@ -172,6 +172,13 @@ Usage: #definition
 * group[=].element[=].target.display = "Dispatch Center Operator Identification"
 * group[=].element[=].target.equivalence = #relatedto
 
+* group[=].element[+].code = #callerContact
+* group[=].element[=].display = "A.2.1.8 - Caller Contact"
+* group[=].element[=].target.code = #Communication.sender
+* group[=].element[=].target.display = "sender (RelatedPerson)"
+* group[=].element[=].target.comment = "Communication.sender should reference RelatedPerson"
+* group[=].element[=].target.equivalence = #relatedto
+
 // ---- Operator person → Practitioner (cz-practitioner-core) ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
@@ -211,5 +218,19 @@ Usage: #definition
 * group[=].element[=].target.display = "Role"
 * group[=].element[=].target.equivalence = #relatedto
 
+// ---- Caller Contact details → RelatedPerson ----
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
+* group[=].target = "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+* group[=].element[+].code = #callerContact
+* group[=].element[=].display = "A.2.1.8 - Caller Contact"
+* group[=].element[=].target.code = #Composition.section:dispatchData
+* group[=].element[=].target.display = "Composition.section:dispatchData.entry.ofType(RelatedPerson)"
+* group[=].element[=].target.comment = "Composition.section:dispatchData.entry should reference RelatedPerson"
+* group[=].element[=].target.equivalence = #relatedto
 
+* group[=].element[+].code = #phone
+* group[=].element[=].display = "A.2.1.8.1 - Phone"
+* group[=].element[=].target.code = #RelatedPerson.telecom
+* group[=].element[=].target.display = "Phone number of the caller"
+* group[=].element[=].target.equivalence = #relatedto
 
