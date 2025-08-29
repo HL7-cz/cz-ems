@@ -6,13 +6,6 @@ Description: "This value set includes other Objective findings observations of E
 * insert SNOMEDCopyrightForVS
 * ^experimental = false
 
-//Základní životní funkce
-* $sct#364075005 //Heart rate (observable entity)
-* $sct#86290005 //Respiratory rate (observable entity)
-* $sct#271649006 //Systolic blood pressure (observable entity)
-* $sct#271650006 //Diastolic blood pressure (observable entity)
-* $sct#386725007 //Body temperature (observable entity)
-* $sct#103228002 //Hemoglobin saturation with oxygen (observable entity)
 //Další měřené parametry
 * $sct#449159002 //AVPU - alert voice pain unresponsive scale
 * $sct#386554004 //Glasgow coma scale
