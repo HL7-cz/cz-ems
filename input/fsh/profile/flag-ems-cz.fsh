@@ -1,4 +1,4 @@
-Profile: CZ_FlagEMS
+Profile: CZ_FlagEms
 Parent: Flag
 Id: cz-flag-ems
 Title: "Flag: (EMS CZ)"

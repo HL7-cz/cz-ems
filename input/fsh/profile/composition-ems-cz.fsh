@@ -88,6 +88,32 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 0..*
   * entry only Reference(CZ_Encounter or CZ_TaskEms or CZ_CommunicationEms)
 
+///////////////////////////////// PATIENT HISTORY SECTION ///////////////////////////////////////
+* section contains sectionPatientHx ..1
+* section[sectionPatientHx]
+  * insert SectionComRules (
+    Patient History Section,
+    This Section describes all aspects of the medical history of the patient even if not pertinent to the current procedure\, and may include chief complaint\, past medical history\, social history\, family history\, surgical or procedure history\, medication history\, and other history information. The history may be limited to information pertinent to the current procedure or may be more comprehensive. The history may be reported as a collection of random clinical statements or it may be reported categorically. Categorical report formats may be divided into multiple subsections including Past Medical History\, Social History.,
+    $loinc#11329-0 )
+
+/////////////////////////////////  Allergies and Intolerances SECTION ///////////////////////////////////////
+* section contains sectionAllergies 0..1
+* section[sectionAllergies]
+  * insert SectionComRules (
+      Allergies and Intolerances Section,
+      This section documents the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\nIf no information about allergies is available\, or if no allergies are known this should be clearly documented in the section.,
+      $loinc#48765-2 )   // CODE
+  * entry 1..
+  * entry only Reference(CZ_AllergyIntoleranceEms or DocumentReference or AllergyIntolerance)
+  * insert SectionEntrySliceComRules(Relevant allergies or intolerances (conditions\) for that patient.,
+    It lists the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\n This entry shall be used to document that no information about allergies is available\, or that no allergies are known .)
+  // entry slices
+  * insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, CZ_AllergyIntoleranceEms)
+
+/////////////////////////////////  Alert SECTION ///////////////////////////////////////
+
+* insert AlertSectionRules
+
 ///////////////////////////////// PRESENTING ILLNESS SECTION ///////////////////////////////////////
 * section[presentingIllness]
   * ^short = "Expos inj EMS person Provider NEMSIS"
