@@ -1,7 +1,7 @@
 Profile: CZ_TaskEms
 Parent: Task
 Id: cz-task-ems
-Title: "CZ Emergency Medical Service Task"
+Title: "Task: (EMS CZ)"
 Description: "CZ Emergency Medical Service Task Resource"
 
 // A.2.1.1 Identifikace výjezdu
@@ -27,8 +27,11 @@ Description: "CZ Emergency Medical Service Task Resource"
 * reasonCode 1..1 MS                          // A.2.1.7.2 Klasifikace výzvy (ZOS)
 * reasonCode from http://example.org/fhir/ValueSet/cz-ems-zos-classification (extensible)
 
+* authoredOn 1..1 MS // A.2.2.2 Čas výzvy
+
 // Použití extension
 * extension contains CzEmsUrgencyLevel named urgencyLevel 1..1 MS // A.2.1.7.1
+
 // A.2.1.7.1 Naléhavost výjezdu (1–4) – vlastní extension
 Extension: CzEmsUrgencyLevel
 Id: ext-cz-ems-urgency-level

@@ -1,7 +1,7 @@
 Profile: CZ_CareTeamEms
 Parent: CareTeam
 Id: cz-careteam-ems
-Title: "CareTeam (EMS CZ)"
+Title: "CareTeam: (EMS CZ)"
 Description: "Profile of the emergency medical service team within Czech EMS."
 
 * status 1..1 MS             // A.2.1 (stav týmu v rámci výjezdu)

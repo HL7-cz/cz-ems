@@ -1,7 +1,7 @@
 Profile: CZ_VehicleLocationEms
 Parent: Location
 Id: cz-vehicle-location-ems
-Title: "Location - Vehicle (EMS CZ)"
+Title: "Location - Vehicle: (EMS CZ)"
 Description: "Location resource used to identify an emergency response vehicle or other means of transport of the Emergency Medical Service (EMS)."
 // A.2.1.2 Identifikace vozidla
 * mode 1..1 MS
