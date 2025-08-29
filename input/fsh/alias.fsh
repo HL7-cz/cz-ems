@@ -12,6 +12,7 @@ Alias: $CodeableConcept-uv-ips = http://hl7.org/fhir/uv/ips/StructureDefinition/
 // Valuesets:
 Alias: $hl7MedicationAdminStatus = http://hl7.org/fhir/ValueSet/medication-admin-status
 Alias: $dlp_lecprip = https://hl7.cz/fhir/core/ValueSet/cz-dlplecivepripravky-vs
+Alias: $hl7-observation-category = http://hl7.org/fhir/ValueSet/observation-category
 
 // CodeSystems:
 Alias: $loinc =  http://loinc.org
