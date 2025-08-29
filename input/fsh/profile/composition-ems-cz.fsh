@@ -63,7 +63,30 @@ Description: "This profile defines how to represent Composition resource in HL7 
     presentingIllness 0..1 and
     clinicalCourseAndRecommendations 0..* and
     procedure 1..1 and
+    diagnosticSummary 0..1 and
+    dispatch 1..1 and
+    timeline 1..1 and
     attachments 0..*
+
+///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
+* section[dispatch]
+  * ^short = "EMS dispatch Narrative NEMSIS"
+  * ^definition = "Information related to dispatch instructions"
+  * code = $loinc#67660-1
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  //* text 1..
+  * entry 0..*
+  * entry only Reference(CZ_Encounter or CZ_TaskEms or CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
+
+///////////////////////////////// TIMELINE SECTION ///////////////////////////////////////
+* section[timeline]
+  * ^short = "EMS times Narrative NEMSIS"
+  * ^definition = "Times recorded to assess delays"
+  * code = $loinc#67667-6
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  //* text 1..
+  * entry 0..*
+  * entry only Reference(CZ_Encounter or CZ_TaskEms or CZ_CommunicationEms)
 
 ///////////////////////////////// PRESENTING ILLNESS SECTION ///////////////////////////////////////
 * section[presentingIllness]
