@@ -73,6 +73,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * text 1..
 
+///////////////////////////////// DiagnosticSummary SECTION ///////////////////////////////////////
+* section[diagnosticSummary]
+  * ^short = "Diagnostic summary"
+  * ^definition = ""
+  * code = $loinc#11450-4
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  * entry 0..*
+  * entry only Reference(CZ_ConditionEms)
 ///////////////////////////////// ClinicalCourseAndRecommendations SECTION ///////////////////////////////////////
 * section[clinicalCourseAndRecommendations]
   * ^short = "Clinical Course And Recommendations"
