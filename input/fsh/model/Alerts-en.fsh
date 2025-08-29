@@ -1,4 +1,4 @@
-Logical: LogAlertsCz
+Logical: LogEnAlertsCz
 Id: AlertsCz
 Title: "A.2.4 - Alerts (en)"
 Description: """EMS Report - Alerts - A.2.4 EN"""

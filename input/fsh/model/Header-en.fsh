@@ -1,4 +1,4 @@
-Logical: HeaderEmsCz
+Logical: LogEnHeaderEmsCz
 Id: HeaderEmsCz
 Title: "A.1 - EMS report header data element (en)"
 Description: """EMS report - EMS report header data element - A.1 EN"""

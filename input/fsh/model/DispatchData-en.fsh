@@ -1,4 +1,4 @@
-Logical: LogDispatchDataCz
+Logical: LogEnDispatchDataCz
 Id: DispatchDataCz
 Title: "A.2.1 - Dispatch Data (en)"
 Description: """EMS report – Dispatch Data – A.2.1 EN"""

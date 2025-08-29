@@ -1,4 +1,4 @@
-Logical: LogPatientHistoryCz
+Logical: LogEnPatientHistoryCz
 Id: PatientHistoryCz
 Title: "A.2.3 - Patient history (en)"
 Description: """EMS Report - Patient history - A.2.3 EN"""

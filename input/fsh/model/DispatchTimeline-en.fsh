@@ -1,4 +1,4 @@
-Logical: LogDispatchTimelineCz
+Logical: LogEnDispatchTimelineCz
 Id: DispatchTimelineCz
 Title: "A.2.2 - Dispatch Timeline (en)"
 Description: """EMS record – Dispatch Timeline – A.2.2 EN"""

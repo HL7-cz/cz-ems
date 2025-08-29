@@ -13,4 +13,4 @@ Description: "Profile of the emergency medical service team within Czech EMS."
 * participant.member only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore) // A.2.1.3
 * participant.member.identifier 1..1 MS          // A.2.1.3.1 Identifikátor člena posádky
 * participant.role 1..1 MS
-* participant.role from https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani (extensible) // A.2.1.3.4 Role (NRZP)
+* participant.role from https://ncez.mzcr.cz/fhir/ValueSet/nrzp-povolani-vs (extensible) // A.2.1.3.4 Role (NRZP)
