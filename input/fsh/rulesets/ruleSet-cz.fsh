@@ -30,3 +30,16 @@ RuleSet: SectionSliceComRules (short, def)
 * section ^slicing.rules = #open
 * section ^short = "{short}"
 * section ^definition = "{def}"
+
+RuleSet: SliceElementWithDescription( type, path, description )
+* ^slicing.discriminator.type = {type}
+* ^slicing.discriminator.path = "{path}"
+* ^slicing.rules = #open
+* ^slicing.description = "{description}"
+* ^slicing.ordered = false
+
+RuleSet: SliceElement( type, path )
+* ^slicing.discriminator.type = {type}
+* ^slicing.discriminator.path = "{path}"
+* ^slicing.rules = #open
+* ^slicing.ordered = false

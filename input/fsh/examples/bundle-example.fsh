@@ -26,6 +26,9 @@ Usage: #example
 * entry[patient].fullUrl = "urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766"
 * entry[patient].resource = cz-examplebase-patient
 
+* entry[procedure].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
+* entry[procedure].resource = cz-procedure-example
+
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
 Usage: #example
@@ -100,6 +103,10 @@ Usage: #example
 * title = "EMS Pacientky Mračeny Mrakomorové"
 * confidentiality = #N
 * type = $loinc#82315-3 "Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
+* section[presentingIllness].title = "Presenting Illness"
+* section[presentingIllness].code = $loinc#67658-5	"EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS"
+* section[presentingIllness].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bolesti na hrudi</div>"
+* section[presentingIllness].text.status = #additional
 * extension[relatedArtifact].valueRelatedArtifact.type  = http://hl7.org/fhir/related-artifact-type#documentation
 * extension[relatedArtifact].valueRelatedArtifact.label = "Presented form"
 * extension[relatedArtifact].valueRelatedArtifact.document = cz-pdf-example
@@ -108,6 +115,7 @@ Usage: #example
 * section[procedure].code = $loinc#29554-3	"Procedure Narrative"
 * section[procedure].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mediální kyslík NEPODÁN.</div>"
 * section[procedure].text.status = #additional
+* section[procedure].entry[0] = Reference(urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6)
 
 Instance: cz-encounter-example
 InstanceOf: CZ_Encounter
@@ -121,3 +129,13 @@ Description: "Encounter"
 * class.code = #AMB
 * type.text = "EMS pacientky Mrakomorové"
 * serviceProvider = Reference(urn:uuid:821077d6-ce17-4602-b3ad-d4bef845a950) // CZ_OrganizationWithLogo
+
+Instance: cz-procedure-example
+InstanceOf: CZ_ProcedureEms
+Usage: #example
+Description: "Procedure"
+* id = "3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
+* status = #completed
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* code.text = "Mediální kyslík NEPODÁN."
+* performedDateTime = "2022-10-07T09:10:00+01:00"

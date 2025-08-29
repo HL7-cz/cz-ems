@@ -60,8 +60,18 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
+    presentingIllness 0..1 and
     procedure 1..1 and
     attachments 0..*
+
+///////////////////////////////// PRESENTING ILLNESS SECTION ///////////////////////////////////////
+* section[presentingIllness]
+  * ^short = "Expos inj EMS person Provider NEMSIS"
+  * ^definition = "EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS."
+  * code = $loinc#67658-5
+  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  * text 1..
+
 
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
@@ -70,7 +80,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#29554-3
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 0..*
-//  * entry only Reference(CZ_ProcedureEms)
+  * entry only Reference(CZ_ProcedureEms)
 
 * section[attachments]  // sekce obsahující referenci na DocumentReference
   * ^short = "Attachments"
