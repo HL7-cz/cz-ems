@@ -11,7 +11,7 @@ Description: "This profile sets minimum expectations for the Observation resourc
 * code from CZ_ObservationOFTypeEmsVs
 
 * value[x] only Quantity or string
-* valueQuantity.code from CZ_UCUMEmsVs
+* valueQuantity.system = $UCUM
 
 * effective[x] 1..1
 * effective[x] only dateTime

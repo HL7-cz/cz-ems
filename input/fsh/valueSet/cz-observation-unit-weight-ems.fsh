@@ -8,7 +8,7 @@ Description: "UCUM units for weight"
 * ^date = "2024-01-01"
 * ^publisher = "NCEZ"
 * ^experimental = false
-* ^url = "https://hl7.cz/fhir/cz-emsr/ValueSet/cz-observationUnitsWeight-vs"
+* ^url = "https://hl7.cz/fhir/cz-ems/ValueSet/cz-observationUnitsWeight-vs"
 * insert SetFmmandStatusRule(2, trial-use)
 
 * ^experimental = false
