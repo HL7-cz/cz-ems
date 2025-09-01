@@ -9,7 +9,7 @@ name: HL7CzEMSImplementationGuide
 title: HL7 Czech EMS Implementation Guide
 description: HL7 Czech EMS Implementation Guide
 status: draft # draft | active | retired | unknown
-version: 0.0.1
+version: 0.0.2
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
