@@ -71,6 +71,10 @@ pages:
     title: Scope and content
   scope-and-content-cs.md:
     title: Rozsah použití a obsah
+  background.md:
+    title: Background
+  background-cs.md:
+    title: Background
   examples.md:
     title: Examples
   examples-cs.md:
@@ -182,6 +186,8 @@ menu:
   Introduction:
     Scope and content (en): scope-and-content.html
     Scope and content (cs): scope-and-content-cs.html
+    Background (en): background.html
+    Background (cs): background-cs.html
   Functional:
     Logical models (en): logical-models.html
     Logical models (cs): logical-models-cs.html
