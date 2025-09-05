@@ -28,7 +28,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * type = $loinc#82315-3 "Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
-* subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the hdr the subject is always the patient."
+* subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
 
 * encounter 1..1 
 * encounter only Reference(CZ_Encounter)
@@ -77,7 +77,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFHdr or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms)
+  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms)
 
 ///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
 * section[dispatch]

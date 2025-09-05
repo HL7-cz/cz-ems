@@ -1,6 +1,6 @@
-Profile: CZ_ObservationOtherOFHdr
+Profile: CZ_ObservationOtherOFEms
 Parent: Observation
-Id: cz-observation-OtherOF-hdr
+Id: cz-observation-OtherOF-ems
 Title: "Observation: Other Objective Findings (EMS CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch Objective Findings."
 
