@@ -102,14 +102,11 @@ Usage: #example
 * author = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
 * title = "EMS Pacientky Mračeny Mrakomorové"
 * confidentiality = #N
-* type = $loinc#82315-3 "Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
-* section[presentingIllness].title = "Presenting Illness"
-* section[presentingIllness].code = $loinc#67658-5	"EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS"
-* section[presentingIllness].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bolesti na hrudi</div>"
-* section[presentingIllness].text.status = #additional
-* extension[relatedArtifact].valueRelatedArtifact.type  = http://hl7.org/fhir/related-artifact-type#documentation
-* extension[relatedArtifact].valueRelatedArtifact.label = "Presented form"
-* extension[relatedArtifact].valueRelatedArtifact.document = cz-pdf-example
+* type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+* section[presentIllness].title = "Presenting Illness"
+* section[presentIllness].code = $loinc#67658-5	"EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS"
+* section[presentIllness].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bolesti na hrudi</div>"
+* section[presentIllness].text.status = #additional
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[procedure].title = "Procedure"
 * section[procedure].code = $loinc#29554-3	"Procedure Narrative"

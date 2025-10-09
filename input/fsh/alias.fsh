@@ -22,3 +22,4 @@ Alias: $loinc =  http://loinc.org
 Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $sct =  http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $mime = urn:ietf:bcp:13

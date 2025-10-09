@@ -12,20 +12,21 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * extension contains $event-basedOn named basedOn 0..*
 * extension[basedOn].valueReference only Reference ( Resource or ServiceRequest ) /// add profile
 
-* extension contains $artifact-relatedArtifact named relatedArtifact 0..*
-* extension[relatedArtifact]
-  * ^short = "Related artefacts: e.g. presented form"
-* extension[relatedArtifact].valueRelatedArtifact.type
-  * ^example[0].label = "presented form"
-  * ^example[0].valueCodeableConcept  = http://hl7.org/fhir/related-artifact-type#documentation
-* extension[relatedArtifact].valueRelatedArtifact.document
+//* extension contains DocumentPresentedForm named presentedForm 1..*
+//* extension[presentedForm] ^short = "Presented form"
+//* extension[presentedForm].valueAttachment
+//  * contentType
+//    * ^example[0].label = "pdf"
+//    * ^example[0].valueCode  = $mime#application/pdf
+//  * data ^short = "B64 in-line data"
+//  * url ^short = "URL of the document"
 
 * identifier ^short = "EMS business identifier"
 * status ^short = "EMS status"
 * type only $CodeableConcept-uv-ips
 * type ^short = "Kind of composition (\"Emergency Medical Services\")"
 * type ^definition = "Specifies that this composition refer to a Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
-* type = $loinc#82315-3 "Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
+* type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
@@ -60,8 +61,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
-    presentingIllness 0..1 and
-    objectiveFindings 0..* and
+    presentIllness 0..1 and
+    findings 0..* and
     clinicalCourseAndRecommendations 0..* and
     procedure 1..1 and
     diagnosticSummary 0..1 and
@@ -70,14 +71,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
     attachments 0..*
 
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
-* section[objectiveFindings]
-  * ^short = "Physical findings note"
-  * ^definition = "Physical findings note"
+* section[findings]
+  * ^short = "Physical findings Narrative"
+  * ^definition = "Physical findings Narrative"
   * code = $loinc#29545-1
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms)
+  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms or Observation)
 
 ///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
 * section[dispatch]
@@ -126,7 +127,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * insert AlertSectionRules
 
 ///////////////////////////////// PRESENTING ILLNESS SECTION ///////////////////////////////////////
-* section[presentingIllness]
+* section[presentIllness]
   * ^short = "Expos inj EMS person Provider NEMSIS"
   * ^definition = "EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS."
   * code = $loinc#67658-5
