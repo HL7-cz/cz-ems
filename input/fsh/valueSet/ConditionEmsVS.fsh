@@ -1,7 +1,7 @@
 ValueSet:   ConditionEmsVS
 Id:         condition-cz-ems
 Title:      "Condition Value Set"
-Description:  """Hospital Discharge Report Condition value set includes selected codes from recommended EU code systems for health conditions (WHO-ICD-10, SNOMED CT and Orphacodes)."""
+Description:  """Condition value set includes selected codes from recommended EU code systems for health conditions (WHO-ICD-10, SNOMED CT and Orphacodes)."""
 
 * insert SetFmmandStatusRule (1, draft)
 

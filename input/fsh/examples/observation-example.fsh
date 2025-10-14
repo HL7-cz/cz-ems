@@ -2,7 +2,7 @@ Instance: ExampleBMIEms
 InstanceOf: CZ_ObservationBMIEms
 Usage: #example
 Title: "BMI of patient"
-Description: "Example instance for BMI observation using the CZ_ObservationBMIHdr profile."
+Description: "Example instance for BMI observation using the CZ_ObservationBMIEms profile."
 * status = #final
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * category.coding.code = #vital-signs
