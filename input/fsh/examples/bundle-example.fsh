@@ -103,10 +103,6 @@ Usage: #example
 * title = "EMS Pacientky Mračeny Mrakomorové"
 * confidentiality = #N
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
-* section[presentIllness].title = "Presenting Illness"
-* section[presentIllness].code = $loinc#67658-5	"EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS"
-* section[presentIllness].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bolesti na hrudi</div>"
-* section[presentIllness].text.status = #additional
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[procedure].title = "Procedure"
 * section[procedure].code = $loinc#29554-3	"Procedure Narrative"

@@ -61,13 +61,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
-    presentIllness 0..1 and
+    courseOfTreatment 0..1 and
+    recommendations 0..1 and
     findings 0..* and
-    clinicalCourseAndRecommendations 0..* and
     procedure 1..1 and
     diagnosticSummary 0..1 and
     dispatch 0..1 and
     timeline 0..1 and
+    payers 0..1 and
     attachments 0..*
 
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
@@ -126,14 +127,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * insert AlertSectionRules
 
-///////////////////////////////// PRESENTING ILLNESS SECTION ///////////////////////////////////////
-* section[presentIllness]
-  * ^short = "Expos inj EMS person Provider NEMSIS"
-  * ^definition = "EMS exposures or injuries of EMS personnel Provider Narrative NEMSIS."
-  * code = $loinc#67658-5
-  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
-  * text 1..
-
 ///////////////////////////////// DiagnosticSummary SECTION ///////////////////////////////////////
 * section[diagnosticSummary]
   * ^short = "Diagnostic summary"
@@ -142,14 +135,23 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 0..*
   * entry only Reference(CZ_ConditionEms)
+
 ///////////////////////////////// ClinicalCourseAndRecommendations SECTION ///////////////////////////////////////
-* section[clinicalCourseAndRecommendations]
-  * ^short = "Clinical Course And Recommendations"
-  * ^definition = "EMS patient care report - version 3 Document NEMSIS"
-  * code = $loinc#67796-3
+* section[courseOfTreatment]
+  * ^short = "The narrative of the patient care report" //Summary of treatment progress and condition development
+  * ^definition = "67781-5"
+  * code = $loinc#67781-5
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
-  * entry 0..*
-  * entry only Reference(CZ_ProcedureEms)
+  * entry only Reference( CZ_ProcedureEms) 
+
+* section[recommendations]
+  * insert SectionComRules (
+    Plan of Care Section,
+    The plan of care section contains a narrative description of the expectations for care including proposals\, goals\, and order requests for monitoring\, tracking\, or improving the condition of the patient.,
+    $loinc#18776-5 )
+  * entry only Reference( CZ_CarePlanEms) 
+  
+
 
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
@@ -160,12 +162,22 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 0..*
   * entry only Reference(CZ_ProcedureEms)
 
+* section[payers]
+  * insert SectionComRules (
+      Health insurance and payment information section.,
+      Health insurance information is67796-3 not always required\, however\, in some jurisdictions\, the insurance number is also used as the patient identifier. It is necessary not just for identification but also forms access to funding for care.,
+      $loinc#48768-6  ) // "Payment sources Document"
+  * ^short = "Health insurance and payment information."
+  * ^definition = "This section includes heath insurance and payment information."
+  * entry only Reference(CZ_Coverage)
+
 * section[attachments]  // sekce obsahující referenci na DocumentReference
   * ^short = "Attachments"
   * code = $loinc#34109-9 //"Note - asi jen dočasný kód TODO: Najít vhodný kód"
   * author only Reference(CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 1..*
-  * entry only Reference(CZ_Logo or DocumentReference)
+  * entry only Reference(CZ_Logo or DocumentReference) 
+
 
 Invariant: text-or-section
 Description: "A Composition SHALL have either text, at least one section, or both."

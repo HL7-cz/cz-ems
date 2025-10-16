@@ -4,7 +4,7 @@ Title: "A.1 - EMS report header data element (en)"
 Description: """EMS report - EMS report header data element - A.1 EN"""
 
 //TODO - upravit Base - > Subject
-* subject 1..1 Base "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject" """Identification of the patient/subject and Patient/subject related contact information"""
+* subject 1..1 SubjectCz "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject" """Identification of the patient/subject and Patient/subject related contact information"""
 * payer 0..1 Base "A.1.3 - Health insurance and payment information - Health insurance information is not always required, however, in some jurisdictions, the insurance number is also used as the patient identifier. It is necessary not just for identification but also forms access to funding for care." """Health insurance and payment information - Health insurance information is not always required, however, in some jurisdictions, the insurance number is also used as the patient identifier. It is necessary not just for identification but also forms access to funding for care."""
 * payer.insuranceCode 0..1 Identifier "A.1.3.1 - Health insurance code" """Unique health insurance company identification code."""
 * payer.insuranceName 0..1 string "A.1.3.2 - Health insurance name" """Full, official name of the healthcare insurance provider."""
@@ -33,5 +33,4 @@ Description: """EMS report - EMS report header data element - A.1 EN"""
 * documentMetadata.confidentiality 1..1 CodeableConcept "A.1.6.7 - Confidentiality" """Level of confidentiality of the document. Implicit value is normal."""
 * documentMetadata.language 1..1 CodeableConcept "A.1.6.8 - Language" """Language in which the document is written. Language is expressed by the ISO language code."""
 * documentMetadata.version 0..1 string "A.1.6.9 - Version" """Version of the document"""
-//TODO - upravit Base - > DigitalSignatureCz
-* digitalSignature 1..* Base "A.1.7 - Digital signature" """Digital signature"""
+* digitalSignature 1..* DigitalSignatureCz "A.1.7 - Digital signature" """Digital signature"""

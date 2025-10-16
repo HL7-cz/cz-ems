@@ -1,5 +1,5 @@
-Logical: LogCzPresentingIllnessEmsCz
-Id: LogPresentingIllnessEmsCz
+Logical: LogCzPresentIllnessEmsCz
+Id: LogPresentIllnessEmsCz
 Title: "A.2.5 - Nynější onemocnění"
 Description: "Zpráva o výjezdu ZZS - Nynější onemocnění."
 

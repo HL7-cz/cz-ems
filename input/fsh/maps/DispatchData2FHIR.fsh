@@ -118,7 +118,7 @@ Usage: #definition
 
 // ---- Crew Member details → Practitioner (cz-practitioner-core) ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
+* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-practitioner-core"
 * group[=].element[+].code = #crewMemberIdentification
 * group[=].element[=].display = "A.2.1.3 - Crew Member Identification"
 * group[=].element[=].target.code = #Composition.section:dispatchData
@@ -143,7 +143,7 @@ Usage: #definition
 
 // ---- Crew Member Role → PractitionerRole (cz-practitionerrole-core) ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
+* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #role
 * group[=].element[=].display = "A.2.1.3.4 Role"
 * group[=].element[=].target.code = #Composition.section:dispatchData
@@ -181,7 +181,7 @@ Usage: #definition
 
 // ---- Operator person → Practitioner (cz-practitioner-core) ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
+* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-practitioner-core"
 * group[=].element[+].code = #operatorIdentifier
 * group[=].element[=].display = "A.2.1.4.1 Operator Identifier"
 * group[=].element[=].target.code = #Composition.section:dispatchData
@@ -206,7 +206,7 @@ Usage: #definition
 
 // ---- Operator role → PractitionerRole (cz-practitionerrole-core) ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
+* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #role
 * group[=].element[=].display = "A.2.1.4.4 Role"
 * group[=].element[=].target.code = #Composition.section:dispatchData
