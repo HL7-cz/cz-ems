@@ -12,7 +12,7 @@
 Instance: DispatchTimeline2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
-* name = "A.2.2 DispatchTimeline2FHIRcz"
+* name = "DispatchTimeline2FHIRcz"
 * title = "CZ DispatchTimeline Model to this guide Map"
 * status = #draft
 * experimental = true

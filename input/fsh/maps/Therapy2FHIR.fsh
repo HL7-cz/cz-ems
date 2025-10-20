@@ -51,7 +51,7 @@ Usage: #definition
 * group[=].element[=].target.code = #Device.id
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
-* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/ReportOfImagingMethod"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/TherapyEmsCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-MedicationAdministration"
 * group[=].element[+].code = #TherapyEmsCz.Medication
 * group[=].element[=].display = "A.2.7.3 Medication"
@@ -64,7 +64,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent	
 * group[=].element[+].code = #Medication.medicinalProductName
-* group[=].element[=].display = "AA.2.7.3.2 Name of the medicinal product"
+* group[=].element[=].display = "A.2.7.3.2 Name of the medicinal product"
 * group[=].element[=].target.code = #CZ_MedicationAdministration.medication.code.text
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent

@@ -1,7 +1,7 @@
 Instance: DispatchDataEMS2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
-* name = "A.2.1 DispatchDataEMS2FHIRcz"
+* name = "DispatchDataEMS2FHIRcz"
 * title = "CZ DispatchData Model to this guide Map"
 * status = #draft
 * experimental = true

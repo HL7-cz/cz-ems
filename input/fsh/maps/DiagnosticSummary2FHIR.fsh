@@ -1,7 +1,6 @@
 Instance: diagnosticSummary2FHIR-cz-ems
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "https://hl7.cz/fhir/cz-ems/ConceptMap/diagnosticSummary2FHIR-cz-ems"
 * name = "DiagnosticSummary2FHIRCzEms"
 * title = "EMS diagnostic summary Model to this guide Map"
 * status = #draft

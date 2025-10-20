@@ -1,7 +1,7 @@
 Instance: ObjectiveFindingsEMS2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
-* name = "A.2.6 ObjectiveFindingsEMS2FHIR2FHIRcz"
+* name = "ObjectiveFindingsEMS2FHIR2FHIRcz"
 * title = "CZ Objective Findings Model to this guide Map"
 * status = #draft
 * experimental = true
