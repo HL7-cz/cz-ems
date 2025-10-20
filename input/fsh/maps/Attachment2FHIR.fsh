@@ -8,7 +8,7 @@ Usage: #definition
 * description = """CZ Emergency Medical Service Report Attachment Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/AttachmentsCz"
-* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-attachment"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-attachment"
 * group[=].element[+].code = #AttachmentsCz
 * group[=].element[=].display = "A.2.11.1 - Attachments EMS"
 * group[=].element[=].target.code = #CZ_Attachment
@@ -82,7 +82,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent	
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/AttachmentsCz"
-* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-attachment"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-attachment"
 * group[=].element[+].code = #AttachmentsCz
 * group[=].element[=].display = "A.5 - Additional attachments"
 * group[=].element[=].target.code = #CZ_Attachment.content

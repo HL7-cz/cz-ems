@@ -137,7 +137,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/PatientHistoryCz"
-* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-medical-device"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-medical-device"
 * group[=].element[+].code = #PatientHistory.medicalHistory.medicalDevices.description
 * group[=].element[=].display = "A.2.6.1.2.1 - Device and implant description"
 * group[=].element[=].target.code = #Device.text

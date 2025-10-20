@@ -35,7 +35,7 @@ Usage: #definition
 * group[=].element[=].target.display = "CZ_ProcedureEms.usedReference.ofType(CZ_MedicationAdministration)"
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/TherapyEmsCz"
-* group[=].target = "https://fhir.hl7cr.eu/core/StructureDefinition/cz-medical-device"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-medical-device"
 * group[=].element[+].code = #TherapyEmsCz.MedicalDevices
 * group[=].element[=].display = "A.2.7.2 Medical devices"
 * group[=].element[=].target.code = #CZ_ProcedureEms.usedReference			
