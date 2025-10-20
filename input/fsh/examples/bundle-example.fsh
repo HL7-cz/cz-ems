@@ -103,6 +103,7 @@ Usage: #example
 * title = "EMS Pacientky Mračeny Mrakomorové"
 * confidentiality = #N
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+* extension[presentedForm].valueAttachment = cz-pdf-example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[procedure].title = "Procedure"
 * section[procedure].code = $loinc#29554-3	"Procedure Narrative"

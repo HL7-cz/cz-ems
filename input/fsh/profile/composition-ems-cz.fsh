@@ -12,14 +12,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * extension contains $event-basedOn named basedOn 0..*
 * extension[basedOn].valueReference only Reference ( Resource or ServiceRequest ) /// add profile
 
-//* extension contains DocumentPresentedForm named presentedForm 1..*
-//* extension[presentedForm] ^short = "Presented form"
-//* extension[presentedForm].valueAttachment
-//  * contentType
-//    * ^example[0].label = "pdf"
-//    * ^example[0].valueCode  = $mime#application/pdf
-//  * data ^short = "B64 in-line data"
-//  * url ^short = "URL of the document"
+* extension contains DocumentPresentedForm named presentedForm 1..*
+* extension[presentedForm] ^short = "Presented form"
+* extension[presentedForm].valueAttachment
+  * contentType
+    * ^example[0].label = "pdf"
+    * ^example[0].valueCode  = $mime#application/pdf
+  * data ^short = "B64 in-line data"
+  * url ^short = "URL of the document"
 
 * identifier ^short = "EMS business identifier"
 * status ^short = "EMS status"
@@ -139,8 +139,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 ///////////////////////////////// ClinicalCourseAndRecommendations SECTION ///////////////////////////////////////
 * section[courseOfTreatment]
   * ^short = "The narrative of the patient care report" //Summary of treatment progress and condition development
-  * ^definition = "67781-5"
-  * code = $loinc#67781-5
+  * ^definition = "18682-5"
+  * code = $loinc#18682-5 "Ambulance records"
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry only Reference( CZ_ProcedureEms) 
 
