@@ -72,3 +72,16 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 
 * entry contains coverage 0..*
 * entry[coverage].resource only CZ_Coverage
+
+* entry contains vehicleLocation 1..1
+* entry[vehicleLocation].resource only CZ_VehicleLocationEms
+
+* entry contains task 1..1
+* entry[task].resource only CZ_TaskEms
+
+* entry contains careTeam 0..1
+* entry[careTeam].resource only CZ_CareTeamEms
+
+* entry contains communication 0..*
+* entry[communication].resource only CZ_CommunicationEms
+

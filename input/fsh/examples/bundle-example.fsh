@@ -23,6 +23,12 @@ Usage: #example
 * entry[practitioner].fullUrl = "urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f"
 * entry[practitioner].resource = cz-example-practitioner
 
+* entry[practitioner][+].fullUrl = "urn:uuid:1e9f88f5-2b1d-4af3-886f-55b649cfe4c3"
+* entry[practitioner][=].resource = cz-example-practitioner2
+
+* entry[practitioner][+].fullUrl = "urn:uuid:f41da185-e4ac-4ef9-a560-4d7db1911090"
+* entry[practitioner][=].resource = cz-example-practitioner3
+
 * entry[patient].fullUrl = "urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766"
 * entry[patient].resource = cz-examplebase-patient
 
@@ -35,11 +41,26 @@ Usage: #example
 * entry[practitionerrole].fullUrl = "urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e"
 * entry[practitionerrole].resource = cz-example-practitioner-role
 
+* entry[practitionerrole][+].fullUrl = "urn:uuid:bfa154a9-69c0-4b7f-909e-6150492b7377"
+* entry[practitionerrole][=].resource = cz-example-practitioner-role2
+
+* entry[practitionerrole][+].fullUrl = "urn:uuid:84d98379-46fa-464d-ad1a-9c3ef1f0f9c8"
+* entry[practitionerrole][=].resource = cz-example-practitioner-role3
+
 * entry[organization][+].fullUrl = "urn:uuid:35e78cc9-6fe2-42a8-8553-83a3f86ce308"
 * entry[organization][=].resource = cz-pojistovna-example
 
 * entry[organization][+].fullUrl = "urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca"
 * entry[organization][=].resource = cz-organizationAuthor-example
+
+* entry[vehicleLocation].fullUrl = "urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9"
+* entry[vehicleLocation].resource = cz-vehicle-location-example
+
+* entry[task].fullUrl = "urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682"
+* entry[task].resource = cz-task-example
+
+* entry[communication].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
+* entry[communication].resource = cz-communication-example
 
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
@@ -103,6 +124,52 @@ Title: "Practitioner Role Novák: EMS report"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
 * practitioner = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
 
+Instance: cz-example-practitioner2
+InstanceOf: CZ_PractitionerCore
+Description: "Example of practitioner for EMS report."
+Title: "Practitioner Rychlý: EMS report"
+Usage: #example
+* id = "1e9f88f5-2b1d-4af3-886f-55b649cfe4c3"
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
+* identifier[=].value = "123456788"
+* name.use = #usual
+* name.family = "Pavel"
+* name.given = "Rychlý"
+* gender = #male
+
+Instance: cz-example-practitioner-role2
+InstanceOf: CZ_PractitionerRoleCore
+Usage: #example
+Description: "Example of practitioner role for EMS report."
+Title: "Practitioner Role Rychlý: EMS report"
+* id = "bfa154a9-69c0-4b7f-909e-6150492b7377"
+* code = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#NL68 "Řidič vozidla zdravotnické záchranné služby"
+* organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
+* practitioner = Reference(urn:uuid:1e9f88f5-2b1d-4af3-886f-55b649cfe4c3)
+
+Instance: cz-example-practitioner3
+InstanceOf: CZ_PractitionerCore
+Description: "Example of practitioner for EMS report."
+Title: "Practitioner Dvořáková: EMS report"
+Usage: #example
+* id = "f41da185-e4ac-4ef9-a560-4d7db1911090"
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
+* identifier[=].value = "123456787"
+* name.use = #usual
+* name.family = "Petra"
+* name.given = "Dvořáková"
+* gender = #female
+
+Instance: cz-example-practitioner-role3
+InstanceOf: CZ_PractitionerRoleCore
+Usage: #example
+Description: "Example of practitioner role for EMS report."
+Title: "Practitioner Role Rychlý: EMS report"
+* id = "84d98379-46fa-464d-ad1a-9c3ef1f0f9c8"
+* code.text = "Calltaker"
+* organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
+* practitioner = Reference(urn:uuid:f41da185-e4ac-4ef9-a560-4d7db1911090)
+
 Instance: cz-organizationAuthor-example
 InstanceOf: CZ_OrganizationCore
 Usage: #example
@@ -146,6 +213,49 @@ Usage: #example
 * section[payers].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Zdravotní pojištění</div>"
 * section[payers].text.status = #additional
 * section[payers].entry[0] = Reference(urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66)
+* section[dispatch].title = "Dispatch"
+* section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
+* section[dispatch].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Údaje o výjezdu</div>"
+* section[dispatch].text.status = #additional
+* section[dispatch].entry[0] = Reference(urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682)
+* section[dispatch].entry[+] = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)
+* section[dispatch].entry[+] = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
+* section[dispatch].entry[+] = Reference(urn:uuid:bfa154a9-69c0-4b7f-909e-6150492b7377)
+* section[dispatch].entry[+] = Reference(urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae)
+
+Instance: cz-task-example
+InstanceOf: CZ_TaskEms
+Description: "Example of task"
+Usage: #example
+Title: "Task - Dispatch"
+* id = "3acd2720-0bcf-41ca-bb17-7c64ac5b7682"
+* identifier[dispatchNumber].value = "852699001"
+* identifier[dispatchNumber].use = #official
+* extension[urgencyLevel].valueInteger = 3
+* authoredOn = "2025-09-03T10:31:00+01:00"
+* status = #completed
+* intent = #order 
+* reasonCode.text = "Arytmie" //doplnit ciselnikovou hodnotu, az budeme mit ciselnik od p.Tumy 
+
+
+Instance: cz-vehicle-location-example
+InstanceOf: CZ_VehicleLocationEms
+Description: "Example of vehicle"
+Usage: #example
+Title: "Vehicle - Dispatch"
+* id = "54d8ee67-8706-46a8-899e-12a54761d9d9"
+* name = "ZCB 121"
+* mode = #instance 
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ve "Vehicle"
+
+Instance: cz-communication-example
+InstanceOf: CZ_CommunicationEms
+Description: "Example of communication"
+Usage: #example
+Title: "Communication - Dispatch"
+* id = "83c6052f-3e0d-4146-a789-c0ad61cb4cae"
+* recipient = Reference(urn:uuid:84d98379-46fa-464d-ad1a-9c3ef1f0f9c8)
+* recipient.identifier.value = "111111"
 
 Instance: cz-coverage-example
 InstanceOf: CZ_Coverage
