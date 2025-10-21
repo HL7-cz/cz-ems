@@ -29,6 +29,18 @@ Usage: #example
 * entry[procedure].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
 * entry[procedure].resource = cz-procedure-example
 
+* entry[coverage].fullUrl = "urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66"
+* entry[coverage].resource = cz-coverage-example
+
+* entry[practitionerrole].fullUrl = "urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e"
+* entry[practitionerrole].resource = cz-example-practitioner-role
+
+* entry[organization][+].fullUrl = "urn:uuid:35e78cc9-6fe2-42a8-8553-83a3f86ce308"
+* entry[organization][=].resource = cz-pojistovna-example
+
+* entry[organization][+].fullUrl = "urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca"
+* entry[organization][=].resource = cz-organizationAuthor-example
+
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
 Usage: #example
@@ -71,16 +83,35 @@ Description: "Example of logo as document reference for FN Motol."
 Instance: cz-example-practitioner
 InstanceOf: CZ_PractitionerCore
 Description: "Example of practitioner for EMS report."
-Title: "Practitioner Blažejovský: EMS report"
+Title: "Practitioner Novák: EMS report"
 Usage: #example
 * id = "2e877c76-633d-479b-a6d4-c6d95942de3f"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
 * identifier[=].value = "123456789"
 * name.use = #usual
-* name.prefix = "MUDr."
-* name.family = "Jan"
-* name.given = "Blažejovský"
+* name.family = "Roman"
+* name.given = "Novák"
 * gender = #male
+
+Instance: cz-example-practitioner-role
+InstanceOf: CZ_PractitionerRoleCore
+Usage: #example
+Description: "Example of practitioner role for EMS report."
+Title: "Practitioner Role Novák: EMS report"
+* id = "f64bef19-c377-404a-bac2-23d2bbac8f3e"
+* code = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#NL14 "Zdravotnický záchranář"
+* organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
+* practitioner = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
+
+Instance: cz-organizationAuthor-example
+InstanceOf: CZ_OrganizationCore
+Usage: #example
+Description: "An example of the organization author"
+Title: "Organization Author: EMS report"
+* id = "e206d37b-cfd4-4f10-ad09-ba78038847ca"
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
+* identifier[=].value = "12345678"
+* name = "Zdravotnická záchranná služba Jihočeského kraje"
 
 Instance: cz-pdf-example
 InstanceOf: Attachment
@@ -99,7 +130,7 @@ Usage: #example
 * status = #final
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * date = "2025-05-20T12:02:00+01:00"
-* author = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
+* author = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * title = "EMS Pacientky Mračeny Mrakomorové"
 * confidentiality = #N
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
@@ -110,6 +141,32 @@ Usage: #example
 * section[procedure].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mediální kyslík NEPODÁN.</div>"
 * section[procedure].text.status = #additional
 * section[procedure].entry[0] = Reference(urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6)
+* section[payers].title = "Payers"
+* section[payers].code = $loinc#48768-6 "Payment sources Document"
+* section[payers].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Zdravotní pojištění</div>"
+* section[payers].text.status = #additional
+* section[payers].entry[0] = Reference(urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66)
+
+Instance: cz-coverage-example
+InstanceOf: CZ_Coverage
+Description: "Example of coverage"
+Usage: #example
+Title: "Coverage - Healthcare insurance company"
+* id = "ba0e590d-252e-4a52-89ed-b10fa02b6c66"
+* status = #active
+* beneficiary = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* subscriberId = "7711260678"
+* payor = Reference(urn:uuid:35e78cc9-6fe2-42a8-8553-83a3f86ce308)
+
+Instance: cz-pojistovna-example
+InstanceOf: CZ_OrganizationCore
+Usage: #example
+Description: "Example of insurance organisation"
+Title: "Organization - Healthcare insurance company"
+* id = "35e78cc9-6fe2-42a8-8553-83a3f86ce308"
+* name = "Všeobecná zdravotní pojišťovna ČR"
+* identifier[KP].system =  "https://ncez.mzcr.cz/fhir/sid/kp"
+* identifier[KP].value = "111"
 
 Instance: cz-encounter-example
 InstanceOf: CZ_Encounter

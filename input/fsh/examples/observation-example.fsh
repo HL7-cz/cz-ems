@@ -7,6 +7,7 @@ Description: "Example instance for BMI observation using the CZ_ObservationBMIEm
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * category.coding.code = #vital-signs
 * code.coding = $sct#60621009
+* code.coding[+] = $loinc#39156-5
 * subject = Reference(cz-examplebase-patient)
 * performer = Reference(practitionerEms)
 * valueQuantity.value = 22.5
@@ -25,6 +26,7 @@ Description: "Example of body weight of Patient Mracena"
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * category.coding.code = #vital-signs
 * code.coding = $sct#424927000
+* code.coding[+] = $loinc#29463-7
 * valueQuantity.value = 66
 * valueQuantity.unit = "kg"
 * valueQuantity.system = $UCUM
@@ -43,6 +45,7 @@ Description: "Example of body height of Patient Mracena"
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * category.coding.code = #vital-signs
 * code.coding = $sct#1162418000
+* code.coding[+] = $loinc#8302-2
 * valueQuantity.value = 165
 * valueQuantity.unit = "cm"
 * valueQuantity.system = $UCUM

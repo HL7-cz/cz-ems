@@ -1,33 +1,35 @@
 Instance: cz-examplebase-patient
 InstanceOf: CZ_PatientCore
 Usage: #example
-Title: "Patient Mracena"
-Description: "Patient Mracena with contact information and practitioner"
+Title: "Patient Novotny"
+Description: "Patient Novotny with contact information and practitioner"
 * id = "3b46c18c-7e07-4232-af3e-f710dec8e766"
 
 * identifier[RC][+].system = "https://ncez.mzcr.cz/fhir/sid/rcis"
-* identifier[RC][=].value = "2716126452"
+* identifier[RC][=].value = "7711260678"
 * identifier[RC][=].use = #official
 * identifier[RID][+].system = "https://ncez.mzcr.cz/fhir/sid/rid"
 * identifier[RID][=].value = "2066425387"
+* identifier[CPOJ][+].system = "https://ncez.mzcr.cz/fhir/sid/cpoj"
+* identifier[CPOJ][=].value = "7711260678"
 
 //* extension[nationality].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#CZ
 * name.use = #usual
-* name.family = "Mrakomorová"
-* name.given = "Mračena"
+* name.family = "Novotný"
+* name.given = "Petr"
 * telecom.system = #phone
-* telecom.value = "+420 603 853 227"
+* telecom.value = "+420601601601"
 * telecom.use = #home
 * gender = #female
-* birthDate = "1971-11-26"
+* birthDate = "1977-11-26"
 * address[+].use = #home
 * address[=].type = #physical
-* address[=].text = "Malé náměstí 13a, 150 00, Praha 5"
-* address[=].line[+] = "Malé náměstí 13a"
-* address[=].line[=].extension[streetName].valueString = "Malé náměstí"
-* address[=].line[=].extension[houseNumber].valueString = "13a"
-* address[=].city = "Praha"
-* address[=].postalCode = "15000"
+* address[=].text = "Testovací 2517/87, 37005, České Budějovice"
+* address[=].line[+] = "Testovací 2517/87"
+* address[=].line[=].extension[streetName].valueString = "Testovací"
+* address[=].line[=].extension[houseNumber].valueString = "2517/87"
+* address[=].city = "České Budějovice"
+* address[=].postalCode = "37005"
 * address[=].country = "Česko"
   * extension[countryCode].valueCoding = urn:iso:std:iso:3166#CZ "Czechia"
 
@@ -39,3 +41,9 @@ Description: "Patient Mracena with contact information and practitioner"
 * generalPractitioner.identifier.system = "https://ncez.mzcr.cz/fhir/sid/krzp"
 * generalPractitioner.identifier.value = "123456789"
 * generalPractitioner.display = "MUDr. Josef Švejk"
+
+* contact.relationship[+].coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#WIFE
+* contact.name.family = "Novotná"
+* contact.name.given = "Petra"
+* contact.telecom.system = #phone
+* contact.telecom.value = "+420602602602"

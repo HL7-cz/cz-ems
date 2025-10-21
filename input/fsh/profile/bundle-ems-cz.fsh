@@ -66,3 +66,9 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 
 * entry contains attachment 0..*
 * entry[attachment].resource only CZ_Logo or CZ_Attachment
+
+* entry contains practitionerrole 0..*
+* entry[practitionerrole].resource only CZ_PractitionerRoleCore
+
+* entry contains coverage 0..*
+* entry[coverage].resource only CZ_Coverage
