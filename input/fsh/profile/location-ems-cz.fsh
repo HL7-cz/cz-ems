@@ -4,8 +4,9 @@ Id: cz-location-ems
 Title: "Location: (EMS CZ)"
 Description: "Location profile for Emergency Medical Service"
 
-* position 1..1 MS                    
-* address 0..1 MS                     
+* position 0..1                    
+* address 0..1 
+* address only CZ_Address                     
 
 Invariant: startloc-1
 Description: "A location must have either an address or a position (coordinates) specified."

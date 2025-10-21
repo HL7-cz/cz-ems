@@ -62,6 +62,9 @@ Usage: #example
 * entry[communication].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
 * entry[communication].resource = cz-communication-example
 
+* entry[location].fullUrl = "urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade"
+* entry[location].resource = cz-location-scene-example
+
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
 Usage: #example
@@ -164,7 +167,7 @@ Instance: cz-example-practitioner-role3
 InstanceOf: CZ_PractitionerRoleCore
 Usage: #example
 Description: "Example of practitioner role for EMS report."
-Title: "Practitioner Role Rychlý: EMS report"
+Title: "Practitioner Role Dvořáková: EMS report"
 * id = "84d98379-46fa-464d-ad1a-9c3ef1f0f9c8"
 * code.text = "Calltaker"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
@@ -198,7 +201,7 @@ Usage: #example
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * date = "2025-05-20T12:02:00+01:00"
 * author = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
-* title = "EMS Pacientky Mračeny Mrakomorové"
+* title = "EMS Pacienta Novotného"
 * confidentiality = #N
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
 * extension[presentedForm].valueAttachment = cz-pdf-example
@@ -222,6 +225,11 @@ Usage: #example
 * section[dispatch].entry[+] = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * section[dispatch].entry[+] = Reference(urn:uuid:bfa154a9-69c0-4b7f-909e-6150492b7377)
 * section[dispatch].entry[+] = Reference(urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae)
+* section[timeline].title = "Timeline"
+* section[timeline].code = $loinc#67667-6 "EMS times Narrative NEMSIS"
+* section[timeline].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Časová osa výjezdu</div>"
+* section[timeline].text.status = #additional
+* section[dispatch].entry[0] = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 
 Instance: cz-task-example
 InstanceOf: CZ_TaskEms
@@ -232,7 +240,7 @@ Title: "Task - Dispatch"
 * identifier[dispatchNumber].value = "852699001"
 * identifier[dispatchNumber].use = #official
 * extension[urgencyLevel].valueInteger = 3
-* authoredOn = "2025-09-03T10:31:00+01:00"
+* authoredOn = "2025-09-03T10:33:00+01:00"
 * status = #completed
 * intent = #order 
 * reasonCode.text = "Arytmie" //doplnit ciselnikovou hodnotu, az budeme mit ciselnik od p.Tumy 
@@ -256,6 +264,7 @@ Title: "Communication - Dispatch"
 * id = "83c6052f-3e0d-4146-a789-c0ad61cb4cae"
 * recipient = Reference(urn:uuid:84d98379-46fa-464d-ad1a-9c3ef1f0f9c8)
 * recipient.identifier.value = "111111"
+* received = "2025-05-20T10:31:00+01:00"
 
 Instance: cz-coverage-example
 InstanceOf: CZ_Coverage
@@ -279,7 +288,7 @@ Title: "Organization - Healthcare insurance company"
 * identifier[KP].value = "111"
 
 Instance: cz-encounter-example
-InstanceOf: CZ_Encounter
+InstanceOf: CZ_EncounterEms
 Usage: #example
 Description: "Encounter"
 * id = "cd343afa-039d-4576-b5e4-e89598aeb628"
@@ -288,8 +297,31 @@ Description: "Encounter"
 * status = #in-progress
 * class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * class.code = #AMB
-* type.text = "EMS pacientky Mrakomorové"
+* type.text = "EMS pacienta Novotného"
 * serviceProvider = Reference(urn:uuid:821077d6-ce17-4602-b3ad-d4bef845a950) // CZ_OrganizationWithLogo
+* period.start = "2025-05-20T10:35:00+01:00"
+* location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
+* location[scene].period.start = "2025-05-20T10:42:00+01:00"
+* location[scene].period.end = "2025-05-20T10:59:00+01:00"
+* location[scene].location = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
+//* location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
+//* location[destination].period.start = "2025-05-20T11:10:00+01:00"
+//* location[destination].period.end = "2025-05-20T11:12:00+01:00"  Nelze zadat bez lokace???
+* period.end = "2025-05-20T11:20:00+01:00"
+
+Instance: cz-location-scene-example
+InstanceOf: CZ_LocationCore
+Usage: #example
+Description: "Example of scene location"
+Title: "Location - Scene"
+* id = "3f4f637d-f274-40c5-87da-9a9c1ade3ade"
+* address
+  * text = "5. května 1024, 373 84 Kamenný Újezd, Česká republika"
+  * line[0] = "5. května 1024"
+  * city = "Praha"
+  * postalCode = "373 84"
+  * country = "CZ"
+  * extension[addressPoint].valueIdentifier.value = "48.9661892N, 14.4702203E"
 
 Instance: cz-procedure-example
 InstanceOf: CZ_ProcedureEms

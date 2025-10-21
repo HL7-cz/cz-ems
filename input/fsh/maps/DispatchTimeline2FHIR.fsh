@@ -33,7 +33,7 @@ Usage: #definition
 * group[=].element[=].display = "A.2.2.1 - Event Notification Time"
 * group[=].element[=].target.code = #Communication.received 
 * group[=].element[=].target.display = "received"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 // A2.2.2	Čas výzvy	1..1	Povinné	Task.authoredOn
 // ========================= A.2.2.2 Task.authoredOn =========================
@@ -50,7 +50,7 @@ Usage: #definition
 * group[=].element[=].display = "A.2.2.2 - Dispatch Notification Time"
 * group[=].element[=].target.code = #Task.authoredOn
 * group[=].element[=].target.display = "authoredOn"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 // A2.2.3	Čas výjezdu	1..1	Povinné	Encounter.period.start
 // A2.2.4	Čas příjezdu na místo události	1..1	Povinné	Encounter.location[scene].period.start
@@ -72,35 +72,35 @@ Usage: #definition
 * group[=].element[=].display = "A.2.2.3 - En-Route Time"
 * group[=].element[=].target.code = #Encounter.period.start
 * group[=].element[=].target.display = "period.start"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #unitArrivedAtSceneTime
 * group[=].element[=].display = "A.2.2.4 - Arrival at Scene Time"
 * group[=].element[=].target.code = #Encounter.location[scene].period.start
 * group[=].element[=].target.display = "location (slice: scene).period.start"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #unitLeftSceneTime
 * group[=].element[=].display = "A.2.2.5 - Left Scene Time"
 * group[=].element[=].target.code = #Encounter.location[scene].period.end
 * group[=].element[=].target.display = "location (slice: scene).period.end"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #arrivedAtDestinationTime
 * group[=].element[=].display = "A.2.2.6 - Arrival at Destination Time"
 * group[=].element[=].target.code = #Encounter.location[destination].period.start
 * group[=].element[=].target.display = "location (slice: destination).period.start"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #patientTransferOfCareTime
 * group[=].element[=].display = "A.2.2.7 - Patient Transfer of Care Time"
 * group[=].element[=].target.code = #Encounter.location[destination].period.end
 * group[=].element[=].target.display = "location (slice: destination).period.end"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #unitBackInServiceTime
 * group[=].element[=].display = "A.2.2.8 - Back in Service Time"
 * group[=].element[=].target.code = #Encounter.period.end
 * group[=].element[=].target.display = "period.end"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equivalent
 

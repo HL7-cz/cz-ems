@@ -1,4 +1,4 @@
-Profile: CZEncounterEMS
+Profile: CZ_EncounterEms
 Parent: Encounter
 Id: cz-encounter-ems
 Title: "Encounter EMS (CZ)"
@@ -18,8 +18,12 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
     scene 1..1 and             // CZ: místo zásahu (scéna)
     destination 0..1           // CZ: místo předání (cílové pracoviště)
 
+* location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
+* location[scene].location only Reference(CZ_LocationEms)
 * location[scene] ^short = "Incident scene"
 * location[scene] ^definition = "The incident scene location for the EMS run."
+* location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
+* location[destination].location only Reference(CZ_LocationEms)
 * location[destination] ^short = "Destination facility"
 * location[destination] ^definition = "The receiving/destination location for the EMS run."
 
