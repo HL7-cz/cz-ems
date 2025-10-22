@@ -1,7 +1,7 @@
 Instance: ExampleBMIEms
 InstanceOf: CZ_ObservationBMIEms
 Usage: #example
-Title: "BMI of patient"
+Title: "Observation: BMI"
 Description: "Example instance for BMI observation using the CZ_ObservationBMIEms profile."
 * status = #final
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -9,7 +9,7 @@ Description: "Example instance for BMI observation using the CZ_ObservationBMIEm
 * code.coding = $sct#60621009
 * code.coding[+] = $loinc#39156-5
 * subject = Reference(cz-examplebase-patient)
-* performer = Reference(practitionerEms)
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * valueQuantity.value = 22.5
 * valueQuantity.unit = "kg/m2"
 * valueQuantity.system = $UCUM
@@ -20,7 +20,7 @@ Description: "Example instance for BMI observation using the CZ_ObservationBMIEm
 Instance: ExampleBodyWeightEms
 InstanceOf: CZ_ObservationWeightEms
 Usage: #example
-Title: "Body weight of patient"
+Title: "Observation: Body weight"
 Description: "Example of body weight of Patient Mracena"
 * subject = Reference(cz-examplebase-patient)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -33,13 +33,13 @@ Description: "Example of body weight of Patient Mracena"
 * valueQuantity.code = #kg
 * status = #final
 * effectiveDateTime = 2020-06-01
-* performer = Reference(practitionerEms)
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 
 
 Instance: ExampleBodyHeightEms
 InstanceOf: CZ_ObservationHeightEms
 Usage: #example
-Title: "Body height of patient"
+Title: "Observation: Body height"
 Description: "Example of body height of Patient Mracena"
 * subject = Reference(cz-examplebase-patient)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -52,4 +52,4 @@ Description: "Example of body height of Patient Mracena"
 * valueQuantity.code = #cm
 * status = #final
 * effectiveDateTime = 2020-06-01
-* performer = Reference(practitionerEms)
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)

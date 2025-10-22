@@ -1,7 +1,7 @@
 Instance: cz-examplebase-patient
 InstanceOf: CZ_PatientCore
 Usage: #example
-Title: "Patient Novotny"
+Title: "Patient: Novotny"
 Description: "Patient Novotny with contact information and practitioner"
 * id = "3b46c18c-7e07-4232-af3e-f710dec8e766"
 

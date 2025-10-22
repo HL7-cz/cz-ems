@@ -71,6 +71,7 @@ Usage: #example
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
 Usage: #example
+Title: "Organization: FN Motol with logo"
 Description: "An example of the organization with logo extension"
 * id = "821077d6-ce17-4602-b3ad-d4bef845a950"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
@@ -111,7 +112,7 @@ Title: "Logo: FN Motol"
 Instance: cz-example-practitioner
 InstanceOf: CZ_PractitionerCore
 Description: "Example of practitioner for EMS report."
-Title: "Practitioner Novák: EMS report"
+Title: "Practitioner: Novák"
 Usage: #example
 * id = "2e877c76-633d-479b-a6d4-c6d95942de3f"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
@@ -125,7 +126,7 @@ Instance: cz-example-practitioner-role
 InstanceOf: CZ_PractitionerRoleCore
 Usage: #example
 Description: "Example of practitioner role for EMS report."
-Title: "Practitioner Role Novák: EMS report"
+Title: "PractitionerRole: Novák"
 * id = "f64bef19-c377-404a-bac2-23d2bbac8f3e"
 * code = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#NL14 "Zdravotnický záchranář"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
@@ -134,7 +135,7 @@ Title: "Practitioner Role Novák: EMS report"
 Instance: cz-example-practitioner2
 InstanceOf: CZ_PractitionerCore
 Description: "Example of practitioner for EMS report."
-Title: "Practitioner Rychlý: EMS report"
+Title: "Practitioner: Rychlý"
 Usage: #example
 * id = "1e9f88f5-2b1d-4af3-886f-55b649cfe4c3"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
@@ -148,7 +149,7 @@ Instance: cz-example-practitioner-role2
 InstanceOf: CZ_PractitionerRoleCore
 Usage: #example
 Description: "Example of practitioner role for EMS report."
-Title: "Practitioner Role Rychlý: EMS report"
+Title: "PractitionerRole: Rychlý"
 * id = "bfa154a9-69c0-4b7f-909e-6150492b7377"
 * code = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#NL68 "Řidič vozidla zdravotnické záchranné služby"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
@@ -157,7 +158,7 @@ Title: "Practitioner Role Rychlý: EMS report"
 Instance: cz-example-practitioner3
 InstanceOf: CZ_PractitionerCore
 Description: "Example of practitioner for EMS report."
-Title: "Practitioner Dvořáková: EMS report"
+Title: "Practitioner: Dvořáková"
 Usage: #example
 * id = "f41da185-e4ac-4ef9-a560-4d7db1911090"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/krzp"
@@ -171,7 +172,7 @@ Instance: cz-example-practitioner-role3
 InstanceOf: CZ_PractitionerRoleCore
 Usage: #example
 Description: "Example of practitioner role for EMS report."
-Title: "Practitioner Role Dvořáková: EMS report"
+Title: "PractitionerRole: Dvořáková"
 * id = "84d98379-46fa-464d-ad1a-9c3ef1f0f9c8"
 * code.text = "Calltaker"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
@@ -181,7 +182,7 @@ Instance: cz-organizationAuthor-example
 InstanceOf: CZ_OrganizationCore
 Usage: #example
 Description: "An example of the organization author"
-Title: "Organization Author: EMS report"
+Title: "Organization: Author"
 * id = "e206d37b-cfd4-4f10-ad09-ba78038847ca"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
 * identifier[=].value = "12345678"
