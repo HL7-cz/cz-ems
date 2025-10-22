@@ -23,3 +23,6 @@ Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $sct =  http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $mime = urn:ietf:bcp:13
+Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+Alias: $allergyintolerance-certainty = http://terminology.hl7.org/CodeSystem/reaction-event-certainty
