@@ -1,4 +1,4 @@
-Profile: CZImmunizationEMS
+Profile: CZ_ImmunizationEMS
 Parent: CZ_ImmunizationHdr
 Id: cz-immunization-ems
 Title: "CZ Immunization EMS"
