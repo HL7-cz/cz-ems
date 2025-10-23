@@ -63,7 +63,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section contains
     courseOfTreatment 0..1 and
     recommendations 0..1 and
-    patientHx 0..1 and
+    patientHx 1..1 and
+    medicalDevices 1..1 and
+    significantProcedures 0..1 and
+    travelHx 0..1 and
+    immunizations 0..1 and
+    infectiousContacts 0..1 and
+    familyHistory 0..1 and
+    socialHistory 0..1 and
     allergies 0..1 and
     findings 0..* and
     procedure 1..1 and
@@ -109,6 +116,66 @@ Description: "This profile defines how to represent Composition resource in HL7 
     Patient History Section,
     This Section describes all aspects of the medical history of the patient even if not pertinent to the current procedure\, and may include chief complaint\, past medical history\, social history\, family history\, surgical or procedure history\, medication history\, and other history information. The history may be limited to information pertinent to the current procedure or may be more comprehensive. The history may be reported as a collection of random clinical statements or it may be reported categorically. Categorical report formats may be divided into multiple subsections including Past Medical History\, Social History.,
     $loinc#11329-0 )
+  * entry 1..
+  * entry only Reference(CZ_ConditionEms)
+
+* section[medicalDevices]
+  * insert SectionComRules (
+      Medical devices and implants,
+      Implants and used medical devices that affected or may affect the provision of health services (diagnosis and treatment\). Also medical devices explanted\, or its use was stopped during hospitalisation. If the section is blank\, the reason must be explicitly stated using the IPS Absent and Unknown Data coding system.,
+      $loinc#57080-4 )
+  * entry 0..*
+  * entry only Reference(CZ_MedicalDevice)
+
+* section[significantProcedures]
+  * insert SectionComRules (
+    Significant procedures,
+    Significant surgical and non-surgical procedures performed during hospitalisation which are significant for continuity of care\, e.g. surgeries and other \"instrumental\"interventions (endoscopic\, intravascular\)\, chemotherapy\, radiotherapy\, purification methods (dialysis\, hemoperfusion\)\, circulation support methods (counterpulsation\, etc.\)\, administration of blood derivatives or others.\r\nThis section does not include purely diagnostic procedures (MRI\, CT\, etc.\). If no significant performance has been performed\, this fact must be explicitly stated using the IPS Absent and Unknown Data. ,
+    $loinc#10185-7)
+  * entry 1..
+  * entry only Reference(CZ_ProcedureEms)
+
+* section[travelHx]
+  * insert SectionComRules (
+      Travel History Section,
+      This Section describes the travel history relevant for the Patient Summary\, e.g.recent travel in a region of high prevalence of a specific infectious disease like Malaria,
+      $loinc#10182-4 )
+  * entry 0..*
+  * entry only Reference(CZ_ObservationTravelEms)
+
+* section[immunizations]
+  * insert SectionComRules (
+      Immunizations Section,
+      The Immunizations Section defines a patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\nThe section includes current immunization status\, and may contain the entire immunization history that is relevant to the period of time being summarized.,
+      $loinc#11369-6 )
+  * entry 0..*
+  * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
+
+* section[infectiousContacts]
+  * insert SectionComRules (
+      Infectious contacts,
+    Infectious contacts of the patient,
+     TemporaryHDRSystem#infection-contact ) // $sct#444071008"Exposure to organism (event\)"
+  * entry 0..*
+  * entry only Reference(CZ_ObservationInfectiousContactEMS)
+
+* section[familyHistory]
+  * insert SectionComRules (
+    Family History Section,
+    This section contains data defining the patient’s genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient’s healthcare risk profile.,
+    http://loinc.org#10157-6  )
+  * entry 0..*
+  * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
+
+* section[socialHistory]
+  * insert SectionComRules (
+    Social History Section,
+    The social history section contains a description of the person Health related lifestyle factors or lifestyle observations.   E.g. smoke habits; alcohol consumption; diets\, risky habits.,
+    $loinc#29762-2)
+  * entry 0..*
+  * entry only Reference(CZ_ObservationSDOHEMS)
+
+
 
 /////////////////////////////////  Allergies and Intolerances SECTION ///////////////////////////////////////
 * section[allergies]
