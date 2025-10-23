@@ -89,6 +89,15 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871"
 * entry[observation][=].resource = ExampleRespitoryRatesEms2
 
+* entry[observation][+].fullUrl = "urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206"
+* entry[observation][=].resource = cz-observation-travel-ems-example
+
+* entry[condition][+].fullUrl = "urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425"
+* entry[condition][=].resource = cz-condition-example
+
+* entry[FamilyMemberHistory][+].fullUrl = "urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf"
+* entry[FamilyMemberHistory][=].resource = cz-familyMemberHistory-ems
+
 
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
@@ -239,7 +248,21 @@ Usage: #example
 * section[patientHx].code = $loinc#11329-0
 * section[patientHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anamnéza</div>"
 * section[patientHx].text.status = #additional
-//* section[patientHx].entry[0] = Reference(urn:uuid:)
+* section[patientHx].entry[0] = Reference(urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425)
+* section[medicalDevices].title = "Medical devices history"
+* section[medicalDevices].code = $loinc#57080-4
+* section[medicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Historie zdravotních pomůcek a implantátů</div>"
+* section[medicalDevices].text.status = #additional
+* section[travelHx].title = "Travel history"
+* section[travelHx].code = $loinc#10182-4
+* section[travelHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cestovní anamnéza</div>"
+* section[travelHx].text.status = #additional
+* section[travelHx].entry[0] = Reference(urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206)
+* section[familyHistory].title = "Family history"
+* section[familyHistory].code = $loinc#10157-6
+* section[familyHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rodinná anamnéza</div>"
+* section[familyHistory].text.status = #additional
+* section[familyHistory].entry[0] = Reference(urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf)
 * section[allergies].title = "Allergies"
 * section[allergies].code = $loinc#48765-2
 * section[allergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Urgetní anamnéza</div>"
@@ -407,3 +430,47 @@ Description: "Example of procedure - Oxygen not administered"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * code.text = "Mediální kyslík NEPODÁN."
 * performedDateTime = "2022-10-07T09:10:00+01:00"
+
+Instance: cz-condition-example
+InstanceOf: CZ_ConditionEms
+Usage: #example
+Title: "Condition: Arterial hypertension"
+Description: "Example of condition - Arterial hypertension"
+* id = "bccc3ea9-d77f-4253-88c3-53b886f5b425"
+* clinicalStatus = #active "Active"
+//* verificationStatus = $condition-verification#confirmed "Confirmed"
+* code = $icd10#I10 "Arterial hypertension"
+* code.text = "Arteriální hypertenze"
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* stage.summary.text = "kompenzováno medikací"
+
+
+Instance: cz-observation-travel-ems-example
+InstanceOf: CZ_ObservationTravelEms
+Usage: #example
+Title: "Observation: Italy travel history"
+Description: "Example of observation - Italy travel history"
+* id = "af4ee062-8ae9-4b7b-a567-2235a762a206"
+* status = #final
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* valueCodeableConcept.coding[0].system = "urn:iso:std:iso:3166"
+* valueCodeableConcept.coding[0].code = #ITA
+* valueCodeableConcept.coding[0].display = "Italy"
+* valueCodeableConcept.text = "Itálie"
+
+Instance: cz-familyMemberHistory-ems
+InstanceOf: CZ_FamilyMemberHistoryEms
+Usage: #example
+Title: "Family Member History: Father"
+Description: "Example of family member history - Father"
+* id = "9a26eaee-9315-420d-a47c-8e8329511aaf"
+* relationship.coding[0].system = "http://hl7.org/fhir/v3/FamilyMember"
+* relationship.coding[0].code = #FTH
+* status = #completed
+* patient = Reference(urn:uuid:d993c7bd-0420-403d-b5c2-de264a97994e)
+* condition[0].code = $icd10#I21 "Acute myocardial infarction"
+* condition[0].code.text = "Akutní infarkt myokardu"
+* condition[0].contributedToDeath = true
+* deceasedAge.value = 54
+
+//TODO: doplnit další zdroje dle příkladu - Alkohol, Kouření

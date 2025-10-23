@@ -91,6 +91,11 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains allergy 0..*
 * entry[allergy].resource only CZ_AllergyIntoleranceEms
 
-
 * entry contains observation 0..*
 * entry[observation].resource only Observation
+
+* entry contains condition 0..*
+* entry[condition].resource only CZ_ConditionEms
+
+* entry contains FamilyMemberHistory 0..*
+* entry[FamilyMemberHistory].resource only CZ_FamilyMemberHistoryEms
