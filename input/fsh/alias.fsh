@@ -26,3 +26,5 @@ Alias: $mime = urn:ietf:bcp:13
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $allergyintolerance-certainty = http://terminology.hl7.org/CodeSystem/reaction-event-certainty
+Alias: $dlp_lecivePripravky = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlplecivepripravky-cs
+Alias: $dlp_formy_cs = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlpformy-cs

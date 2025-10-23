@@ -32,8 +32,11 @@ Usage: #example
 * entry[patient].fullUrl = "urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766"
 * entry[patient].resource = cz-examplebase-patient
 
-* entry[procedure].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
-* entry[procedure].resource = cz-procedure-example
+* entry[procedure][0].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
+* entry[procedure][=].resource = cz-procedure-example
+
+* entry[procedure][+].fullUrl = "urn:uuid:6ec0b5df-ad0b-487b-9918-367ca876ac38"
+* entry[procedure][=].resource = cz-procedure-example2
 
 * entry[coverage].fullUrl = "urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66"
 * entry[coverage].resource = cz-coverage-example
@@ -89,6 +92,20 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871"
 * entry[observation][=].resource = ExampleRespitoryRatesEms2
 
+* entry[medication][0].fullUrl = "urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94"
+* entry[medication][=].resource = cz-medication-example
+
+* entry[medicationAdministration][0].fullUrl = "urn:uuid:9be3ee4c-0844-450b-9d43-fde72ab1642a"
+* entry[medicationAdministration][=].resource = cz-medication-administration-example
+
+* entry[medication][+].fullUrl = "urn:uuid:68c98e94-e997-417c-9108-f05f65fc5327"
+* entry[medication][=].resource = cz-medication-example2
+
+* entry[medicationAdministration][+].fullUrl = "urn:uuid:4aed93c8-8b0b-433f-9b7b-3cef96515352"
+* entry[medicationAdministration][=].resource = cz-medication-administration-example2
+
+* entry[device].fullUrl = "urn:uuid:b15bd921-5bbe-46eb-8b69-4762dfadbd2a"
+* entry[device].resource = cz-device-example
 
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
@@ -250,6 +267,7 @@ Usage: #example
 * section[procedure].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mediální kyslík NEPODÁN.</div>"
 * section[procedure].text.status = #additional
 * section[procedure].entry[0] = Reference(urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6)
+* section[procedure].entry[+] = Reference(urn:uuid:6ec0b5df-ad0b-487b-9918-367ca876ac38)
 * section[payers].title = "Payers"
 * section[payers].code = $loinc#48768-6 "Payment sources Document"
 * section[payers].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Zdravotní pojištění</div>"
@@ -405,5 +423,88 @@ Description: "Example of procedure - Oxygen not administered"
 * id = "3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
 * status = #completed
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
-* code.text = "Mediální kyslík NEPODÁN."
-* performedDateTime = "2022-10-07T09:10:00+01:00"
+* code.text = "EKG 12 svod"
+* performedDateTime = "2022-09-03T10:35:00+01:00"
+* usedReference = Reference(urn:uuid:b15bd921-5bbe-46eb-8b69-4762dfadbd2a)
+
+Instance: cz-device-example
+InstanceOf: CZ_DeviceObserver
+Usage: #example
+Title: "Medical Device: Defibrillator and monitor"
+Description: "Example of medical device"
+* id = "b15bd921-5bbe-46eb-8b69-4762dfadbd2a"
+* identifier[+].system = "http://example.org/devices"
+* identifier[=].value = "DEF-123456"
+* type = $sct#86184003 "Electrocardiographic monitor and recorder"
+* deviceName.name = "Monitor/defibrilátor Lifepak 15"
+* deviceName.type = #user-friendly-name
+
+Instance: cz-procedure-example2
+InstanceOf: CZ_ProcedureEms
+Usage: #example
+Title: "Procedure: Oxygen not administered"
+Description: "Example of procedure - Oxygen not administered"
+* id = "6ec0b5df-ad0b-487b-9918-367ca876ac38"
+* status = #completed
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* partOf = Reference(urn:uuid:9be3ee4c-0844-450b-9d43-fde72ab1642a)
+* partOf = Reference(urn:uuid:4aed93c8-8b0b-433f-9b7b-3cef96515352)
+* code.text = "kanylace periferní žíly"
+* performedDateTime = "2022-09-03T10:35:00+01:00"
+* usedReference = Reference(urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94)
+* usedReference = Reference(urn:uuid:68c98e94-e997-417c-9108-f05f65fc5327)
+
+Instance: cz-medication-example
+InstanceOf: CZ_Medication
+Usage: #example
+Title: "Medical Device: Defibrillator and monitor"
+Description: "Example of medical device"
+* id = "782255e0-cd1d-4f31-ace3-08b278936b94"
+* identifier[+].system = "https://www.nempriklad.cz/"
+* identifier[=].value = "a12345"
+* code.coding[+] = $dlp_lecivePripravky#98872 "FYZIOLOGICKÝ ROZTOK VIAFLO"
+* code.text = "FYZIOLOGICKÝ ROZTOK VIAFLO"
+* form = $dlp_formy_cs#INJSOL "Injekční roztok"
+
+Instance: cz-medication-administration-example
+InstanceOf: MedicationAdministration
+Usage: #example
+Description: "Medication Administration during EMS"
+Title: "Medication Administration: EMS Novotný"
+* id = "9be3ee4c-0844-450b-9d43-fde72ab1642a"
+* identifier[+].system = "https://www.nempriklad.cz/"
+* identifier[=].value = "med-adm-2"
+* status = #completed
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* medicationReference = Reference (urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94)
+* dosage.dose = 250 'ml' "ml"
+* dosage.route = $sct#47625008 "Intravenous route"
+* effectiveDateTime = "2025-09-03T10:50:00+01:00"
+
+Instance: cz-medication-example2
+InstanceOf: CZ_Medication
+Usage: #example
+Title: "Medical Device: BETALOC"
+Description: "Example of medication"
+* id = "68c98e94-e997-417c-9108-f05f65fc5327"
+* identifier[+].system = "https://www.nempriklad.cz/"
+* identifier[=].value = "a12345"
+* code.coding[+] = $dlp_lecivePripravky#231703 "BETALOC"
+* code.text = "BETALOC"
+* ingredient.itemCodeableConcept = CZ_DLPLecivelatkyCs#4634 "METOPROLOLI TARTRAS"
+* form = $dlp_formy_cs#INJSOL "Injekční roztok"
+
+Instance: cz-medication-administration-example2
+InstanceOf: MedicationAdministration
+Usage: #example
+Description: "Medication Administration during EMS"
+Title: "Medication Administration: BETALOC"
+* id = "4aed93c8-8b0b-433f-9b7b-3cef96515352"
+* identifier[+].system = "https://www.nempriklad.cz/"
+* identifier[=].value = "med-adm-2"
+* status = #completed
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* medicationReference = Reference (urn:uuid:68c98e94-e997-417c-9108-f05f65fc5327)
+* dosage.dose = 2.5 'mg' "mg"
+* dosage.route = $sct#47625008 "Intravenous route"
+* effectiveDateTime = "2025-09-03T10:50:00+01:00"
