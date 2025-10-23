@@ -94,8 +94,18 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains observation 0..*
 * entry[observation].resource only Observation
 
+* entry contains medicationAdministration 0..*
+* entry[medicationAdministration].resource only MedicationAdministration
+
+* entry contains medication 0..*
+* entry[medication].resource only CZ_Medication
+
+* entry contains device 0..*
+* entry[device].resource only Device
+
 * entry contains condition 0..*
 * entry[condition].resource only CZ_ConditionEms
 
 * entry contains FamilyMemberHistory 0..*
 * entry[FamilyMemberHistory].resource only CZ_FamilyMemberHistoryEms
+
