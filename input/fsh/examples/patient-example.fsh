@@ -47,3 +47,19 @@ Description: "Patient Novotny with contact information and practitioner"
 * contact.name.given = "Petra"
 * contact.telecom.system = #phone
 * contact.telecom.value = "+420602602602"
+
+* maritalStatus.coding = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#M "Married"
+
+
+Instance: cz-examplebase-patient2
+InstanceOf: CZ_PatientCore
+Usage: #example
+Title: "Patient: Otec"
+Description: "Patient Otec"
+* id = "d993c7bd-0420-403d-b5c2-de264a97994e"
+* identifier[RID][+].system = "https://ncez.mzcr.cz/fhir/sid/rid"
+* identifier[RID][=].value = "2165425387"
+* name.use = #usual
+* name.family = "Novotný"
+* name.given = "Karel"
+* birthDate = "1971-11-26"
