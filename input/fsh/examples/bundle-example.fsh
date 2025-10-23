@@ -68,6 +68,28 @@ Usage: #example
 * entry[allergy].fullUrl = "urn:uuid:27145145-c229-465f-a11e-6767c34c1489"
 * entry[allergy].resource = cz-allergy-intolerance-example
 
+* entry[observation][0].fullUrl = "urn:uuid:5792aae8-20ba-4baa-90b3-311988fa5434"
+* entry[observation][=].resource = ExampleBMIEms
+
+* entry[observation][+].fullUrl = "urn:uuid:272d3f43-e7fb-4759-9ade-b9cf530d07ab"
+* entry[observation][=].resource = ExampleBodyWeightEms
+
+* entry[observation][+].fullUrl = "urn:uuid:5114880a-a222-40eb-b67e-2e0780027e7c"
+* entry[observation][=].resource = ExampleBodyHeightEms
+
+* entry[observation][+].fullUrl = "urn:uuid:ce370af7-3c13-4b19-8870-a8a4fa6fd898"
+* entry[observation][=].resource = ExampleHearthRatesEms1
+
+* entry[observation][+].fullUrl = "urn:uuid:53f76fa0-c675-44fa-a816-d9416683c201"
+* entry[observation][=].resource = ExampleHearthRatesEms2
+
+* entry[observation][+].fullUrl = "urn:uuid:5be4cac5-103c-4b5d-bf66-453da09b35ac"
+* entry[observation][=].resource = ExampleRespitoryRatesEms1
+
+* entry[observation][+].fullUrl = "urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871"
+* entry[observation][=].resource = ExampleRespitoryRatesEms2
+
+
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
 Usage: #example
@@ -247,6 +269,17 @@ Usage: #example
 * section[timeline].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Časová osa výjezdu</div>"
 * section[timeline].text.status = #additional
 * section[timeline].entry[0] = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
+* section[findings].title = "Findings"
+* section[findings].code = $loinc#29545-1 "Physical findings note"
+* section[findings].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Nálezy při vyšetření</div>"
+* section[findings].text.status = #additional
+* section[findings].entry[0] = Reference(urn:uuid:5792aae8-20ba-4baa-90b3-311988fa5434)
+* section[findings].entry[+] = Reference(urn:uuid:272d3f43-e7fb-4759-9ade-b9cf530d07ab)
+* section[findings].entry[+] = Reference(urn:uuid:5114880a-a222-40eb-b67e-2e0780027e7c)
+* section[findings].entry[+] = Reference(urn:uuid:ce370af7-3c13-4b19-8870-a8a4fa6fd898)
+* section[findings].entry[+] = Reference(urn:uuid:53f76fa0-c675-44fa-a816-d9416683c201)
+* section[findings].entry[+] = Reference(urn:uuid:5be4cac5-103c-4b5d-bf66-453da09b35ac)
+* section[findings].entry[+] = Reference(urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871)
 
 Instance: cz-task-example
 InstanceOf: CZ_TaskEms
@@ -344,6 +377,7 @@ Description: "Example of encounter for EMS document"
 * location[scene].period.start = "2025-05-20T10:42:00+01:00"
 * location[scene].period.end = "2025-05-20T10:59:00+01:00"
 * location[scene].location = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
+* reasonCode.text = "Od večera 2.9.2025 pozoruje bušení srdce, při námaze se zadýchá, bolesti neguje."
 //* location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
 //* location[destination].period.start = "2025-05-20T11:10:00+01:00"
 //* location[destination].period.end = "2025-05-20T11:12:00+01:00"  Nelze zadat bez lokace???

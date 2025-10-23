@@ -1,8 +1,8 @@
-Instance: ObjectiveFindingsEMS2FHIR-cz
+Instance: FindingsEMS2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
-* name = "ObjectiveFindingsEMS2FHIR2FHIRcz"
-* title = "CZ Objective Findings Model to this guide Map"
+* name = "FindingsEMS2FHIR2FHIRcz"
+* title = "CZ Findings Model to this guide Map"
 * status = #draft
 * experimental = true
 * description = """CZ Emergency Medical Service Report ObjectiveFindings Model to this guide mapping"""
@@ -10,33 +10,33 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.antropometricData
 * group[=].element[=].display = "A.2.6.1 - Anthropometric Data"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationWeightEms)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationWeightEms)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.vitalSigns
 * group[=].element[=].display = "A.2.6.2 - Basic Vital Signs"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationVitalSignsEms)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationVitalSignsEms)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.vitalSigns.parametricRecord.oxigenAdministration(CZ_ObservationOxygenEms)
 * group[=].element[=].display = "A.2.6.2 - Basic Vital Signs - Oxygen therapy"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationOxygenEms)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationOxygenEms)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.otherParameters
 * group[=].element[=].display = "A.2.6.3 - Other measured parameters"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationOtherOFEms)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationOtherOFEms)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.somaticExamination
 * group[=].element[=].display = "A.2.6.4 - Somatic examination"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationOtherOFEms)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationOtherOFEms)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #ObjectiveFindingsEmsCz.otherExamination
 * group[=].element[=].display = "A.2.6.5 - Other examinations"
-* group[=].element[=].target.comment = "Composition.section:objectiveFindings.entry.ofType(CZ_ObservationOtherOFEms) or omposition.section:objectiveFindings.entry.ofType(Observation)"
-* group[=].element[=].target.code = #Composition.section:objectiveFindings
+* group[=].element[=].target.comment = "Composition.section:findings.entry.ofType(CZ_ObservationOtherOFEms) or omposition.section:findings.entry.ofType(Observation)"
+* group[=].element[=].target.code = #Composition.section:findings
 * group[=].element[=].target.equivalence = #relatedto
 
 
