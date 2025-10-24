@@ -113,6 +113,9 @@ Usage: #example
 * entry[condition][+].fullUrl = "urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425"
 * entry[condition][=].resource = cz-condition-example
 
+* entry[condition][+].fullUrl = "urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db"
+* entry[condition][=].resource = cz-condition-example2
+
 * entry[FamilyMemberHistory][+].fullUrl = "urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf"
 * entry[FamilyMemberHistory][=].resource = cz-familyMemberHistory-ems
 
@@ -321,6 +324,12 @@ Usage: #example
 * section[findings].entry[+] = Reference(urn:uuid:53f76fa0-c675-44fa-a816-d9416683c201)
 * section[findings].entry[+] = Reference(urn:uuid:5be4cac5-103c-4b5d-bf66-453da09b35ac)
 * section[findings].entry[+] = Reference(urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871)
+* section[handover].title = "Handover"
+* section[handover].code = $loinc#67660-1 "EMS dispatch Narrative"
+* section[handover].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ukončení</div>"
+* section[handover].text.status = #additional
+* section[handover].entry[patientCondition] = Reference(urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db)
+* section[handover].entry[handoverFrom] = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
 
 Instance: cz-task-example
 InstanceOf: CZ_TaskEms
@@ -544,6 +553,16 @@ Description: "Example of condition - Arterial hypertension"
 * code.text = "Arteriální hypertenze"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * stage.summary.text = "kompenzováno medikací"
+
+Instance: cz-condition-example2
+InstanceOf: CZ_ConditionEms
+Usage: #example
+Title: "Condition: Handover"
+Description: "Example of condition - Handover"
+* id = "7c3c7c3d-b5ca-451b-9446-4944598b01db"
+* clinicalStatus = #active "Active"
+* code.text = "Předán CPALP"
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 
 
 Instance: cz-observation-travel-ems-example

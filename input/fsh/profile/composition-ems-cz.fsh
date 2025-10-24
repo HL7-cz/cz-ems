@@ -63,6 +63,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section contains
     courseOfTreatment 0..1 and
     recommendations 0..1 and
+    handover 1..1 and
     patientHx 1..1 and
     medicalDevices 1..1 and
     significantProcedures 0..1 and
@@ -217,9 +218,27 @@ Description: "This profile defines how to represent Composition resource in HL7 
     The plan of care section contains a narrative description of the expectations for care including proposals\, goals\, and order requests for monitoring\, tracking\, or improving the condition of the patient.,
     $loinc#18776-5 )
   * entry only Reference( CZ_CarePlanEms) 
+
+* section[handover] ^short = "Handover"
+* section[handover].title 1.. 
+* section[handover].title ^short = "'Ukončení' or 'Remise' or 'Předání' or 'Handover'"
+* section[handover].code 1.. 
+* section[handover].code = $loinc#67660-1 // "EMS dispatch Narrative"
+* section[handover].entry ^slicing.discriminator.type = #profile
+* section[handover].entry ^slicing.discriminator.path = "resolve()"
+* section[handover].entry ^slicing.rules = #open
+* section[handover].entry contains
+    patientCondition 1..1 and
+    handoverFrom 0..1 and
+    handoverTo 0..1 
+* section[handover].entry[patientCondition] only Reference(CZ_ConditionEms)
+* section[handover].entry[patientCondition].reference 1..
+* section[handover].entry[handoverFrom] only Reference(CZ_PractitionerCore)
+* section[handover].entry[handoverFrom].reference 1..
+* section[handover].entry[handoverTo] only Reference(CZ_OrganizationCore or CZ_PractitionerCore)
+* section[handover].entry[handoverTo].reference 1..
+* section[handover].section 0..0
   
-
-
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
   * ^short = "Procedure"
