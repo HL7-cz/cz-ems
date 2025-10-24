@@ -110,6 +110,14 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206"
 * entry[observation][=].resource = cz-observation-travel-ems-example
 
+// alcohol status
+* entry[observation][+].fullUrl = "urn:uuid:9e6eb80b-e351-4faa-92cf-8519b58def33"
+* entry[observation][=].resource = cz-observation-alcoholuse-ems-example
+
+// smoking status
+* entry[observation][+].fullUrl = "urn:uuid:e6d14fe5-fc02-46aa-942b-6559c9e644d2"
+* entry[observation][=].resource = cz-observation-smokinguse-ems-example
+
 * entry[condition][+].fullUrl = "urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425"
 * entry[condition][=].resource = cz-condition-example
 
@@ -283,6 +291,16 @@ Usage: #example
 * section[familyHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rodinná anamnéza</div>"
 * section[familyHistory].text.status = #additional
 * section[familyHistory].entry[0] = Reference(urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf)
+* section[alcoholUse].title = "Alcohol use"
+* section[alcoholUse].code = $loinc#11331-6
+* section[alcoholUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba alkoholu</div>"
+* section[alcoholUse].text.status = #additional
+* section[alcoholUse].entry[0] = Reference(urn:uuid:9e6eb80b-e351-4faa-92cf-8519b58def33)
+* section[tobaccoUse].title = "Tobacco use"
+* section[tobaccoUse].code = $loinc#11367-0
+* section[tobaccoUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba tabáku</div>"
+* section[tobaccoUse].text.status = #additional
+* section[tobaccoUse].entry[0] = Reference(urn:uuid:e6d14fe5-fc02-46aa-942b-6559c9e644d2)
 * section[allergies].title = "Allergies"
 * section[allergies].code = $loinc#48765-2
 * section[allergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Urgetní anamnéza</div>"
@@ -577,6 +595,7 @@ Description: "Example of observation - Italy travel history"
 * valueCodeableConcept.coding[0].code = #ITA
 * valueCodeableConcept.coding[0].display = "Italy"
 * valueCodeableConcept.text = "Itálie"
+* effectiveDateTime = "2025-08-01"
 
 Instance: cz-familyMemberHistory-ems
 InstanceOf: CZ_FamilyMemberHistoryEms
@@ -593,4 +612,31 @@ Description: "Example of family member history - Father"
 * condition[0].contributedToDeath = true
 * deceasedAge.value = 54
 
-//TODO: doplnit další zdroje dle příkladu - Alkohol, Kouření
+Instance: cz-observation-alcoholuse-ems-example
+InstanceOf: Observation
+Usage: #example
+Title: "Observation: Alcohol use"
+Description: "Example of observation - Alcohol use"
+* id = "9e6eb80b-e351-4faa-92cf-8519b58def33"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://snomed.info/sct#2190006 "Current drinker of alcohol"
+* code.text = "Konzumace alkoholu"
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
+* valueQuantity.value = 2
+* valueQuantity.unit = "beer/day"
+* note.text = "Pacient uvádí dlouhodobou konzumaci přibližně 2 piva denně, bez známek závislosti."
+
+Instance: cz-observation-smokinguse-ems-example
+InstanceOf: Observation
+Usage: #example
+Title: "Observation: Smoking use"
+Description: "Example of observation - Smoking use"
+* id = "e6d14fe5-fc02-46aa-942b-6559c9e644d2"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://snomed.info/sct#449868002 "Smokes tobacco daily"
+* code.text = "Kouření tabáku denně"
+* valueQuantity.value = 20
+* valueQuantity.unit = "cigarettes/day"
+* note.text = "Pacient kouří přibližně 20 cigaret denně."

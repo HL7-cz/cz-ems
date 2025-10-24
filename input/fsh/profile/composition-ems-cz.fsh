@@ -72,6 +72,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
     infectiousContacts 0..1 and
     familyHistory 0..1 and
     socialHistory 0..1 and
+    alcoholUse 0..1 and
+    tobaccoUse 0..1 and
+    drugUse 0..1 and
     allergies 0..1 and
     findings 0..* and
     procedure 1..1 and
@@ -176,7 +179,29 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 0..*
   * entry only Reference(CZ_ObservationSDOHEMS)
 
+* section[alcoholUse]
+  * insert SectionComRules (
+    Alcohol use Section,
+    The Alcohol use Section contains a description of the use abuse of alcohol,
+    $loinc#11331-6  )   // History of Alcohol use
+  * entry 0..*
+  * entry only Reference(Observation)
 
+* section[tobaccoUse]
+  * insert SectionComRules (
+    Tobacco use Section,
+    The Tobacco use Section contains a description of the use abuse of tobacco,
+    $loinc#11367-0  )   // History of Tobacco use
+  * entry 0..*
+  * entry only Reference(Observation)
+
+* section[drugUse]
+  * insert SectionComRules (
+    Drug use Section,
+    The Drug use Section contains a description of the use abuse of drugs,
+    $loinc#11343-1  )   // History of Other nonmedical drug use
+  * entry 0..*
+  * entry only Reference(Observation)
 
 /////////////////////////////////  Allergies and Intolerances SECTION ///////////////////////////////////////
 * section[allergies]
