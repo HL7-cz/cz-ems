@@ -106,6 +106,6 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains condition 0..*
 * entry[condition].resource only CZ_ConditionEms
 
-* entry contains FamilyMemberHistory 0..*
-* entry[FamilyMemberHistory].resource only CZ_FamilyMemberHistoryEms
+* entry contains familyMemberHistory 0..*
+* entry[familyMemberHistory].resource only CZ_FamilyMemberHistoryEms
 

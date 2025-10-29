@@ -28,3 +28,4 @@ Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/
 Alias: $allergyintolerance-certainty = http://terminology.hl7.org/CodeSystem/reaction-event-certainty
 Alias: $dlp_lecivePripravky = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlplecivepripravky-cs
 Alias: $dlp_formy_cs = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlpformy-cs
+Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical

@@ -124,8 +124,8 @@ Usage: #example
 * entry[condition][+].fullUrl = "urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db"
 * entry[condition][=].resource = cz-condition-example2
 
-* entry[FamilyMemberHistory][+].fullUrl = "urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf"
-* entry[FamilyMemberHistory][=].resource = cz-familyMemberHistory-ems
+* entry[familyMemberHistory][0].fullUrl = "urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf"
+* entry[familyMemberHistory][=].resource = cz-familyMemberHistory-ems
 
 Instance: cz-organizationwithlogo-example
 InstanceOf: cz-organization-core
@@ -343,11 +343,24 @@ Usage: #example
 * section[findings].entry[+] = Reference(urn:uuid:5be4cac5-103c-4b5d-bf66-453da09b35ac)
 * section[findings].entry[+] = Reference(urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871)
 * section[handover].title = "Handover"
-* section[handover].code = $loinc#67660-1 "EMS dispatch Narrative"
+* section[handover].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
 * section[handover].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ukončení</div>"
 * section[handover].text.status = #additional
 * section[handover].entry[patientCondition] = Reference(urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db)
 * section[handover].entry[handoverFrom] = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
+//* section[attachments].title = "Attachments"
+//* section[attachments].code = $loinc#48767-8 "Document attachments"
+//* section[attachments].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>"
+//* section[attachments].text.status = #additional
+//* section[attachments].entry[0] = Reference(urn:uuid:5a111db8-4b2b-48c7-abef-eed70f0ca308)
+
+//Instance: cz-ekg-example
+//InstanceOf: CZ_Attachment
+//Description: "Example of EKG attachment"
+//Usage: #example
+//Title: "Attachment: EKG"
+//* id = "5a111db8-4b2b-48c7-abef-eed70f0ca308"
+//* contentType = "application/pdf"
 
 Instance: cz-task-example
 InstanceOf: CZ_TaskEms
@@ -565,9 +578,9 @@ Usage: #example
 Title: "Condition: Arterial hypertension"
 Description: "Example of condition - Arterial hypertension"
 * id = "bccc3ea9-d77f-4253-88c3-53b886f5b425"
-* clinicalStatus = #active "Active"
+* clinicalStatus = $ConditionClinicalStatusCodeSystem#active
 //* verificationStatus = $condition-verification#confirmed "Confirmed"
-* code = $icd10#I10 "Arterial hypertension"
+* code = $icd10#I10 "Essential (primary) hypertension"
 * code.text = "Arteriální hypertenze"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * stage.summary.text = "kompenzováno medikací"
@@ -578,7 +591,7 @@ Usage: #example
 Title: "Condition: Handover"
 Description: "Example of condition - Handover"
 * id = "7c3c7c3d-b5ca-451b-9446-4944598b01db"
-* clinicalStatus = #active "Active"
+* clinicalStatus = $ConditionClinicalStatusCodeSystem#active
 * code.text = "Předán CPALP"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 
@@ -592,7 +605,7 @@ Description: "Example of observation - Italy travel history"
 * status = #final
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * valueCodeableConcept.coding[0].system = "urn:iso:std:iso:3166"
-* valueCodeableConcept.coding[0].code = #ITA
+* valueCodeableConcept.coding[0].code = #IT
 * valueCodeableConcept.coding[0].display = "Italy"
 * valueCodeableConcept.text = "Itálie"
 * effectiveDateTime = "2025-08-01"
@@ -606,7 +619,7 @@ Description: "Example of family member history - Father"
 * relationship.coding[0].system = "http://hl7.org/fhir/v3/FamilyMember"
 * relationship.coding[0].code = #FTH
 * status = #completed
-* patient = Reference(urn:uuid:d993c7bd-0420-403d-b5c2-de264a97994e)
+* patient = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * condition[0].code = $icd10#I21 "Acute myocardial infarction"
 * condition[0].code.text = "Akutní infarkt myokardu"
 * condition[0].contributedToDeath = true
@@ -620,12 +633,13 @@ Description: "Example of observation - Alcohol use"
 * id = "9e6eb80b-e351-4faa-92cf-8519b58def33"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = http://snomed.info/sct#2190006 "Current drinker of alcohol"
+* code = http://snomed.info/sct#219006 "Current drinker of alcohol"
 * code.text = "Konzumace alkoholu"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * valueQuantity.value = 2
 * valueQuantity.unit = "beer/day"
 * note.text = "Pacient uvádí dlouhodobou konzumaci přibližně 2 piva denně, bez známek závislosti."
+* effectiveDateTime = "2025-09-03"
 
 Instance: cz-observation-smokinguse-ems-example
 InstanceOf: Observation
@@ -634,9 +648,11 @@ Title: "Observation: Smoking use"
 Description: "Example of observation - Smoking use"
 * id = "e6d14fe5-fc02-46aa-942b-6559c9e644d2"
 * status = #final
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://snomed.info/sct#449868002 "Smokes tobacco daily"
 * code.text = "Kouření tabáku denně"
 * valueQuantity.value = 20
 * valueQuantity.unit = "cigarettes/day"
 * note.text = "Pacient kouří přibližně 20 cigaret denně."
+* effectiveDateTime = "2025-09-03"
