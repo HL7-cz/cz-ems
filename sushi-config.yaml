@@ -75,6 +75,10 @@ pages:
     title: Background
   background-cs.md:
     title: Background
+  use-cases.md:
+    title: Use cases
+  use-cases-cs.md:
+    title: Případy užití
   examples.md:
     title: Examples
   examples-cs.md:
@@ -190,6 +194,8 @@ menu:
     Background (en): background.html
     Background (cs): background-cs.html
   Functional:
+    Use cases (en): use-cases.html
+    Use cases (cs): use-cases-cs.html
     Logical models (en): logical-models.html
     Logical models (cs): logical-models-cs.html
   Implementation:
