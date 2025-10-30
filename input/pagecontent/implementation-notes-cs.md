@@ -39,7 +39,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_ObservationVitalSignsEms
   CZ_BundleEms *-- "0..*" CZ_ObservationWeightEms
   
-  CZ_TaskEms --> CZ_CompositionImageOrder: composition
+  CZ_TaskEms --> CZ_CompositionEms: composition
 
   CZ_CompositionEms --> CZ_TaskEms: extension[basedOn]  
   CZ_CompositionEms --> CZ_EncounterEms: encounter
@@ -96,4 +96,4 @@ classDiagram
 
 ```
 
-Záznam je reprezentován jako FHIR bundle, který obsahuje zdroje CZ_CompositionImageOrder a všechny zdroje ve stromové struktuře zdrojů, na které se odkazovalo (viz [$document operation](https://www.hl7.org/fhir/composition-operation-document.html)).
+Záznam je reprezentován jako FHIR bundle, který obsahuje zdroje CompositionEms a všechny zdroje ve stromové struktuře zdrojů, na které se odkazovalo (viz [$document operation](https://www.hl7.org/fhir/composition-operation-document.html)).

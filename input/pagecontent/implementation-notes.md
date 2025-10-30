@@ -39,7 +39,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_ObservationVitalSignsEms
   CZ_BundleEms *-- "0..*" CZ_ObservationWeightEms
   
-  CZ_TaskEms --> CZ_CompositionImageOrder: composition
+  CZ_TaskEms --> CompositionEms: composition
 
   CZ_CompositionEms --> CZ_TaskEms: extension[basedOn]  
   CZ_CompositionEms --> CZ_EncounterEms: encounter
