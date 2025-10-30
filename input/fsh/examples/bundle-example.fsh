@@ -343,11 +343,11 @@ Usage: #example
 * section[findings].entry[+] = Reference(urn:uuid:5be4cac5-103c-4b5d-bf66-453da09b35ac)
 * section[findings].entry[+] = Reference(urn:uuid:99ae9ec2-ab21-4afc-8fba-503f5fb34871)
 * section[handover].title = "Handover"
-* section[handover].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
+* section[handover].code = $loinc#67661-9 "EMS disposition Narrative NEMSIS"
 * section[handover].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ukončení</div>"
 * section[handover].text.status = #additional
-* section[handover].entry[patientCondition] = Reference(urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db)
-* section[handover].entry[handoverFrom] = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
+* section[handover].entry[0] = Reference(urn:uuid:7c3c7c3d-b5ca-451b-9446-4944598b01db)
+* section[handover].entry[+] = Reference(urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f)
 //* section[attachments].title = "Attachments"
 //* section[attachments].code = $loinc#48767-8 "Document attachments"
 //* section[attachments].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>"
@@ -615,15 +615,14 @@ InstanceOf: CZ_FamilyMemberHistoryEms
 Usage: #example
 Title: "Family Member History: Father"
 Description: "Example of family member history - Father"
-* id = "9a26eaee-9315-420d-a47c-8e8329511aaf"
-* relationship.coding[0].system = "http://hl7.org/fhir/v3/FamilyMember"
-* relationship.coding[0].code = #FTH
+* id = "9a26eaee-9315-420d-a47c-8e8329511aaf" 
+* relationship.coding = $v3-RoleCode#FTH
 * status = #completed
 * patient = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * condition[0].code = $icd10#I21 "Acute myocardial infarction"
 * condition[0].code.text = "Akutní infarkt myokardu"
 * condition[0].contributedToDeath = true
-* deceasedAge.value = 54
+* deceasedAge = 54 'a' "years"
 
 Instance: cz-observation-alcoholuse-ems-example
 InstanceOf: Observation

@@ -7,14 +7,14 @@ Usage: #definition
 * experimental = true
 * description = """CZ Emergency Medical Service Report DispatchData Model to this guide mapping"""
 
-// ========================= Sekce DispatchData → Composition.section:dispatchData =========================
+// ========================= Sekce DispatchData → Composition.section:dispatch =========================
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #DispatchDataCz.Section
 * group[=].element[=].display = "A.2.1 Dispatch Data (section)"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.display = "Composition.section slice 'dispatchData'"
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry agreguje níže uvedené zdroje (Task, Location, CareTeam, Practitioner/Role, Communication)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.display = "Composition.section slice 'dispatch'"
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry agreguje níže uvedené zdroje (Task, Location, CareTeam, Practitioner/Role, Communication)"
 * group[=].element[=].target.equivalence = #relatedto
 
 // ========================= Dispatch Identification → Task (cz-task-ems) =========================
@@ -56,8 +56,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-vehicle-location-ems"
 * group[=].element[+].code = #vehicleIdentification
 * group[=].element[=].display = "A.2.1.2 Vehicle Identification"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_VehicleLocationEms)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_VehicleLocationEms)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #licensePlate
@@ -71,8 +71,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-location-ems"
 * group[=].element[+].code = #dispatchStartLocation
 * group[=].element[=].display = "A.2.1.5 Dispatch Start Location"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_LocationEms)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_LocationEms)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #address
@@ -86,8 +86,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-location-ems"
 * group[=].element[+].code = #incidentLocation
 * group[=].element[=].display = "A.2.1.6 Incident Location"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_LocationEms)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_LocationEms)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #gpsAddress
@@ -107,8 +107,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-careteam-ems"
 * group[=].element[+].code = #crewMemberIdentification
 * group[=].element[=].display = "A.2.1.3 Crew Member Identification"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_CareTeamEms)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_CareTeamEms)"
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #crewMemberIdentifier
 * group[=].element[=].display = "A.2.1.3.1 - Crew Member Identifier"
@@ -121,8 +121,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
 * group[=].element[+].code = #crewMemberIdentification
 * group[=].element[=].display = "A.2.1.3 - Crew Member Identification"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_PractitionerCore)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_PractitionerCore)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #crewMemberIdentifier
@@ -146,8 +146,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #role
 * group[=].element[=].display = "A.2.1.3.4 Role"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_PractitionerRoleCore)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_PractitionerRoleCore)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #role
@@ -162,8 +162,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-communication-ems"
 * group[=].element[+].code = #dispatchCenterOperator
 * group[=].element[=].display = "A.2.1.4 Dispatch Center Operator Identification"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_CommunicationEms)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_CommunicationEms)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #dispatchCenterOperator
@@ -184,8 +184,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
 * group[=].element[+].code = #operatorIdentifier
 * group[=].element[=].display = "A.2.1.4.1 Operator Identifier"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_PractitionerCore)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_PractitionerCore)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #operatorIdentifier
@@ -209,8 +209,8 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #role
 * group[=].element[=].display = "A.2.1.4.4 Role"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry.ofType(CZ_PractitionerRoleCore)"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_PractitionerRoleCore)"
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #role
 * group[=].element[=].display = "A.2.1.4.4  - Role"
@@ -223,9 +223,9 @@ Usage: #definition
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
 * group[=].element[+].code = #callerContact
 * group[=].element[=].display = "A.2.1.8 - Caller Contact"
-* group[=].element[=].target.code = #Composition.section:dispatchData
-* group[=].element[=].target.display = "Composition.section:dispatchData.entry.ofType(RelatedPerson)"
-* group[=].element[=].target.comment = "Composition.section:dispatchData.entry should reference RelatedPerson"
+* group[=].element[=].target.code = #Composition.section:dispatch
+* group[=].element[=].target.display = "Composition.section:dispatch.entry.ofType(RelatedPerson)"
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry should reference RelatedPerson"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #phone

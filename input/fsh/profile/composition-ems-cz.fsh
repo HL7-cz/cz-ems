@@ -10,7 +10,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * . ^definition = "Emergency medical service report composition. \r\nA composition is a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. \r\nWhile a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained."
 
 * extension contains $event-basedOn named basedOn 0..*
-* extension[basedOn].valueReference only Reference ( Resource or ServiceRequest ) /// add profile
+* extension[basedOn].valueReference only Reference ( Resource or CZ_TaskEms ) /// add profile
 
 * extension contains DocumentPresentedForm named presentedForm 1..*
 * extension[presentedForm] ^short = "Presented form"
@@ -37,7 +37,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * date ^short = "EMS date"
 * author ^short = "Who and/or what authored the Emergency Medical Services"
-* author ^definition = "Identifies who is responsible for the information in the Hospital Discharge Report, not necessarily who typed it in."
+* author ^definition = "Identifies who is responsible for the information in the Emergency Medical Service (EMS) Record, not necessarily who typed it in."
 * author only Reference( CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_MedicalDevice or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
 
@@ -48,6 +48,12 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * attester.party ^short = "Who attested the composition."
 * attester.party only Reference( CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
+* custodian ^short = "Organization which is the custodian of the Composition"
+* custodian only Reference( CZ_OrganizationCore )
+
+* extension contains
+    $information-recipient-url  named informationRecipient 0..*
+* extension[informationRecipient].valueReference only Reference(CZ_PractitionerCore or CZ_DeviceObserver or CZ_PatientCore or CZ_RelatedPersonCore or CZ_PractitionerRoleCore or CZ_OrganizationCore)
 
 
 * section 1..
@@ -248,21 +254,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section[handover].title 1.. 
 * section[handover].title ^short = "'Ukončení' or 'Remise' or 'Předání' or 'Handover'"
 * section[handover].code 1.. 
-* section[handover].code = $loinc#67660-1 // "EMS dispatch Narrative"
-* section[handover].entry ^slicing.discriminator.type = #profile
-* section[handover].entry ^slicing.discriminator.path = "resolve()"
-* section[handover].entry ^slicing.rules = #open
-* section[handover].entry contains
-    patientCondition 1..1 and
-    handoverFrom 0..1 and
-    handoverTo 0..1 
-* section[handover].entry[patientCondition] only Reference(CZ_ConditionEms)
-* section[handover].entry[patientCondition].reference 1..
-* section[handover].entry[handoverFrom] only Reference(CZ_PractitionerCore)
-* section[handover].entry[handoverFrom].reference 1..
-* section[handover].entry[handoverTo] only Reference(CZ_OrganizationCore or CZ_PractitionerCore)
-* section[handover].entry[handoverTo].reference 1..
-* section[handover].section 0..0
+* section[handover].code = $loinc#67661-9 // "EMS disposition Narrative NEMSIS"
+* section[handover].entry only Reference(CZ_ConditionEms or CZ_PractitionerCore or CZ_OrganizationCore or CZ_PractitionerCore)
   
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
@@ -287,7 +280,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#34109-9 //"Note - asi jen dočasný kód TODO: Najít vhodný kód"
   * author only Reference(CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 1..*
-  * entry only Reference(CZ_Logo or DocumentReference) 
+  * entry only Reference(CZ_Attachment or DocumentReference) 
 
 
 Invariant: text-or-section

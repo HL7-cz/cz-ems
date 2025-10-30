@@ -6,6 +6,7 @@ Alias: $event-basedOn = http://hl7.org/fhir/StructureDefinition/event-basedOn
 Alias: $flag-detail = http://hl7.org/fhir/StructureDefinition/flag-detail
 Alias: $flag-priority = http://hl7.org/fhir/StructureDefinition/flag-priority
 Alias: $bodySite-reference = http://hl7.org/fhir/StructureDefinition/bodySite
+Alias: $information-recipient-url = http://hl7.eu/fhir/StructureDefinition/information-recipient
 
 // Profiles:
 Alias: $CodeableConcept-uv-ips = http://hl7.org/fhir/uv/ips/StructureDefinition/CodeableConcept-uv-ips
@@ -29,3 +30,4 @@ Alias: $allergyintolerance-certainty = http://terminology.hl7.org/CodeSystem/rea
 Alias: $dlp_lecivePripravky = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlplecivepripravky-cs
 Alias: $dlp_formy_cs = https://fhir.hl7cr.eu/core/CodeSystem/cz-dlpformy-cs
 Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical
+Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode

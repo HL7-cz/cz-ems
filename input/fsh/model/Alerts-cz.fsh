@@ -20,7 +20,6 @@ Description: """Zpráva o výjezdu - Urgentní informace CZ"""
 * alergie.posledniProjev 0..1 dateTime "A.2.4.1.10 - Poslední projev" """Datum (a čas) poslední známé reakce (projevu)."""
 * varovani 0..* Base "A.2.4.2 - Varování" """Varování relevantní pro danou hospitalizaci (např. vzácná onemocnění, komplikované stavy, přítomnost implantátu apod.)."""
 * varovani.oznaceniVarovani 0..1 CodeableConcept "A.2.4.2.1 - Označení varování" """Název charakterizující typ či předmět varování"""
-//TODO A.2.4.2.2 přeskočeno ???? není ani v HDR - budeme opravovat na obou místech?
 * varovani.kod 0..* CodeableConcept "A.2.4.2.3 - Onemocnění či stav" """Stav či onemocnění, které je zdrojem/příčinou pro varování."""
 * varovani.specializovanyLekar 0..* Base "A.2.4.2.4 - Specializovaný lékař" """Kontaktní informace na specialistu, u kterého je pacient v péči - týká se především pacientů se vzácným onemocněním."""
 * varovani.komentar 0..1 string "A.2.4.2.5 - Komentář" """Komentář/popis varování volným textem"""

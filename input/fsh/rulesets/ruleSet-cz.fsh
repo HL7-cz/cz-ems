@@ -89,7 +89,6 @@ RuleSet: SectionEntrySliceDefRules (name, card, short, def, profiles)
 * entry[{name}] only Reference({profiles})
 
 RuleSet: AlertSectionRules
-// Alert Section used for the HDR and PS composition
 * section contains sectionAlert ..1
 * section[sectionAlert]
   * insert SectionComRules (

@@ -39,7 +39,7 @@ dependencies:
   hl7.fhir.cz.core: current
   hl7.fhir.cz.hdr: current
   hl7.fhir.eu.base: 0.1.0-ballot
-  
+  hl7.fhir.eu.extensions: 0.1.1-ballot
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -105,10 +105,10 @@ pages:
     title: Download
   downloads-cs.md:
     title: Download
-# general-guidance.md:
-#   title: General Guidance
-# identifiers.md:
-#   title: Identifiers
+  implementation-notes.md:
+    title: Implementation notes
+  implementation-notes-cs.md:
+    title: Poznámky k implementaci
 # artifacts.xml:
 #   title: Summary artifacts
 # profiles-and-extensions.md:
@@ -201,6 +201,8 @@ menu:
   Implementation:
     Examples (en): examples.html
     Examples (cs): examples-cs.html
+    Implementation notes (en): implementation-notes.html
+    Implementation notes (cs): implementation-notes-cs.html
   About:
     Authors (en): authors.html
     Authors (cs): authors-cs.html
