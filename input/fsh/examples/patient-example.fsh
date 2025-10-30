@@ -62,4 +62,4 @@ Description: "Patient Otec"
 * name.use = #usual
 * name.family = "Novotný"
 * name.given = "Karel"
-* birthDate = "1971-11-26"
+* birthDate = "1951-10-23"

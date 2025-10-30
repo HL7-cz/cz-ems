@@ -390,7 +390,7 @@ Title: "Allergy Intolerance: Augmentin"
 * category = #medication
 * criticality = #high
 * code = CZ_DLPATCCs#J01CA "PENICILINY SE ŠIROKÝM SPEKTREM"
-* patient = Reference(Patient/Mracena) "Mračena"
+* patient = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * reaction.extension[0].url = "http://hl7.org/fhir/StructureDefinition/allergyintolerance-certainty"
 * reaction.extension[=].valueCodeableConcept = $allergyintolerance-certainty#confirmed "Confirmed"
 * reaction.extension[+].url = "http://hl7.org/fhir/StructureDefinition/openEHR-exposureDescription"
@@ -481,8 +481,8 @@ Title: "Location: Scene"
 Instance: cz-procedure-example
 InstanceOf: CZ_ProcedureEms
 Usage: #example
-Title: "Procedure: Oxygen not administered"
-Description: "Example of procedure - Oxygen not administered"
+Title: "Procedure: EKG"
+Description: "Example of procedure - EKG"
 * id = "3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
 * status = #completed
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
@@ -505,8 +505,8 @@ Description: "Example of medical device"
 Instance: cz-procedure-example2
 InstanceOf: CZ_ProcedureEms
 Usage: #example
-Title: "Procedure: Oxygen not administered"
-Description: "Example of procedure - Oxygen not administered"
+Title: "Procedure: Peripheral venous cannulation"
+Description: "Example of procedure - Peripheral venous cannulation"
 * id = "6ec0b5df-ad0b-487b-9918-367ca876ac38"
 * status = #completed
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
@@ -520,8 +520,8 @@ Description: "Example of procedure - Oxygen not administered"
 Instance: cz-medication-example
 InstanceOf: CZ_Medication
 Usage: #example
-Title: "Medical Device: Defibrillator and monitor"
-Description: "Example of medical device"
+Title: "Medication: VIAFLO"
+Description: "Example of medication"
 * id = "782255e0-cd1d-4f31-ace3-08b278936b94"
 * identifier[+].system = "https://www.nempriklad.cz/"
 * identifier[=].value = "a12345"
@@ -533,7 +533,7 @@ Instance: cz-medication-administration-example
 InstanceOf: MedicationAdministration
 Usage: #example
 Description: "Medication Administration during EMS"
-Title: "Medication Administration: EMS Novotný"
+Title: "Medication Administration: VIAFLO"
 * id = "9be3ee4c-0844-450b-9d43-fde72ab1642a"
 * identifier[+].system = "https://www.nempriklad.cz/"
 * identifier[=].value = "med-adm-2"
@@ -547,7 +547,7 @@ Title: "Medication Administration: EMS Novotný"
 Instance: cz-medication-example2
 InstanceOf: CZ_Medication
 Usage: #example
-Title: "Medical Device: BETALOC"
+Title: "Medication: BETALOC"
 Description: "Example of medication"
 * id = "68c98e94-e997-417c-9108-f05f65fc5327"
 * identifier[+].system = "https://www.nempriklad.cz/"

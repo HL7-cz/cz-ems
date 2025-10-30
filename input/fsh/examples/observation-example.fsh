@@ -60,8 +60,8 @@ Description: "Example of body height"
 Instance: ExampleHearthRatesEms1
 InstanceOf: CZ_ObservationVitalSignsEms
 Usage: #example
-Title: "Observation: Vital Signs (EMS CZ) Example"
-Description: "Example instance for Vital Signs observation using the CZ_ObservationVitalSignsEms profile."
+Title: "Observation: Heart Rate 1"
+Description: "Example instance for Heart Rate observation using."
 * id = "ce370af7-3c13-4b19-8870-a8a4fa6fd898"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -78,8 +78,8 @@ Description: "Example instance for Vital Signs observation using the CZ_Observat
 Instance: ExampleHearthRatesEms2
 InstanceOf: CZ_ObservationVitalSignsEms
 Usage: #example
-Title: "Observation: Vital Signs (EMS CZ) Example"
-Description: "Example instance for Vital Signs observation using the CZ_ObservationVitalSignsEms profile."
+Title: "Observation: Heart Rate 2"
+Description: "Example instance for Heart Rate observation"
 * id = "53f76fa0-c675-44fa-a816-d9416683c201"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -96,8 +96,8 @@ Description: "Example instance for Vital Signs observation using the CZ_Observat
 Instance: ExampleRespitoryRatesEms1
 InstanceOf: CZ_ObservationVitalSignsEms
 Usage: #example
-Title: "Observation: Vital Signs (EMS CZ) Example"
-Description: "Example instance for Vital Signs observation using the CZ_ObservationVitalSignsEms profile."
+Title: "Observation: Respiratory rate 1"
+Description: "Example instance for Respiratory rate observation."
 * id = "5be4cac5-103c-4b5d-bf66-453da09b35ac"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
@@ -115,8 +115,8 @@ Description: "Example instance for Vital Signs observation using the CZ_Observat
 Instance: ExampleRespitoryRatesEms2
 InstanceOf: CZ_ObservationVitalSignsEms
 Usage: #example
-Title: "Observation: Vital Signs (EMS CZ) Example"
-Description: "Example instance for Vital Signs observation using the CZ_ObservationVitalSignsEms profile."
+Title: "Observation: Respiratory rate 2"
+Description: "Example instance for Respiratory rate observation."
 * id = "99ae9ec2-ab21-4afc-8fba-503f5fb34871"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
