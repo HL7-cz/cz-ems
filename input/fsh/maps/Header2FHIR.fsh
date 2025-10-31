@@ -6,7 +6,7 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * description = """CZ Header Model to this guide mapping"""
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-organization-core"
 * group[=].element[+].code = #Header.payer.insuranceCode
 * group[=].element[=].display = "A.1.3.1 - Health insurance code"
@@ -18,14 +18,14 @@ Usage: #definition
 * group[=].element[=].target.code = #Organization.name
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent		
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-coverage"
 * group[=].element[+].code = #Header.coverage.insuranceNumber	
 * group[=].element[=].display = "A.1.3.3 - insuranceNumber"
 * group[=].element[=].target.code = #CZ_Coverage.identifer                  
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent                  
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-patient-core"
 * group[=].element[+].code = #Header.subject
 * group[=].element[=].display = "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
@@ -39,7 +39,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If treated as one of the Patient identifiers; this applies in some jurisdictions."
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #Header.informationRecipient.identifier
 * group[=].element[=].display = "A.1.4.1 - Recipient identifier"
@@ -131,8 +131,8 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "where attester.mode = 'legal'"
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-bundle-hdr"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-bundle-ems"
 * group[=].element[+].code = #Header.documentMetadata.identifier
 * group[=].element[=].display = "A.1.8.1 - Document ID"
 * group[=].element[=].target.code = #Bundle.identifier					
@@ -145,8 +145,8 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If it is when this particular version of  this report has been assembled into a Bundle."
-* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
+* group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #Header.subject
 * group[=].element[=].display = "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
 * group[=].element[=].target.code = #Composition.subject		
