@@ -1,0 +1,25 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Present Illness" <<LogicalModel>> [[StructureDefinition-PresentIllnessEmsCz.html]]
+note top #EEEEAE [[ConceptMap-PresentIllness2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
+
+"Present Illness" <|. "cz-encounter-ems"
+
+@enduml

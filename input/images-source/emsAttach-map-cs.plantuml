@@ -1,0 +1,36 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsEmsCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "Další přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
+
+"Přílohy" -- "Další přílohy"
+"Další přílohy" <|. "cz-attachment"
+"Přílohy" <|. "cz-attachment"
+
+"Další přílohy" -r[hidden]-> "Přílohy"
+"Další přílohy" -d[hidden]-> "cz-attachment"
+"Přílohy" -d[hidden]-> "cz-attachment"
+
+@enduml

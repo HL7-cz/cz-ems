@@ -1,0 +1,53 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Anamnéza" <<LogicalModel>> [[StructureDefinition-LogPatientHistoryCz.html]]
+note top #EEEEAE [[ConceptMap-patientHistory2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-immunizationRecommendation-ems" <<Profile>> [[StructureDefinition-cz-immunizationRecommendation-ems.html]]
+class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
+class "deviceusestatement" <<Profile>> [[https://hl7.org/fhir/R4/deviceusestatement.html]]
+class "cz-immunization-ems" <<Profile>> [[StructureDefinition-cz-immunization-ems.html]]
+class "cz-observation-sdoh-ems" <<Profile>> [[StructureDefinition-cz-observation-sdoh-ems.html]]
+class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
+class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
+class "familymemberhistory" <<Profile>> [[https://hl7.org/fhir/R4/familymemberhistory.html]]
+class "cz-observation-infectious-contact-ems" <<Profile>> [[StructureDefinition-cz-observation-infectious-contact-ems.html]]
+
+"Anamnéza" <|. "cz-composition-ems"
+"Anamnéza" <|. "cz-immunizationRecommendation-ems"
+"Anamnéza" <|. "deviceusestatement"
+"Anamnéza" <|. "cz-immunization-ems"
+"Anamnéza" <|. "cz-observation-sdoh-ems"
+"Anamnéza" <|. "cz-procedure-ems"
+"Anamnéza" <|. "observation"
+"Anamnéza" <|. "familymemberhistory"
+"Anamnéza" <|. "cz-medical-device"
+"Anamnéza" <|. "cz-observation-infectious-contact-ems"
+
+"cz-composition-ems" -d[hidden]-> "cz-immunizationRecommendation-ems"
+"cz-immunizationRecommendation-ems" -d[hidden]-> "deviceusestatement"
+"deviceusestatement" -d[hidden]-> "cz-observation-sdoh-ems"
+"cz-observation-sdoh-ems" -d[hidden]-> "cz-procedure-ems"
+"cz-procedure-ems" -d[hidden]-> "observation"
+"observation" -d[hidden]-> "familymemberhistory"
+"familymemberhistory" -d[hidden]-> "cz-immunization-ems"
+"cz-immunization-ems" -d[hidden]-> "cz-medical-device"
+"cz-medical-device" -d[hidden]-> "cz-observation-infectious-contact-ems"
+
+@enduml

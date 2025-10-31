@@ -1,0 +1,26 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical Model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Presented Form" <<LogicalModel>> [[StructureDefinition-PresentedFormCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems/StructureDefinition-cz-composition-ems.html]]
+
+"Presented Form" <|. "cz-composition-ems"
+"Presented Form" -d[hidden]-> "cz-composition-ems"
+
+@enduml

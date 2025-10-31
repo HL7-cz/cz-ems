@@ -1,0 +1,32 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Urgentní informace" <<LogicalModel>> [[StructureDefinition-LogAlertsCz.html]]
+note top #EEEEAE [[ConceptMap-Alerts2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-allergyIntolerance-ems" <<Profile>> [[StructureDefinition-cz-allergyIntolerance-ems.html]]
+class "cz-flag-ems" <<Profile>> [[StructureDefinition-cz-flag-ems.html]]
+
+"Urgentní informace" <|. "cz-composition-ems"
+"Urgentní informace" <|. "cz-allergyIntolerance-ems"
+"Urgentní informace" <|. "cz-flag-ems"
+
+"cz-composition-ems" -d[hidden]-> "cz-allergyIntolerance-ems"
+"cz-allergyIntolerance-ems" -d[hidden]-> "cz-flag-ems"
+
+@enduml

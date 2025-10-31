@@ -1,0 +1,32 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Ukončení" <<LogicalModel>> [[StructureDefinition-LogEndOfCareCz.html]]
+note top #EEEEAE [[ConceptMap-EndOfCare2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-organization-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html]]
+class "cz-practitioner-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html]]
+
+"Ukončení" <|. "cz-composition-ems"
+"Ukončení" <|. "cz-organization-core"
+"Ukončení" <|. "cz-practitioner-core"
+
+"cz-composition-ems" -d[hidden]-> "cz-organization-core"
+"cz-organization-core" -d[hidden]-> "cz-practitioner-core"
+
+@enduml

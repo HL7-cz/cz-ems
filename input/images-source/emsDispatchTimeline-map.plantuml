@@ -1,0 +1,32 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Dispatch timeline" <<LogicalModel>> [[StructureDefinition-DispatchDataCz.html]]
+note top #EEEEAE [[ConceptMap-DispatchDataEMS2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
+class "cz-task-ems" <<Profile>> [[StructureDefinition-cz-task-ems.html]]
+class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
+
+"Dispatch timeline" <|. "cz-encounter-ems"
+"Dispatch timeline" <|. "cz-task-ems"
+"Dispatch timeline" <|. "cz-communication-ems"
+
+"cz-encounter-ems" -d[hidden]-> "cz-task-ems"
+"cz-task-ems" -d[hidden]-> "cz-communication-ems"
+
+@enduml

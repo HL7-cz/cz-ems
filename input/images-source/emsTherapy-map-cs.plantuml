@@ -1,0 +1,32 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Terapie" <<LogicalModel>> [[StructureDefinition-LogTherapyEmsCz.html]]
+note top #EEEEAE [[ConceptMap-Therapy2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
+class "cz-medical-device" <<Profile>> [[StructureDefinition-cz-medical-device.html]]
+class "cz-MedicationAdministration" <<Profile>> [[StructureDefinition-cz-MedicationAdministration.html]]
+
+"Terapie" <|. "cz-procedure-ems"
+"Terapie" <|. "cz-medical-device"
+"Terapie" <|. "cz-MedicationAdministration"
+
+"cz-procedure-ems" -d[hidden]-> "cz-medical-device"
+"cz-medical-device" -d[hidden]-> "cz-MedicationAdministration"
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "Objektivní nález" <<LogicalModel>> [[StructureDefinition-LogObjectiveFindingsEmsCz.html]]
+note top #EEEEAE [[ConceptMap-FindingsEMS2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-observation-height-ems" <<Profile>> [[StructureDefinition-cz-observation-height-ems.html]]
+class "cz-observation-weight-ems" <<Profile>> [[StructureDefinition-cz-observation-weight-ems.html]]
+class "cz-observation-BMI-ems" <<Profile>> [[StructureDefinition-cz-observation-BMI-ems.html]]
+class "cz-observation-vitalSigns-ems" <<Profile>> [[StructureDefinition-cz-observation-vitalSigns-ems.html]]
+class "cz-observation-oxygen-ems" <<Profile>> [[StructureDefinition-cz-observation-oxygen-ems.html]]
+class "cz-observation-OtherOF-ems" <<Profile>> [[StructureDefinition-cz-observation-OtherOF-ems.html]]
+class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
+
+"Objektivní nález" <|. "cz-composition-ems"
+"Objektivní nález" <|. "cz-observation-height-ems"
+"Objektivní nález" <|. "cz-observation-weight-ems"
+"Objektivní nález" <|. "cz-observation-BMI-ems"
+"Objektivní nález" <|. "cz-observation-oxygen-ems"
+"Objektivní nález" <|. "cz-observation-OtherOF-ems"
+"Objektivní nález" <|. "observation"
+
+"cz-composition-ems" -d[hidden]-> "cz-observation-height-ems"
+"cz-observation-height-ems" -d[hidden]-> "cz-observation-weight-ems"
+"cz-observation-weight-ems" -d[hidden]-> "cz-observation-BMI-ems"
+"cz-observation-BMI-ems" -d[hidden]-> "cz-observation-oxygen-ems"
+"cz-observation-oxygen-ems" -d[hidden]-> "cz-observation-OtherOF-ems"
+"cz-observation-OtherOF-ems" -d[hidden]-> "cz-observation-vitalSigns-ems"
+"cz-observation-vitalSigns-ems" -d[hidden]-> "observation"
+
+@enduml

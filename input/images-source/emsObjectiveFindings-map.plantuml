@@ -1,0 +1,46 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Findings" <<LogicalModel>> [[StructureDefinition-ObjectiveFindingsEmsCz.html]]
+note top #EEEEAE [[ConceptMap-FindingsEMS2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-observation-height-ems" <<Profile>> [[StructureDefinition-cz-observation-height-ems.html]]
+class "cz-observation-weight-ems" <<Profile>> [[StructureDefinition-cz-observation-weight-ems.html]]
+class "cz-observation-BMI-ems" <<Profile>> [[StructureDefinition-cz-observation-BMI-ems.html]]
+class "cz-observation-vitalSigns-ems" <<Profile>> [[StructureDefinition-cz-observation-vitalSigns-ems.html]]
+class "cz-observation-oxygen-ems" <<Profile>> [[StructureDefinition-cz-observation-oxygen-ems.html]]
+class "cz-observation-OtherOF-ems" <<Profile>> [[StructureDefinition-cz-observation-OtherOF-ems.html]]
+class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
+
+"Findings" <|. "cz-composition-ems"
+"Findings" <|. "cz-observation-height-ems"
+"Findings" <|. "cz-observation-weight-ems"
+"Findings" <|. "cz-observation-BMI-ems"
+"Findings" <|. "cz-observation-oxygen-ems"
+"Findings" <|. "cz-observation-OtherOF-ems"
+"Findings" <|. "observation"
+
+"cz-composition-ems" -d[hidden]-> "cz-observation-height-ems"
+"cz-observation-height-ems" -d[hidden]-> "cz-observation-weight-ems"
+"cz-observation-weight-ems" -d[hidden]-> "cz-observation-BMI-ems"
+"cz-observation-BMI-ems" -d[hidden]-> "cz-observation-oxygen-ems"
+"cz-observation-oxygen-ems" -d[hidden]-> "cz-observation-OtherOF-ems"
+"cz-observation-OtherOF-ems" -d[hidden]-> "cz-observation-vitalSigns-ems"
+"cz-observation-vitalSigns-ems" -d[hidden]-> "observation"
+
+@enduml

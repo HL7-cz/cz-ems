@@ -1,0 +1,36 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical Model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsEMSCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-en.html]]
+Concept Map
+endnote
+
+class "Additional Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-en.html]]
+Concept Map
+endnote
+
+class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
+
+"Attachments" -- "Additional Attachments"
+"Additional Attachments" <|. "cz-attachment"
+"Attachments" <|. "cz-attachment"
+
+"Additional Attachments" -r[hidden]-> "Attachments"
+"Additional Attachments" -d[hidden]-> "cz-attachment"
+"Attachments" -d[hidden]-> "cz-attachment"
+
+@enduml
