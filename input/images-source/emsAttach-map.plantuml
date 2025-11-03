@@ -23,13 +23,19 @@ note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-en.html]]
 Concept Map
 endnote
 
+class "Presented Form" <<LogicalModel>> [[StructureDefinition-PresentedFormCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems/StructureDefinition-cz-composition-ems.html]]
 class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
 
-"Attachments" -- "Additional Attachments"
+"Presented Form" <|. "cz-composition-ems"
 "Additional Attachments" <|. "cz-attachment"
 "Attachments" <|. "cz-attachment"
 
-"Additional Attachments" -r[hidden]-> "Attachments"
+"Presented Form" -d[hidden]-> "cz-composition-ems"
 "Additional Attachments" -d[hidden]-> "cz-attachment"
 "Attachments" -d[hidden]-> "cz-attachment"
 

@@ -87,6 +87,10 @@ pages:
     title: Logical models
   logical-models-cs.md:
     title: Datová sada - logické modely
+  model-map.md:
+    title: Model maps
+  model-map-cs.md:
+    title: Mapování logického modelu
   artifacts.xml:
     title: Artifacts
   authors.md:
@@ -109,6 +113,56 @@ pages:
     title: Implementation notes
   implementation-notes-cs.md:
     title: Poznámky k implementaci
+# === MAP ====
+  Header-map.html:
+    title: Header Model map
+  Header-map-cs.html:
+    title: Mapování logického modelu hlavičky
+  Alerts-map.html:
+    title: Alerts Model map
+  Alerts-map-cs.html:
+    title: Mapování logického urgentních informací
+  CourseOf-map.html:
+    title: Course of Treatment and Recommendations Model map
+  CourseOf-map-cs.html:
+    title: Mapování logického modelu průběhu ošetření a doporučení
+  DiagnosticSummary-map.html:
+    title: Diagnostic Summary Model map
+  DiagnosticSummary-map-cs.html:
+    title: Mapování logického modelu diagnostického souhrnu
+  DispatchData-map.html:
+    title: Dispatch Data Model map
+  DispatchData-map-cs.html:
+    title: Mapování logického modelu údajů o výjezdu
+  DispatchTimeline-map.html:
+    title: Dispatch Timeline Model map
+  DispatchTimeline-map-cs.html:
+    title: Mapování logického modelu časové osy výjezdu
+  EndOfCare-map.html:
+    title: End of Care Model map
+  EndOfCare-map-cs.html:
+    title: Mapování logického modelu ukončení výjezdu
+  ObjectiveFindings-map.html:
+    title: Objective Findings Model map
+  ObjectiveFindings-map-cs.html:
+    title: Mapování logického modelu objektivních nálezů
+  PatientHistory-map.html:
+    title: Patient History Model map
+  PatientHistory-map-cs.html:
+    title: Mapování logického modelu anamnézy
+  PresentIllness-map.html:
+    title: Present Illness Model map
+  PresentIllness-map-cs.html:
+    title: Mapování logického modelu nynějších onemocnění
+  Therapy-map.html:
+    title: Therapy Model map
+  Therapy-map-cs.html:
+    title: Mapování logického modelu terapie
+  Attachment-map.html:
+    title: Presented Form and Attachment Model map
+  Attachment-map-cs.html:
+    title: Mapování logického modelu vizuální podoby dokumentu a příloh
+
 # artifacts.xml:
 #   title: Summary artifacts
 # profiles-and-extensions.md:
@@ -199,6 +253,8 @@ menu:
     Logical models (en): logical-models.html
     Logical models (cs): logical-models-cs.html
   Implementation:
+    Mapping to profiles (en): model-map.html
+    Mapping to profiles (cs): model-map-cs.html  
     Examples (en): examples.html
     Examples (cs): examples-cs.html
     Implementation notes (en): implementation-notes.html

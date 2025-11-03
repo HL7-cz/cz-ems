@@ -23,13 +23,19 @@ note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
 Concept Mapa
 endnote
 
+class "Vizuální podoba dokumentu" <<LogicalModel>> [[StructureDefinition-LogPresentedFormCz.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems/StructureDefinition-cz-composition-ems.html]]
 class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
 
-"Přílohy" -- "Další přílohy"
+"Vizuální podoba dokumentu" <|. "cz-composition-ems"
 "Další přílohy" <|. "cz-attachment"
 "Přílohy" <|. "cz-attachment"
 
-"Další přílohy" -r[hidden]-> "Přílohy"
+"Vizuální podoba dokumentu" -d[hidden]-> "cz-composition-ems"
 "Další přílohy" -d[hidden]-> "cz-attachment"
 "Přílohy" -d[hidden]-> "cz-attachment"
 
