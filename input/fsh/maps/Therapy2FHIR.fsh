@@ -52,7 +52,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/TherapyEmsCz"
-* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-MedicationAdministration"
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-medication-administration"
 * group[=].element[+].code = #TherapyEmsCz.Medication
 * group[=].element[=].display = "A.2.7.3 Medication"
 * group[=].element[=].target.code = #CZ_ProcedureEms.usedReference			

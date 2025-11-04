@@ -1,7 +1,7 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile:    CZ_MedicationAdministration
 Parent:     MedicationAdministration
-Id:         cz-MedicationAdministration
+Id:         cz-medication-administration
 Title:      "Medication Administration: EMS Report (CZ)"
 Description: "Czech national profile for a medication administration."
 //-------------------------------------------------------------------------------------------
