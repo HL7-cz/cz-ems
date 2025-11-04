@@ -15,17 +15,14 @@ Tato příručka je rozdělena na několik stránek, které jsou uvedeny v horn�
 - [Home - Domovská stránka](index-cs.html) - Domovská stránka: Tato stránka poskytuje úvodní informace, stručný rozsah použití, reference, závislosti, rozdílovou analýzu verzí a prohlášení o duševním vlastnictví. 
 - Introduction: 
   - [Rozsah použití a obsah](scope-and-content-cs.html): Tento segment obsahuje úvodní obecné informace o záznamu o výjezdu. 
-  - Background: Tento segment obsahuje obecné informace o původu definice záznamu o výjezdu 
+  - [Background](background-cs.html): Tento segment obsahuje obecné informace o původu definice záznamu o výjezdu 
 - Functional: 
-  - Případy užití: Tento segment obsahuje informace o případech použití. 
-  - Workflow: Tento segment obsahuje informace o pracovním postupu. 
-  - Logické modely: Tento segment obsahuje informace o logických modelech. 
-  - Terminologické aspekty: Tento segment obsahuje informace o terminologii. 
+  - [Případy užití](use-cases-cs.html): Tento segment obsahuje informace o případech použití. 
+  - [Logické modely](logical-model-cs.html): Tento segment obsahuje informace o logických modelech. 
 - Implementation: 
-  - Mapování logického modelu: Tento segment obsahuje informace o mapování logického modelu na profily záznamu o výjezdu. 
-  - Příklady: Tento segment obsahuje informace o příkladech. 
-  - Povinnosti: Tento segment obsahuje informace o povinnostech. 
-  - Poznámky k implementaci: Tento segment obsahuje informace pro implementaci. 
+  - [Mapování logického modelu](model-map-cs.html): Tento segment obsahuje informace o mapování logického modelu na profily záznamu o výjezdu. 
+  - [Příklady](examples-cs.html): Tento segment obsahuje informace o příkladech. 
+  - [Poznámky k implementaci](implementation-notes.html): Tento segment obsahuje informace pro implementaci. 
 - About: 
   - [Autoři](authors-cs.html): Tento segment obsahuje informace o autorech. 
   - [Downloads](downloads-cs.html): Tento segment obsahuje informace o možnostech stahování obsahu implementační specifikace. 

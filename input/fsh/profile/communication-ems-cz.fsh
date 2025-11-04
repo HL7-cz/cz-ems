@@ -11,13 +11,13 @@ Description: "CZ Emergency Medical Service Communication Resource"
 
 // A.2.1.4 Identifikace operátorů ZOS
 * recipient 1..* MS                      // A.2.1.4 (operátor/ři)
-* recipient only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or RelatedPerson)
+* recipient only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_RelatedPersonCore)
 * recipient.identifier 1..1 MS           // A.2.1.4.1 Identifikátor operátora (může být přímo v Reference)
 
 // A.2.1.4.4 role operátora – přes PractitionerRole.code (na referencovaném zdroji)
 // Jména operátora (A.2.1.4.2/4.3) dodá referencovaný Practitioner (MS)
 
 // A.2.1.8 Kontakt volajícího
-* sender only Reference(RelatedPerson)
+* sender only Reference(CZ_RelatedPersonCore)
 
 

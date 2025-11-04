@@ -13,17 +13,14 @@ This guide is divided into several pages, which are listed in the menu bar at th
 - [Home](index.html): This page provides introductory information, a brief scope of use, references, dependencies, version difference analysis, and intellectual property statements. 
 - Introduction: 
   - [Scope and Content](scope-and-content.html): This section contains introductory general information about the EMS Record of Intervention. 
-  - Background: This section provides general information on the origins of the definition of the EMS Record of Intervention. 
+  - [Background](background.html): This section provides general information on the origins of the definition of the EMS Record of Intervention. 
 - Functional: 
-  - Use Cases: This section contains information about use cases. 
-  - Workflow: This section contains information about the workflow. 
-  - Logical Models: This section contains information about logical models.  
-  - Terminology Aspects: This section contains information about terminology. 
+  - [Use Cases](use-cases.html): This section contains information about use cases. 
+  - [Logical Models](logical-model.html): This section contains information about logical models.  
 - Implementation: 
-  - Logical Model Mapping: This section contains information on mapping the logical model to the EMS Record of Intervention profiles. 
-  - Examples: This section contains examples. 
-  - Obligations: This section outlines the obligations. 
-  - Implementation Notes: This section contains implementation guidance. 
+  - [Mapping to profiles](model-map.html): This section contains information on mapping the logical model to the EMS Record of Intervention profiles. 
+  - [Examples](examples.html): This section contains examples. 
+  - [Implementation Notes](implementation-notes.html): This section contains implementation guidance. 
 - About: 
   - [Authors](authors.html): This section contains information about the authors. 
   - [Downloads](downloads.html): This section provides information about available downloads of the implementation specification. 

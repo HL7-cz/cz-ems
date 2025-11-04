@@ -26,7 +26,7 @@ class "cz-careteam-ems" <<Profile>> [[StructureDefinition-cz-careteam-ems.html]]
 class "cz-practitioner-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html]]
 class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
 class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
-class "relatedperson" <<Profile>> [[https://hl7.org/fhir/R4/relatedperson.html]]
+class "cz-relatedPerson-core" <<Profile>> [[https://hl7.cz/fhir/core/StructureDefinition/cz-relatedPerson-core.html]]
 
 "Dispatch data" <|. "cz-composition-ems"
 "Dispatch data" <|. "cz-task-ems"
@@ -36,7 +36,7 @@ class "relatedperson" <<Profile>> [[https://hl7.org/fhir/R4/relatedperson.html]]
 "Dispatch data" <|. "cz-practitionerrole-core"
 "Dispatch data" <|. "cz-communication-ems"
 "Dispatch data" <|. "cz-vehicle-location-ems"
-"Dispatch data" <|. "relatedperson"
+"Dispatch data" <|. "cz-relatedPerson-core"
 
 "cz-composition-ems" -d[hidden]-> "cz-task-ems"
 "cz-task-ems" -d[hidden]-> "cz-location-ems"
@@ -45,6 +45,6 @@ class "relatedperson" <<Profile>> [[https://hl7.org/fhir/R4/relatedperson.html]]
 "cz-practitionerrole-core" -d[hidden]-> "cz-communication-ems"
 "cz-communication-ems" -d[hidden]-> "cz-careteam-ems"
 "cz-careteam-ems" -d[hidden]-> "cz-vehicle-location-ems"
-"cz-vehicle-location-ems" -d[hidden]-> "relatedperson"
+"cz-vehicle-location-ems" -d[hidden]-> "cz-relatedPerson-core"
 
 @enduml

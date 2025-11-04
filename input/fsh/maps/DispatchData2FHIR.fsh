@@ -220,7 +220,7 @@ Usage: #definition
 
 // ---- Caller Contact details → RelatedPerson ----
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-relatedPerson-core"
 * group[=].element[+].code = #callerContact
 * group[=].element[=].display = "A.2.1.8 - Caller Contact"
 * group[=].element[=].target.code = #Composition.section:dispatch
