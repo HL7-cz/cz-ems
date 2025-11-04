@@ -365,6 +365,7 @@ groups:
     resources:
       - StructureDefinition/LogEmsReportCz
       - StructureDefinition/LogHeaderEmsCz
+      - StructureDefinition/logSubjectCz
       - StructureDefinition/LogDispatchDataCz
       - StructureDefinition/LogDispatchTimelineCz
       - StructureDefinition/LogPatientHistoryCz

@@ -1,7 +1,7 @@
 Logical: LogCzEmsReportCz
 Id: LogEmsReportCz
-Title: "A - Zpráva o výjezdu (cz)"
-Description: """Zpráva o výjezdu CZ"""
+Title: "A - Zpráva o výjezdu ZSS (cz)"
+Description: """Zpráva o výjezdu ZSS CZ"""
 
 
 * hlavicka 1..1 LogHeaderEmsCz "A.1 - Hlavička dokumentu" """Hlavička zprávy o výjezdu – podle české specifikace"""
