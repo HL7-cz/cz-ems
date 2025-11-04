@@ -1,7 +1,7 @@
 Logical: LogEnTherapyEmsCz
 Id: TherapyEmsCz
 Title: "A.2.7 - Therapy"
-Description: """Emergency medical service report - Therapy"""
+Description: """EMS Report - Therapy"""
 
 * procedures 0..* Base "A.2.7.1 - Procedures" """Medical procedures according to the EMS (Emergency Medical Service) codebook."""
   * name 1..1 CodeableConcept "A.2.7.1.1 - Procedure name" """The name of the procedure according to the EMS codebook."""

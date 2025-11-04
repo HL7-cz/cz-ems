@@ -1,7 +1,7 @@
 Logical: LogEnDispatchDataCz
 Id: DispatchDataCz
-Title: "A.2.1 - Dispatch Data (en)"
-Description: """EMS report – Dispatch Data – A.2.1 EN"""
+Title: "A.2.1 - Dispatch Data"
+Description: """EMS Report - Dispatch Data"""
 
 * dispatchIdentification 1..1 Base "A.2.1.1 - Dispatch Identification" """Identification of the dispatch"""
   * dispatchNumber 1..1 Identifier "A.2.1.1.1 - Dispatch Identifier" """Dispatch Identifier"""

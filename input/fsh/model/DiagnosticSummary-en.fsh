@@ -1,7 +1,7 @@
 Logical: LogEnDiagnosticSummary
 Id: LogDiagnosticSummary
-Title: "A.2.8 - Diagnostic Summary (en)"
-Description: """Emergency Medical Service Report – Diagnostic Summary – A.2.8 EN"""
+Title: "A.2.8 - Diagnostic Summary"
+Description: """EMS Report - Diagnostic Summary"""
 
 * diagnosticSummary 1..* Base "A.2.8 Diagnostic summary" """All problems/diagnoses that affect care during EMS."""
   * specificationDiagnoses 1..1 string "A.2.8.1 - Specification of diagnoses in free text" """Specification of diagnoses or problems in free text"""

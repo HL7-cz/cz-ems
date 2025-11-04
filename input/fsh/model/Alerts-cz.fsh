@@ -1,7 +1,7 @@
 Logical: LogCzAlertsCz
 Id: LogAlertsCz
-Title: "A.2.4 - Urgentní informace (cz)"
-Description: """Zpráva o výjezdu ZZS - Urgentní informace CZ"""
+Title: "A.2.4 - Urgentní informace"
+Description: """Záznam o výjezdu ZZS - Urgentní informace"""
 
 * alergie 1..* Base "A.2.4.1 - Alergie a intolerance" """Záznam alergie a intolerance je povinný. U pacientů, bez alergie či intolerance je nutné tento fakt explicitně vyjádřit příslušným kódem."""
 * alergie.popis 0..1 string "A.2.4.1.1 - Popis alergie" """Textové doplnění informací volným textem. Je určeno pro zápis informací, které nelze zapsat strukturovaně."""

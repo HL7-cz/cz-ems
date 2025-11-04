@@ -1,7 +1,7 @@
 Logical: LogCzTherapyEmsCz
 Id: LogTherapyEmsCz
 Title: "A.2.7 - Terapie"
-Description: "Zpráva o výjezdu ZZS - Terapie."
+Description: "Záznam o výjezdu ZZS - Terapie."
 
 * vykony 0..* Base "A.2.7.1 - Výkony" """Zdravotnické výkony dle čísleníku ZZS."""
   * nazev 1..1 CodeableConcept "A.2.7.1.1 - Název výkonu" """Název výkonu dle číselníku ZZS."""

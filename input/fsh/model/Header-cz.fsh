@@ -1,7 +1,7 @@
 Logical: LogCzHeaderEmsCz
 Id: LogHeaderEmsCz
-Title: "A.1 – Hlavička dokumentu (cz)"
-Description: "Zpráva o výjezdu ZZS - Struktura hlavičky zprávy o výjezdu podle tabulky části. CZ"
+Title: "A.1 – Hlavička dokumentu"
+Description: "Záznam o výjezdu ZZS - Struktura hlavičky zprávy o výjezdu podle tabulky části"
 
 * subjekt 1..1 logSubjectCz "A.1.1 - Identifikace a A.1.2 - Kontaktní informace pacienta" """Identifikace pacienta a kontaktní informace pacienta"""
 

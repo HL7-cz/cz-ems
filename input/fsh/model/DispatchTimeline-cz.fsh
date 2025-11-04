@@ -1,7 +1,7 @@
 Logical: LogCzDispatchTimelineCz
 Id: LogDispatchTimelineCz
-Title: "A.2.2 - Časová osa výjezdu (cz)"
-Description: """Záznam o výjezdu - Časová osa výjezdu - A.2.2 CZ"""
+Title: "A.2.2 - Časová osa výjezdu"
+Description: """Záznam o výjezdu ZZS - Časová osa výjezdu"""
 
 * casOznameniUdalosti 0..1 dateTime "A.2.2.1 - Čas oznámení události" """Přijetí oznámení na operačním středisku"""
 * casVyzvy 1..1 dateTime "A.2.2.2 - Čas výzvy" """Předání pokynu k výjezdu výjezdové skupině"""

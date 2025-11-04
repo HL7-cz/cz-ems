@@ -366,6 +366,7 @@ groups:
       - StructureDefinition/LogEmsReportCz
       - StructureDefinition/LogHeaderEmsCz
       - StructureDefinition/logSubjectCz
+      - StructureDefinition/logDigitalSignatureCz
       - StructureDefinition/LogDispatchDataCz
       - StructureDefinition/LogDispatchTimelineCz
       - StructureDefinition/LogPatientHistoryCz

@@ -1,7 +1,7 @@
 Logical: LogEnRecommendations
 Id: LogRecommendations
-Title: "A.2.9 - Course of Treatment and Recommendations (en)"
-Description: """Emergency Medical Service Report – Course of Treatment and Recommendations – A.2.9 EN"""
+Title: "A.2.9 - Course of Treatment and Recommendations"
+Description: """EMS Report - Course of Treatment and Recommendations"""
 
 * courseOfTreatment 0..* Base "A.2.9.1 - Course of Treatment" """Summary of the course of treatment and progression of the patient’s condition."""
   * description 1..1 string "A.2.9.1.1 - Course Description" """Text description of the course of treatment. Entered by the physician as free text."""

@@ -1,7 +1,7 @@
 Logical: LogEnHeaderEmsCz
 Id: HeaderEmsCz
-Title: "A.1 - EMS report header data element (en)"
-Description: """EMS report - EMS report header data element - A.1 EN"""
+Title: "A.1 - EMS Report header data element"
+Description: """EMS Report - EMS report header data element"""
 
 //TODO - upravit Base - > Subject
 * subject 1..1 SubjectCz "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject" """Identification of the patient/subject and Patient/subject related contact information"""

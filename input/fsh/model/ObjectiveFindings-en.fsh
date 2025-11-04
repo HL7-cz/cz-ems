@@ -1,7 +1,7 @@
 Logical: LogEnObjectiveFindingsEmsCz
 Id: ObjectiveFindingsEmsCz
 Title: "A.2.6 - Objective findings"
-Description: """Emergency medical service report - Objective Findings"""
+Description: """EMS Report - Objective Findings"""
 
 * antropometricData 0..* Base "A.2.6.1 - Anthropometric Data" """Results of patient's anthropometric measurements: height, weight, BMI (automatic calculation from the given values). Optional: head, chest, abdomen circumference."""
   * textResult 0..1 string "A.2.6.1.1 - Examination result text" """Textual description of the examination result."""

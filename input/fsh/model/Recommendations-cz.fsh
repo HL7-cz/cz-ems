@@ -1,7 +1,7 @@
 Logical: LogCzRecommendationsCz
 Id: LogRecommendationsCz
-Title: "A.2.9 - Průběh ošetření a doporučení (cz)"
-Description: """Zpráva o výjezdu ZZS – Průběh ošetření a doporučení – A.2.9 CZ"""
+Title: "A.2.9 - Průběh ošetření a doporučení"
+Description: """Záznam o výjezdu ZZS - Průběh ošetření a doporučení"""
 
 * prubehOsetreni 0..* Base "A.2.9.1 - Průběh ošetření" """Shrnutí průběhu ošetření, vývoje stavu"""
   * popis 1..1 string "A.2.9.1.1 - Popis průběhu ošetření" """Textový popis průběhu ošetření. Zadává lékař volným textem."""

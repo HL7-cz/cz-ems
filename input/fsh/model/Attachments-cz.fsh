@@ -1,7 +1,7 @@
 Logical: LogCzAttachmentsCz
 Id: LogAttachmentsCz
 Title: "A.4 - Přílohy"
-Description: """Záznam o výjezdu - Přílohy"""
+Description: """Záznam o výjezdu ZZS - Přílohy"""
 
 * typObsahu 0..1 CodeableConcept "A.4.1 - Typ obsahu" """Typ obsahu - je  požadován MIME typ"""
 * jazyk 0..1 CodeableConcept "A.4.2 - Jazyk obsahu" """Jazyk obsahu - je požadována hodnata z HL7 valueset Languages"""

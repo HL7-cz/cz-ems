@@ -1,7 +1,7 @@
 Logical: LogCzPresentedFormCz
 Id: LogPresentedFormCz
 Title: "A.3 - Vizuální podoba dokumentu"
-Description: """Záznam o výjezdu - Záznamu o výjezdu ZZS (ZOV ZZS) čitelná lidským okem, je požadován PDF formát."""
+Description: """Záznam o výjezdu ZZS - Záznamu o výjezdu ZZS (ZOV ZZS) čitelná lidským okem, je požadován PDF formát."""
 
 * vizualniPodoba 1..* Base "A.3 - Vizuální podoba" """Vizuální podoba dokumentu"""
   * typObsahu 0..1 CodeableConcept "A.3.1 - Typ obsahu" """Typ obsahu - je  požadován MIME typ"""

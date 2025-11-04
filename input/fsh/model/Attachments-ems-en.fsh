@@ -1,7 +1,7 @@
 Logical: LogEnAttachmentsEMSCz
 Id: AttachmentsEMSCz
-Title: "A.2.11 - Attachments EMS"
-Description: """Emergency medical service Record - Single attachment or collection of attachments"""
+Title: "A.2.11 - Attachments"
+Description: """EMS Report - Single attachment or collection of attachments"""
 
 * attachment 1..* Base "A.2.11.1 - Attachment" """Any attachment selected by the user"""
   * type 1..1 CodeableConcept "A.2.11.1.1 - Attachment type" """Defines the attachment type"""

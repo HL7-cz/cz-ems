@@ -1,7 +1,7 @@
 Logical: LogCzEndOfCareCz
 Id: LogEndOfCareCz
-Title: "A.2.10 - Ukončení (cz)"
-Description: """Zpráva o výjezdu ZZS – Ukončení – A.2.10 CZ"""
+Title: "A.2.10 - Ukončení"
+Description: """Záznam o výjezdu ZZS - Ukončení"""
 
 * specifikaceUkonceni 1..1 Base "A.2.10.1 - Specifikace ukončení" """Specifikace ukončení péče"""
   * zpusobUkonceni 1..1 CodeableConcept "A.2.10.1.1 - Způsob ukončení" """Popis způsobu ukončení péče o pacienta. Hodnota z číselníku Způsob ukončení."""

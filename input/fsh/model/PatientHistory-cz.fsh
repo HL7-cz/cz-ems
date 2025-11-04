@@ -1,7 +1,7 @@
 Logical: LogCzPatientHistoryCz
 Id: LogPatientHistoryCz
-Title: "A.2.3 - Anamnéza (cz)"
-Description: """Zpráva o výjezdu ZZS - Anamnéza CZ"""
+Title: "A.2.3 - Anamnéza"
+Description: """Záznam o výjezdu ZZS - Anamnéza CZ"""
 
 * anamnezaOsobni 1..1 Base "A.2.3.1 - Osobní" """Osobní Anamnéza"""
   * zdravotniProblemy 1..* Base "A.2.3.1.1 - Historie zdravotních problémů" """Historie zdravotních problémů jiných, než je nynější onemocnění (které je součástí klinického shrnutí)."""

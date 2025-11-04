@@ -1,7 +1,7 @@
 Logical: LogCzDigitalSignatureCz
 Id: logDigitalSignatureCz
 Title: "A.1.9 - Elektronické podpisy"
-Description: """Elektronické podpisy - Elektronické podpisy nebo pečetě dle zákona 327/2011 §54a"""
+Description: """Záznam o výjezdu ZZS - Elektronické podpisy nebo pečetě dle zákona 327/2011 §54a"""
 
 * insert SetFmmandStatusRule ( 1, draft )
 

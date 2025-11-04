@@ -1,7 +1,7 @@
 Logical: LogEnSubjectCz
 Id: LogSubject
 Title: "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
-Description: """EMS report - EMS report subject data element - A.1.1 and A.1.2"""
+Description: """EMS Report - subject data element"""
 
 * insert SetFmmandStatusRule ( 1, draft )
 * ^language = #cs

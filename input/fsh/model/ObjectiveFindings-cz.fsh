@@ -1,7 +1,7 @@
 Logical: LogCzObjectiveFindingsEmsCz
 Id: LogObjectiveFindingsEmsCz
 Title: "A.2.6 - Objektivní nález"
-Description: "Zpráva o výjezdu ZZS - Objektivní nález."
+Description: "Záznam o výjezdu ZZS - Objektivní nález."
 
 * antropometrickeUdaje 0..* Base "A.2.6.1 - Antropometrické údaje" """Výsledky antropometrických měření pacienta: výška, hmotnost, BMI (automatický výpočet z uvedených hodnot). Volitelné: obvod hlavy, hrudníku, břicha."""
   * textovyVysledek 0..1 string "A.2.6.1.1 - Výsledek vyšetření textem" """Textový popis výsledku vyšetření."""

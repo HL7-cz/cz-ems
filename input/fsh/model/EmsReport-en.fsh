@@ -1,7 +1,7 @@
 Logical: LogEnEmsReportCz
 Id: EmsReportCz
-Title: "A - EMS Report (en)"
-Description: """EMS Report EN"""
+Title: "A - EMS Report"
+Description: """EMS Report"""
 
 * header 1..1 HeaderEmsCz "A.1 - EMS Report header data element" """EMS Report header data element"""
 * body 1..1 Base "A.2 - EMS Report body data element" """EMS Report body data element"""

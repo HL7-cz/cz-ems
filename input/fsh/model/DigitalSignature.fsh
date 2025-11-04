@@ -1,7 +1,7 @@
 Logical: LogEnDigitalSignatureCz
 Id: DigitalSignatureCz
 Title: "A.1.9 - Digital signature"
-Description: """Digital signature - Electronic signature or seal of a document according to Act 327/2011 §54a"""
+Description: """EMS Report - Electronic signature or seal of a document according to Act 327/2011 §54a"""
 
 * insert SetFmmandStatusRule ( 1, draft )
 

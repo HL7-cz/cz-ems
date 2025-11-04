@@ -1,7 +1,7 @@
 Logical: LogCzDiagnosticSummaryCz
 Id: LogDiagnostickySouhrnCz
-Title: "A.2.8 - Diagnostický souhrn (cz)"
-Description: """Zpráva o výjezdu ZZS – Diagnostický souhrn – A.2.8 CZ"""
+Title: "A.2.8 - Diagnostický souhrn"
+Description: """Záznam o výjezdu ZZS - Diagnostický souhrn"""
 
 
 * diagnostickySouhrn 1..* Base "A.2.8 Diagnostický souhrn" """Všechny problémy/diagnózy, které ovlivňují péči během výjezdu ZZS."""

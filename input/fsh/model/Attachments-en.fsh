@@ -1,7 +1,7 @@
 Logical: LogEnAttachmentsCz
 Id: AttachmentsCz
 Title: "A.4 - Additional attachments"
-Description: """EMS report - additional attachments"""
+Description: """EMS Report - additional attachments"""
 
 * insert SetFmmandStatusRule ( 1, draft )
 

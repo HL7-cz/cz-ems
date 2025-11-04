@@ -1,7 +1,7 @@
 Logical: LogEnPatientHistoryCz
 Id: PatientHistoryCz
-Title: "A.2.3 - Patient history (en)"
-Description: """EMS Report - Patient history - A.2.3 EN"""
+Title: "A.2.3 - Patient history"
+Description: """EMS Report - Patient history"""
 
 * medicalHistory 1..1 Base "A.2.3.1 - Medical history" """Medical history"""
 * medicalHistory.historyOfConditions 1..* Base "A.2.3.1.1 - History of problems" """A list of conditions of a patient that the patient suffered in the past or still suffers. Unlike diagnostic summary, medical history is not only a list of problems, but could contain broader description of the condition and its progress, details about treatment including medication and patient response to treatment. Past problem section (unlike the same section of the patient summary) should include only conditions that are important for continuity of care. This section, if provided, complements the diagnostic summary section of the discharge report."""

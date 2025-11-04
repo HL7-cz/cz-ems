@@ -1,7 +1,7 @@
 Logical: LogEnDispatchTimelineCz
 Id: DispatchTimelineCz
-Title: "A.2.2 - Dispatch Timeline (en)"
-Description: """EMS record – Dispatch Timeline – A.2.2 EN"""
+Title: "A.2.2 - Dispatch Timeline"
+Description: """EMS Report - Dispatch Timeline"""
 
 * callReceivedTime 0..1 dateTime "A.2.2.1 - Event Notification Time" """Time when the emergency call was received by the dispatch center"""
 * dispatchNotifiedTime 1..1 dateTime "A.2.2.2 - Dispatch Notification Time" """Time when the dispatch order was communicated to the responding crew"""

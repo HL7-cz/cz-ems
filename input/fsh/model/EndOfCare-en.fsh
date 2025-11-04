@@ -1,7 +1,7 @@
 Logical: LogEnEndOfCare
 Id: LogEndOfCare
-Title: "A.2.10 - End of Care (en)"
-Description: """Emergency Medical Service Report – End of Care – A.2.10 EN"""
+Title: "A.2.10 - End of Care"
+Description: """EMS Report - End of Care"""
 
 * endOfCareSpecification 1..1 Base "A.2.10.1 - End of Care Specification" """Specification of patient end of care/discharge."""
   * endOfCareMethod 1..1 CodeableConcept "A.2.10.1.1 - Method of End of Care" """Description of the way in which patient care was concluded. Value from the “Method of End of Care” code list."""
