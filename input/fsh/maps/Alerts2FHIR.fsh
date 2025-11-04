@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ Alerts Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Emergency Medical Service Report Alerts Model to this guide mapping"""
+* description = """CZ EMS Report Alerts Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/AlertsCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-allergyIntolerance-ems"

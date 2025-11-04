@@ -1,7 +1,7 @@
 Profile: CZ_FlagEms
 Parent: Flag
 Id: cz-flag-ems
-Title: "Flag: (EMS CZ)"
+Title: "Flag: EMS Report (CZ)"
 Description: """This profile constrains the Flag resource for the purpose of the EMS project."""
 
 * insert SetFmmandStatusRule (1, draft)

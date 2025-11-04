@@ -2,7 +2,7 @@
 Profile: CZ_CompositionEms
 Parent: Composition
 Id: cz-composition-ems
-Title: "Composition (EMS CZ)"
+Title: "Composition: EMS Report (CZ)"
 Description: "This profile defines how to represent Composition resource in HL7 FHIR for the scope of this guide."
 //-------------------------------------------------------------------------------------------
 

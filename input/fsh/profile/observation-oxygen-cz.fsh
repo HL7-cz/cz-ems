@@ -1,7 +1,7 @@
 Profile: CZ_ObservationOxygenEms
 Parent: Observation
 Id: cz-observation-oxygen-ems
-Title: "Observation: Oxygen Therapy Observation (EMS CZ)"
+Title: "Observation - Oxygen Therapy: EMS Report (CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch VitalSigns - Oxygen Therapy."
 //* extension contains CZOxygenFlowRate named flowRate 0..1
 

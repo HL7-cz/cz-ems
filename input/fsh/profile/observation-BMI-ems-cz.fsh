@@ -1,7 +1,7 @@
 Profile: CZ_ObservationBMIEms
 Parent: Observation
 Id: cz-observation-BMI-ems
-Title: "Observation: Anthropometric Data - BMI (EMS CZ)"
+Title: "Observation - Anthropometric Data - BMI: EMS Report (CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch anthropometric data - BMI."
 
 * ^experimental = false

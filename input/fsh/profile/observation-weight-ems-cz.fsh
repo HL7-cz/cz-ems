@@ -1,7 +1,7 @@
 Profile: CZ_ObservationWeightEms
 Parent: Observation
 Id: cz-observation-weight-ems
-Title: "Observation: Anthropometric Data - Weight (EMS CZ)"
+Title: "Observation - Anthropometric Data: EMS Report (CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch anthropometric data - weight."
 
 * ^experimental = false

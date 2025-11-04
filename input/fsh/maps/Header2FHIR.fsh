@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ Header Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Header Model to this guide mapping"""
+* description = """CZ EMS Report Header Model to this guide mapping"""
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-organization-core"
 * group[=].element[+].code = #Header.payer.insuranceCode

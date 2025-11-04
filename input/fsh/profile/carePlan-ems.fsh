@@ -1,7 +1,7 @@
 Profile: CZ_CarePlanEms
 Parent: CarePlan
 Id: cz-carePlan-ems
-Title:    "Care Plan (EMS CZ)"
+Title:    "Care Plan: EMS Report (CZ)"
 Description: """This profile constrains the CarePlan resource for the purpose of this guide."""
 
 * title ^short = "Name for the care plan"

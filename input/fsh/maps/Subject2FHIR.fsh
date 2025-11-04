@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ Subject Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Header Model to this guide mapping"""
+* description = """CZ EMS Report Subject Model to this guide mapping"""
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogSubject"
 * group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-patient-core"
 * group[=].element[+].code = #Subject.identification					

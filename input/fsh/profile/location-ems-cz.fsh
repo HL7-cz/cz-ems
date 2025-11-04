@@ -1,7 +1,7 @@
 Profile: CZ_LocationEms
 Parent: Location
 Id: cz-location-ems
-Title: "Location: (EMS CZ)"
+Title: "Location: EMS Report (CZ)"
 Description: "Location profile for Emergency Medical Service"
 
 * position 0..1                    

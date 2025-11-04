@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ DispatchData Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Emergency Medical Service Report DispatchData Model to this guide mapping"""
+* description = """CZ EMS Report DispatchData Model to this guide mapping"""
 
 // ========================= Sekce DispatchData → Composition.section:dispatch =========================
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"

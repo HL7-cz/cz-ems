@@ -2,7 +2,7 @@
 Profile: CZ_ConditionEms
 Parent: Condition
 Id: cz-condition-ems
-Title: "Condition (EMS CZ)"
+Title: "Condition: EMS Report (CZ)"
 Description: """This profile represents the constraint applied to the Condition in the scope of this guide. It supports the Diagnostic summary part of the data model."""
 //-------------------------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 Profile: CZ_ObservationVitalSignsEms
 Parent: Observation
 Id: cz-observation-vitalSigns-ems
-Title: "Observation: Vital Signs (EMS CZ)"
+Title: "Observation - Vital Signs: EMS Report (CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch Vital signs."
 
 * ^experimental = false

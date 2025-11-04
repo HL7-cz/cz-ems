@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ ClinicalCourseAndRecommendations Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Emergency Medical Service Report ClinicalCourseAndRecommendations Model to this guide mapping"""
+* description = """CZ EMS Report ClinicalCourseAndRecommendations Model to this guide mapping"""
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogRecommendations"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #Recommendations.courseOfTreatment

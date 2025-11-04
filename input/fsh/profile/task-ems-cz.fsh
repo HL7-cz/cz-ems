@@ -1,7 +1,7 @@
 Profile: CZ_TaskEms
 Parent: Task
 Id: cz-task-ems
-Title: "Task: (EMS CZ)"
+Title: "Task: EMS Report (CZ)"
 Description: "CZ Emergency Medical Service Task Resource"
 
 // A.2.1.1 Identifikace výjezdu

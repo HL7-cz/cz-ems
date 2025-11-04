@@ -1,7 +1,7 @@
 Profile: CZ_EncounterEms
 Parent: Encounter
 Id: cz-encounter-ems
-Title: "Encounter EMS (CZ)"
+Title: "Encounter: EMS Report (CZ)"
 Description: "This profile defines how to represent Encounter resource in HL7 FHIR for the scope of this guide."
 
 // A2.2.3 Čas výjezdu 1..1 Povinné Encounter.period.start

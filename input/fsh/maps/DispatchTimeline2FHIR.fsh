@@ -16,7 +16,7 @@ Usage: #definition
 * title = "CZ DispatchTimeline Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Emergency Medical Service Report DispatchTimeline Model to this guide mapping"""
+* description = """CZ EMS Report DispatchTimeline Model to this guide mapping"""
 
 
 // A2.2.1	Čas oznámení události	0..1	Požadované	Communication.received

@@ -1,7 +1,7 @@
 Profile: CZ_CommunicationEms
 Parent: Communication
 Id: cz-communication-ems
-Title: "Communication: (EMS CZ)"
+Title: "Communication: EMS Report (CZ)"
 Description: "CZ Emergency Medical Service Communication Resource"
 
 * status 1..1 MS

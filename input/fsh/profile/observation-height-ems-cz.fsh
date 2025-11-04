@@ -1,7 +1,7 @@
 Profile: CZ_ObservationHeightEms
 Parent: Observation
 Id: cz-observation-height-ems
-Title: "Observation: Anthropometric Data - Height (EMS CZ)"
+Title: "Observation - Anthropometric Data - Height: EMS Report (CZ)"
 Description: "This profile sets minimum expectations for the Observation resource to record, search, and fetch anthropometric data - height."
 
 * ^experimental = false

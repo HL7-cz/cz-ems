@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ Patient History to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ EMS Patient History Model to this guide Map"""
+* description = """CZ EMS Report Patient History Model to this guide Map"""
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/PatientHistoryCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-immunizationRecommendation-ems"
 * group[=].element[+].code = #PatientHistory.medicalHistory.vaccination.nextVaccinationDate

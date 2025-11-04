@@ -5,7 +5,7 @@ Usage: #definition
 * title = "CZ End of Care Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Emergency Medical Service Report EndOfCare Model to this guide mapping"""
+* description = """CZ EMS Report EndOfCare Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogEndOfCare"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"

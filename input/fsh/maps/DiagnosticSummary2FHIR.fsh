@@ -2,10 +2,10 @@ Instance: diagnosticSummary2FHIR-cz-ems
 InstanceOf: ConceptMap
 Usage: #definition
 * name = "DiagnosticSummary2FHIRCzEms"
-* title = "EMS diagnostic summary Model to this guide Map"
+* title = "CZ Diagnostic summary Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ EMS Diagnostic summary Model to this guide Map"""
+* description = """CZ EMS Report Diagnostic summary Model to this guide Map"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogDiagnosticSummary"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-condition-ems"
