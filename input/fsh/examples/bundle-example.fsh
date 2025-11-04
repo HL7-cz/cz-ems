@@ -56,8 +56,8 @@ Usage: #example
 * entry[organization][+].fullUrl = "urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca"
 * entry[organization][=].resource = cz-organizationAuthor-example
 
-* entry[vehicleLocation].fullUrl = "urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9"
-* entry[vehicleLocation].resource = cz-vehicle-location-example
+* entry[location][0].fullUrl = "urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9"
+* entry[location][=].resource = cz-vehicle-location-example
 
 * entry[task].fullUrl = "urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682"
 * entry[task].resource = cz-task-example
@@ -65,8 +65,8 @@ Usage: #example
 * entry[communication].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
 * entry[communication].resource = cz-communication-example
 
-* entry[location].fullUrl = "urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade"
-* entry[location].resource = cz-location-scene-example
+* entry[location][+].fullUrl = "urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade"
+* entry[location][=].resource = cz-location-scene-example
 
 * entry[allergy].fullUrl = "urn:uuid:27145145-c229-465f-a11e-6767c34c1489"
 * entry[allergy].resource = cz-allergy-intolerance-example
@@ -609,6 +609,7 @@ Description: "Example of observation - Italy travel history"
 * valueCodeableConcept.coding[0].display = "Italy"
 * valueCodeableConcept.text = "Itálie"
 * effectiveDateTime = "2025-08-01"
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 
 Instance: cz-familyMemberHistory-ems
 InstanceOf: CZ_FamilyMemberHistoryEms
@@ -639,6 +640,7 @@ Description: "Example of observation - Alcohol use"
 * valueQuantity.unit = "beer/day"
 * note.text = "Pacient uvádí dlouhodobou konzumaci přibližně 2 piva denně, bez známek závislosti."
 * effectiveDateTime = "2025-09-03"
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 
 Instance: cz-observation-smokinguse-ems-example
 InstanceOf: Observation
@@ -655,3 +657,4 @@ Description: "Example of observation - Smoking use"
 * valueQuantity.unit = "cigarettes/day"
 * note.text = "Pacient kouří přibližně 20 cigaret denně."
 * effectiveDateTime = "2025-09-03"
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)

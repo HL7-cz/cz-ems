@@ -14,12 +14,12 @@ legend right
 endlegend
 
 class "Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsEMSCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-en.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
 Concept Map
 endnote
 
 class "Additional Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-en.html]]
+note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
 Concept Map
 endnote
 

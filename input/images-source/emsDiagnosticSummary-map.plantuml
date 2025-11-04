@@ -13,7 +13,7 @@ legend right
 | <#TECHNOLOGY>  Profile |
 endlegend
 
-class "Diagnostic summary" <<LogicalModel>> [[StructureDefinition-DiagnostickySouhrnCz.html]]
+class "Diagnostic summary" <<LogicalModel>> [[StructureDefinition-LogDiagnosticSummary.html]]
 note top #EEEEAE [[ConceptMap-diagnosticSummary2FHIR-cz-ems.html]]
 Concept Map
 endnote

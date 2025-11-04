@@ -13,7 +13,7 @@ legend right
 | <#TECHNOLOGY>  Profile |
 endlegend
 
-class "Clinical course and recommendations" <<LogicalModel>> [[StructureDefinition-RecommendationsCz.html]]
+class "Clinical course and recommendations" <<LogicalModel>> [[StructureDefinition-LogRecommendations.html]]
 note top #EEEEAE [[ConceptMap-ClinicalCourseAndRecommendationsEMS2FHIR-cz.html]]
 Concept Map
 endnote
