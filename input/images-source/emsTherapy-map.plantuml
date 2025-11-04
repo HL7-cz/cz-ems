@@ -20,13 +20,13 @@ endnote
 
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
 class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
-class "cz-MedicationAdministration" <<Profile>> [[StructureDefinition-cz-MedicationAdministration.html]]
+class "cz-medication-administration" <<Profile>> [[StructureDefinition-cz-medication-administration.html]]
 
 "Therapy" <|. "cz-procedure-ems"
 "Therapy" <|. "cz-medical-device"
-"Therapy" <|. "cz-MedicationAdministration"
+"Therapy" <|. "cz-medication-administration"
 
 "cz-procedure-ems" -d[hidden]-> "cz-medical-device"
-"cz-medical-device" -d[hidden]-> "cz-MedicationAdministration"
+"cz-medical-device" -d[hidden]-> "cz-medication-administration"
 
 @enduml
