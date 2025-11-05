@@ -16,7 +16,6 @@ Description: """Záznam o výjezdu ZZS"""
   * diagnostickySouhrn 0..1 LogDiagnostickySouhrnCz "A.2.8 Diagnostický souhrn" """Diagnostický souhrn"""
   * prubehDoporuceni 0..1 LogRecommendationsCz "A.2.9 Průběh, Doporučení" """Průběh, Doporučení"""
   * ukonceni 1..1 LogEndOfCareCz "A.2.10 Ukončení" """Ukončení"""
-  * prilohyEms 0..1 LogAttachmentsEmsCz "A.2.11 Přílohy výjezdu" """Přílohy výjezdu"""
 
 * zobrazitelnaForma 1..1 LogPresentedFormCz "A.3 - Zobrazitelná forma dokumentu" """Zobrazená verze dokumentu, doporučeno PDF."""
 * prilohy 0..* LogAttachmentsCz "A.4 - Přílohy" """Přiložené obrázky, dokumenty nebo jiná média."""

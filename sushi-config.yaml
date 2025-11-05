@@ -377,7 +377,6 @@ groups:
       - StructureDefinition/LogTherapyEmsCz
       - StructureDefinition/LogRecommendationsCz
       - StructureDefinition/LogEndOfCareCz
-      - StructureDefinition/LogAttachmentsEmsCz
       - StructureDefinition/LogPresentedFormCz
       - StructureDefinition/LogAttachmentsCz
 #
