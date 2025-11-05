@@ -13,12 +13,7 @@ legend right
 | <#TECHNOLOGY>  Profile |
 endlegend
 
-class "Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsEMSCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
-Concept Map
-endnote
-
-class "Additional Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsCz.html]]
+class "Attachments" <<LogicalModel>> [[StructureDefinition-AttachmentsCz.html]]
 note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
 Concept Map
 endnote
@@ -32,11 +27,9 @@ class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems
 class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
 
 "Presented Form" <|. "cz-composition-ems"
-"Additional Attachments" <|. "cz-attachment"
 "Attachments" <|. "cz-attachment"
 
 "Presented Form" -d[hidden]-> "cz-composition-ems"
-"Additional Attachments" -d[hidden]-> "cz-attachment"
 "Attachments" -d[hidden]-> "cz-attachment"
 
 @enduml

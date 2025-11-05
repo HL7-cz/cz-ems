@@ -13,12 +13,7 @@ legend right
 | <#TECHNOLOGY>  Profil |
 endlegend
 
-class "Přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsEmsCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
-Concept Mapa
-endnote
-
-class "Další přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsCz.html]]
+class "Přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsCz.html]]
 note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
 Concept Mapa
 endnote
@@ -32,11 +27,9 @@ class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems
 class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]
 
 "Vizuální podoba dokumentu" <|. "cz-composition-ems"
-"Další přílohy" <|. "cz-attachment"
 "Přílohy" <|. "cz-attachment"
 
 "Vizuální podoba dokumentu" -d[hidden]-> "cz-composition-ems"
-"Další přílohy" -d[hidden]-> "cz-attachment"
 "Přílohy" -d[hidden]-> "cz-attachment"
 
 @enduml
