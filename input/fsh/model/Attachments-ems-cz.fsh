@@ -1,7 +1,7 @@
 Logical: LogCzAttachmentsEmsCz
 Id: LogAttachmentsEmsCz
 Title: "A.2.11 - Přílohy"
-Description: """Záznam o výjezdu ZZS - Jedna příloha nebo kolekce příloh"""
+Description: """Záznam o výjezdu ZZS - Jedna příloha nebo kolekce příloh."""
 
 * priloha 1..* Base "A.2.11.1 - Příloha" """Libovolná příloha vybraná uživatelem"""
   * typ 1..1 CodeableConcept "A.2.11.1.1 - Typ přílohy" """Definuje typ přílohy"""

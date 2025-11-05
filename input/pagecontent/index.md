@@ -16,7 +16,7 @@ This guide is divided into several pages, which are listed in the menu bar at th
   - [Background](background.html): This section provides general information on the origins of the definition of the EMS Record of Intervention. 
 - Functional: 
   - [Use Cases](use-cases.html): This section contains information about use cases. 
-  - [Logical Models](logical-model.html): This section contains information about logical models.  
+  - [Logical Models](logical-models.html): This section contains information about logical models.  
 - Implementation: 
   - [Mapping to profiles](model-map.html): This section contains information on mapping the logical model to the EMS Record of Intervention profiles. 
   - [Examples](examples.html): This section contains examples. 

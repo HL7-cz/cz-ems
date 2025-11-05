@@ -26,7 +26,7 @@ class "cz-careteam-ems" <<Profile>> [[StructureDefinition-cz-careteam-ems.html]]
 class "cz-practitioner-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html]]
 class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
 class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
-class "cz-relatedPerson-core" <<Profile>> [[https://hl7.cz/fhir/core/StructureDefinition/cz-relatedPerson-core.html]]
+class "cz-relatedPerson-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-relatedPerson-core.html]]
 
 "Dispatch data" <|. "cz-composition-ems"
 "Dispatch data" <|. "cz-task-ems"

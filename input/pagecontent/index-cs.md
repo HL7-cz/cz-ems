@@ -18,7 +18,7 @@ Tato příručka je rozdělena na několik stránek, které jsou uvedeny v horn�
   - [Background](background-cs.html): Tento segment obsahuje obecné informace o původu definice záznamu o výjezdu 
 - Functional: 
   - [Případy užití](use-cases-cs.html): Tento segment obsahuje informace o případech použití. 
-  - [Logické modely](logical-model-cs.html): Tento segment obsahuje informace o logických modelech. 
+  - [Logické modely](logical-models-cs.html): Tento segment obsahuje informace o logických modelech. 
 - Implementation: 
   - [Mapování logického modelu](model-map-cs.html): Tento segment obsahuje informace o mapování logického modelu na profily záznamu o výjezdu. 
   - [Příklady](examples-cs.html): Tento segment obsahuje informace o příkladech. 

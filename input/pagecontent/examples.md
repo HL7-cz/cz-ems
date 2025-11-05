@@ -10,7 +10,6 @@ Example of Emergency medical service report: [EMS report of patient Novotný](Bu
 - Example [Communication](Communication-83c6052f-3e0d-4146-a789-c0ad61cb4cae.html)
 - Example [Composition](Composition-da3f987f-2a08-431a-92e3-129d7689e465.html)
 - Example [Condition - Diagnosis](Condition-bccc3ea9-d77f-4253-88c3-53b886f5b425.html)
-- Example [Condition - handover](Condition-7c3c7c3d-b5ca-451b-9446-4944598b01db.html)
 - Example [Coverage - health insurance](Coverage-ba0e590d-252e-4a52-89ed-b10fa02b6c66.html)
 - Example [Encounter](Encounter-cd343afa-039d-4576-b5e4-e89598aeb628.html)
 - Example [Family history](FamilyMemberHistory-9a26eaee-9315-420d-a47c-8e8329511aaf.html)
