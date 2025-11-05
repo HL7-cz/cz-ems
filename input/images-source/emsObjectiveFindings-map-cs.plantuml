@@ -33,6 +33,7 @@ class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
 "Objektivní nález" <|. "cz-observation-BMI-ems"
 "Objektivní nález" <|. "cz-observation-oxygen-ems"
 "Objektivní nález" <|. "cz-observation-OtherOF-ems"
+"Objektivní nález" <|. "cz-observation-vitalSigns-ems"
 "Objektivní nález" <|. "observation"
 
 "cz-composition-ems" -d[hidden]-> "cz-observation-height-ems"

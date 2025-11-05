@@ -33,6 +33,7 @@ class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
 "Findings" <|. "cz-observation-BMI-ems"
 "Findings" <|. "cz-observation-oxygen-ems"
 "Findings" <|. "cz-observation-OtherOF-ems"
+"Findings" <|. "cz-observation-vitalSigns-ems"
 "Findings" <|. "observation"
 
 "cz-composition-ems" -d[hidden]-> "cz-observation-height-ems"

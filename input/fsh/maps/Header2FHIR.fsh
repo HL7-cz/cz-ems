@@ -74,77 +74,29 @@ Usage: #definition
 * group[=].element[=].display = "A.1.5.4 - Author organisation"
 * group[=].element[=].target.code = #PractitionerRole.organization					
 * group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[+].code = #Header.attester
-* group[=].element[=].display = "A.1.6 - Attester (multiple attesters could be provided)"
-* group[=].element[=].target.code = #PractitionerRole
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'professional' AND Composition.attester.party.resolve().ofType(PractitionerRole).confirmsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core')"
-* group[=].element[+].code = #Header.attester.identifier
-* group[=].element[=].display = "A.1.6.1 - Attester identifier"
-* group[=].element[=].target.code = #PractitionerRole.identifier					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[+].code = #Header.attester.name
-* group[=].element[=].display = "A.1.6.2 - Attester name"
-* group[=].element[=].target.code = #PractitionerRole.practictioner.name					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[+].code = #Header.attester.organizationID
-* group[=].element[=].display = "A.1.6.3 - Attester organisation ID"
-* group[=].element[=].target.code = #PractitionerRole.organization.identifier					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[+].code = #Header.attester.organization
-* group[=].element[=].display = "A.1.6.4 - Attester organisation"
-* group[=].element[=].target.code = #PractitionerRole.organization					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[+].code = #Header.legalAuthenticator
-* group[=].element[=].display = "A.1.7 - Legal authenticator (The person taking responsibility for the medical content of the document)"
-* group[=].element[=].target.code = #PractitionerRole					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal' AND Composition.attester.party.resolve().ofType(PractitionerRole).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core')"
-* group[=].element[+].code = #Header.legalAuthenticator.identifier
-* group[=].element[=].display = "A.1.7.1 - Legal authenticator identifier"
-* group[=].element[=].target.code = #PractitionerRole.identifier					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
-* group[=].element[+].code = #Header.legalAuthenticator.name
-* group[=].element[=].display = "A.1.7.2 - Legal authenticator name"
-* group[=].element[=].target.code = #PractitionerRole.practictioner.name					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
-* group[=].element[+].code = #Header.legalAuthenticator.organizationID
-* group[=].element[=].display = "A.1.7.3 - Legal authenticator organisation ID"
-* group[=].element[=].target.code = #PractitionerRole.organization.identifier					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
-* group[=].element[+].code = #Header.legalAuthenticator.organization
-* group[=].element[=].display = "A.1.7.4 - Legal authenticator organisation"
-* group[=].element[=].target.code = #PractitionerRole.organization					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
+* group[=].element[=].target.equivalence = #relatedto
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-bundle-ems"
 * group[=].element[+].code = #Header.documentMetadata.identifier
-* group[=].element[=].display = "A.1.8.1 - Document ID"
+* group[=].element[=].display = "A.1.6.1 - Document ID"
 * group[=].element[=].target.code = #Bundle.identifier					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If it is the identifier of a particular report instance"
 * group[=].element[+].code = #Header.documentMetadata.dateTime
-* group[=].element[=].display = "A.1.8.4 - Report date and time"
+* group[=].element[=].display = "A.1.6.4 - Report date and time"
 * group[=].element[=].target.code = #Bundle.timeStamp
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If it is when this particular version of  this report has been assembled into a Bundle."
+
+* group[=].element[+].code = #Header.digitalSignature
+* group[=].element[=].display = "A.1.7 - Digital signature"
+* group[=].element[=].target.code = #Bundle.signature
+* group[=].element[=].target.display = ""
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.comment = "Digital signature of the Bundle"
+
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/HeaderEmsCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-composition-ems"
 * group[=].element[+].code = #Header.subject
@@ -209,73 +161,50 @@ Usage: #definition
 * group[=].element[=].display = "A.1.5.5 - Date Time"
 * group[=].element[=].target.code = #Composition.date					
 * group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[+].code = #Header.attester
-* group[=].element[=].display = "A.1.6 - Attester (multiple attesters could be provided)"
-* group[=].element[=].target.code = #Composition.attester.party					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'professional'"
-* group[=].element[+].code = #Header.attester.dateTime
-* group[=].element[=].display = "A.1.6.5 - Approval date and time"
-* group[=].element[=].target.code = #Composition.attester.time					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equal					
-* group[=].element[+].code = #Header.legalAuthenticator
-* group[=].element[=].display = "A.1.7 - Legal authenticator (The person taking responsibility for the medical content of the document)"
-* group[=].element[=].target.code = #Composition.attester.party					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
-* group[=].element[+].code = #Header.legalAuthenticator.dateTime
-* group[=].element[=].display = "A.1.7.5 - Authentication date and time"
-* group[=].element[=].target.code = #Composition.attester.time					
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equal					
-* group[=].element[=].target.comment = "where attester.mode = 'legal'"
+* group[=].element[=].target.equivalence = #equivalent		
 * group[=].element[+].code = #Header.documentMetadata
-* group[=].element[=].display = "A.1.8 - Document metadata"
+* group[=].element[=].display = "A.1.6 - Document metadata"
 * group[=].element[=].target.code = #Composition					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
 * group[=].element[+].code = #Header.documentMetadata.type
-* group[=].element[=].display = "A.1.8.2 - Document type"
+* group[=].element[=].display = "A.1.6.2 - Document type"
 * group[=].element[=].target.code = #Composition.type					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.documentMetadata.status
-* group[=].element[=].display = "A.1.8.3 - Document status"
+* group[=].element[=].display = "A.1.6.3 - Document status"
 * group[=].element[=].target.code = #Composition.status					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.documentMetadata.dateTime
-* group[=].element[=].display = "A.1.8.4 - Report date and time"
+* group[=].element[=].display = "A.1.6.4 - Report date and time"
 * group[=].element[=].target.code = #Composition.date					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If it is when this document has been created (indipendently by its version)"
 * group[=].element[+].code = #Header.documentMetadata.title
-* group[=].element[=].display = "A.1.8.5 - Document title"
+* group[=].element[=].display = "A.1.6.5 - Document title"
 * group[=].element[=].target.code = #Composition.title					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.documentMetadata.custodian
-* group[=].element[=].display = "A.1.8.6 - Report custodian"
+* group[=].element[=].display = "A.1.6.6 - Report custodian"
 * group[=].element[=].target.code = #Composition.custodian					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.documentMetadata.confidentiality
-* group[=].element[=].display = "A.1.8.7 - Confidentiality"
+* group[=].element[=].display = "A.1.6.7 - Confidentiality"
 * group[=].element[=].target.code = #Composition.confidentiality					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.documentMetadata.language
-* group[=].element[=].display = "A.1.8.8 - Language"
+* group[=].element[=].display = "A.1.6.8 - Language"
 * group[=].element[=].target.code = #Composition.language		
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
 * group[=].element[+].code = #Header.documentMetadata.version
-* group[=].element[=].display = "A.1.8.9 - Version"
+* group[=].element[=].display = "A.1.6.9 - Version"
 * group[=].element[=].target.code = #Composition.extension:versionNumber.valueString					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
