@@ -48,3 +48,48 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 // A2.2.8 Čas ukončení výjezdu 0..1 Volitelné Encounter.period.end
 * period.end 0..1
 
+* hospitalization ^short = "Destination of the mission"
+* hospitalization.extension contains
+    TerminationMethod named terminationMethod 1..1 
+
+Extension: TerminationMethod
+Id: cz-ext-terminationMethod
+Title: "Method of termination: EMS termination method for Encounter"
+Description: "Termination method for Encounter"
+
+* ^context.type = #element
+* ^context.expression = "Encounter.hospitalization"
+
+* . ^definition = "Extension to define an encounter is caused by an accident and at which time the accident happened"
+* extension contains
+    code 1..1 and
+    dateTime 0..1 and
+    handingOverStaff 0..1 and
+    receivingStaffId 0..1 and
+    receivingStaffText 0..1
+* extension[code] ^short = "Method of termination"
+* extension[code].url only uri
+* extension[code].valueCoding 1..
+* extension[code].valueCoding only Coding
+* extension[code].valueCoding from TerminationMethodEmsVS (required)
+* extension[dateTime] ^short = "Timestamp of the termination"
+* extension[dateTime].url only uri
+* extension[dateTime].valueDateTime 1..
+* extension[dateTime].valueDateTime only dateTime
+* extension[dateTime].valueDateTime ^short = "date and time of accident"
+* extension[handingOverStaff] ^short = "EMS handing-over staff identifier"
+* extension[handingOverStaff].url only uri
+* extension[handingOverStaff].valueIdentifier 1..
+* extension[handingOverStaff].valueIdentifier only Identifier
+* extension[handingOverStaff].valueIdentifier ^short = "identifier of EMS handing-over staff"
+* extension[receivingStaffId] ^short = "Receiving CPALP healthcare professional identifier"
+* extension[receivingStaffId].url only uri
+* extension[receivingStaffId].valueIdentifier 1..
+* extension[receivingStaffId].valueIdentifier only Identifier
+* extension[receivingStaffId].valueIdentifier ^short = "identifier of receiving CPALP healthcare professional" 
+* extension[receivingStaffText] ^short = "Receiving CPALP healthcare professional (text)"
+* extension[receivingStaffText].url only uri
+* extension[receivingStaffText].valueString 1..
+* extension[receivingStaffText].valueString only string
+* extension[receivingStaffText].valueString ^short = "text name of receiving CPALP healthcare professional"   
+* url only uri

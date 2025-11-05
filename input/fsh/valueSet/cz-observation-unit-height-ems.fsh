@@ -8,6 +8,6 @@ Description: "UCUM units for height"
 * ^date = "2024-01-01"
 * ^publisher = "NCEZ"
 * ^experimental = false
-* ^experimental = false
+
 * $UCUM#m
 * $UCUM#cm

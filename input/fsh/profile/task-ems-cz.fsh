@@ -21,7 +21,7 @@ Description: "CZ Emergency Medical Service Task Resource"
 
 // A.2.1.7 Klasifikace výjezdu
 * reasonCode 1..1 MS                          // A.2.1.7.2 Klasifikace výzvy (ZOS)
-* reasonCode from http://example.org/fhir/ValueSet/cz-ems-zos-classification (extensible)
+* reasonCode from TaskReasonCodeEmsVS (required)
 
 * authoredOn 1..1 MS // A.2.2.2 Čas výzvy
 

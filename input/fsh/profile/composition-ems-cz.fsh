@@ -69,7 +69,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section contains
     courseOfTreatment 0..1 and
     recommendations 0..1 and
-    handover 1..1 and
     patientHx 1..1 and
     medicalDevices 1..1 and
     significantProcedures 0..1 and
@@ -250,13 +249,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
     $loinc#18776-5 )
   * entry only Reference( CZ_CarePlanEms) 
 
-* section[handover] ^short = "Handover"
-* section[handover].title 1.. 
-* section[handover].title ^short = "'Ukončení' or 'Remise' or 'Předání' or 'Handover'"
-* section[handover].code 1.. 
-* section[handover].code = $loinc#67661-9 // "EMS disposition Narrative NEMSIS"
-* section[handover].entry only Reference(CZ_ConditionEms or CZ_PractitionerCore or CZ_OrganizationCore or CZ_PractitionerCore)
-  
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
   * ^short = "Procedure"
