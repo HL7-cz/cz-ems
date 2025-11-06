@@ -26,4 +26,8 @@ Description: "CZ Emergency Medical Service Communication Resource"
 * sender ^short = "Caller contact"
 * sender ^definition = "Telephone number or other contact information of the person who initiated the emergency call."
 
+// A.2.1.1 Čas oznámení události
+* received 0..1 MS                        // A.2.1.1 (čas oznámení události)
+* received ^short = "Event notification time"
+* received ^definition = "Specifies the time when the emergency event was first reported and received by the dispatch center operator."
 
