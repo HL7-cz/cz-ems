@@ -308,7 +308,7 @@ Usage: #example
 * section[allergies].entry[0] = Reference(urn:uuid:27145145-c229-465f-a11e-6767c34c1489)
 * section[procedure].title = "Procedure"
 * section[procedure].code = $loinc#29554-3	"Procedure Narrative"
-* section[procedure].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Mediální kyslík NEPODÁN.</div>"
+* section[procedure].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ošetření pacienta Novotného</div>"
 * section[procedure].text.status = #additional
 * section[procedure].entry[0] = Reference(urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6)
 * section[procedure].entry[+] = Reference(urn:uuid:6ec0b5df-ad0b-487b-9918-367ca876ac38)
@@ -330,7 +330,7 @@ Usage: #example
 * section[timeline].code = $loinc#67667-6 "EMS times Narrative NEMSIS"
 * section[timeline].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Časová osa výjezdu</div>"
 * section[timeline].text.status = #additional
-* section[timeline].entry[0] = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
+* section[timeline].entry[0] = Reference(urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682)
 * section[findings].title = "Findings"
 * section[findings].code = $loinc#29545-1 "Physical findings note"
 * section[findings].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Nálezy při vyšetření</div>"

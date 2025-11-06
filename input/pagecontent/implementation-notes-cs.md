@@ -87,13 +87,13 @@ classDiagram
   CZ_CompositionEms --> CZ_ConditionEms: section[diagnosticSummary]
   CZ_CompositionEms --> CZ_ProcedureEms: section[courseOfTreatment]
   CZ_CompositionEms --> CZ_CarePlanEms: section[recommendations]
-  CZ_CompositionEms --> CZ_ConditionEms: section[handover]
-  CZ_CompositionEms --> CZ_Practioner: section[handover]
-  CZ_CompositionEms --> CZ_PractionerRole: section[handover]
-  CZ_CompositionEms --> CZ_Organization: section[handover]
   CZ_CompositionEms --> CZ_Coverage: section[payers]
   CZ_CompositionEms --> CZ_Logo: section[attachments]
 
 ```
 
 Záznam je reprezentován jako FHIR bundle, který obsahuje zdroje CompositionEms a všechny zdroje ve stromové struktuře zdrojů, na které se odkazovalo (viz [$document operation](https://www.hl7.org/fhir/composition-operation-document.html)).
+
+### Popis obsahu CZ_CompositionEms
+
+{% include composition-intro-cs.md %}

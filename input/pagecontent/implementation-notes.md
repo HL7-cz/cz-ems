@@ -87,14 +87,14 @@ classDiagram
   CZ_CompositionEms --> CZ_ConditionEms: section[diagnosticSummary]
   CZ_CompositionEms --> CZ_ProcedureEms: section[courseOfTreatment]
   CZ_CompositionEms --> CZ_CarePlanEms: section[recommendations]
-  CZ_CompositionEms --> CZ_ConditionEms: section[handover]
-  CZ_CompositionEms --> CZ_Practioner: section[handover]
-  CZ_CompositionEms --> CZ_PractionerRole: section[handover]
-  CZ_CompositionEms --> CZ_Organization: section[handover]
   CZ_CompositionEms --> CZ_Coverage: section[payers]
   CZ_CompositionEms --> CZ_Attachment: section[attachments]
 
 ```
 
 The record is a FHIR bundle that includes CZ_CompositionEms and all resources in the tree of resources that referred to (see [$document operation](https://www.hl7.org/fhir/composition-operation-document.html)).
+
+### Description of content CZ_CompositionEms
+
+{% include composition-intro.md %}
 

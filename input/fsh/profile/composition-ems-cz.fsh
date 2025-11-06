@@ -67,8 +67,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
-    courseOfTreatment 0..1 and
-    recommendations 0..1 and
+    dispatch 1..1 and
+    timeline 1..1 and
     patientHx 1..1 and
     medicalDevices 1..1 and
     significantProcedures 0..1 and
@@ -81,11 +81,12 @@ Description: "This profile defines how to represent Composition resource in HL7 
     tobaccoUse 0..1 and
     drugUse 0..1 and
     allergies 0..1 and
+    alert 0..1 and
     findings 0..* and
     procedure 1..1 and
     diagnosticSummary 0..1 and
-    dispatch 0..1 and
-    timeline 0..1 and
+    courseOfTreatment 0..1 and
+    recommendations 0..1 and
     payers 0..1 and
     attachments 0..*
 
@@ -223,7 +224,22 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 /////////////////////////////////  Alert SECTION ///////////////////////////////////////
 
-* insert AlertSectionRules
+* section[alert]
+  * insert SectionComRules (
+    Health Concern Section, // SHORT
+      This section contains data describing an interest or worry about a health state or process that could possibly require attention\, intervention\, or management. A Health Concern is a health related matter that is of interest\, importance or worry to someone\, who may be the patient\, patient's family or patient's health care provider. Health concerns are derived from a variety of sources within an EHR\, such as Problem List\, Family History\, Social Histor\, Social Worker Note\, etc. Health concerns can be medical\, surgical\, nursing\, allied health or patient-reported concerns. Problem Concerns are a subset of Health Concerns that have risen to the level of importance that they typically would belong on a classic “Problem List”\, such as “Diabetes Mellitus” or “Family History of Melanoma” or “Tobacco abuse”. These are of broad interest to multiple members of the care team. Examples of other Health Concerns that might not typically be considered a Problem Concern include “Risk of Hyperkalemia” for a patient taking an ACE-inhibitor medication\, or “Transportation difficulties” for someone who doesn't drive and has trouble getting to appointments\, or “Under-insured” for someone who doesn't have sufficient insurance to properly cover their medical needs such as medications. These are typically most important to just a limited number of care team members, // DESC
+      http://loinc.org#75310-3 )   // CODE
+  * entry 0..
+  * insert SectionEntrySliceComRules(Alerts, Alerts)
+  // entry slices
+  * insert SectionEntrySliceDefRules (flag, 0.. , Flags , Flags , CZ_FlagEms)
+  * insert SectionEntrySliceDefRules (detectedIssue, 0.. ,  Detected Issue,
+    Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction\, Ineffective treatment frequency\, Procedure-condition conflict\, etc. ,
+    DetectedIssue)
+
+  * insert SectionEntrySliceDefRules (riskAssessment, 0.. , Risk Assessment,
+    An assessment of the likely outcomes for a patient or other subject as well as the likelihood of each outcome. ,
+    RiskAssessment)
 
 ///////////////////////////////// DiagnosticSummary SECTION ///////////////////////////////////////
 * section[diagnosticSummary]
