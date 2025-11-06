@@ -107,7 +107,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_Encounter or CZ_TaskEms or CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
+  * entry only Reference(CZ_TaskEms or CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
 
 ///////////////////////////////// TIMELINE SECTION ///////////////////////////////////////
 * section[timeline]
@@ -117,7 +117,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_Encounter or CZ_TaskEms or CZ_CommunicationEms)
+  * entry only Reference(CZ_TaskEms or CZ_CommunicationEms)
 
 ///////////////////////////////// PATIENT HISTORY SECTION ///////////////////////////////////////
 * section[patientHx]

@@ -66,6 +66,7 @@ Usage: #definition
 * group[=].element[=].target.display = "License Plate"
 * group[=].element[=].target.equivalence = #equivalent
 
+
 // ========================= Dispatch Start Location → Location (cz-location-ems) =========================
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-location-ems"

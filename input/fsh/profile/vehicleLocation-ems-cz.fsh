@@ -9,4 +9,6 @@ Description: "Location resource used to identify an emergency response vehicle o
 //physicalType #ve odpovídá položce vehicle
 * physicalType 1..1 MS
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ve "Vehicle" // A.2.1.2
-* name 1..1 MS                                     // A.2.1.2.1
+* name 1..1 MS 
+* name ^short = "Licence plate"   
+* name ^definition = "call sign and vehicle registration number (or helicopter registration number)" 

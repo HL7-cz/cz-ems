@@ -64,8 +64,8 @@ Usage: #definition
 // „hlavička“ skupiny – navádí entry do sekce
 * group[=].element[+].code = #DispatchTimelineCz.Encounter
 * group[=].element[=].display = "A.2.2.x En-route/Scene/Destination/End (Encounter)"
-* group[=].element[=].target.code = #Composition.section:dispatchTimeline
-* group[=].element[=].target.comment = "Composition.section:dispatchTimeline.entry.ofType(CZ_EncounterEms)"
+* group[=].element[=].target.code = #Composition.encounter
+* group[=].element[=].target.comment = ""
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #unitEnRouteTime
