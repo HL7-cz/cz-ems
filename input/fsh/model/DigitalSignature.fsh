@@ -1,9 +1,9 @@
 Logical: LogEnDigitalSignatureCz
 Id: DigitalSignatureCz
-Title: "A.1.9 - Digital signature"
+Title: "A.1.7 - Digital signature"
 Description: """EMS Report - Electronic signature or seal of a document according to Act 327/2011 §54a"""
 
 * insert SetFmmandStatusRule ( 1, draft )
 
-* digitalSignature 0..* Signature "A.1.9.1 - Electronic signature or document seal" """Electronic signature or document seal."""
-* timestamp 0..1 instant "A.1.9.2 - Electronic time stamp" """Electronic time stamp"""
+* digitalSignature 0..* Signature "A.1.7.1 - Electronic signature or document seal" """Electronic signature or document seal."""
+* timestamp 0..1 instant "A.1.7.2 - Electronic time stamp" """Electronic time stamp"""
