@@ -27,11 +27,12 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * type ^short = "Kind of composition (\"Emergency Medical Services\")"
 * type ^definition = "Specifies that this composition refer to a Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+//TODO: zvážit zda nepoužít spíše * type = $loinc#101135-2 "Ambulance Discharge summary"
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
 
-* encounter 1..1 
+* encounter 1..1
 * encounter only Reference(CZ_Encounter)
   * ^short = "Context that defines the EMS Report"
 
@@ -256,14 +257,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * ^definition = "18682-5"
   * code = $loinc#18682-5 "Ambulance records"
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
-  * entry only Reference( CZ_ProcedureEms) 
+  * entry only Reference( CZ_ProcedureEms)
 
 * section[recommendations]
   * insert SectionComRules (
     Plan of Care Section,
     The plan of care section contains a narrative description of the expectations for care including proposals\, goals\, and order requests for monitoring\, tracking\, or improving the condition of the patient.,
     $loinc#18776-5 )
-  * entry only Reference( CZ_CarePlanEms) 
+  * entry only Reference( CZ_CarePlanEms)
 
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]
@@ -288,7 +289,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#34109-9 //"Note - asi jen dočasný kód TODO: Najít vhodný kód"
   * author only Reference(CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 1..*
-  * entry only Reference(CZ_Attachment or DocumentReference) 
+  * entry only Reference(CZ_Attachment or DocumentReference)
 
 
 Invariant: text-or-section
