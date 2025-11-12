@@ -62,8 +62,8 @@ Usage: #definition
 
 * group[=].element[+].code = #licensePlate
 * group[=].element[=].display = "A.2.1.2.1 - License Plate"
-* group[=].element[=].target.code = #Location.name
-* group[=].element[=].target.display = "License Plate"
+* group[=].element[=].target.code = #Location.Identifier
+* group[=].element[=].target.display = "Vehicle Identifier"
 * group[=].element[=].target.equivalence = #equivalent
 
 

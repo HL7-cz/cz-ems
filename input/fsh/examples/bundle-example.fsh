@@ -404,9 +404,26 @@ Description: "Example of vehicle"
 Usage: #example
 Title: "Vehicle: Dispatch"
 * id = "54d8ee67-8706-46a8-899e-12a54761d9d9"
-* name = "ZCB 121"
+// Povinné z profilu
 * mode = #instance 
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ve "Vehicle"
+
+// --- Identifiers (slices) ---
+// SPZ (registracni znacka)
+* identifier[licensePlate].type = CZVehicleIdentifierTypeCS#license-plate "License plate (SPZ/RZ)"
+* identifier[licensePlate].value = "8AB 1234"
+
+// Call sign (volací znak)
+* identifier[callSign].type = CZVehicleIdentifierTypeCS#call-sign "Call sign"
+* identifier[callSign].value = "RZP-12"
+
+// VIN
+* identifier[vin].type = CZVehicleIdentifierTypeCS#vin "Vehicle Identification Number (VIN)"
+* identifier[vin].value = "VF1AAAAA0A1234567" // projde invariantem vin-17chars
+
+// Letecká imatrikulace (volitelné; pokud jde o vrtulník)
+* identifier[helicopterId].type = CZVehicleIdentifierTypeCS#helicopter-id "Helicopter ID"
+* identifier[helicopterId].value = "OK-NIK"
 
 Instance: cz-communication-example
 InstanceOf: CZ_CommunicationEms
