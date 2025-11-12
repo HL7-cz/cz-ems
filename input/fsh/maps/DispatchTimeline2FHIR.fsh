@@ -1,14 +1,3 @@
-// #	Položka	Četnost	Povinnost	Mapping
-// A2.2	Časová osa výjezdu	1..1	Povinné	
-// A2.2.1	Čas oznámení události	0..1	Požadované	Communication.received
-// A2.2.2	Čas výzvy	1..1	Povinné	Task.authoredOn
-// A2.2.3	Čas výjezdu	1..1	Povinné	Encounter.period.start
-// A2.2.4	Čas příjezdu na místo události	1..1	Povinné	Encounter.location[scene].period.start
-// A2.2.5	Čas odjezdu z místa události 	1..1	Povinné	Encounter.location[scene].period.end
-// A2.2.6	Čas příjezdu do místa předání	0..1	Požadované	Encounter.location[destination].period.start
-// A2.2.7	Čas předání pacienta	1..1	Povinné	Encounter.location[destination].period.end
-// A2.2.8	Čas ukončení výjezdu	0..1	Volitelné	Encounter.period.end
-
 Instance: DispatchTimeline2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
@@ -35,20 +24,14 @@ Usage: #definition
 * group[=].element[=].target.display = "received"
 * group[=].element[=].target.equivalence = #equivalent
 
-// A2.2.2	Čas výzvy	1..1	Povinné	Task.authoredOn
-// ========================= A.2.2.2 Task.authoredOn =========================
+// A2.2.2	Čas výzvy	1..1	Povinné	ServiceRequest.authoredOn
+// ========================= A.2.2.2 ServiceRequest.authoredOn =========================
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchTimelineCz"
-* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-task-ems"
-// „hlavička“ skupiny – navádí entry do sekce
-* group[=].element[+].code = #DispatchTimelineCz.Task
-* group[=].element[=].display = "A.2.2.2 Dispatch Notification (Task)"
-* group[=].element[=].target.code = #Composition.section:dispatchTimeline
-* group[=].element[=].target.comment = "Composition.section:dispatchTimeline.entry.ofType(CZ_TaskEms)"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-servicerequest-ems"
 
 * group[=].element[+].code = #dispatchNotifiedTime
 * group[=].element[=].display = "A.2.2.2 - Dispatch Notification Time"
-* group[=].element[=].target.code = #Task.authoredOn
+* group[=].element[=].target.code = #ServiceRequest.authoredOn
 * group[=].element[=].target.display = "authoredOn"
 * group[=].element[=].target.equivalence = #equivalent
 

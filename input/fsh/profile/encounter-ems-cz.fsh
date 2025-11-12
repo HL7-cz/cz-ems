@@ -4,6 +4,34 @@ Id: cz-encounter-ems
 Title: "Encounter: EMS Report (CZ)"
 Description: "This profile defines how to represent Encounter resource in HL7 FHIR for the scope of this guide."
 
+// A.2.1.1 Identifikace výjezdu
+* identifier 1..* MS    // A.2.1.1
+* identifier ^slicing.discriminator[0].type = #value
+* identifier ^slicing.discriminator[0].path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains dispatchNumber 1..1 MS and otherId 0..* MS
+* identifier ^short = "Dispatch number"   
+* identifier ^definition = "Unique number identifying the emergency response. May include the main dispatch number and any additional identifiers assigned by the EMS system." 
+
+// A.2.1.1.1 Číslo výjezdu
+* identifier[dispatchNumber].use = #official // A.2.1.1.1
+* identifier[dispatchNumber].value 1..1      // A.2.1.1.1
+
+// A.2.1.1.2 Další identifikátor výjezdu
+* identifier[otherId].use = #secondary       // A.2.1.1.2
+* identifier[otherId].value 1..1             // A.2.1.1.2
+
+// A.2.1.7 Klasifikace výjezdu
+* type 1..1 // A.2.1.7.2 Klasifikace výzvy (ZOS)
+* type from CallClassificationEmsVS (required)
+* type ^short = "Call classification (dispatch center classification)"
+* type ^definition = "Preliminary information about the patient’s condition – “working diagnosis” – reason for dispatch"
+
+// A.2.1.7.1 Urgentnost výjezdu
+* priority 1..1
+* priority ^short = "Urgency level of the dispatch"
+* priority ^definition = "Indicates the urgency level assigned by the dispatch center."
+
 // A2.2.3 Čas výjezdu 1..1 Povinné Encounter.period.start
 * period.start 1..1 MS
 * period.start ^short = "Time the EMS unit departed for the incident"
