@@ -6,7 +6,7 @@ Title: "CZ Vehicle Identifier Type (VS)"
 CodeSystem: CZVehicleIdentifierTypeCS
 Id: cz-vehicle-identifier-type
 Title: "CZ Vehicle Identifier Type"
-Description: "Typy identifikátorů vozidel používané v EMS."
+Description: "Types of vehicle identifiers used in EMS."
 * ^content = #complete
 * #license-plate "License plate (SPZ/RZ)" "State registration mark."
 * #call-sign "Radio call sign" "Radio call sign of the crew/vehicle."
