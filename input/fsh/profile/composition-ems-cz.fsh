@@ -68,6 +68,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
+    mission 1..1  and
     dispatch 1..1 and
     timeline 1..1 and
     patientHx 1..1 and
@@ -90,6 +91,37 @@ Description: "This profile defines how to represent Composition resource in HL7 
     recommendations 0..1 and
     payers 0..1 and
     attachments 0..*
+
+// ---------------------------------------------------- mission ----------------------------------------------------//
+* section[mission]
+  * ^short = "Mission"
+  * ^definition = "EMS response Narrative NEMSIS"
+  * code = $loinc#67664-3 // "EMS response Narrative NEMSIS"
+* section[mission].entry ^slicing.discriminator.type = #profile
+* section[mission].entry ^slicing.discriminator.path = "resolve()"
+* section[mission].entry ^slicing.rules = #open
+* section[mission].entry contains 
+    missionEncounter 0..1 MS and 
+    missionTimeStatus 0..* MS and 
+    precautionsInfection 0..* MS and 
+    transportation 0..1 MS and 
+    ambulance 0..* MS and
+    device 0..* MS
+
+* section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
+* section[mission].entry[missionEncounter].reference 1..
+* section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationMissionTimeStatusEMS) //CHEmsObservationMissionTimeStatus
+* section[mission].entry[missionTimeStatus].reference 1..
+* section[mission].entry[precautionsInfection] only Reference(Procedure) //CHEmsProcedurePrecautionsInfection
+* section[mission].entry[precautionsInfection].reference 1..
+* section[mission].entry[transportation] only Reference(Procedure) //CHEmsProcedureTransportation
+* section[mission].entry[transportation].reference 1..
+* section[mission].entry[ambulance] only Reference(CZ_LocationEms) //CHEmsLocationAmbulance
+* section[mission].entry[ambulance].reference 1..
+* section[mission].entry[device] only Reference(Device) //CHEmsDevice
+* section[mission].entry[device].reference 1..
+* section[mission].section 0..0
+
 
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
 * section[findings]
