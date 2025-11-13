@@ -34,7 +34,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * encounter 1..1
 * encounter only Reference(CZ_Encounter)
-  * ^short = "Context that defines the EMS Report"
+  * ^short = "Reference to the encounter profile, which records the times of the call notification and the end of the dispatch"
 
 * date ^short = "EMS date"
 * author ^short = "Who and/or what authored the Emergency Medical Services"
@@ -103,23 +103,25 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section[mission].entry contains 
     missionEncounter 0..1 MS and 
     missionTimeStatus 0..* MS and 
-    precautionsInfection 0..* MS and 
-    transportation 0..1 MS and 
-    ambulance 0..* MS and
-    device 0..* MS
+    // precautionsInfection 0..* MS and 
+    // transportation 0..1 MS and 
+    ambulance 0..* MS //and
+    // device 0..* MS
 
 * section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
 * section[mission].entry[missionEncounter].reference 1..
-* section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationMissionTimeStatusEMS) //CHEmsObservationMissionTimeStatus
+  * ^short = "Reference to the encounter profile, which records the times of departure, arrival, and departure from the scene of the incident, and the handover of the patient."
+  // * ^description = "Encouter p"
+* section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
 * section[mission].entry[missionTimeStatus].reference 1..
-* section[mission].entry[precautionsInfection] only Reference(Procedure) //CHEmsProcedurePrecautionsInfection
-* section[mission].entry[precautionsInfection].reference 1..
-* section[mission].entry[transportation] only Reference(Procedure) //CHEmsProcedureTransportation
-* section[mission].entry[transportation].reference 1..
+// * section[mission].entry[precautionsInfection] only Reference(Procedure) //CHEmsProcedurePrecautionsInfection
+// * section[mission].entry[precautionsInfection].reference 1..
+// * section[mission].entry[transportation] only Reference(Procedure) //CHEmsProcedureTransportation
+// * section[mission].entry[transportation].reference 1..
 * section[mission].entry[ambulance] only Reference(CZ_LocationEms) //CHEmsLocationAmbulance
 * section[mission].entry[ambulance].reference 1..
-* section[mission].entry[device] only Reference(Device) //CHEmsDevice
-* section[mission].entry[device].reference 1..
+// * section[mission].entry[device] only Reference(Device) //CHEmsDevice
+// * section[mission].entry[device].reference 1..
 * section[mission].section 0..0
 
 
