@@ -19,14 +19,14 @@ Concept Map
 endnote
 
 class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
-class "cz-task-ems" <<Profile>> [[StructureDefinition-cz-task-ems.html]]
+class "cz-encounter-mission-ems" <<Profile>> [[StructureDefinition-cz-encounter-mission-ems.html]]
 class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
 
 "Dispatch timeline" <|. "cz-encounter-ems"
-"Dispatch timeline" <|. "cz-task-ems"
+"Dispatch timeline" <|. "cz-encounter-mission-ems"
 "Dispatch timeline" <|. "cz-communication-ems"
 
-"cz-encounter-ems" -d[hidden]-> "cz-task-ems"
-"cz-task-ems" -d[hidden]-> "cz-communication-ems"
+"cz-encounter-ems" -d[hidden]-> "cz-encounter-mission-ems"
+"cz-encounter-mission-ems" -d[hidden]-> "cz-communication-ems"
 
 @enduml
