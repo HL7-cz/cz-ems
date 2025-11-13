@@ -407,20 +407,20 @@ Title: "Vehicle: Dispatch"
 
 // --- Identifiers (slices) ---
 // SPZ (registracni znacka)
-* identifier[licensePlate].type = CZVehicleIdentifierTypeCS#license-plate "License plate (SPZ/RZ)"
-* identifier[licensePlate].value = "8AB 1234"
-
-// Call sign (volací znak)
-* identifier[callSign].type = CZVehicleIdentifierTypeCS#call-sign "Call sign"
-* identifier[callSign].value = "RZP-12"
+* identifier[licensePlate][+].system = "https://ncez.mzcr.cz/fhir/sid/licensePlate"
+* identifier[licensePlate][=].value = "8AB 1234"
 
 // VIN
-* identifier[vin].type = CZVehicleIdentifierTypeCS#vin "Vehicle Identification Number (VIN)"
-* identifier[vin].value = "VF1AAAAA0A1234567" // projde invariantem vin-17chars
+* identifier[VIN][+].system = "https://ncez.mzcr.cz/fhir/sid/vin"
+* identifier[VIN][=].value = "VF1AAAAA0A1234567" // projde invariantem vin-17chars
+
+// Call sign (volací znak)
+* identifier[callSign][+].system = "https://ncez.mzcr.cz/fhir/sid/call-sign"
+* identifier[callSign][=].value = "RZP-12"
 
 // Letecká imatrikulace (volitelné; pokud jde o vrtulník)
-* identifier[helicopterId].type = CZVehicleIdentifierTypeCS#helicopter-id "Helicopter ID"
-* identifier[helicopterId].value = "OK-NIK"
+* identifier[helicopterId][+].system = "https://ncez.mzcr.cz/fhir/sid/helicopterId"
+* identifier[helicopterId][=].value = "OK-NIK"
 
 Instance: cz-communication-example
 InstanceOf: CZ_CommunicationEms
