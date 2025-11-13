@@ -6,11 +6,10 @@ Description: "This profile constrains the Observation resource for representing 
 
 * . ^short = "CZ EMS Observation: Mission Time Status"
 
-// typ časového údaje mise
+//A2.2.6	Čas příjezdu do místa předání
 * code 1..1 MS
-* code only CodeableConcept
-* code from ObservationTypeMissionTimeEmsVS (required)
-* code ^short = "Mission time code"
+* code = $loinc#69476-0
+* code ^short = "Responding unit arrived with the patient at the destination or transfer point [Date and time] Vehicle"
 
 // vlastní hodnota = čas
 * value[x] only dateTime
