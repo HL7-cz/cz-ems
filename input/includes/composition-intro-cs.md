@@ -41,7 +41,7 @@ Tato sekce obsahuje cestovatelskou anamnézu.
 Tato sekce obsahuje infekční kontakty tedy informace o infekcích, kterým byl pacient vystaven.
 
 **Rodinná anamnéza (familyHistory)**
-Sekce obsahující rodinnou anamnézu.Jedná se o informace o závažných onemocněních u blízkých pokrevně příbuzných se známým nebo předpokládaným genetickým potenciálem nebo s možným vlivem na péči o pacienta. 
+Sekce obsahující rodinnou anamnézu.Jedná se o informace o závažných onemocněních u blízkých pokrevně příbuzných se známým nebo předpokládaným genetickým potenciálem nebo s možným vlivem na péči o pacienta.
 
 **Sociální anamnéza (socialHistory)**
 Tato sekce obsahuje sociální anamnézu pacienta (společenské uplatnění, pracovní zapojení, koníčky, sociální síť, vzdělání či bydlení).
@@ -56,22 +56,22 @@ Tato sekce obsahuje informace o pravidelném užívání tabáku.
 Tato sekce obsahuje informace o pravidelném užívání drog.
 
 **Alergie (allergies)**
-Tato sekce obsahuje informace o alergiích a intolerancích. Záznam alergie a intolerance je povinný. U pacientů, bez alergie či intolerance je nutné tento fakt explicitně vyjádřit příslušným kódem 
+Tato sekce obsahuje informace o alergiích a intolerancích. Záznam alergie a intolerance je povinný. U pacientů, bez alergie či intolerance je nutné tento fakt explicitně vyjádřit příslušným kódem
 
 **Varování (alert)**
 Tato sekce obsahuje veškeré další varování.
 
 **Nálezy (findings)**
-¨Tato sekce obsahuje veškeré nálezy pořízené během mise. Obsahuje informace z antropometrických měření, výsledky měření základních životních funkcí i dalších jiných měřených parametrů (jako například glykémie). Může obsahovat i vyšetření somatické a veškerá další vyšetření.
+¨Tato sekce obsahuje veškeré nálezy pořízené během výjezdu. Obsahuje informace z antropometrických měření, výsledky měření základních životních funkcí i dalších jiných měřených parametrů (jako například glykémie). Může obsahovat i vyšetření somatické a veškerá další vyšetření.
 
 **Terapie (procedure)**
-Tato sekce obsahuje informace o veškerých zdravotnických výkonech a použitých zdravotnických prostředků i medikací během mise.
+Tato sekce obsahuje informace o veškerých zdravotnických výkonech a použitých zdravotnických prostředků i medikací během výjezdu.
 
 **Diagnostický souhrn (diagnosticSummary)**
 Tato sekce obsahuje diagnostický souhrn. Jsou zde popsány diagnózy řešení výjezdem a to jak v kódované tak textové formě.
 
 **Průběh ošetření (courseOfTreatment)**
-Tato sekce obsahuje záznam o průběhu ošetření a vývoji stavů pacienta během mise.
+Tato sekce obsahuje záznam o průběhu ošetření a vývoji stavů pacienta během výjezdu.
 
 **Doporučení (recommendations)**
 Tato sekce obsahuje veškerá doporučení pro pacienta po ukončení ošetření.
