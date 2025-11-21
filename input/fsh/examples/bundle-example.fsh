@@ -263,6 +263,8 @@ Title: "Composition: Novotný EMS"
 Description: "Example of composition for EMS document"
 Usage: #example
 * id = "da3f987f-2a08-431a-92e3-129d7689e465"
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Composition of EMS</div>"
 * status = #final
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * date = "2025-05-20T12:02:00+01:00"

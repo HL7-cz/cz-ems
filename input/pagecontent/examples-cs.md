@@ -43,5 +43,5 @@ Příklad Záznamu o výjezdu: [Záznam o výjezdu pacienta Novotného](Bundle-c
 - Příklad [Role praktika - Zdravotnický záchranář](PractitionerRole-f64bef19-c377-404a-bac2-23d2bbac8f3e.html)
 - Příklad [Procedura - EKG](Procedure-3af2e7a6-c16e-4b80-a173-ca2c8aa081b6.html)
 - Příklad [Procedura - Kanylace periferní žíly](Procedure-6ec0b5df-ad0b-487b-9918-367ca876ac38.html)
-- Příklad [Výjezd](Task-3acd2720-0bcf-41ca-bb17-7c64ac5b7682.html)
+- Příklad [ServiceRequest](ServiceRequest-3acd2720-0bcf-41ca-bb17-7c64ac5b7682.html)
 - Příklad [Výjezdové vozidlo](Location-54d8ee67-8706-46a8-899e-12a54761d9d9.html)

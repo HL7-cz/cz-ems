@@ -46,11 +46,12 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry ^slicing.rules = #open
 
 * entry.resource 1..
+
 * entry contains composition 1..1
 * entry[composition].resource only CZ_CompositionEms
 
 * entry contains patient 1..*
-* entry[patient].resource only CZ_PatientCore or CZ_PatientAnimal
+* entry[patient].resource only CZ_PatientCore
 
 * entry contains organization 0..*
 * entry[organization].resource only CZ_OrganizationCore
@@ -58,7 +59,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains practitioner 0..*
 * entry[practitioner].resource only CZ_PractitionerCore
 
-* entry contains encounter 1..*
+* entry contains encounter 0..*
 * entry[encounter].resource only CZ_EncounterEms
 
 * entry contains procedure 0..*
@@ -73,7 +74,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains coverage 0..*
 * entry[coverage].resource only CZ_Coverage
 
-* entry contains serviceRequest 1..1
+* entry contains serviceRequest 0..1
 * entry[serviceRequest].resource only CZ_ServiceRequestEms
 
 * entry contains careTeam 0..1
@@ -82,7 +83,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains communication 0..*
 * entry[communication].resource only CZ_CommunicationEms
 
-* entry contains location 1..*
+* entry contains location 0..*
 * entry[location].resource only CZ_LocationEms or CZ_VehicleLocationEms
 
 * entry contains allergy 0..*
