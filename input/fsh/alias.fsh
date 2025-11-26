@@ -7,6 +7,8 @@ Alias: $flag-detail = http://hl7.org/fhir/StructureDefinition/flag-detail
 Alias: $flag-priority = http://hl7.org/fhir/StructureDefinition/flag-priority
 Alias: $bodySite-reference = http://hl7.org/fhir/StructureDefinition/bodySite
 Alias: $information-recipient-url = http://hl7.eu/fhir/StructureDefinition/information-recipient
+Alias: $obligation = http://hl7.org/fhir/StructureDefinition/obligation
+
 
 // Profiles:
 Alias: $CodeableConcept-uv-ips = http://hl7.org/fhir/uv/ips/StructureDefinition/CodeableConcept-uv-ips
@@ -32,3 +34,12 @@ Alias: $dlp_formy_cs = https://hl7.cz/fhir/core/CodeSystem/cz-dlpformy-cs
 Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+
+
+// Actor Definitions for Obligations:
+// Alias: $creatorL1 = https://hl7.cz/fhir/core/ActorDefinition/actor-creator-L1
+Alias: $consumerL1 = https://hl7.cz/fhir/core/ActorDefinition/actor-consumer-L1
+// Alias: $creatorL2 = https://hl7.cz/fhir/core/ActorDefinition/actor-creator-L2
+// Alias: $consumerL2 = https://hl7.cz/fhir/core/ActorDefinition/actor-consumer-L2
+Alias: $creatorL3 = https://hl7.cz/fhir/core/ActorDefinition/actor-creator-L3
+Alias: $consumerL3 = https://hl7.cz/fhir/core/ActorDefinition/actor-consumer-L3
