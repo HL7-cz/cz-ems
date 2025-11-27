@@ -60,7 +60,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[practitioner].resource only CZ_PractitionerCore
 
 * entry contains encounter 0..*
-* entry[encounter].resource only CZ_EncounterEms
+* entry[encounter].resource only CZ_EncounterEms or CZ_EncounterMissionEms
 
 * entry contains procedure 0..*
 * entry[procedure].resource only CZ_ProcedureEms
@@ -90,7 +90,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[allergy].resource only CZ_AllergyIntoleranceEms
 
 * entry contains observation 0..*
-* entry[observation].resource only Observation
+* entry[observation].resource only Observation or CZ_ObservationArrivalAtDestinationTimeEMS or CZ_ObservationTravelEms
 
 * entry contains medicationAdministration 0..*
 * entry[medicationAdministration].resource only MedicationAdministration

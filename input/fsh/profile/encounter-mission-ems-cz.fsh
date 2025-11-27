@@ -9,13 +9,8 @@ Description: "This profile defines how to represent Encounter Mission resource i
 * period.start ^short = "Time the EMS unit departed for the incident"
 * period.start ^definition = "Specifies the time when the emergency medical service (EMS) unit began its departure from the base or station to respond to the incident."
 
-// A2.2.8 Čas ukončení výjezdu 0..1 Volitelné Encounter.period.end
-* period.end 0..1
-* period.end ^short = "Response end time"
-* period.end ^definition = "Specifies the time when the emergency medical service (EMS) unit formally completed the response, including all post-incident activities and documentation."
-
-* location.physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
-* location.location only Reference(CZ_LocationEms)
+// * location.physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
+// * location.location only Reference(CZ_LocationEms)
 
 // A2.2.4 Čas příjezdu na místo události 1..1 Povinné Encounter.location[scene].period.start
 * location.period.start ^short = "Arrival at incident scene time"
@@ -33,5 +28,9 @@ Description: "This profile defines how to represent Encounter Mission resource i
 // A2.2.5 Čas odjezdu z místa události 1..1 Povinné Encounter.location.period.end
 * location.period.end 1..1 MS
 
+// A2.2.7 Čas předání pacienta 1..1 Povinné Encounter.period.end
+* period.end 1..1 MS
+* period.end ^short = "Patient handover time"
+* period.end ^definition = "Specifies the time when the EMS unit handed over the patient to the receiving facility or otherwise completed patient care at the destination."
 
 

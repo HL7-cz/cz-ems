@@ -27,13 +27,12 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * type ^short = "Kind of composition (\"Emergency Medical Services\")"
 * type ^definition = "Specifies that this composition refer to a Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
-//TODO: zvážit zda nepoužít spíše * type = $loinc#101135-2 "Ambulance Discharge summary"
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
 
 * encounter 1..1
-* encounter only Reference(CZ_Encounter)
+* encounter only Reference(CZ_EncounterEms)
   * ^short = "Reference to the encounter profile, which records the times of the call notification and the end of the dispatch"
 
 * date ^short = "EMS date"
@@ -100,28 +99,20 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section[mission].entry ^slicing.discriminator.type = #profile
 * section[mission].entry ^slicing.discriminator.path = "resolve()"
 * section[mission].entry ^slicing.rules = #open
+
 * section[mission].entry contains 
-    missionEncounter 0..1 MS and 
-    missionTimeStatus 0..* MS and 
-    // precautionsInfection 0..* MS and 
-    // transportation 0..1 MS and 
-    ambulance 0..* MS //and
-    // device 0..* MS
+    missionEncounter 1..1 MS and 
+    missionTimeStatus 0..1 MS and 
+    ambulance 0..* MS
 
 * section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
-* section[mission].entry[missionEncounter].reference 1..
+* section[mission].entry[missionEncounter].reference 1..1
   * ^short = "Reference to the encounter profile, which records the times of departure, arrival, and departure from the scene of the incident, and the handover of the patient."
   // * ^description = "Encouter p"
 * section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
-* section[mission].entry[missionTimeStatus].reference 1..
-// * section[mission].entry[precautionsInfection] only Reference(Procedure) //CHEmsProcedurePrecautionsInfection
-// * section[mission].entry[precautionsInfection].reference 1..
-// * section[mission].entry[transportation] only Reference(Procedure) //CHEmsProcedureTransportation
-// * section[mission].entry[transportation].reference 1..
-* section[mission].entry[ambulance] only Reference(CZ_LocationEms) //CHEmsLocationAmbulance
+* section[mission].entry[missionTimeStatus].reference 0..1
+* section[mission].entry[ambulance] only Reference(CZ_VehicleLocationEms) //CHEmsLocationAmbulance
 * section[mission].entry[ambulance].reference 1..
-// * section[mission].entry[device] only Reference(Device) //CHEmsDevice
-// * section[mission].entry[device].reference 1..
 * section[mission].section 0..0
 
 
