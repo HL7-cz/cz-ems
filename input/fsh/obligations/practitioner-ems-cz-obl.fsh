@@ -4,8 +4,6 @@ Id: cz-practitioner-obl-ems
 Title:    "Practitioner: Obligations"
 Description: "This profile defines obligations for a practitioner in FHIR for the purpose of this guide."
 
-* insert SetFmmandStatusRule ( 0, informative)
-
 // consumer obligations L1 ===========>
 * identifier[KRZP] insert OblConsumer(#SHALL:process,L1)
 * name insert OblConsumer(#SHALL:display,L1)

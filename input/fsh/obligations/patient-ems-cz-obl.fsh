@@ -3,9 +3,6 @@ Parent: CZ_PatientCore
 Id: cz-patient-obl-ems
 Title:    "Patient: Obligations"
 Description: "This profile defines obligations for an human Patient in FHIR for the purpose of this guide."
-// * ^publisher = "HL7 Europe"
-// * ^copyright = "HL7 Europe"
-* insert SetFmmandStatusRule ( 0, informative)
 
 // Consumer obligations L1
 * identifier insert OblConsumer(#SHALL:display,L1)
