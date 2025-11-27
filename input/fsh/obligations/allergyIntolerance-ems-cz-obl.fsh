@@ -4,7 +4,7 @@ Profile: CZ_AllergyIntoleranceObligationsEms
 Parent: CZ_AllergyIntoleranceEms
 Id: cz-allergyintolerance-obl-ems
 Title:    "Allergy Intolerance: Obligations"
-Description: "This profile defines the obligations for the CZ_AllergyIntoleranceHdr profile used in the HDR CZ project."
+Description: "This profile defines obligations for an allergy intolerance in FHIR for the purpose of this guide."
 
 // Creator Obligations L3 ============>
 * text insert OblCreator(#SHALL:able-to-populate,L3)
