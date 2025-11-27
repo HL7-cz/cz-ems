@@ -13,6 +13,12 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-servicerequest-ems"
 
 * group[=].element[+].code = #dispatchNotifiedTime
+* group[=].element[=].display = "A.2.2.x En-route/Scene/Destination/End (ServiceRequest)"
+* group[=].element[=].target.code = #Composition.section[timeline]
+* group[=].element[=].target.display = ""
+* group[=].element[=].target.equivalence = #equivalent
+
+* group[=].element[+].code = #dispatchNotifiedTime
 * group[=].element[=].display = "A.2.2.2 - Dispatch Notification Time"
 * group[=].element[=].target.code = #ServiceRequest.authoredOn
 * group[=].element[=].target.display = "authoredOn"
@@ -60,12 +66,6 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 
-* group[=].element[+].code = #patientTransferOfCareTime
-* group[=].element[=].display = "A.2.2.7 - Patient Transfer of Care Time"
-* group[=].element[=].target.code = #Encounter.period.end
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent
-
 * group[=].element[+].code = #unitArrivedAtSceneTime
 * group[=].element[=].display = "A.2.2.4 - Arrival at Scene Time"
 * group[=].element[=].target.code = #Encounter.location.period.start
@@ -78,11 +78,16 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 
+* group[=].element[+].code = #patientTransferOfCareTime
+* group[=].element[=].display = "A.2.2.7 - Patient Transfer of Care Time"
+* group[=].element[=].target.code = #Encounter.period.end
+* group[=].element[=].target.display = ""
+* group[=].element[=].target.equivalence = #equivalent
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchTimelineCz"
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-observation-mission-time-status-ems"
-* group[=].element[+].code = #DispatchTimelineCz.Encounter
-* group[=].element[=].display = "A.2.2.x En-route/Scene/Destination/End (Encounter)"
+* group[=].element[+].code = #arrivedAtDestinationTime
+* group[=].element[=].display = "A.2.2.x En-route/Scene/Destination/End (Observation)"
 * group[=].element[=].target.code = #Composition.section[mission].entry[missionTimeStatus]
 * group[=].element[=].target.comment = ""
 * group[=].element[=].target.equivalence = #relatedto
