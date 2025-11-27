@@ -386,9 +386,13 @@ groups:
     description: Obligations used to describe the HDR functional requirements for the specified data elements. Informative for this version of the guide.
     resources:
       - StructureDefinition/cz-allergyintolerance-obl-ems
+      - StructureDefinition/cz-composition-obl-ems
+      - StructureDefinition/cz-condition-obl-ems
       - StructureDefinition/cz-encounter-obl-ems
+      - StructureDefinition/cz-medicaldevice-obl-ems
       - StructureDefinition/cz-patient-obl-ems
       - StructureDefinition/cz-practitioner-obl-ems
+      - StructureDefinition/cz-procedure-obl-ems
   czech-logical-model:
     name: Czech logical model (Informative)
     description: Logical model in czech language. Informative for this version of the guide.
