@@ -2,7 +2,7 @@ Profile: CZ_MedicalDeviceObligationsEms
 Parent: CZ_MedicalDevice
 Id: cz-medicaldevice-obl-ems
 Title:    "Medical Device: Obligations"
-Description: "This profile defines the obligations for the CZ_MedicalDevice profile used in the"
+Description: "This profile defines obligations for a medical device in FHIR for the purpose of this guide."
 
 // Creator Obligations L3 ============>
 * identifier insert OblCreator(#SHALL:able-to-populate,L3)

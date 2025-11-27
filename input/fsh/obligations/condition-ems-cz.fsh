@@ -2,7 +2,7 @@ Profile: CZ_ConditionObligationsEms
 Parent: CZ_ConditionEms
 Id: cz-condition-obl-ems
 Title:    "Condition: Obligations"
-Description: "This profile defines the obligations for the CZ_ConditionEms profile used in the"
+Description: "This profile defines obligations for a condition in FHIR for the purpose of this guide."
 // Creator Obligations L3 ============>
 * text insert OblCreator(#SHALL:able-to-populate,L3)
 * code insert OblCreator(#SHALL:able-to-populate,L3)
