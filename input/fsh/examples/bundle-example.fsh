@@ -392,7 +392,7 @@ Instance: cz-allergy-intolerance-example
 InstanceOf: CZ_AllergyIntoleranceEms
 Description: "Example of allergy intolerance"
 Usage: #example
-Title: "Allergy Intolerance: Augmentin"
+Title: "Allergy Intolerance: Allergy to cat dander"
 * id = "27145145-c229-465f-a11e-6767c34c1489"
 * identifier[+].system = "urn:ietf:rfc:3986"
 * identifier[=].value = "urn:uuid:d8f41e59-56fe-4440-9467-3a0f8601b91e"
@@ -401,15 +401,15 @@ Title: "Allergy Intolerance: Augmentin"
 * type = #allergy
 * category = #medication
 * criticality = #high
-* code = CZ_DLPATCCs#J01CA "PENICILINY SE ŠIROKÝM SPEKTREM"
+* code = $sctCZ#232346004 "Allergy to cat dander (finding)"
 * patient = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 * reaction.extension[0].url = "http://hl7.org/fhir/StructureDefinition/allergyintolerance-certainty"
 * reaction.extension[=].valueCodeableConcept = $allergyintolerance-certainty#confirmed "Confirmed"
 * reaction.extension[+].url = "http://hl7.org/fhir/StructureDefinition/openEHR-exposureDescription"
-* reaction.extension[=].valueString = "Oral route"
-* reaction.substance = $sct#255631004 "Antibiotic"
-* reaction.manifestation[0] = $sct#40178009 "Allergic urticaria"
-* reaction.severity = #severe
+* reaction.extension[=].valueString = "Animal shelter"
+* reaction.substance = $sct#260152009 "Cat dander (substance)"
+* reaction.manifestation[0] = $sct#271807003 "Eruption of skin (disorder)"
+* reaction.severity = #mild
 
 Instance: cz-communication-example
 InstanceOf: CZ_CommunicationEms
@@ -547,10 +547,22 @@ Description: "Example of medication"
 * id = "68c98e94-e997-417c-9108-f05f65fc5327"
 * identifier[+].system = "https://www.nempriklad.cz/"
 * identifier[=].value = "a12345"
-* code.coding[+] = $dlp_lecivePripravky#231703 "BETALOC"
+* code.coding[+] = $CZ_DLPLecivePripravkyCs#231703 "BETALOC"
 * code.text = "BETALOC"
-* ingredient.itemCodeableConcept = CZ_DLPLecivelatkyCs#4634 "METOPROLOLI TARTRAS"
+* ingredient.itemCodeableConcept = $CZ_DLPLecivelatkyCs#4634 "METOPROLOLI TARTRAS"
 * form = $dlp_formy_cs#INJSOL "Injekční roztok"
+
+
+// * identifier[+].system = "http://example.org/exampleSystem" //vydavatel identifikatoru nemocnice vs. NIS
+// * identifier[=].value = "med-1"
+// * code.coding[0] = $CZ_DLPLecivePripravkyCs#0013831 "SIMVASTATIN RATIOPHARM 40MG TBL FLM 20"
+// * code.coding[+] = $CZ_DLPATCCs#C10AA01 "simvastatin"
+// * code.text = "Simvastatin 40 MG TBL FLM 20"
+// * form.coding[0] = $CZ_DLPFormyCs#TBL_FLM "Potahovaná tableta"
+// * form.coding[+] = $standardterms#10219000 "Tablet"
+// * ingredient.itemCodeableConcept = $CZ_DLPLecivelatkyCs#10647 "Simvastatin"
+// * ingredient.strength.numerator = 40 'mg' "mcg"
+// * ingredient.strength.denominator = 1 '1' "tablet"
 
 Instance: cz-medication-administration-example2
 InstanceOf: MedicationAdministration

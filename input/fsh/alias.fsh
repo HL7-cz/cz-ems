@@ -24,6 +24,7 @@ Alias: $hl7-observation-category = http://hl7.org/fhir/ValueSet/observation-cate
 Alias: $loinc =  http://loinc.org
 Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $sct =  http://snomed.info/sct
+Alias: $sctCZ = http://snomed.info/sct|http://snomed.info/sct/11000279109
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $mime = urn:ietf:bcp:13
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
@@ -34,6 +35,8 @@ Alias: $dlp_formy_cs = https://hl7.cz/fhir/core/CodeSystem/cz-dlpformy-cs
 Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
+Alias: $CZ_DLPLecivePripravkyCs = https://sukl.cz/terminology/CodeSystem/dlp-lecive-pripravky
+Alias: $CZ_DLPLecivelatkyCs = https://sukl.cz/terminology/CodeSystem/dlp-lecivelatky
 
 
 // Actor Definitions for Obligations:
