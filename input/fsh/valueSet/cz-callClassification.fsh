@@ -2,7 +2,7 @@ CodeSystem:   CallClassificationEmsCS
 Id:         cz-call-lassification-cs
 Title:      "Call classification Code Code System"
 Description:  """Call classification Code codesystem includes special codes."""
-* ^language = #cs-CZ
+* ^language = #cs
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^version = "1.0.0"
 * ^status = #active
