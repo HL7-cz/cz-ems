@@ -13,8 +13,8 @@ legend right
 | <#TECHNOLOGY>  Profile |
 endlegend
 
-class "Dispatch timeline" <<LogicalModel>> [[StructureDefinition-DispatchDataCz.html]]
-note top #EEEEAE [[ConceptMap-DispatchDataEMS2FHIR-cz.html]]
+class "Dispatch timeline" <<LogicalModel>> [[StructureDefinition-DispatchTimelineCz.html]]
+note top #EEEEAE [[ConceptMap-DispatchTimeline2FHIR-cz.html]]
 Concept Map
 endnote
 

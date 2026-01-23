@@ -13,8 +13,8 @@ legend right
 | <#TECHNOLOGY>  Profil |
 endlegend
 
-class "Časová osa výjezdu" <<LogicalModel>> [[StructureDefinition-LogDispatchDataCz.html]]
-note top #EEEEAE [[ConceptMap-DispatchDataEMS2FHIR-cz.html]]
+class "Časová osa výjezdu" <<LogicalModel>> [[StructureDefinition-LogDispatchTimelineCz.html]]
+note top #EEEEAE [[ConceptMap-DispatchTimeline2FHIR-cz.html]]
 Concept Map
 endnote
 
