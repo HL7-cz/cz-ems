@@ -55,10 +55,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
     $information-recipient-url  named informationRecipient 0..*
 * extension[informationRecipient].valueReference only Reference(CZ_PractitionerCore or CZ_DeviceObserver or CZ_PatientCore or CZ_RelatedPersonCore or CZ_PractitionerRoleCore or CZ_OrganizationCore)
 
-
-* section 1..
-  // add invariant or text or section
-
 * insert SectionSliceComRules (Sections composing the Emergency Medical Services,
         The root of the sections that make up the Emergency Medical Services composition.)
 
@@ -67,11 +63,11 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
-    mission 1..1  and
-    dispatch 1..1 and
-    timeline 1..1 and
-    patientHx 1..1 and
-    medicalDevices 1..1 and
+    mission 0..1  and
+    dispatch 0..1 and
+    timeline 0..1 and
+    patientHx 0..1 and
+    medicalDevices 0..1 and
     significantProcedures 0..1 and
     travelHx 0..1 and
     immunizations 0..1 and
@@ -84,7 +80,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     allergies 0..1 and
     alert 0..1 and
     findings 0..* and
-    procedure 1..1 and
+    procedure 0..1 and
     diagnosticSummary 0..1 and
     courseOfTreatment 0..1 and
     recommendations 0..1 and
@@ -102,15 +98,15 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section[mission].entry contains 
     missionEncounter 1..1 MS and 
-    missionTimeStatus 0..1 MS and 
+    destinationArrivalTime 0..1 MS and 
     ambulance 0..* MS
 
 * section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
 * section[mission].entry[missionEncounter].reference 1..1
   * ^short = "Reference to the encounter profile, which records the times of departure, arrival, and departure from the scene of the incident, and the handover of the patient."
   // * ^description = "Encouter p"
-* section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
-* section[mission].entry[missionTimeStatus].reference 0..1
+* section[mission].entry[destinationArrivalTime] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
+* section[mission].entry[destinationArrivalTime].reference 0..1
 * section[mission].entry[ambulance] only Reference(CZ_VehicleLocationEms) //CHEmsLocationAmbulance
 * section[mission].entry[ambulance].reference 1..
 * section[mission].section 0..0
