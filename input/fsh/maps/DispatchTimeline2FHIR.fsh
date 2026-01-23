@@ -88,7 +88,7 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-observation-mission-time-status-ems"
 * group[=].element[+].code = #arrivedAtDestinationTime
 * group[=].element[=].display = "A.2.2.x En-route/Scene/Destination/End (Observation)"
-* group[=].element[=].target.code = #Composition.section[mission].entry[missionTimeStatus]
+* group[=].element[=].target.code = #Composition.section[mission].entry[destinationArrivalTime]
 * group[=].element[=].target.comment = ""
 * group[=].element[=].target.equivalence = #relatedto
 

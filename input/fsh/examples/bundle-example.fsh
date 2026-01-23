@@ -156,8 +156,7 @@ Usage: #example
 * section[mission].text.status = #additional
 // * section[mission].entry[missionEncounter] = Reference(cz-encounter-mission-example)
 * section[mission].entry[missionEncounter] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
-
-* section[mission].entry[missionTimeStatus] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
+* section[mission].entry[destinationArrivalTime] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
 * section[mission].entry[ambulance] = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
 * section[dispatch].title = "Dispatch"
 * section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
