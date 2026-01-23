@@ -2,7 +2,7 @@ CodeSystem:   TaskReasonCodeEmsCS
 Id:         cz-task-reasoncode-cs
 Title:      "Task Reason Code Code System"
 Description:  """Task Reason Code codesystem includes special codes."""
-* ^language = #cs-CZ
+* ^language = #cs
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^version = "1.0.0"
 * ^status = #active
