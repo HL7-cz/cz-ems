@@ -14,41 +14,36 @@ Usage: #definition
 * group[=].element[=].display = "A.2.1 Dispatch Data (section)"
 * group[=].element[=].target.code = #Composition.section:dispatch
 * group[=].element[=].target.display = "Composition.section slice 'dispatch'"
-* group[=].element[=].target.comment = "Composition.section:dispatch.entry agreguje níže uvedené zdroje (Task, Location, CareTeam, Practitioner/Role, Communication)"
+* group[=].element[=].target.comment = "Composition.section:dispatch.entry agreguje níže uvedené zdroje Location, CareTeam, Practitioner/Role, Communication)"
 * group[=].element[=].target.equivalence = #relatedto
 
-// ========================= Dispatch Identification → Task (cz-task-ems) =========================
+// ========================= Dispatch Identification → Encounter (cz-encounter-ems) =========================
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/DispatchDataCz"
-* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-task-ems"
-* group[=].element[+].code = #DispatchDataCz.DispatchIdentification
-* group[=].element[=].display = "A.2.1.1 Dispatch Identification"
-* group[=].element[=].target.code = #Composition.section:dispatch
-* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_TaskEms)"
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-encounter-ems"
 
 * group[=].element[+].code = #dispatchNumber
 * group[=].element[=].display = "A.2.1.1.1 - Dispatch Identifier"
-* group[=].element[=].target.code = #Task.identifier[dispatchNumber].value
+* group[=].element[=].target.code = #Encounter.identifier[dispatchNumber].value
 * group[=].element[=].target.display = "identifier (slice: dispatchNumber).value"
 * group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #additionalDispatchIdentifier
 * group[=].element[=].display = "A.2.1.1.2 - Additional Dispatch Identifier"
-* group[=].element[=].target.code = #Task.identifier[otherId].value
+* group[=].element[=].target.code = #Encounter.identifier[otherId].value
 * group[=].element[=].target.display = "identifier (slice: otherId).value"
 * group[=].element[=].target.equivalence = #equivalent
 
 // A.2.1.7 - Dispatch Classification
 * group[=].element[+].code = #dispatchUrgency
 * group[=].element[=].display = "A.2.1.7.1 - Dispatch Urgency"
-* group[=].element[=].target.code = #Task.extension[urgencyLevel].valueCodeableConcept
-* group[=].element[=].target.display = "extension (slice: urgencyLevel).valueCodeableConcept"
+* group[=].element[=].target.code = #Encounter.priority
+* group[=].element[=].target.display = "priority"
 * group[=].element[=].target.equivalence = #equivalent
 
 * group[=].element[+].code = #callClassification
 * group[=].element[=].display = "A.2.1.7.2 - Call Classification"
-* group[=].element[=].target.code = #Task.reasonCode
-* group[=].element[=].target.display = "reasonCode"
+* group[=].element[=].target.code = #Encounter.type
+* group[=].element[=].target.display = "type"
 * group[=].element[=].target.equivalence = #equivalent
 
 // ========================= Vehicle Identification → Location (cz-vehicle-location-ems) =========================
@@ -56,15 +51,16 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-vehicle-location-ems"
 * group[=].element[+].code = #vehicleIdentification
 * group[=].element[=].display = "A.2.1.2 Vehicle Identification"
-* group[=].element[=].target.code = #Composition.section:dispatch
-* group[=].element[=].target.comment = "Composition.section:dispatch.entry.ofType(CZ_VehicleLocationEms)"
+* group[=].element[=].target.code = #Composition.section:mission.entry:ambulance
+* group[=].element[=].target.comment = "Composition.section:mission.entry.ofType(CZ_VehicleLocationEms)"
 * group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #licensePlate
-* group[=].element[=].display = "A.2.1.2.1 - License Plate"
-* group[=].element[=].target.code = #Location.name
-* group[=].element[=].target.display = "License Plate"
+* group[=].element[=].display = "A.2.1.2.1 - Vehicle Identifier"
+* group[=].element[=].target.code = #Location.identifier
+* group[=].element[=].target.display = "Vehicle Identifier"
 * group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.comment = "At least one vehicle identifier (license plate, VIN, call sign or helicopter ID) must be present."
 
 
 // ========================= Dispatch Start Location → Location (cz-location-ems) =========================

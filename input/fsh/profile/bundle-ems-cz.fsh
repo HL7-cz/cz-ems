@@ -46,11 +46,12 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry ^slicing.rules = #open
 
 * entry.resource 1..
+
 * entry contains composition 1..1
 * entry[composition].resource only CZ_CompositionEms
 
 * entry contains patient 1..*
-* entry[patient].resource only CZ_PatientCore or CZ_PatientAnimal
+* entry[patient].resource only CZ_PatientCore
 
 * entry contains organization 0..*
 * entry[organization].resource only CZ_OrganizationCore
@@ -58,8 +59,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains practitioner 0..*
 * entry[practitioner].resource only CZ_PractitionerCore
 
-* entry contains encounter 1..*
-* entry[encounter].resource only CZ_EncounterEms
+* entry contains encounter 0..*
+* entry[encounter].resource only CZ_EncounterEms or CZ_EncounterMissionEms
 
 * entry contains procedure 0..*
 * entry[procedure].resource only CZ_ProcedureEms
@@ -67,14 +68,14 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains attachment 0..*
 * entry[attachment].resource only CZ_Logo or CZ_Attachment
 
-* entry contains practitionerrole 0..*
-* entry[practitionerrole].resource only CZ_PractitionerRoleCore
+* entry contains practitionerRole 0..*
+* entry[practitionerRole].resource only CZ_PractitionerRoleCore
 
 * entry contains coverage 0..*
 * entry[coverage].resource only CZ_Coverage
 
-* entry contains task 1..1
-* entry[task].resource only CZ_TaskEms
+* entry contains serviceRequest 0..1
+* entry[serviceRequest].resource only CZ_ServiceRequestEms
 
 * entry contains careTeam 0..1
 * entry[careTeam].resource only CZ_CareTeamEms
@@ -82,14 +83,14 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains communication 0..*
 * entry[communication].resource only CZ_CommunicationEms
 
-* entry contains location 1..*
+* entry contains location 0..*
 * entry[location].resource only CZ_LocationEms or CZ_VehicleLocationEms
 
 * entry contains allergy 0..*
 * entry[allergy].resource only CZ_AllergyIntoleranceEms
 
 * entry contains observation 0..*
-* entry[observation].resource only Observation
+* entry[observation].resource only Observation or CZ_ObservationArrivalAtDestinationTimeEMS or CZ_ObservationTravelEms
 
 * entry contains medicationAdministration 0..*
 * entry[medicationAdministration].resource only MedicationAdministration

@@ -9,8 +9,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * . ^short = "Emergency medical service report composition"
 * . ^definition = "Emergency medical service report composition. \r\nA composition is a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. \r\nWhile a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained."
 
-* extension contains $event-basedOn named basedOn 0..*
-* extension[basedOn].valueReference only Reference ( Resource or CZ_TaskEms ) /// add profile
+// * extension contains $event-basedOn named basedOn 0..*
+// * extension[basedOn].valueReference only Reference ( Resource or CZ_ServiceRequestEms ) /// add profile
 
 * extension contains DocumentPresentedForm named presentedForm 1..*
 * extension[presentedForm] ^short = "Presented form"
@@ -27,14 +27,13 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * type ^short = "Kind of composition (\"Emergency Medical Services\")"
 * type ^definition = "Specifies that this composition refer to a Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
-//TODO: zvážit zda nepoužít spíše * type = $loinc#101135-2 "Ambulance Discharge summary"
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
 
 * encounter 1..1
-* encounter only Reference(CZ_Encounter)
-  * ^short = "Context that defines the EMS Report"
+* encounter only Reference(CZ_EncounterEms)
+  * ^short = "Reference to the encounter profile, which records the times of the call notification and the end of the dispatch"
 
 * date ^short = "EMS date"
 * author ^short = "Who and/or what authored the Emergency Medical Services"
@@ -68,6 +67,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * obeys text-or-section
 
 * section contains
+    mission 1..1  and
     dispatch 1..1 and
     timeline 1..1 and
     patientHx 1..1 and
@@ -91,6 +91,31 @@ Description: "This profile defines how to represent Composition resource in HL7 
     payers 0..1 and
     attachments 0..*
 
+// ---------------------------------------------------- mission ----------------------------------------------------//
+* section[mission]
+  * ^short = "Mission"
+  * ^definition = "EMS response Narrative NEMSIS"
+  * code = $loinc#67664-3 // "EMS response Narrative NEMSIS"
+* section[mission].entry ^slicing.discriminator.type = #profile
+* section[mission].entry ^slicing.discriminator.path = "resolve()"
+* section[mission].entry ^slicing.rules = #open
+
+* section[mission].entry contains 
+    missionEncounter 1..1 MS and 
+    missionTimeStatus 0..1 MS and 
+    ambulance 0..* MS
+
+* section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
+* section[mission].entry[missionEncounter].reference 1..1
+  * ^short = "Reference to the encounter profile, which records the times of departure, arrival, and departure from the scene of the incident, and the handover of the patient."
+  // * ^description = "Encouter p"
+* section[mission].entry[missionTimeStatus] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
+* section[mission].entry[missionTimeStatus].reference 0..1
+* section[mission].entry[ambulance] only Reference(CZ_VehicleLocationEms) //CHEmsLocationAmbulance
+* section[mission].entry[ambulance].reference 1..
+* section[mission].section 0..0
+
+
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
 * section[findings]
   * ^short = "Physical findings Narrative"
@@ -109,7 +134,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_TaskEms or CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
+  * entry only Reference(CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
 
 ///////////////////////////////// TIMELINE SECTION ///////////////////////////////////////
 * section[timeline]
@@ -119,7 +144,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_TaskEms or CZ_CommunicationEms)
+  * entry only Reference(CZ_ServiceRequestEms or CZ_CommunicationEms)
 
 ///////////////////////////////// PATIENT HISTORY SECTION ///////////////////////////////////////
 * section[patientHx]

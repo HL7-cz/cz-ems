@@ -43,5 +43,5 @@ Example of Emergency medical service report: [EMS report of patient Novotný](Bu
 - Example [Practitioner role - Paramedic](PractitionerRole-f64bef19-c377-404a-bac2-23d2bbac8f3e.html)
 - Example [Procedure - ECG](Procedure-3af2e7a6-c16e-4b80-a173-ca2c8aa081b6.html)
 - Example [Procedure - Peripheral Venous Cannulation](Procedure-6ec0b5df-ad0b-487b-9918-367ca876ac38.html)
-- Example [Task - Dispatch](Task-3acd2720-0bcf-41ca-bb17-7c64ac5b7682.html)
+- Example [ServiceRequest - Dispatch](ServiceRequest-3acd2720-0bcf-41ca-bb17-7c64ac5b7682.html)
 - Example [Vehicle - Dispatch](Location-54d8ee67-8706-46a8-899e-12a54761d9d9.html)

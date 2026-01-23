@@ -39,8 +39,23 @@ dependencies:
   hl7.fhir.cz.core: current
   hl7.fhir.cz.hdr: current
   hl7.fhir.eu.base: 0.1.0-ballot
-  hl7.fhir.eu.extensions: 0.1.1-ballot
-#
+  # hl7.fhir.eu.extensions.r4: 0.1.1-ballot
+  # hl7.fhir.eu.extensions.r4: 0.1.1
+  hl7.fhir.eu.extensions.r4: 0.1.1 #https://simplifier.net/packages/hl7.fhir.eu.extensions.r4/0.1.1
+  # hl7.fhir.eu.extensions.r4: current
+  # hl7.fhir.eu.extensions.r4:
+  #   id: hl7.fhir.eu.extensions.r4
+  #   uri: http://hl7.eu/fhir/extensions/ImplementationGuide/hl7.fhir.eu.extensions
+  #   version: 0.1.1
+  # hl7.fhir.cz.core:
+  #   id: core
+  #   uri: https://hl7.cz/fhir/core/ImplementationGuide/hl7.fhir.cz.core
+  #   version: 0.3.0-ballot
+  # hl7.fhir.uv.ips: 2.0.0
+  # hl7.fhir.cz.core: current
+  # hl7.fhir.cz.hdr: current
+  # hl7.fhir.eu.base: 0.1.0-ballot
+  # hl7.fhir.eu.extensions: 0.1.1-ballot
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
 # auto-generate the page list, but if the author includes pages in
@@ -113,7 +128,12 @@ pages:
     title: Implementation notes
   implementation-notes-cs.md:
     title: Poznámky k implementaci
-# === MAP ====
+  obligations.md:
+    title: Obligations
+  obligations-cs.md:
+    title: Závazná pravidla
+
+  # === MAP ====
   Header-map.html:
     title: Header Model map
   Header-map-cs.html:
@@ -260,6 +280,8 @@ menu:
     Examples (cs): examples-cs.html
     Implementation notes (en): implementation-notes.html
     Implementation notes (cs): implementation-notes-cs.html
+    Obligations (en): obligations.html
+    Obligations (cs): obligations-cs.html
   About:
     Authors (en): authors.html
     Authors (cs): authors-cs.html
@@ -360,6 +382,17 @@ menu:
 #     - StructureDefinition/bark-control
 #     - StructureDefinition/bee-sting
 groups:
+  obligations:
+    name: Obligations
+    description: Obligations used to describe the HDR functional requirements for the specified data elements. Informative for this version of the guide.
+    resources:
+      - StructureDefinition/cz-allergyintolerance-obl-ems
+      - StructureDefinition/cz-condition-obl-ems
+      - StructureDefinition/cz-encounter-obl-ems
+      - StructureDefinition/cz-medicaldevice-obl-ems
+      - StructureDefinition/cz-patient-obl-ems
+      - StructureDefinition/cz-practitioner-obl-ems
+      - StructureDefinition/cz-procedure-obl-ems
   czech-logical-model:
     name: Czech logical model (Informative)
     description: Logical model in czech language. Informative for this version of the guide.

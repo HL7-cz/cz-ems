@@ -19,7 +19,7 @@ Concept Mapa
 endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
-class "cz-task-ems" <<Profile>> [[StructureDefinition-cz-task-ems.html]]
+class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
 class "cz-vehicle-location-ems" <<Profile>> [[StructureDefinition-cz-vehicle-location-ems.html]]
 class "cz-location-ems" <<Profile>> [[StructureDefinition-cz-location-ems.html]]
 class "cz-careteam-ems" <<Profile>> [[StructureDefinition-cz-careteam-ems.html]]
@@ -29,7 +29,7 @@ class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-
 class "cz-relatedPerson-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-relatedPerson-core.html]]
 
 "Údaje o výjezdu" <|. "cz-composition-ems"
-"Údaje o výjezdu" <|. "cz-task-ems"
+"Údaje o výjezdu" <|. "cz-encounter-ems"
 "Údaje o výjezdu" <|. "cz-location-ems"
 "Údaje o výjezdu" <|. "cz-careteam-ems"
 "Údaje o výjezdu" <|. "cz-practitioner-core"
@@ -38,8 +38,8 @@ class "cz-relatedPerson-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-
 "Údaje o výjezdu" <|. "cz-vehicle-location-ems"
 "Údaje o výjezdu" <|. "cz-relatedPerson-core"
 
-"cz-composition-ems" -d[hidden]-> "cz-task-ems"
-"cz-task-ems" -d[hidden]-> "cz-location-ems"
+"cz-composition-ems" -d[hidden]-> "cz-encounter-ems"
+"cz-encounter-ems" -d[hidden]-> "cz-location-ems"
 "cz-location-ems" -d[hidden]-> "cz-practitioner-core"
 "cz-practitioner-core" -d[hidden]-> "cz-practitionerrole-core"
 "cz-practitionerrole-core" -d[hidden]-> "cz-communication-ems"
