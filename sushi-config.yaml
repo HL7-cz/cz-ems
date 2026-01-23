@@ -207,6 +207,7 @@ parameters: #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Pa
   #  html-template:
   #  active-tables: false
   pin-canonicals: pin-multiples
+  path-expansion-params: '../../expansion-params.json'
   apply-contact: true
   apply-jurisdiction: true
   apply-publisher: true
@@ -254,7 +255,7 @@ menu:
     Logical models (cs): logical-models-cs.html
   Implementation:
     Mapping to profiles (en): model-map.html
-    Mapping to profiles (cs): model-map-cs.html  
+    Mapping to profiles (cs): model-map-cs.html
     Examples (en): examples.html
     Examples (cs): examples-cs.html
     Implementation notes (en): implementation-notes.html
