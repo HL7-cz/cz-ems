@@ -74,7 +74,7 @@ Usage: #definition
 
 * group[=].element[+].code = #unitLeftSceneTime
 * group[=].element[=].display = "A.2.2.5 - Left Scene Time"
-* group[=].element[=].target.code = #Encounter.location.period.start
+* group[=].element[=].target.code = #Encounter.location.period.end
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 
