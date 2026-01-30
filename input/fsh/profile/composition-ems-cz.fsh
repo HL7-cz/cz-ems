@@ -120,7 +120,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms or Observation)
+  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms or CZ_ObservationComaScoreEms or Observation)
 
 ///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
 * section[dispatch]
