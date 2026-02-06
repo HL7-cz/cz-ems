@@ -176,30 +176,40 @@ Usage: #example
 * section[patientHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anamnéza</div>"
 * section[patientHx].text.status = #additional
 * section[patientHx].entry[0] = Reference(urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425)
-* section[medicalDevices].title = "Medical devices history"
-* section[medicalDevices].code = $loinc#57080-4
-* section[medicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Historie zdravotních pomůcek a implantátů</div>"
-* section[medicalDevices].text.status = #additional
-* section[travelHx].title = "Travel history"
-* section[travelHx].code = $loinc#10182-4
-* section[travelHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cestovní anamnéza</div>"
-* section[travelHx].text.status = #additional
-* section[travelHx].entry[0] = Reference(urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206)
-* section[familyHistory].title = "Family history"
-* section[familyHistory].code = $loinc#10157-6
-* section[familyHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rodinná anamnéza</div>"
-* section[familyHistory].text.status = #additional
-* section[familyHistory].entry[0] = Reference(urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf)
-* section[alcoholUse].title = "Alcohol use"
-* section[alcoholUse].code = $loinc#11331-6
-* section[alcoholUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba alkoholu</div>"
-* section[alcoholUse].text.status = #additional
-* section[alcoholUse].entry[0] = Reference(urn:uuid:9e6eb80b-e351-4faa-92cf-8519b58def33)
-* section[tobaccoUse].title = "Tobacco use"
-* section[tobaccoUse].code = $loinc#11367-0
-* section[tobaccoUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba tabáku</div>"
-* section[tobaccoUse].text.status = #additional
-* section[tobaccoUse].entry[0] = Reference(urn:uuid:e6d14fe5-fc02-46aa-942b-6559c9e644d2)
+
+// * section[patientHx].section[HistoryMedicalDevices].title = "History of medical device use"
+// * section[patientHx].section[HistoryMedicalDevices].code = $loinc#46264-8
+// * section[patientHx].section[HistoryMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Historie zdravotních pomůcek a implantátů</div>"
+// * section[patientHx].section[HistoryMedicalDevices].text.status = #additional
+
+// TravelHx (subsection)
+* section[patientHx].section[TravelHx].title = "Travel History Section"
+* section[patientHx].section[TravelHx].code = $loinc#11349-8 "Travel history"
+* section[patientHx].section[TravelHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cestovní anamnéza</div>"
+* section[patientHx].section[TravelHx].text.status = #additional
+* section[patientHx].section[TravelHx].entry[0] = Reference(urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206)
+
+
+// FamilyHistory (subsection)
+* section[patientHx].section[FamilyHistory].title = "Family History Section"
+* section[patientHx].section[FamilyHistory].code = $loinc#10157-6 "Family history"
+* section[patientHx].section[FamilyHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rodinná anamnéza</div>"
+* section[patientHx].section[FamilyHistory].text.status = #additional
+* section[patientHx].section[FamilyHistory].entry[0] = Reference(urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf)
+
+// AlcoholUse (subsection)
+* section[patientHx].section[AlcoholUse].title = "Alcohol use Section"
+* section[patientHx].section[AlcoholUse].code = $loinc#11331-6 "History of Alcohol use"
+* section[patientHx].section[AlcoholUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba alkoholu</div>"
+* section[patientHx].section[AlcoholUse].text.status = #additional
+* section[patientHx].section[AlcoholUse].entry[0] = Reference(urn:uuid:9e6eb80b-e351-4faa-92cf-8519b58def33)
+// TobaccoUse (subsection)
+* section[patientHx].section[TobaccoUse].title = "Tobacco use Section"
+* section[patientHx].section[TobaccoUse].code = $loinc#11367-0 "History of Tobacco use"
+* section[patientHx].section[TobaccoUse].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Spotřeba tabáku</div>"
+* section[patientHx].section[TobaccoUse].text.status = #additional
+* section[patientHx].section[TobaccoUse].entry[0] = Reference(urn:uuid:e6d14fe5-fc02-46aa-942b-6559c9e644d2)
+
 * section[allergies].title = "Allergies"
 * section[allergies].code = $loinc#48765-2
 * section[allergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Urgetní anamnéza</div>"

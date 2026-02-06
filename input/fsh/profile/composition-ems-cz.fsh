@@ -69,14 +69,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
     patientHx 0..1 and
     medicalDevices 0..1 and
     significantProcedures 0..1 and
-    travelHx 0..1 and
-    immunizations 0..1 and
-    infectiousContacts 0..1 and
-    familyHistory 0..1 and
-    socialHistory 0..1 and
-    alcoholUse 0..1 and
-    tobaccoUse 0..1 and
-    drugUse 0..1 and
+    // travelHx 0..1 and
+    // immunizations 0..1 and
+    // infectiousContacts 0..1 and
+    // familyHistory 0..1 and
+    // socialHistory 0..1 and
+    // alcoholUse 0..1 and
+    // tobaccoUse 0..1 and
+    // drugUse 0..1 and
     allergies 0..1 and
     alert 0..1 and
     findings 0..* and
@@ -148,8 +148,102 @@ Description: "This profile defines how to represent Composition resource in HL7 
     Patient History Section,
     This Section describes all aspects of the medical history of the patient even if not pertinent to the current procedure\, and may include chief complaint\, past medical history\, social history\, family history\, surgical or procedure history\, medication history\, and other history information. The history may be limited to information pertinent to the current procedure or may be more comprehensive. The history may be reported as a collection of random clinical statements or it may be reported categorically. Categorical report formats may be divided into multiple subsections including Past Medical History\, Social History.,
     $loinc#11329-0 )
-  * entry 1..
-  * entry only Reference(CZ_ConditionEms)
+  // * entry 1..
+  // * entry only Reference(CZ_ConditionEms)
+
+// SLICING PRO VNOŘENÉ SECTION
+* section[patientHx].section ^slicing.discriminator[0].type = #pattern
+* section[patientHx].section ^slicing.discriminator[0].path = "code"
+* section[patientHx].section ^slicing.rules = #open
+* section[patientHx].section ^slicing.ordered = false
+
+* section[patientHx].section contains
+      InfectiousContacts 0..* and
+      TravelHx 0..* and
+      SocialHistory 0..1 and
+      PastIllnessHx 0..1 and
+      ProceduresHx 0..1 and
+      ImmunizationHx 0..* and
+      FamilyHistory 0..* and
+      SubstanceUse 0..1 and
+      AlcoholUse 0..1 and
+      TobaccoUse 0..1 and
+      DrugUse 0..1 and 
+      HistoryMedicalDevices 0..1
+
+* section[patientHx].section[InfectiousContacts]
+  * title = "Infectious contacts"
+  * code = $loinc#11348-0 "Infectious disease contact"
+  * entry 0..*
+  * entry only Reference(CZ_ObservationInfectiousContactEMS or DocumentReference)
+
+* section[patientHx].section[TravelHx]
+  * title = "Travel History Section"
+  * code = $loinc#11349-8 "Travel history"
+  * entry 0..*
+  * entry only Reference(CZ_ObservationTravelEms)
+
+* section[patientHx].section[SocialHistory]
+  * title = "Social History Section"
+  * code = $loinc#29762-2 "Social history"
+  * entry 0..*
+  * entry only Reference(CZ_ObservationSDOHEMS)
+
+* section[patientHx].section[PastIllnessHx]
+  * title = "Past Illness History Section"
+  * code = $loinc#11336-7 "History of past illness"
+  * entry 0..*
+  * entry only Reference(CZ_ConditionEms or Condition)
+
+* section[patientHx].section[ProceduresHx]
+  * title = "Procedures History Section"
+  * code = $loinc#11340-9 "History of past procedures"
+  * entry 0..*
+  * entry only Reference(CZ_ProcedureEms or Procedure)
+
+* section[patientHx].section[ImmunizationHx]
+  * title = "Immunizations Section"
+  * code = $loinc#11369-6 "Immunizations"
+  * entry 0..*
+  * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
+
+* section[patientHx].section[FamilyHistory]
+  * title = "Family History Section"
+  * code = $loinc#10157-6 "Family history"
+  * entry 0..*
+  * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
+
+* section[patientHx].section[SubstanceUse]
+  * title = "Substance Use History Section"
+  * code = $loinc#11364-7 "History of substance use"
+  * entry 0..*
+  * entry only Reference(Observation)
+
+* section[patientHx].section[AlcoholUse]
+  * title = "Alcohol use Section"
+  * code = $loinc#11331-6 "History of Alcohol use"
+  * entry 0..*
+  * entry only Reference(Observation)
+
+* section[patientHx].section[TobaccoUse]
+  * title = "Tobacco use Section"
+  * code = $loinc#11367-0 "History of Tobacco use"
+  * entry 0..*
+  * entry only Reference(Observation)
+
+* section[patientHx].section[DrugUse]
+  * title = "Drug use Section"
+  * code = $loinc#11343-1 "History of Other nonmedical drug use"
+  * entry 0..*
+  * entry only Reference(Observation)
+
+* section[patientHx].section[HistoryMedicalDevices]
+  * title = "Medical Devices History Section"
+  * code = $loinc#46264-8 "History of medical device use"
+  * entry 0..*
+  * entry only Reference(CZ_MedicalDevice or Device)
+// END SLICING PRO VNOŘENÉ SECTION  
+      
 
 * section[medicalDevices]
   * insert SectionComRules (
@@ -167,69 +261,69 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 1..
   * entry only Reference(CZ_ProcedureEms)
 
-* section[travelHx]
-  * insert SectionComRules (
-      Travel History Section,
-      This Section describes the travel history relevant for the Patient Summary\, e.g.recent travel in a region of high prevalence of a specific infectious disease like Malaria,
-      $loinc#10182-4 )
-  * entry 0..*
-  * entry only Reference(CZ_ObservationTravelEms)
+// * section[travelHx]
+//   * insert SectionComRules (
+//       Travel History Section,
+//       This Section describes the travel history relevant for the Patient Summary\, e.g.recent travel in a region of high prevalence of a specific infectious disease like Malaria,
+//       $loinc#10182-4 )
+//   * entry 0..*
+//   * entry only Reference(CZ_ObservationTravelEms)
 
-* section[immunizations]
-  * insert SectionComRules (
-      Immunizations Section,
-      The Immunizations Section defines a patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\nThe section includes current immunization status\, and may contain the entire immunization history that is relevant to the period of time being summarized.,
-      $loinc#11369-6 )
-  * entry 0..*
-  * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
+// * section[immunizations]
+//   * insert SectionComRules (
+//       Immunizations Section,
+//       The Immunizations Section defines a patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\nThe section includes current immunization status\, and may contain the entire immunization history that is relevant to the period of time being summarized.,
+//       $loinc#11369-6 )
+//   * entry 0..*
+//   * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
 
-* section[infectiousContacts]
-  * insert SectionComRules (
-      Infectious contacts,
-    Infectious contacts of the patient,
-     TemporaryHDRSystem#infection-contact ) // $sct#444071008"Exposure to organism (event\)"
-  * entry 0..*
-  * entry only Reference(CZ_ObservationInfectiousContactEMS)
+// * section[infectiousContacts]
+//   * insert SectionComRules (
+//       Infectious contacts,
+//     Infectious contacts of the patient,
+//      TemporaryHDRSystem#infection-contact ) // $sct#444071008"Exposure to organism (event\)"
+//   * entry 0..*
+//   * entry only Reference(CZ_ObservationInfectiousContactEMS)
 
-* section[familyHistory]
-  * insert SectionComRules (
-    Family History Section,
-    This section contains data defining the patient’s genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient’s healthcare risk profile.,
-    http://loinc.org#10157-6  )
-  * entry 0..*
-  * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
+// * section[familyHistory]
+//   * insert SectionComRules (
+//     Family History Section,
+//     This section contains data defining the patient’s genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient’s healthcare risk profile.,
+//     http://loinc.org#10157-6  )
+//   * entry 0..*
+//   * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
 
-* section[socialHistory]
-  * insert SectionComRules (
-    Social History Section,
-    The social history section contains a description of the person Health related lifestyle factors or lifestyle observations.   E.g. smoke habits; alcohol consumption; diets\, risky habits.,
-    $loinc#29762-2)
-  * entry 0..*
-  * entry only Reference(CZ_ObservationSDOHEMS)
+// * section[socialHistory]
+//   * insert SectionComRules (
+//     Social History Section,
+//     The social history section contains a description of the person Health related lifestyle factors or lifestyle observations.   E.g. smoke habits; alcohol consumption; diets\, risky habits.,
+//     $loinc#29762-2)
+//   * entry 0..*
+//   * entry only Reference(CZ_ObservationSDOHEMS)
 
-* section[alcoholUse]
-  * insert SectionComRules (
-    Alcohol use Section,
-    The Alcohol use Section contains a description of the use abuse of alcohol,
-    $loinc#11331-6  )   // History of Alcohol use
-  * entry 0..*
-  * entry only Reference(Observation)
+// * section[alcoholUse]
+//   * insert SectionComRules (
+//     Alcohol use Section,
+//     The Alcohol use Section contains a description of the use abuse of alcohol,
+//     $loinc#11331-6  )   // History of Alcohol use
+//   * entry 0..*
+//   * entry only Reference(Observation)
 
-* section[tobaccoUse]
-  * insert SectionComRules (
-    Tobacco use Section,
-    The Tobacco use Section contains a description of the use abuse of tobacco,
-    $loinc#11367-0  )   // History of Tobacco use
-  * entry 0..*
-  * entry only Reference(Observation)
+// * section[tobaccoUse]
+//   * insert SectionComRules (
+//     Tobacco use Section,
+//     The Tobacco use Section contains a description of the use abuse of tobacco,
+//     $loinc#11367-0  )   // History of Tobacco use
+//   * entry 0..*
+//   * entry only Reference(Observation)
 
-* section[drugUse]
-  * insert SectionComRules (
-    Drug use Section,
-    The Drug use Section contains a description of the use abuse of drugs,
-    $loinc#11343-1  )   // History of Other nonmedical drug use
-  * entry 0..*
-  * entry only Reference(Observation)
+// * section[drugUse]
+//   * insert SectionComRules (
+//     Drug use Section,
+//     The Drug use Section contains a description of the use abuse of drugs,
+//     $loinc#11343-1  )   // History of Other nonmedical drug use
+//   * entry 0..*
+//   * entry only Reference(Observation)
 
 /////////////////////////////////  Allergies and Intolerances SECTION ///////////////////////////////////////
 * section[allergies]
