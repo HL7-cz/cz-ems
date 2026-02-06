@@ -19,7 +19,7 @@ Description: "Glasgow Coma Scale represented as a single Observation with total 
 * category.coding 1..1
 * category.coding from $hl7-observation-category (extensible)
 * category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category" (exactly)
-* category.coding.code = #vital-signs (exactly)
+* category.coding.code = #survey (exactly)
 
 // --- the scale (adult vs pediatric) is expressed in Observation.code
 * code 1..1
@@ -34,17 +34,18 @@ Description: "Glasgow Coma Scale represented as a single Observation with total 
 // Components (required 3 subscores)
 // =======================================================
 
-* component 3..3
+* component 0..3
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* component ^slicing.rules = #closed
 * component ^slicing.description = "Subscores eye/verbal/motor as components."
+* component.code from CZ_ObservationComaScoreComponentTypeEmsVs (required)
 
 * component contains
-    eyeOpening 1..1 and
-    verbalResponse 1..1 and
-    motorResponse 1..1
+    eyeOpening 0..1 and
+    verbalResponse 0..1 and
+    motorResponse 0..1
 
 * component[eyeOpening].code 1..1
 * component[eyeOpening].code = $sct#281395000 "Glasgow Coma Score eye opening subscore" (exactly)
@@ -60,10 +61,6 @@ Description: "Glasgow Coma Scale represented as a single Observation with total 
 * component[motorResponse].code = $sct#281396004 "Glasgow Coma Scale motor response subscore" (exactly)
 * component[motorResponse].value[x] 1..1
 * component[motorResponse].value[x] only integer
-
-
-
-
 
 // =======================================================
 // ValueSets
