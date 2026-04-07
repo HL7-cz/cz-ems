@@ -31,6 +31,6 @@ Usage: #example
 * author = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * title = "EMS Pacienta Novotného"
 * confidentiality = #N
-* type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+* type = $loinc#67796-3 //Zpráva o výjezdu záchranné služby
 * extension[presentedForm].valueAttachment = cz-pdf-example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)

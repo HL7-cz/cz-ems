@@ -23,10 +23,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * identifier ^short = "EMS business identifier"
 * status ^short = "EMS status"
-* type only $CodeableConcept-uv-ips
-* type ^short = "Kind of composition (\"Emergency Medical Services\")"
-* type ^definition = "Specifies that this composition refer to a Level 3 emergency medical services patient care report - recommended CDA R1 and R2 sections"
-* type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+* type 1..1 MS
+* type = $loinc#67796-3 //Zpráva o výjezdu záchranné služby
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
@@ -179,7 +177,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section[patientHx].section[TravelHx]
   * title = "Travel History Section"
-  * code = $loinc#11349-8 "Travel history"
+  * code = $loinc#10182-4 "Travel history"
   * entry 0..*
   * entry only Reference(CZ_ObservationTravelEms)
 
@@ -209,7 +207,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section[patientHx].section[FamilyHistory]
   * title = "Family History Section"
-  * code = $loinc#10157-6 "Family history"
+  * code = $loinc#10157-6
   * entry 0..*
   * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
 

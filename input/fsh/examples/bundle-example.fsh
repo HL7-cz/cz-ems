@@ -147,7 +147,7 @@ Usage: #example
 * author = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * title = "EMS Pacienta Novotného"
 * confidentiality = #N
-* type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
+* type = $loinc#67796-3 //Zpráva o výjezdu záchranné služby
 * extension[presentedForm].valueAttachment = cz-pdf-example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[mission].title = "Mission details"
@@ -184,7 +184,7 @@ Usage: #example
 
 // TravelHx (subsection)
 * section[patientHx].section[TravelHx].title = "Travel History Section"
-* section[patientHx].section[TravelHx].code = $loinc#11349-8 "Travel history"
+* section[patientHx].section[TravelHx].code = $loinc#10182-4 "Travel history"
 * section[patientHx].section[TravelHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cestovní anamnéza</div>"
 * section[patientHx].section[TravelHx].text.status = #additional
 * section[patientHx].section[TravelHx].entry[0] = Reference(urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206)
@@ -671,7 +671,7 @@ Usage: #example
 Title: "Encounter: EMS mission Novotný"
 Description: "Encounter representing the EMS mission for patient Novotný."
 * id = "fb7cd123-6683-49e3-89cc-040ad008b922"
-* meta.profile[+] = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-encounter-mission-ems"
+* meta.profile = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-encounter-mission-ems"
 * status = #finished
 * class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * class.code = #EMER
