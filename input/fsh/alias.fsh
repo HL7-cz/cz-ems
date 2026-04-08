@@ -1,6 +1,7 @@
 //============== ALIAS ===============
 
 // Extensions:
+Alias: $allergyintolerance-abatement = http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement
 Alias: $artifact-relatedArtifact = http://hl7.org/fhir/StructureDefinition/artifact-relatedArtifact
 Alias: $event-basedOn = http://hl7.org/fhir/StructureDefinition/event-basedOn
 Alias: $flag-detail = http://hl7.org/fhir/StructureDefinition/flag-detail

@@ -8,7 +8,7 @@ Description: "This profile sets minimum expectations for the Observation resourc
 
 * subject 1..1
 * subject only Reference(CZ_PatientCore)
-* code from CZ_ObservationHeightTypeEmsVs
+* code = $loinc#8302-2 // "Body height"
 * value[x] only Quantity
 * valueQuantity.code from CZ_ObservationUnitsHeightEmsVs
 * valueQuantity ^short = "Height in cm"

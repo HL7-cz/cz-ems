@@ -70,6 +70,7 @@ ValueSet: CZ_ObservationComaScoreTypeEmsVs
 Id: cz-observation-comaScore-type-ems-vs
 Title: "Observation Coma Score Type (CZ EMS)"
 Description: "Allowed coma score scales: adult GCS and pediatric Adelaide."
+* ^experimental = true
 * $sct#248241002 "Glasgow coma score"
 * $sct#443881004 "Adelaide pediatric coma score"
 
@@ -77,6 +78,7 @@ ValueSet: CZ_ObservationComaScoreComponentTypeEmsVs
 Id: cz-observation-comaScore-component-type-ems-vs
 Title: "Observation Coma Score Component Type (CZ EMS)"
 Description: "Subscores for coma score."
+* ^experimental = true
 * $sct#281396004 "Glasgow Coma Scale motor response subscore"
 * $sct#281397008 "Glasgow Coma Scale verbal response subscore"
 * $sct#281395000 "Glasgow Coma Score eye opening subscore"

@@ -192,7 +192,7 @@ Usage: #example
 
 // FamilyHistory (subsection)
 * section[patientHx].section[FamilyHistory].title = "Family History Section"
-* section[patientHx].section[FamilyHistory].code = $loinc#10157-6 "Family history"
+* section[patientHx].section[FamilyHistory].code = $loinc#10157-6 "History of family member diseases note"
 * section[patientHx].section[FamilyHistory].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Rodinná anamnéza</div>"
 * section[patientHx].section[FamilyHistory].text.status = #additional
 * section[patientHx].section[FamilyHistory].entry[0] = Reference(urn:uuid:9a26eaee-9315-420d-a47c-8e8329511aaf)
