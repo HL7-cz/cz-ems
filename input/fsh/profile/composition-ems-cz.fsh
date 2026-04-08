@@ -171,37 +171,37 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section[patientHx].section[InfectiousContacts]
   * title = "Infectious contacts"
-  * code = $loinc#11348-0 "Infectious disease contact"
+  * code = TemporaryHDRSystem#infection-contact
   * entry 0..*
   * entry only Reference(CZ_ObservationInfectiousContactEMS or DocumentReference)
 
 * section[patientHx].section[TravelHx]
   * title = "Travel History Section"
-  * code = $loinc#10182-4 "Travel history"
+  * code = $loinc#10182-4 "History of Travel note"
   * entry 0..*
   * entry only Reference(CZ_ObservationTravelEms)
 
 * section[patientHx].section[SocialHistory]
   * title = "Social History Section"
-  * code = $loinc#29762-2 "Social history"
+  * code = $loinc#29762-2 "Social history note"
   * entry 0..*
   * entry only Reference(CZ_ObservationSDOHEMS)
 
 * section[patientHx].section[PastIllnessHx]
   * title = "Past Illness History Section"
-  * code = $loinc#11336-7 "History of past illness"
+  * code = $loinc#11348-0 "History of Past illness note"
   * entry 0..*
   * entry only Reference(CZ_ConditionEms or Condition)
 
 * section[patientHx].section[ProceduresHx]
   * title = "Procedures History Section"
-  * code = $loinc#11340-9 "History of past procedures"
+  * code = $loinc#47519-4 "History of Procedures Document"
   * entry 0..*
   * entry only Reference(CZ_ProcedureEms or Procedure)
 
 * section[patientHx].section[ImmunizationHx]
   * title = "Immunizations Section"
-  * code = $loinc#11369-6 "Immunizations"
+  * code = $loinc#11369-6 "History of Immunization note"
   * entry 0..*
   * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
 
@@ -213,7 +213,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section[patientHx].section[SubstanceUse]
   * title = "Substance Use History Section"
-  * code = $loinc#11364-7 "History of substance use"
+  * code = TemporaryHDRSystem#substance-use "Use of Substances Section"
   * entry 0..*
   * entry only Reference(Observation)
 

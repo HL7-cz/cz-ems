@@ -184,7 +184,7 @@ Usage: #example
 
 // TravelHx (subsection)
 * section[patientHx].section[TravelHx].title = "Travel History Section"
-* section[patientHx].section[TravelHx].code = $loinc#10182-4 "Travel history"
+* section[patientHx].section[TravelHx].code = $loinc#10182-4 "History of Travel note"
 * section[patientHx].section[TravelHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Cestovní anamnéza</div>"
 * section[patientHx].section[TravelHx].text.status = #additional
 * section[patientHx].section[TravelHx].entry[0] = Reference(urn:uuid:af4ee062-8ae9-4b7b-a567-2235a762a206)
