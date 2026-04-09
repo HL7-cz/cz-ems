@@ -17,8 +17,8 @@ Usage: #definition
 
 * group[=].element[+].code = #LogAlertsCz.alergie.popis
 * group[=].element[=].display = "A.2.4.1.1 - Popis alergie"
-* group[=].element[=].target.code = #AllergyIntolerance.text
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.code = #AllergyIntolerance.note
+* group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #LogAlertsCz.alergie.puvodce
 * group[=].element[=].display = "A.2.4.1.2 - Původce"
@@ -43,12 +43,12 @@ Usage: #definition
 * group[=].element[+].code = #LogAlertsCz.alergie.pocatekProjevu
 * group[=].element[=].display = "A.2.4.1.6 - Počátek období projevu"
 * group[=].element[=].target.code = #AllergyIntolerance.onset[x]
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #LogAlertsCz.alergie.konecProjevu
 * group[=].element[=].display = "A.2.4.1.7 - Konec období projevu"
 * group[=].element[=].target.code = #AllergyIntolerance.extension:abatement.value[x]
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #relatedto
 
 * group[=].element[+].code = #LogAlertsCz.alergie.stav
 * group[=].element[=].display = "A.2.4.1.8 - Stav"

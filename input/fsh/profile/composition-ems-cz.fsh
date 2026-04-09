@@ -23,8 +23,17 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * identifier ^short = "EMS business identifier"
 * status ^short = "EMS status"
+
 * type 1..1 MS
+* type from $MedicalDocumentType (preferred)
+* type ^short = "Kind of composition (\"Záznam o výjezdu\")"
 * type = $loinc#67796-3 //Zpráva o výjezdu záchranné služby
+
+* category 0..* MS
+* category from $DocumentCategory (preferred)
+* category ^short = "Category of composition (\"Záznamy zdravotnické záchranné služby\")"
+* category = $loinc#18682-5	//Záznamy zdravotnické záchranné služby
+
 * subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."

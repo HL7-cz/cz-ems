@@ -20,6 +20,8 @@ Alias: $dlp_lecprip = https://ncez.mzcr.cz/fhir/ValueSet/cz-dlplecivepripravky-v
 Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
 Alias: $orpha = https://www.orpha.net
 Alias: $hl7-observation-category = http://hl7.org/fhir/ValueSet/observation-category
+Alias: $MedicalDocumentType = https://ncez.mzcr.cz/terminology/ValueSet/medical-document-type
+Alias: $DocumentCategory = https://ncez.mzcr.cz/terminology/ValueSet/document-category
 
 // CodeSystems:
 Alias: $loinc =  http://loinc.org
