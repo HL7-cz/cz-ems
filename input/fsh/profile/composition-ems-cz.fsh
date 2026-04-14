@@ -38,7 +38,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the ems the subject is always the patient."
 
-* encounter 1..1
+* encounter 0..1
 * encounter only Reference(CZ_EncounterEms)
   * ^short = "Reference to the encounter profile, which records the times of the call notification and the end of the dispatch"
 

@@ -388,6 +388,7 @@ groups:
     resources:
       - StructureDefinition/cz-allergyintolerance-obl-ems
       - StructureDefinition/cz-condition-obl-ems
+      - StructureDefinition/cz-composition-obl-ems
       - StructureDefinition/cz-encounter-obl-ems
       - StructureDefinition/cz-medicaldevice-obl-ems
       - StructureDefinition/cz-patient-obl-ems
