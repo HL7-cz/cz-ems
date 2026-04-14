@@ -3,6 +3,7 @@ Parent: Encounter
 Id: cz-encounter-ems
 Title: "Encounter: EMS Report (CZ)"
 Description: "This profile defines how to represent Encounter resource in HL7 FHIR for the scope of this guide."
+* class = $v3-ActCode#EMER "emergency"
 
 // A.2.1.1 Identifikace výjezdu
 * identifier 1..* MS    // A.2.1.1
@@ -22,13 +23,13 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * identifier[otherId].value 1..1             // A.2.1.1.2
 
 // A.2.1.7 Klasifikace výjezdu
-* type 1..1 // A.2.1.7.2 Klasifikace výzvy (ZOS)
+* type 0..1 // A.2.1.7.2 Klasifikace výzvy (ZOS)
 * type from CallClassificationEmsVS (required)
 * type ^short = "Call classification (dispatch center classification)"
 * type ^definition = "Preliminary information about the patient’s condition – “working diagnosis” – reason for dispatch"
 
 // A.2.1.7.1 Urgentnost výjezdu
-* priority 1..1
+* priority 0..1
 * priority ^short = "Urgency level of the dispatch"
 * priority ^definition = "Indicates the urgency level assigned by the dispatch center."
 
@@ -49,7 +50,7 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * location ^slicing.rules = #open
 * location ^slicing.description = "Slicing of Encounter.location for scene and destination."
 * location contains
-    scene 1..1 and             // CZ: místo zásahu (scéna)
+    scene 0..1 and             // CZ: místo zásahu (scéna)
     destination 0..1           // CZ: místo předání (cílové pracoviště)
 
 * location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"

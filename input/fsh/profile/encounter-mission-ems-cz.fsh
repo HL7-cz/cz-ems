@@ -3,6 +3,7 @@ Parent: Encounter
 Id: cz-encounter-mission-ems
 Title: "Encounter Mission: EMS Report (CZ)"
 Description: "This profile defines how to represent Encounter Mission resource in HL7 FHIR for the scope of this guide."
+* class = $v3-ActCode#FLD "field"
 
 // A2.2.3 Čas výjezdu 1..1 Povinné Encounter.period.start
 * period.start 1..1 MS

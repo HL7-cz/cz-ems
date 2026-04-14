@@ -14,8 +14,8 @@ Usage: #example
 * entry[encounter].fullUrl = "urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628"
 * entry[encounter].resource = cz-encounter-example
 
-* entry[encounter][+].fullUrl = "urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922"
-* entry[encounter][=].resource = cz-encounter-mission-example
+* entry[missionEncounter].fullUrl = "urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922"
+* entry[missionEncounter].resource = cz-encounter-mission-example
 
 * entry[attachment].fullUrl = "urn:uuid:040eb849-a513-4d74-b3f3-d2f246a26877"
 * entry[attachment].resource = cz-logo2-example
@@ -460,8 +460,7 @@ Description: "Example of encounter for EMS document"
 * identifier[dispatchNumber].value = "852699001"
 * identifier[dispatchNumber].use = #official
 * status = #in-progress
-* class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* class.code = #AMB
+* class = $v3-ActCode#EMER "emergency"
 * type.coding = $sct#56265001 "Heart disease"
 * type.text = "Arytmie" 
 * priority = $v3-ActPriority#UR "Urgent"
@@ -673,8 +672,7 @@ Description: "Encounter representing the EMS mission for patient Novotný."
 * id = "fb7cd123-6683-49e3-89cc-040ad008b922"
 * meta.profile = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-encounter-mission-ems"
 * status = #finished
-* class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-* class.code = #EMER
+* class = $v3-ActCode#FLD "field"
 // odkaz na pacienta z bundle
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
 // ------------------------

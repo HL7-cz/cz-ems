@@ -7,8 +7,14 @@ Description: "This profile defines obligations for an encounter in FHIR for the 
 * period insert OblCreator(#SHALL:able-to-populate,L3)
 * reasonCode insert OblCreator(#SHALL:able-to-populate,L3)
 * hospitalization insert OblCreator(#SHALL:able-to-populate,L3)
+* priority insert OblCreator(#SHALL:able-to-populate,L3)
+* location[scene] insert OblCreator(#SHALL:able-to-populate,L3)
 
 // Consumer Obligations L3 ===========>
 * identifier[dispatchNumber] insert OblConsumer(#SHALL:display,L3)
 * reasonCode insert OblConsumer(#SHALL:display,L3)
 * hospitalization insert OblConsumer(#SHALL:display,L3)
+* priority insert OblConsumer(#SHALL:display,L3)
+* location[scene] insert OblConsumer(#SHALL:display,L3)
+
+
