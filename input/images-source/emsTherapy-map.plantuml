@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Therapy" <<LogicalModel>> [[StructureDefinition-TherapyEmsCz.html]]
-note top #EEEEAE [[ConceptMap-Therapy2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
 class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]

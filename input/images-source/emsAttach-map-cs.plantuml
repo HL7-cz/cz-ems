@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Přílohy" <<LogicalModel>> [[StructureDefinition-LogAttachmentsCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "Vizuální podoba dokumentu" <<LogicalModel>> [[StructureDefinition-LogPresentedFormCz.html]]
 note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]

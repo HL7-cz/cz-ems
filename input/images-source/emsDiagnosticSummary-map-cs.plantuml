@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Diagnostický souhrn" <<LogicalModel>> [[StructureDefinition-LogDiagnostickySouhrnCz.html]]
-note top #EEEEAE [[ConceptMap-diagnosticSummary2FHIR-cz-ems.html]]
-Concept Mapa
-endnote
 
 class "cz-condition-ems" <<Profile>> [[StructureDefinition-cz-condition-ems.html]]
 

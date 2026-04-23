@@ -19,9 +19,6 @@ Concept Map
 endnote
 
 class "Presented Form" <<LogicalModel>> [[StructureDefinition-PresentedFormCz.html]]
-note top #EEEEAE [[ConceptMap-AttachmentEMS2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-composition-ems" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-ems/StructureDefinition-cz-composition-ems.html]]
 class "cz-attachment" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-attachment.html]]

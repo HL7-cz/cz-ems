@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Findings" <<LogicalModel>> [[StructureDefinition-ObjectiveFindingsEmsCz.html]]
-note top #EEEEAE [[ConceptMap-FindingsEMS2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-observation-height-ems" <<Profile>> [[StructureDefinition-cz-observation-height-ems.html]]

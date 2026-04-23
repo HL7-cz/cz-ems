@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Clinical course and recommendations" <<LogicalModel>> [[StructureDefinition-LogRecommendations.html]]
-note top #EEEEAE [[ConceptMap-ClinicalCourseAndRecommendationsEMS2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]

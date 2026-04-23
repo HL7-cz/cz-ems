@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Anamnéza" <<LogicalModel>> [[StructureDefinition-LogPatientHistoryCz.html]]
-note top #EEEEAE [[ConceptMap-patientHistory2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-immunizationRecommendation-ems" <<Profile>> [[StructureDefinition-cz-immunizationRecommendation-ems.html]]

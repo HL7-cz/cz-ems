@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Urgentní informace" <<LogicalModel>> [[StructureDefinition-LogAlertsCz.html]]
-note top #EEEEAE [[ConceptMap-Alerts2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-allergyIntolerance-ems" <<Profile>> [[StructureDefinition-cz-allergyIntolerance-ems.html]]

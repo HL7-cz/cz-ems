@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Údaje o výjezdu" <<LogicalModel>> [[StructureDefinition-LogDispatchDataCz.html]]
-note top #EEEEAE [[ConceptMap-DispatchDataEMS2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]

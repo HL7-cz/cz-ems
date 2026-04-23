@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Dispatch timeline" <<LogicalModel>> [[StructureDefinition-DispatchTimelineCz.html]]
-note top #EEEEAE [[ConceptMap-DispatchTimeline2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
 class "cz-encounter-mission-ems" <<Profile>> [[StructureDefinition-cz-encounter-mission-ems.html]]

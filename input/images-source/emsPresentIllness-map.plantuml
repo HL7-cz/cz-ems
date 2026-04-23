@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Present Illness" <<LogicalModel>> [[StructureDefinition-PresentIllnessEmsCz.html]]
-note top #EEEEAE [[ConceptMap-PresentIllness2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
 

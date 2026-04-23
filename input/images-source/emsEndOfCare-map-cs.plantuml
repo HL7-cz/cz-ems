@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Ukončení" <<LogicalModel>> [[StructureDefinition-LogEndOfCareCz.html]]
-note top #EEEEAE [[ConceptMap-EndOfCare2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-organization-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html]]

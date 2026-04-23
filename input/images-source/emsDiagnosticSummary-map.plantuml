@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Diagnostic summary" <<LogicalModel>> [[StructureDefinition-LogDiagnosticSummary.html]]
-note top #EEEEAE [[ConceptMap-diagnosticSummary2FHIR-cz-ems.html]]
-Concept Map
-endnote
 
 class "cz-condition-ems" <<Profile>> [[StructureDefinition-cz-condition-ems.html]]
 

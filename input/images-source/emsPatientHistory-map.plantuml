@@ -14,9 +14,6 @@ legend right
 endlegend
 
 class "Patient history" <<LogicalModel>> [[StructureDefinition-PatientHistoryCz.html]]
-note top #EEEEAE [[ConceptMap-patientHistory2FHIR-cz.html]]
-Concept Map
-endnote
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-immunizationRecommendation-ems" <<Profile>> [[StructureDefinition-cz-immunizationRecommendation-ems.html]]
