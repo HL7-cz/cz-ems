@@ -1,8 +1,252 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Presented Form and Attachments Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Emergency Medical Service (EMS) Record Presented form and Attachments model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include emsAttach-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Attachments -&gt; FHIR Profiles (CZ EMS)</title>
+
+        <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+        </style>
+    </head>
+    <body>
+        <div class="model-map-block">
+            <div class="callout-wrapper">
+                <div class="callout-box">
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+        <h3 id="overview">Attachments -&gt; FHIR Profiles (CZ EMS)</h3>
+
+
+        <p>Hereafter a browseable diagram showing how the Emergency Medical Service (EMS) Record Presented form and Attachments model is realized by the HL7 FHIR Profiles of this guide</p>
+
+
+        <h4 id="model">Model Overview</h4>
+
+        <p>{% include emsAttach-map.svg %}</p>
+
+        <div class="table-wrap">
+
+            <strong>Mapping Context</strong>
+
+            <ul>
+                <li>
+                    <strong>Source logical model:</strong>
+                    <a href="StructureDefinition-AttachmentsCz.html">AttachmentsCz</a>
+                    <a href="StructureDefinition-PresentedFormCz.html">PresentedFormCz</a>
+                </li>
+
+                <li>
+                    <strong>Main target profile:</strong>
+                    <a href="StructureDefinition-cz-composition-ems.html">CZ_Composition-EMS</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+
+            <table summary="Attachments -&gt; FHIR Profiles (CZ EMS)" class="grid">
+                <caption>Attachments -&gt; FHIR Profiles (CZ EMS)</caption>
+
+                <thead>
+                    <tr>
+                        <th colspan="2" class="src-head">Attachments (Logical Model)</th>
+                        <th class="relhead">Relationship</th>
+                        <th colspan="4" class="tgt-head">FHIR Target</th>
+                    </tr>
+
+                    <tr>
+                        <th class="src-sub">Element</th>
+                        <th class="src-sub">Description</th>
+                        <th class="relsub">Relation</th>
+                        <th class="tgt-sub">Resource/Profile</th>
+                        <th class="tgt-sub">Element</th>
+                        <th class="tgt-sub">Description</th>
+                        <th class="tgt-sub">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PresentedForm</td>
+                        <td>A.3 - Presented Form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.extension:presentedForm.document</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.contentType</td>
+                        <td>A.3.1 - Content type of presented form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.contentType</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.language</td>
+                        <td>A.3.2 - Language of presented form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.language</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.data</td>
+                        <td>A.3.3 - Data of presented form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.data</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.url</td>
+                        <td>A.3.4 - URL of presented form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.url</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.title</td>
+                        <td>A.3.5 - Title of presented form</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.title</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PresentedForm.creation</td>
+                        <td>A.3.6 - Date and time of creation</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>document.creation</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz</td>
+                        <td>A.4 - Attachments EMS</td>
+                        <td>related-to</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>CZ_Attachment</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.type</td>
+                        <td>A.4.1 - Attachment type</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.type</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.format</td>
+                        <td>A.4.2 - Attachment format</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.attachment.contentType</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.name</td>
+                        <td>A.4.3 - Attachment name</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.attachment.title</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.description</td>
+                        <td>A.4.4 - Attachment description</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.description</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.dateAndTimeOfAttachment</td>
+                        <td>A.4.5 - Attachment date and time</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.attachment.creation</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AttachmentsCz.document</td>
+                        <td>A.4.6 - Document</td>
+                        <td>equivalent</td>
+                        <td>Attachment (cz-attachment)</td>
+                        <td>content.attachment.data</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </div>
