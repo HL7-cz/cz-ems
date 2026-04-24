@@ -1,8 +1,411 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Header Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Emergency Medical Service (EMS) Record Dispatch Data model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include emsDispatchData-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Dispatch data -&gt; FHIR Profiles (CZ EMS)</title>
+
+        <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+        </style>
+    </head>
+    <body>
+        <div class="model-map-block">
+            <div class="callout-wrapper">
+                <div class="callout-box">
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+        <h3 id="overview">Dispatch data -&gt; FHIR Profiles (CZ EMS)</h3>
+
+
+        <p>The diagram below shows how the Emergency Medical Service (EMS) Record Dispatch data model is realized by the HL7 FHIR Profiles of this guide.</p>
+
+        <h4 id="model">Model Overview</h4>
+
+        <p>{% include emsDispatchData-map.svg %}</p>
+
+        <div class="table-wrap">
+
+            <strong>Mapping Context</strong>
+
+            <ul>
+
+                <li>
+                    <strong>Source:</strong>
+                    <a href="StructureDefinition-DispatchDataCz.html">DispatchDataCz</a>
+                </li>
+                <li>
+                    <strong>Profile:</strong>
+                    <a href="StructureDefinition-cz-composition-ems.html">cz-composition-ems</a>
+                    <a href="StructureDefinition-cz-encounter-ems.html">cz-encounter-ems</a>
+                    <a href="StructureDefinition-cz-vehicle-location-ems.html">cz-vehicle-location-ems</a>
+                    <a href="StructureDefinition-cz-location-ems.html">cz-location-ems</a>
+                    <a href="StructureDefinition-cz-careteam-ems.html">cz-careteam-ems</a>
+                    <a href="StructureDefinition-cz-practitioner-core.html">cz-practitioner-core</a>
+                    <a href="StructureDefinition-cz-practitionerrole-core.html">cz-practitionerrole-core</a>
+                    <a href="StructureDefinition-cz-communication-ems.html">cz-communication-ems</a>
+                    <a href="StructureDefinition-cz-relatedPerson-core.html">cz-relatedPerson-core</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+
+            <table summary="Dispatch data -&gt; FHIR Profiles (CZ EMS)" class="grid">
+                <caption>Dispatch data -&gt; FHIR Profiles (CZ EMS)</caption>
+
+                <thead>
+                    <tr>
+                        <th colspan="2" class="src-head">Dispatch data (Logical Model)</th>
+                        <th class="relhead">Relationship</th>
+                        <th colspan="4" class="tgt-head">FHIR Target</th>
+                    </tr>
+
+                    <tr>
+                        <th class="src-sub">Element</th>
+                        <th class="src-sub">Description</th>
+                        <th class="relsub">Relation</th>
+                        <th class="tgt-sub">Resource/Profile</th>
+                        <th class="tgt-sub">Element</th>
+                        <th class="tgt-sub">Description</th>
+                        <th class="tgt-sub">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DispatchDataCz.Section</td>
+                        <td>A.2.1 Dispatch Data (section)</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td>Composition.section slice 'dispatch'</td>
+                        <td>Composition.section:dispatch.entry agreguje níže uvedené zdroje Location, CareTeam, Practitioner/Role, Communication</td>
+                    </tr>
+                    <tr>
+                        <td>dispatchNumber</td>
+                        <td>A.2.1.1.1 - Dispatch Identifier</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.identifier[dispatchNumber].value</td>
+                        <td>identifier (slice: dispatchNumber).value</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>additionalDispatchIdentifier</td>
+                        <td>A.2.1.1.2 - Additional Dispatch Identifier</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.identifier[otherId].value</td>
+                        <td>identifier (slice: otherId).value</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>dispatchUrgency</td>
+                        <td>A.2.1.7.1 - Dispatch Urgency</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.priority</td>
+                        <td>priority</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>callClassification</td>
+                        <td>A.2.1.7.2 - Call Classification</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.type</td>
+                        <td>type</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vehicleIdentification</td>
+                        <td>A.2.1.2 Vehicle Identification</td>
+                        <td>related-to</td>
+                        <td>Location (cz-vehicle-location-ems)</td>
+                        <td>Composition.section:mission.entry:ambulance</td>
+                        <td></td>
+                        <td>Composition.section:mission.entry.ofType(CZ_VehicleLocationEms)</td>
+                    </tr>
+                    <tr>
+                        <td>licensePlate</td>
+                        <td>A.2.1.2.1 - Vehicle Identifier</td>
+                        <td>equivalent</td>
+                        <td>Location (cz-vehicle-location-ems)</td>
+                        <td>Location.identifier</td>
+                        <td>Vehicle Identifier</td>
+                        <td>At least one vehicle identifier (license plate, VIN, call sign or helicopter ID) must be present.</td>
+                    </tr>
+                    <tr>
+                        <td>dispatchStartLocation</td>
+                        <td>A.2.1.5 Dispatch Start Location</td>
+                        <td>related-to</td>
+                        <td>Location (cz-location-ems)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_LocationEms)</td>
+                    </tr>
+                    <tr>
+                        <td>address</td>
+                        <td>A.2.1.5.1 - Address</td>
+                        <td>equivalent</td>
+                        <td>Location (cz-location-ems)</td>
+                        <td>Location.address</td>
+                        <td>Address</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>incidentLocation</td>
+                        <td>A.2.1.6 Incident Location</td>
+                        <td>related-to</td>
+                        <td>Location (cz-location-ems)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_LocationEms)</td>
+                    </tr>
+                    <tr>
+                        <td>gpsAddress</td>
+                        <td>A.2.1.6.1 - GPS Address</td>
+                        <td>equivalent</td>
+                        <td>Location (cz-location-ems)</td>
+                        <td>Location.position</td>
+                        <td>GPS Address</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>address</td>
+                        <td>A.2.1.6.2 - Address</td>
+                        <td>equivalent</td>
+                        <td>Location (cz-location-ems)</td>
+                        <td>Location.address</td>
+                        <td>Address</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>crewMemberIdentification</td>
+                        <td>A.2.1.3 Crew Member Identification</td>
+                        <td>related-to</td>
+                        <td>CareTeam (cz-careteam-ems)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_CareTeamEms)</td>
+                    </tr>
+                    <tr>
+                        <td>crewMemberIdentifier</td>
+                        <td>A.2.1.3.1 - Crew Member Identifier</td>
+                        <td>equivalent</td>
+                        <td>CareTeam (cz-careteam-ems)</td>
+                        <td>CareTeam.participant.member.identifier</td>
+                        <td>Crew Member Identifier</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>crewMemberIdentification</td>
+                        <td>A.2.1.3 - Crew Member Identification</td>
+                        <td>related-to</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_PractitionerCore)</td>
+                    </tr>
+                    <tr>
+                        <td>crewMemberIdentifier</td>
+                        <td>A.2.1.3.1 - Crew Member Identifier</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.identifier</td>
+                        <td>Crew Member Identifier</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>firstName</td>
+                        <td>A.2.1.3.2 - First Name</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.name.given</td>
+                        <td>First Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>lastName</td>
+                        <td>A.2.1.3.3 - Last Name</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.name.family</td>
+                        <td>Last Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>A.2.1.3.4 Role</td>
+                        <td>related-to</td>
+                        <td>PractitionerRole (cz-practitionerrole-core)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_PractitionerRoleCore)</td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>A.2.1.3.4 - Role</td>
+                        <td>equivalent</td>
+                        <td>PractitionerRole (cz-practitionerrole-core)</td>
+                        <td>PractitionerRole.code</td>
+                        <td>Role</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>dispatchCenterOperator</td>
+                        <td>A.2.1.4 Dispatch Center Operator Identification</td>
+                        <td>related-to</td>
+                        <td>Communication (cz-communication-ems)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_CommunicationEms)</td>
+                    </tr>
+                    <tr>
+                        <td>dispatchCenterOperator</td>
+                        <td>A.2.1.4 - Dispatch Center Operator Identification</td>
+                        <td>equivalent</td>
+                        <td>Communication (cz-communication-ems)</td>
+                        <td>Communication.recipient</td>
+                        <td>Dispatch Center Operator Identification</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>callerContact</td>
+                        <td>A.2.1.8 - Caller Contact</td>
+                        <td>equivalent</td>
+                        <td>Communication (cz-communication-ems)</td>
+                        <td>Communication.sender</td>
+                        <td>sender (RelatedPerson)</td>
+                        <td>Communication.sender should reference RelatedPerson</td>
+                    </tr>
+                    <tr>
+                        <td>operatorIdentifier</td>
+                        <td>A.2.1.4 Operator Identifier</td>
+                        <td>related-to</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_PractitionerCore)</td>
+                    </tr>
+                    <tr>
+                        <td>operatorIdentifier</td>
+                        <td>A.2.1.4.1 - Operator Identifier</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.identifier</td>
+                        <td>Operator Identifier</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>firstName</td>
+                        <td>A.2.1.4.2 - First Name</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.name.given</td>
+                        <td>First Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>lastName</td>
+                        <td>A.2.1.4.3 - Last Name</td>
+                        <td>equivalent</td>
+                        <td>Practitioner (cz-practitioner-core)</td>
+                        <td>Practitioner.name.family</td>
+                        <td>Last Name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>A.2.1.4.4 Role</td>
+                        <td>related-to</td>
+                        <td>PractitionerRole (cz-practitionerrole-core)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td></td>
+                        <td>Composition.section:dispatch.entry.ofType(CZ_PractitionerRoleCore)</td>
+                    </tr>
+                    <tr>
+                        <td>role</td>
+                        <td>A.2.1.4.4 - Role</td>
+                        <td>equivalent</td>
+                        <td>PractitionerRole (cz-practitionerrole-core)</td>
+                        <td>PractitionerRole.code</td>
+                        <td>Role</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>callerContact</td>
+                        <td>A.2.1.8 - Caller Contact</td>
+                        <td>related-to</td>
+                        <td>RelatedPerson (cz-relatedPerson-core)</td>
+                        <td>Composition.section:dispatch</td>
+                        <td>Composition.section:dispatch.entry.ofType(RelatedPerson)</td>
+                        <td>Composition.section:dispatch.entry should reference RelatedPerson</td>
+                    </tr>
+                    <tr>
+                        <td>phone</td>
+                        <td>A.2.1.8.1 - Phone</td>
+                        <td>equivalent</td>
+                        <td>RelatedPerson (cz-relatedPerson-core)</td>
+                        <td>RelatedPerson.telecom</td>
+                        <td>Phone number of the caller</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </div>
