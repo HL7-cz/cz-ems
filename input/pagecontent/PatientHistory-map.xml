@@ -1,8 +1,620 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Header Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Emergency Medical Service (EMS) Record Patient history model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include emsPatientHistory-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Patient History -&gt; FHIR Profiles (CZ EMS)</title>
+
+        <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+        </style>
+    </head>
+    <body>
+        <div class="model-map-block">
+            <div class="callout-wrapper">
+                <div class="callout-box">
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+        <h3 id="overview">Patient History -&gt; FHIR Profiles (CZ EMS)</h3>
+
+
+        <p>The diagram below shows how the Emergency Medical Service (EMS) Record Patient History model is realized by the HL7 FHIR Profiles of this guide.</p>
+
+        <h4 id="model">Model Overview</h4>
+
+        <p>{% include emsPatientHistory-map.svg %}</p>
+
+        <div class="table-wrap">
+
+            <strong>Mapping Context</strong>
+
+            <ul>
+
+                <li>
+                    <strong>Source:</strong>
+                    <a href="StructureDefinition-PatientHistoryEmsCz.html">PatientHistoryEmsCz</a>
+                </li>
+                <li>
+                    <strong>Profile:</strong>
+                    <a href="StructureDefinition-cz-immunizationRecommendation-ems.html">cz-immunizationRecommendation-ems</a>
+                    <a href="StructureDefinition-cz-composition-ems.html">cz-composition-ems</a>
+                    <a href="StructureDefinition-cz-condition-ems.html">cz-condition-ems</a>
+                    <a href="StructureDefinition-cz-medical-device.html">cz-medical-device</a>
+                    <a href="StructureDefinition-DeviceUseStatement.html">cz-device-use-statement-ems</a>
+                    <a href="StructureDefinition-cz-immunization-ems.html">cz-immunization-ems</a>
+                    <a href="StructureDefinition-cz-observation-sdoh-ems.html">cz-observation-sdoh-ems</a>
+                    <a href="StructureDefinition-cz-procedure-ems.html">cz-procedure-ems</a>
+                    <a href="StructureDefinition-Observation.html">Observation</a>
+                    <a href="StructureDefinition-FamilyMemberHistory.html">FamilyMember</a>
+                    <a href="StructureDefinition-cz-observation-infectious-contact-ems.html">cz-observation-infectious-contact-ems</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+
+            <table summary="Patient History -&gt; FHIR Profiles (CZ EMS)" class="grid">
+                <caption>Patient History -&gt; FHIR Profiles (CZ EMS)</caption>
+
+                <thead>
+                    <tr>
+                        <th colspan="2" class="src-head">Patient History (Logical Model)</th>
+                        <th class="relhead">Relationship</th>
+                        <th colspan="4" class="tgt-head">FHIR Target</th>
+                    </tr>
+
+                    <tr>
+                        <th class="src-sub">Element</th>
+                        <th class="src-sub">Description</th>
+                        <th class="relsub">Relation</th>
+                        <th class="tgt-sub">Resource/Profile</th>
+                        <th class="tgt-sub">Element</th>
+                        <th class="tgt-sub">Description</th>
+                        <th class="tgt-sub">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PatientHistory.medicalHistory.vaccination.nextVaccinationDate</td>
+                        <td>A.2.3.1.4.8 - Next vaccination date</td>
+                        <td>related-to</td>
+                        <td>ImmunizationRecommendation (cz-immunizationRecommendation-ems)</td>
+                        <td>ImmunizationRecommendation.recommendation.dateCriterion[nextDose].value</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PatientHistory.medicalHistory</td>
+                        <td>A.2.3.1 - Medical history</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composiiton.section</td>
+                        <td></td>
+                        <td>several sections</td>
+                    </tr>
+                    <tr>
+                        <td>medicalHistory.historyOfConditions</td>
+                        <td>A.2.3.1.1 - History of problems</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composiiton.section:sectionDiagnosticSummary</td>
+                        <td></td>
+                        <td>The same section used by the hospital stay ?</td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.resolution</td>
+                        <td>A.2.3.1.1.6 - Resolution circumstances</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionDiagnosticSummary.text</td>
+                        <td></td>
+                        <td>The resolution circumstances may be described as resource or composiiton.section text ; or indirectly determined by the resource (e.g. Procedure) that has been perfomed in reason of this Condition no more active</td>
+                    </tr>
+                    <tr>
+                        <td>medicalHistory.medicalDevices</td>
+                        <td>A.2.3.1.2 - Devices and Implants</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionMedicalDevices</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>medicalHistory.vaccination</td>
+                        <td>A.2.3.1.4 - Vaccination</td>
+                        <td>equivalent</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionImmunizations</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>medicalHistory.epidemiologicalHistory</td>
+                        <td>A.2.3.1.5 - Epidemiological history</td>
+                        <td>unmatched</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section</td>
+                        <td></td>
+                        <td>decison not to have as distict section</td>
+                    </tr>
+                    <tr>
+                        <td>epidemiologicalHistory.infectiousContacts</td>
+                        <td>A.2.3.1.5.1 - Infectious contacts</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section::infectiousContacts</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>epidemiologicalHistory.travelHistory</td>
+                        <td>A.2.3.1.5.2 - Travel history</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionTravelHx</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>travelHistory.period</td>
+                        <td>A.2.3.1.5.2.1 - Time period</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionTravelHx</td>
+                        <td></td>
+                        <td>To be specified</td>
+                    </tr>
+                    <tr>
+                        <td>travelHistory.country</td>
+                        <td>A.2.3.1.5.2.2 - Country visited</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionTravelHx</td>
+                        <td></td>
+                        <td>To be specified</td>
+                    </tr>
+                    <tr>
+                        <td>travelHistory.comment</td>
+                        <td>A.2.3.1.5.2.3 - Comment</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionTravelHx</td>
+                        <td></td>
+                        <td>To be specified</td>
+                    </tr>
+                    <tr>
+                        <td>PatientHistory.familyHistory</td>
+                        <td>A.2.3.2 - Family history</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionFamilyMemberHistory</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PatientHistory.socialDeterminants</td>
+                        <td>A.2.3.3 - Social determinants of health</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionSocialHistory</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>PatientHistory.useOfSubstances</td>
+                        <td>A.2.3.4 - Use of substances</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionSocialHistory</td>
+                        <td></td>
+                        <td>To be specified</td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.conditionSpecification</td>
+                        <td>A.2.3.1.1.1 - Problem description</td>
+                        <td>related-to</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Condition.text</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.conditionDetails</td>
+                        <td>A.2.3.1.1.2 - Problem details</td>
+                        <td>related-to</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Condition</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.onsetDate</td>
+                        <td>A.2.3.1.1.3 - Onset date</td>
+                        <td>equivalent</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Condition.onSetDateTime</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.endDate</td>
+                        <td>A.2.3.1.1.4 - End date</td>
+                        <td>equivalent</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Condition.abatementDateTime</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.clinicalStatus</td>
+                        <td>A.2.3.1.1.5 - Clinical status</td>
+                        <td>equivalent</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Composition.clinicalStatus</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.resolution</td>
+                        <td>A.2.3.1.1.6 - Resolution circumstances</td>
+                        <td>related-to</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Condition.text</td>
+                        <td></td>
+                        <td>The resolution circumstances may be described as resource or composiiton.section text ; or indirectly determined by the resource (e.g. Procedure) that has been perfomed in reason of this Condition no more active</td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.severity</td>
+                        <td>A.2.3.1.1.7 - Severity</td>
+                        <td>related-to</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Composition.severity</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>historyOfConditions.stage</td>
+                        <td>A.2.3.1.1.8 - Stage</td>
+                        <td>equivalent</td>
+                        <td>Condition (cz-condition-ems)</td>
+                        <td>Composition.stage</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.description</td>
+                        <td>A.2.3.1.2.1 - Device and implant description</td>
+                        <td>related-to</td>
+                        <td>Device (cz-medical-device)</td>
+                        <td>Device.text</td>
+                        <td></td>
+                        <td>if referring to the description of the device</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.identifier</td>
+                        <td>A.2.3.1.2.2 - Device ID</td>
+                        <td>related-to</td>
+                        <td>Device (cz-medical-device)</td>
+                        <td>Device.identifier</td>
+                        <td></td>
+                        <td>if generic identifier</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.identifier</td>
+                        <td>A.2.3.1.2.2 - Device ID</td>
+                        <td>related-to</td>
+                        <td>Device (cz-medical-device)</td>
+                        <td>Device.udiCarrier</td>
+                        <td></td>
+                        <td>if it is the udiCarrier</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.description</td>
+                        <td>A.2.3.1.2.1 - Device and implant description</td>
+                        <td>related-to</td>
+                        <td>DeviceUseStatement</td>
+                        <td>DeviceUseStatement.text</td>
+                        <td></td>
+                        <td>if referring to the description of the usage of the device</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.implantDate</td>
+                        <td>A.2.3.1.2.3 - Implant date</td>
+                        <td>related-to</td>
+                        <td>DeviceUseStatement</td>
+                        <td>DeviceUseStatement.timing[x]</td>
+                        <td></td>
+                        <td>If the usage period is highlighted</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.endDate</td>
+                        <td>A.2.3.1.2.4 - End date</td>
+                        <td>related-to</td>
+                        <td>DeviceUseStatement</td>
+                        <td>DeviceUseStatement.timingPeriod.end</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.reason</td>
+                        <td>A.2.3.1.2.5 - Reason</td>
+                        <td>related-to</td>
+                        <td>DeviceUseStatement</td>
+                        <td>DeviceUseStatement.reasonCode</td>
+                        <td></td>
+                        <td>if details about the body structure have to be provided</td>
+                    </tr>
+                    <tr>
+                        <td>medicalDevices.reason</td>
+                        <td>A.2.3.1.2.5 - Reason</td>
+                        <td>related-to</td>
+                        <td>DeviceUseStatement</td>
+                        <td>DeviceUseStatement.reasonReference</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>medicalHistory.historyOfProcedures</td>
+                        <td>A.2.3.1.3 - History of procedures</td>
+                        <td>related-to</td>
+                        <td>Composition (cz-composition-ems)</td>
+                        <td>Composition.section:sectionSignificantProcedures</td>
+                        <td></td>
+                        <td>The same section usd by the hospital stay ?</td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.diseaseOrAgent</td>
+                        <td>A.2.3.1.4.1 - Disease or agent targeted</td>
+                        <td>equivalent</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.protocolApplied.targetDisease</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.vaccine</td>
+                        <td>A.2.3.1.4.2 - Vaccine/prophylaxis</td>
+                        <td>related-to</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.vaccineCode</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.productName</td>
+                        <td>A.2.3.1.4.4 - Vaccine medicinal product</td>
+                        <td>related-to</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.extension:administeredProduct</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.manufacturerOrMAH</td>
+                        <td>A.2.3.1.4.5 - Marketing Authorisation Holder</td>
+                        <td>related-to</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.manufacturer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.orderNumber</td>
+                        <td>A.2.3.1.4.6 - Number in a series of vaccinations / doses</td>
+                        <td>related-to</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.protocolApplied.doseNumberPositiveInt</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>vaccination.vaccinationDate</td>
+                        <td>A.2.3.1.4.7 - Date of vaccination</td>
+                        <td>related-to</td>
+                        <td>Immunization (cz-immunization-ems)</td>
+                        <td>Immunization.occurenceDateTime</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>socialDeterminants.participationInSociety</td>
+                        <td>A.2.3.3.1 - Participation in society</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation</td>
+                        <td></td>
+                        <td>category to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>participationInSociety.workSituation</td>
+                        <td>A.2.3.3.1.1 - Work situation</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>participationInSociety.hobby</td>
+                        <td>A.2.3.3.1.2 - Hobby</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>participationInSociety.socailNetwork</td>
+                        <td>A.2.3.3.1.3 - Social network</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>socialDeterminants.education</td>
+                        <td>A.2.3.3.2 - Education</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation</td>
+                        <td></td>
+                        <td>category to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>education.level</td>
+                        <td>A.2.3.3.2.1 - Education level</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>education.comment</td>
+                        <td>A.2.3.3.2.2 - Comment</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.note</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>socialDeterminants.livingSituation</td>
+                        <td>A.2.3.3.3 - Living situation</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation</td>
+                        <td></td>
+                        <td>category to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>livingSituation.houseType</td>
+                        <td>A.2.3.3.3.1 - House type</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>livingSituation.homeAdaption</td>
+                        <td>A.2.3.3.3.2 - Home adaption</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>livingSituation.livingConditions</td>
+                        <td>A.2.3.3.3.3 - Living conditions</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>socialDeterminants.familySituation</td>
+                        <td>A.2.3.3.4 - Family situation</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation</td>
+                        <td></td>
+                        <td>category to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>familySituation.comment</td>
+                        <td>A.2.3.3.4.1 - Comment</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>familySituation.familyComposition</td>
+                        <td>A.2.3.3.4.2 - Family composition</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>familySituation.maritalStatus</td>
+                        <td>A.2.3.3.4.3 - Marital status</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td>category and code to be defined</td>
+                    </tr>
+                    <tr>
+                        <td>familySituation.numberOfChildren</td>
+                        <td>A.2.3.3.4.4 - Number of children</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-sdoh-ems)</td>
+                        <td>Observation.value[x]</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </div>
