@@ -1,8 +1,235 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Header Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Emergency Medical Service (EMS) Record Dispatch Timeline model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include emsDispatchTimeline-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Dispatch timeline -&gt; FHIR Profiles (CZ EMS)</title>
+
+        <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+        </style>
+    </head>
+    <body>
+        <div class="model-map-block">
+            <div class="callout-wrapper">
+                <div class="callout-box">
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+        <h3 id="overview">Dispatch timeline -&gt; FHIR Profiles (CZ EMS)</h3>
+
+
+        <p>The diagram below shows how the Emergency Medical Service (EMS) Record Dispatch timeline model is realized by the HL7 FHIR Profiles of this guide.</p>
+
+        <h4 id="model">Model Overview</h4>
+
+        <p>{% include emsDispatchTimeline-map.svg %}</p>
+
+        <div class="table-wrap">
+
+            <strong>Mapping Context</strong>
+
+            <ul>
+
+                <li>
+                    <strong>Source:</strong>
+                    <a href="StructureDefinition-DispatchTimelineCz.html">DispatchTimelineCz</a>
+                </li>
+                <li>
+                    <strong>Profile:</strong>
+                    <a href="StructureDefinition-cz-servicerequest-ems.html">cz-servicerequest-ems</a>
+                    <a href="StructureDefinition-cz-encounter-ems.html">cz-encounter-ems</a>
+                    <a href="StructureDefinition-cz-encounter-mission-ems.html">cz-encounter-mission-ems</a>
+                    <a href="StructureDefinition-cz-observation-mission-time-status-ems.html">cz-observation-mission-time-status-ems</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+
+            <table summary="Dispatch timeline -&gt; FHIR Profiles (CZ EMS)" class="grid">
+                <caption>Dispatch timeline -&gt; FHIR Profiles (CZ EMS)</caption>
+
+                <thead>
+                    <tr>
+                        <th colspan="2" class="src-head">Dispatch timeline (Logical Model)</th>
+                        <th class="relhead">Relationship</th>
+                        <th colspan="4" class="tgt-head">FHIR Target</th>
+                    </tr>
+
+                    <tr>
+                        <th class="src-sub">Element</th>
+                        <th class="src-sub">Description</th>
+                        <th class="relsub">Relation</th>
+                        <th class="tgt-sub">Resource/Profile</th>
+                        <th class="tgt-sub">Element</th>
+                        <th class="tgt-sub">Description</th>
+                        <th class="tgt-sub">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>dispatchNotifiedTime</td>
+                        <td>A.2.2.x En-route/Scene/Destination/End (ServiceRequest)</td>
+                        <td>equivalent</td>
+                        <td>ServiceRequest (cz-servicerequest-ems)</td>
+                        <td>Composition.section[timeline]</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>dispatchNotifiedTime</td>
+                        <td>A.2.2.2 - Dispatch Notification Time</td>
+                        <td>equivalent</td>
+                        <td>ServiceRequest (cz-servicerequest-ems)</td>
+                        <td>ServiceRequest.authoredOn</td>
+                        <td>authoredOn</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>DispatchTimelineCz.Encounter</td>
+                        <td>A.2.2.x En-route/Scene/Destination/End (Encounter)</td>
+                        <td>related-to</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Composition.encounter</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>callReceivedTime</td>
+                        <td>A.2.2.1 - Event Notification Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.period.start</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>unitBackInServiceTime</td>
+                        <td>A.2.2.8 - Back in Service Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-ems)</td>
+                        <td>Encounter.period.end</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>DispatchTimelineCz.Encounter</td>
+                        <td>A.2.2.x En-route/Scene/Destination/End (Encounter)</td>
+                        <td>related-to</td>
+                        <td>Encounter (cz-encounter-mission-ems)</td>
+                        <td>Composition.section[mission].entry[missionEncounter]</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>unitEnRouteTime</td>
+                        <td>A.2.2.3 - En-Route Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-mission-ems)</td>
+                        <td>Encounter.period.start</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>unitArrivedAtSceneTime</td>
+                        <td>A.2.2.4 - Arrival at Scene Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-mission-ems)</td>
+                        <td>Encounter.location.period.start</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>unitLeftSceneTime</td>
+                        <td>A.2.2.5 - Left Scene Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-mission-ems)</td>
+                        <td>Encounter.location.period.end</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>patientTransferOfCareTime</td>
+                        <td>A.2.2.7 - Patient Transfer of Care Time</td>
+                        <td>equivalent</td>
+                        <td>Encounter (cz-encounter-mission-ems)</td>
+                        <td>Encounter.period.end</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>arrivedAtDestinationTime</td>
+                        <td>A.2.2.x En-route/Scene/Destination/End (Observation)</td>
+                        <td>related-to</td>
+                        <td>Observation (cz-observation-mission-time-status-ems)</td>
+                        <td>Composition.section[mission].entry[destinationArrivalTime]</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>arrivedAtDestinationTime</td>
+                        <td>A.2.2.6 - Arrival at Destination Time</td>
+                        <td>equivalent</td>
+                        <td>Observation (cz-observation-mission-time-status-ems)</td>
+                        <td>Observation.value</td>
+                        <td></td>
+                        <td>It is necessary to add the appropriate Observation.code corresponding to the specific time type.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </div>
