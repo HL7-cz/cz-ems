@@ -398,7 +398,7 @@ Title: "Service Request: Dispatch"
 
 
 Instance: cz-allergy-intolerance-example
-InstanceOf: CZ_AllergyIntoleranceEms
+InstanceOf: CZ_AllergyIntolerance
 Description: "Example of allergy intolerance"
 Usage: #example
 Title: "Allergy Intolerance: Allergy to cat dander"

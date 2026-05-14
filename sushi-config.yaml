@@ -38,10 +38,10 @@ dependencies:
   hl7.fhir.uv.ips: 2.0.0
   hl7.fhir.cz.core: current
   hl7.fhir.cz.hdr: current
-  hl7.fhir.eu.base: 0.1.0-ballot
+  hl7.fhir.eu.base: 2.0.0
   # hl7.fhir.eu.extensions.r4: 0.1.1-ballot
   # hl7.fhir.eu.extensions.r4: 0.1.1
-  hl7.fhir.eu.extensions.r4: 0.1.1 #https://simplifier.net/packages/hl7.fhir.eu.extensions.r4/0.1.1
+  hl7.fhir.eu.extensions.r4: 1.2.0 #https://simplifier.net/packages/hl7.fhir.eu.extensions.r4/0.1.1
   # hl7.fhir.eu.extensions.r4: current
   # hl7.fhir.eu.extensions.r4:
   #   id: hl7.fhir.eu.extensions.r4

@@ -1,7 +1,7 @@
 // TODO: Profile for alerts obligations
 
 Profile: CZ_AllergyIntoleranceObligationsEms
-Parent: CZ_AllergyIntoleranceEms
+Parent: CZ_AllergyIntolerance
 Id: cz-allergyintolerance-obl-ems
 Title:    "Allergy Intolerance: Obligations"
 Description: "This profile defines obligations for an allergy intolerance in FHIR for the purpose of this guide."

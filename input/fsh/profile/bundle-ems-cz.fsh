@@ -88,7 +88,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[location].resource only CZ_LocationEms or CZ_VehicleLocationEms
 
 * entry contains allergy 0..*
-* entry[allergy].resource only CZ_AllergyIntoleranceEms
+* entry[allergy].resource only CZ_AllergyIntolerance
 
 * entry contains observation 0..*
 * entry[observation].resource only Observation or CZ_ObservationArrivalAtDestinationTimeEMS or CZ_ObservationTravelEms

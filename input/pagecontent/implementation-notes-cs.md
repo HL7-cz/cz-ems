@@ -20,7 +20,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_CarePlanEms
   CZ_BundleEms *-- "0..*" CZ_CommunicationEms
   CZ_BundleEms *-- "0..*" CZ_ConditionEms
-  CZ_BundleEms *-- "0..*" CZ_AllergyIntoleranceEms
+  CZ_BundleEms *-- "0..*" CZ_AllergyIntolerance
   CZ_BundleEms *-- "0..*" CZ_FamilyMemberHistoryEms
   CZ_BundleEms *-- "0..*" CZ_FlagEms
   CZ_BundleEms *-- "0..*" CZ_ImmunizationEms
@@ -81,7 +81,7 @@ classDiagram
   CZ_CompositionEms --> Observation: section[alcoholUse]
   CZ_CompositionEms --> Observation: section[tobaccoUse]
   CZ_CompositionEms --> Observation: section[drugUse]
-  CZ_CompositionEms --> CZ_AllergyIntoleranceEms: section[allergies]
+  CZ_CompositionEms --> CZ_AllergyIntolerance: section[allergies]
   CZ_CompositionEms --> CZ_FlagEms: section[allergies]
   CZ_CompositionEms --> CZ_ProcedureEms: section[procedure]
   CZ_CompositionEms --> CZ_ConditionEms: section[diagnosticSummary]
