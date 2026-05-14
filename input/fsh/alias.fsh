@@ -39,7 +39,7 @@ Alias: $dlp_formy_cs = https://hl7.cz/fhir/core/CodeSystem/cz-dlpformy-cs
 Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
-Alias: $CZ_DLPLecivePripravkyCs = https://sukl.cz/terminology/CodeSystem/dlp-lecive-pripravky
+Alias: $CZ_DLPLecivePripravkyCs = https://sukl.cz/terminology/CodeSystem/dlp-lecivepripravky
 Alias: $CZ_DLPLecivelatkyCs = https://sukl.cz/terminology/CodeSystem/dlp-lecivelatky
 
 
