@@ -8,17 +8,17 @@ Usage: #example
 * type = #document
 * timestamp = "2022-10-07T08:15:00+01:00"
 
-* entry[composition].fullUrl = "urn:uuid:da3f987f-2a08-431a-92e3-129d7689e465"
-* entry[composition].resource = cz-example-composition
+* entry[composition][0].fullUrl = "urn:uuid:da3f987f-2a08-431a-92e3-129d7689e465"
+* entry[composition][=].resource = cz-example-composition
 
-* entry[encounter].fullUrl = "urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628"
-* entry[encounter].resource = cz-encounter-example
+* entry[encounter][+].fullUrl = "urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628"
+* entry[encounter][=].resource = cz-encounter-example
 
-* entry[missionEncounter].fullUrl = "urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922"
-* entry[missionEncounter].resource = cz-encounter-mission-example
+* entry[missionEncounter][+].fullUrl = "urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922"
+* entry[missionEncounter][=].resource = cz-encounter-mission-example
 
-* entry[attachment].fullUrl = "urn:uuid:040eb849-a513-4d74-b3f3-d2f246a26877"
-* entry[attachment].resource = cz-logo2-example
+* entry[attachment][+].fullUrl = "urn:uuid:040eb849-a513-4d74-b3f3-d2f246a26877"
+* entry[attachment][=].resource = cz-logo2-example
 
 * entry[attachment][+].fullUrl = "urn:uuid:5a111db8-4b2b-48c7-abef-eed70f0ca308"
 * entry[attachment][=].resource = cz-ekg-example
@@ -35,20 +35,20 @@ Usage: #example
 * entry[practitioner][+].fullUrl = "urn:uuid:f41da185-e4ac-4ef9-a560-4d7db1911090"
 * entry[practitioner][=].resource = cz-example-practitioner3
 
-* entry[patient].fullUrl = "urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766"
-* entry[patient].resource = cz-examplebase-patient
+* entry[patient][+].fullUrl = "urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766"
+* entry[patient][=].resource = cz-examplebase-patient
 
-* entry[procedure][0].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
-* entry[procedure][0].resource = cz-procedure-example
+* entry[procedure][+].fullUrl = "urn:uuid:3af2e7a6-c16e-4b80-a173-ca2c8aa081b6"
+* entry[procedure][=].resource = cz-procedure-example
 
 * entry[procedure][+].fullUrl = "urn:uuid:6ec0b5df-ad0b-487b-9918-367ca876ac38"
 * entry[procedure][=].resource = cz-procedure-example2
 
-* entry[coverage].fullUrl = "urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66"
-* entry[coverage].resource = cz-coverage-example
+* entry[coverage][+].fullUrl = "urn:uuid:ba0e590d-252e-4a52-89ed-b10fa02b6c66"
+* entry[coverage][=].resource = cz-coverage-example
 
-* entry[practitionerRole].fullUrl = "urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e"
-* entry[practitionerRole].resource = cz-example-practitioner-role
+* entry[practitionerRole][+].fullUrl = "urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e"
+* entry[practitionerRole][=].resource = cz-example-practitioner-role
 
 * entry[practitionerRole][+].fullUrl = "urn:uuid:bfa154a9-69c0-4b7f-909e-6150492b7377"
 * entry[practitionerRole][=].resource = cz-example-practitioner-role2
@@ -62,23 +62,23 @@ Usage: #example
 * entry[organization][+].fullUrl = "urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca"
 * entry[organization][=].resource = cz-organizationAuthor-example
 
-* entry[location].fullUrl = "urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9"
-* entry[location].resource = cz-vehicle-location-example
+* entry[location][+].fullUrl = "urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9"
+* entry[location][=].resource = cz-vehicle-location-example
 
 * entry[location][+].fullUrl = "urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade"
 * entry[location][=].resource = cz-location-scene-example
 
-* entry[serviceRequest].fullUrl = "urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682"
-* entry[serviceRequest].resource = cz-service-request-example
+* entry[serviceRequest][+].fullUrl = "urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682"
+* entry[serviceRequest][=].resource = cz-service-request-example
 
-* entry[communication].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
-* entry[communication].resource = cz-communication-example
+* entry[communication][+].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
+* entry[communication][=].resource = cz-communication-example
 
-* entry[allergy].fullUrl = "urn:uuid:27145145-c229-465f-a11e-6767c34c1489"
-* entry[allergy].resource = cz-allergy-intolerance-example
+* entry[allergy][+].fullUrl = "urn:uuid:27145145-c229-465f-a11e-6767c34c1489"
+* entry[allergy][=].resource = cz-allergy-intolerance-example
 
-* entry[observation].fullUrl = "urn:uuid:5792aae8-20ba-4baa-90b3-311988fa5434"
-* entry[observation].resource = ExampleBMIEms
+* entry[observation][+].fullUrl = "urn:uuid:5792aae8-20ba-4baa-90b3-311988fa5434"
+* entry[observation][=].resource = ExampleBMIEms
 
 * entry[observation][+].fullUrl = "urn:uuid:272d3f43-e7fb-4759-9ade-b9cf530d07ab"
 * entry[observation][=].resource = ExampleBodyWeightEms
@@ -112,20 +112,20 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab"
 * entry[observation][=].resource = cz-observation-arrival-at-destination-time-ems-example
 
-* entry[medication].fullUrl = "urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94"
-* entry[medication].resource = cz-medication-example
+* entry[medication][+].fullUrl = "urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94"
+* entry[medication][=].resource = cz-medication-example
 
 * entry[medication][+].fullUrl = "urn:uuid:68c98e94-e997-417c-9108-f05f65fc5327"
 * entry[medication][=].resource = cz-medication-example2
 
-* entry[medicationAdministration].fullUrl = "urn:uuid:9be3ee4c-0844-450b-9d43-fde72ab1642a"
-* entry[medicationAdministration].resource = cz-medication-administration-example
+* entry[medicationAdministration][+].fullUrl = "urn:uuid:9be3ee4c-0844-450b-9d43-fde72ab1642a"
+* entry[medicationAdministration][=].resource = cz-medication-administration-example
 
 * entry[medicationAdministration][+].fullUrl = "urn:uuid:4aed93c8-8b0b-433f-9b7b-3cef96515352"
 * entry[medicationAdministration][=].resource = cz-medication-administration-example2
 
-* entry[device].fullUrl = "urn:uuid:b15bd921-5bbe-46eb-8b69-4762dfadbd2a"
-* entry[device].resource = cz-device-example
+* entry[device][+].fullUrl = "urn:uuid:b15bd921-5bbe-46eb-8b69-4762dfadbd2a"
+* entry[device][=].resource = cz-device-example
 
 * entry[condition][+].fullUrl = "urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425"
 * entry[condition][=].resource = cz-condition-example
@@ -155,9 +155,9 @@ Usage: #example
 * section[mission].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Detaily výjezdu</div>"
 * section[mission].text.status = #additional
 // * section[mission].entry[missionEncounter] = Reference(cz-encounter-mission-example)
-* section[mission].entry[missionEncounter] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
-* section[mission].entry[destinationArrivalTime] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
-* section[mission].entry[ambulance] = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
+* section[mission].entry[0] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
+* section[mission].entry[+] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
+* section[mission].entry[+] = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
 * section[dispatch].title = "Dispatch"
 * section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
 * section[dispatch].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Údaje o výjezdu</div>"
