@@ -528,7 +528,7 @@ Description: "Example of medication"
 * id = "782255e0-cd1d-4f31-ace3-08b278936b94"
 * identifier[+].system = "https://www.nempriklad.cz/"
 * identifier[=].value = "a12345"
-* code.coding[+] = $dlp_lecivePripravky#98872 "FYZIOLOGICKÝ ROZTOK VIAFLO"
+* code.coding[+] = $CZ_DLPLecivePripravkyCs#98872 "FYZIOLOGICKÝ ROZTOK VIAFLO"
 * code.text = "FYZIOLOGICKÝ ROZTOK VIAFLO"
 * form = $dlp_formy_cs#INJSOL "Injekční roztok"
 
