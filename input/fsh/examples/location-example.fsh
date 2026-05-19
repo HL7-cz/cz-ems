@@ -15,6 +15,12 @@ Title: "Vehicle: Dispatch"
 * identifier[licensePlate][+].system = "https://ncez.mzcr.cz/fhir/sid/licensePlate"
 * identifier[licensePlate][=].value = "8AB 1234"
 
+* identifier[VIN].system = "https://ncez.mzcr.cz/fhir/sid/vin"
+* identifier[VIN].value = "1HGCR2487M1234567"
+
+* identifier[callSign].system = "https://ncez.mzcr.cz/fhir/sid/call-sign"
+* identifier[callSign].value = "KRYSTOF_06"
+
 // Lokace místa události/zásahu
 Instance: cz-location-scene-example
 InstanceOf: CZ_LocationEms

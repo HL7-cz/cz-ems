@@ -5,7 +5,6 @@ Description:  """Urgency level codesystem defines the method of terminating pati
 * ^language = #cs-CZ
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^version = "1.0.0"
-* ^status = #active
 * ^date = "2025-11-04"
 * ^jurisdiction = urn:iso:std:iso:3166#CZ "Czechia"
 * ^caseSensitive = true

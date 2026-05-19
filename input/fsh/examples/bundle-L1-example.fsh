@@ -17,6 +17,12 @@ Usage: #example
 * entry[practitionerRole].fullUrl = "urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e"
 * entry[practitionerRole].resource = cz-example-practitioner-role
 
+* entry[practitioner].fullUrl = "urn:uuid:2e877c76-633d-479b-a6d4-c6d95942de3f"
+* entry[practitioner].resource = cz-example-practitioner
+
+* entry[organization][+].fullUrl = "urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca"
+* entry[organization][=].resource = cz-organizationAuthor-example
+
 Instance: cz-example-composition-L1
 InstanceOf: CZ_CompositionEms
 Title: "Composition: Novotný EMS - L1"
@@ -33,7 +39,7 @@ Usage: #example
 * confidentiality = #N
 * type = $loinc#67796-3 "EMS patient care report - version 3 Document NEMSIS"
 * category = $loinc#18682-5 "Ambulance records"
-* extension[presentedForm].valueAttachment = cz-pdf-example
+* extension[presentedForm].valueAttachment = cz-pdfhdr-example
 
 Instance: cz-pdfhdr-example
 InstanceOf: Attachment

@@ -99,24 +99,15 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * ^short = "Mission"
   * ^definition = "EMS response Narrative NEMSIS"
   * code = $loinc#67664-3 // "EMS response Narrative NEMSIS"
-* section[mission].entry ^slicing.discriminator.type = #profile
-* section[mission].entry ^slicing.discriminator.path = "resolve()"
-* section[mission].entry ^slicing.rules = #open
-
-* section[mission].entry contains 
-    missionEncounter 1..1 MS and 
-    destinationArrivalTime 0..1 MS and 
-    ambulance 0..* MS
-
-* section[mission].entry[missionEncounter] only Reference(CZ_EncounterMissionEms) //CHEmsEncounter
-* section[mission].entry[missionEncounter].reference 1..1
-  * ^short = "Reference to the encounter profile, which records the times of departure, arrival, and departure from the scene of the incident, and the handover of the patient."
-  // * ^description = "Encouter p"
-* section[mission].entry[destinationArrivalTime] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS) //CHEmsObservationMissionTimeStatus
-* section[mission].entry[destinationArrivalTime].reference 0..1
-* section[mission].entry[ambulance] only Reference(CZ_VehicleLocationEms) //CHEmsLocationAmbulance
-* section[mission].entry[ambulance].reference 1..
-* section[mission].section 0..0
+  * entry 
+    * insert SliceElement( #profile, [[resolve()]] )
+  * entry contains 
+      missionEncounter 1..1 and 
+      destinationArrivalTime 0..1 and 
+      ambulance 1..*
+  * entry[missionEncounter] only Reference(CZ_EncounterMissionEms) 
+  * entry[destinationArrivalTime] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS)
+  * entry[ambulance] only Reference(CZ_VehicleLocationEms) 
 
 
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////

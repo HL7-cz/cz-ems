@@ -152,17 +152,13 @@ Usage: #example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[mission].title = "Mission details"
 * section[mission].code = $loinc#67664-3
-* section[mission].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Detaily výjezdu</div>"
-* section[mission].text.status = #additional
-// * section[mission].entry[missionEncounter] = Reference(cz-encounter-mission-example)
-* section[mission].entry[0] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
-* section[mission].entry[+] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
-* section[mission].entry[+] = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
+* section[mission].entry[missionEncounter] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
+* section[mission].entry[destinationArrivalTime] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
+* section[mission].entry[ambulance] = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)
 * section[dispatch].title = "Dispatch"
 * section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
 * section[dispatch].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Údaje o výjezdu</div>"
 * section[dispatch].text.status = #additional
-* section[dispatch].entry[0] = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)
 * section[dispatch].entry[+] = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 * section[dispatch].entry[+] = Reference(urn:uuid:bfa154a9-69c0-4b7f-909e-6150492b7377)
 * section[dispatch].entry[+] = Reference(urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae)
@@ -326,7 +322,7 @@ Usage: #example
 Description: "Example of practitioner role for EMS report."
 Title: "PractitionerRole: Rychlý"
 * id = "bfa154a9-69c0-4b7f-909e-6150492b7377"
-* code = https://ncez.mzcr.cz/terminology/ValueSet/nrzp-povolani-vs#NL68 "Řidič vozidla zdravotnické záchranné služby"
+* code = https://ncez.mzcr.cz/terminology/CodeSystem/nrzp-povolani#NL68 "Řidič vozidla zdravotnické záchranné služby"
 * organization = Reference(urn:uuid:e206d37b-cfd4-4f10-ad09-ba78038847ca)
 * practitioner = Reference(urn:uuid:1e9f88f5-2b1d-4af3-886f-55b649cfe4c3)
 

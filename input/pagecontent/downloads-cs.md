@@ -1,4 +1,4 @@
-### Kompletní implementační specifikace
+package.tgz### Kompletní implementační specifikace
 
 Implementační příručka lze stáhnout [zde](../full-ig.zip).
 
@@ -6,7 +6,7 @@ Implementační příručka lze stáhnout [zde](../full-ig.zip).
 
 Následující soubor obsahuje všechny valuesety, profily, extenze, stránky a url apod. definované části této Implementační příručky:
 
-- [NPM Package](package.tgz)
+- [NPM Package](../package.tgz)
 
 Kromě toho existují definiční soubory specifické pro daný formát:
 
