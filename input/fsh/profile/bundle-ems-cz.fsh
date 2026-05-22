@@ -67,7 +67,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[procedure].resource only CZ_ProcedureEms
 
 * entry contains attachment 0..*
-* entry[attachment].resource only CZ_Logo or CZ_Attachment
+* entry[attachment].resource only DocumentReference
+
 
 * entry contains practitionerRole 0..*
 * entry[practitionerRole].resource only CZ_PractitionerRoleCore
@@ -85,7 +86,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[communication].resource only CZ_CommunicationEms
 
 * entry contains location 0..*
-* entry[location].resource only CZ_LocationEms or CZ_VehicleLocationEms
+* entry[location].resource only Location
 
 * entry contains allergy 0..*
 * entry[allergy].resource only CZ_AllergyIntolerance

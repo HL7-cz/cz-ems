@@ -218,10 +218,12 @@ parameters: #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Pa
   #  active-tables: false
   pin-canonicals: pin-multiples
   path-expansion-params: "../../expansion-params.json"
-  apply-contact: true
+  default-contact: true
+  default-copyright: true
+  apply-contact: false
   apply-jurisdiction: true
   apply-publisher: true
-  apply-version: true
+  default-license: true
   show-inherited-invariants: true
   usage-stats-opt-out: true
   # excludexml: false

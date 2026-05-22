@@ -662,11 +662,10 @@ Description: "Example of observation - Smoking use"
 
 Instance: cz-encounter-mission-example
 InstanceOf: CZ_EncounterMissionEms
-Usage: #example
+Usage: #inline
 Title: "Encounter: EMS mission Novotný"
 Description: "Encounter representing the EMS mission for patient Novotný."
 * id = "fb7cd123-6683-49e3-89cc-040ad008b922"
-* meta.profile = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-encounter-mission-ems"
 * status = #finished
 * class = $v3-ActCode#FLD "field"
 // odkaz na pacienta z bundle

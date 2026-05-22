@@ -4,6 +4,10 @@ Title: "ObservationsEmsOFType"
 Description: "This value set includes other Objective findings observations of EMS report."
 
 * insert SNOMEDCopyrightForVS
+* ^version = "1.0.0"
+* ^status = #active
+* ^date = "2024-01-01"
+* ^publisher = "NCEZ"
 * ^experimental = false
 
 //Další měřené parametry

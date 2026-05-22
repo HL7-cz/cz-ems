@@ -102,9 +102,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 
     * insert SliceElement( #profile, [[resolve()]] )
   * entry contains 
-      missionEncounter 1..1 and 
+      missionEncounter 0..1 and 
       destinationArrivalTime 0..1 and 
-      ambulance 1..*
+      ambulance 0..*
   * entry[missionEncounter] only Reference(CZ_EncounterMissionEms) 
   * entry[destinationArrivalTime] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS)
   * entry[ambulance] only Reference(CZ_VehicleLocationEms) 

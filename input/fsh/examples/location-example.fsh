@@ -3,7 +3,7 @@
 Instance: cz-vehicle-location-example
 InstanceOf: CZ_VehicleLocationEms
 Description: "Example of vehicle"
-Usage: #example
+Usage: #inline
 Title: "Vehicle: Dispatch"
 * id = "54d8ee67-8706-46a8-899e-12a54761d9d9"
 // Povinné z profilu

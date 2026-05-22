@@ -25,6 +25,10 @@ Description:  """Call classification Code value set includes selected codes from
 
 * insert SetFmmandStatusRule (1, draft)
 
+* ^version = "1.0.0"
+* ^status = #active
+* ^date = "2024-01-01"
+* ^publisher = "NCEZ"
 * ^experimental = false
 
 * insert SNOMEDCopyrightForVS
