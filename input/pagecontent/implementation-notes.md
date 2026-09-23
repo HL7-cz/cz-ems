@@ -27,7 +27,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_ImmunizationRecommendationEms
   CZ_BundleEms *-- "0..*" CZ_LocationEms
   CZ_BundleEms *-- "0..*" CZ_VehicleLocationEms
-  CZ_BundleEms *-- "0..*" CZ_MedicationAdministrationEms
+  CZ_BundleEms *-- "0..*" CZ_MedicationCoreAdministrationEms
   CZ_BundleEms *-- "0..*" CZ_ProcedureEms
   CZ_BundleEms *-- "0..*" CZ_ObservationBMIEms
   CZ_BundleEms *-- "0..*" CZ_ObservationHeightEms

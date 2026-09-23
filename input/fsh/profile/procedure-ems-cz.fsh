@@ -26,4 +26,4 @@ Description: "This profile on Procedure represents the ems procedure for the sco
   * actor only Reference(CZ_PractitionerRoleCore)
   * onBehalfOf only Reference(CZ_OrganizationCore)
 
-* usedReference only Reference(CZ_DeviceObserver or CZ_MedicalDevice or CZ_Medication or Substance)
+* usedReference only Reference(CZ_DeviceObserver or CZ_MedicalDevice or CZ_MedicationCore or Substance)

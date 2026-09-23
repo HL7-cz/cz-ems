@@ -98,7 +98,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[medicationAdministration].resource only MedicationAdministration
 
 * entry contains medication 0..*
-* entry[medication].resource only CZ_Medication
+* entry[medication].resource only CZ_MedicationCore
 
 * entry contains device 0..*
 * entry[device].resource only Device

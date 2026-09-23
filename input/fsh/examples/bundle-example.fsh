@@ -517,7 +517,7 @@ Description: "Example of procedure - Peripheral venous cannulation"
 * usedReference = Reference(urn:uuid:68c98e94-e997-417c-9108-f05f65fc5327)
 
 Instance: cz-medication-example
-InstanceOf: CZ_Medication
+InstanceOf: CZ_MedicationCore
 Usage: #example
 Title: "Medication: VIAFLO"
 Description: "Example of medication"
@@ -544,7 +544,7 @@ Title: "Medication Administration: VIAFLO"
 * effectiveDateTime = "2025-09-03T10:50:00+01:00"
 
 Instance: cz-medication-example2
-InstanceOf: CZ_Medication
+InstanceOf: CZ_MedicationCore
 Usage: #example
 Title: "Medication: BETALOC"
 Description: "Example of medication"

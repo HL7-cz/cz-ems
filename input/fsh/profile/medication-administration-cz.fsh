@@ -1,5 +1,5 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:    CZ_MedicationAdministration
+Profile:    CZ_MedicationCoreAdministration
 Parent:     MedicationAdministration
 Id:         cz-medication-administration
 Title:      "Medication Administration: EMS Report (CZ)"
@@ -12,11 +12,11 @@ Description: "Czech national profile for a medication administration."
 * . ^definition = "This profile is derived from the Medication Administration in FHIR, which is a record for tracking the administration of medications."
 
 * identifier 1..
-* partOf only Reference(CZ_MedicationAdministration or MedicationAdministration or CZ_ProcedureEms or Procedure)
+* partOf only Reference(CZ_MedicationCoreAdministration or MedicationAdministration or CZ_ProcedureEms or Procedure)
 * status
 * status from $hl7MedicationAdminStatus
 * medication[x]
-* medicationReference only Reference(CZ_Medication)
+* medicationReference only Reference(CZ_MedicationCore)
 * medicationCodeableConcept from $dlp_lecprip (preferred)
 
 * subject only Reference(CZ_PatientCore or CZ_PatientAnimal or Group)
