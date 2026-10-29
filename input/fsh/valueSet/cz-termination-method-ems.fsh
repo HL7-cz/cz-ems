@@ -1,7 +1,7 @@
 CodeSystem:   TerminationMethodEmsCS
 Id:         cz-termination-method-cs
-Title:      "Urgency level Code System"
-Description:  """Urgency level codesystem defines the method of terminating patient care."""
+Title:      "Termination method Code System"
+Description:  """Termination method codesystem defines the method of terminating patient care."""
 * ^language = #cs-CZ
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^version = "1.0.0"
@@ -26,8 +26,8 @@ Description:  """Urgency level codesystem defines the method of terminating pati
 
 ValueSet:   TerminationMethodEmsVS
 Id:         cz-termination-method-vs
-Title:      "Urgency level Value Set"
-Description:  """Urgency level value set includes selected codes from Urgency level Code System."""
+Title:      "Termination method Value Set"
+Description:  """Termination method value set includes selected codes from Termination method Code System."""
 * insert SetFmmandStatusRule (1, draft)
 * ^experimental = false
 * codes from system TerminationMethodEmsCS

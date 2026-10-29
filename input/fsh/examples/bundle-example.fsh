@@ -14,8 +14,23 @@ Usage: #example
 * entry[encounter][+].fullUrl = "urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628"
 * entry[encounter][=].resource = cz-encounter-example
 
-* entry[missionEncounter][+].fullUrl = "urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922"
-* entry[missionEncounter][=].resource = cz-encounter-mission-example
+// časová osa výjezdu (A.2.2)
+* entry[observation][+].fullUrl = "urn:uuid:16921112-5aa4-4db1-82ac-ae1a878bb4d7"
+* entry[observation][=].resource = cz-observation-mission-time-01-example
+* entry[observation][+].fullUrl = "urn:uuid:35f1f4e4-f41b-4328-a40a-a8db1a5d6b70"
+* entry[observation][=].resource = cz-observation-mission-time-02-example
+* entry[observation][+].fullUrl = "urn:uuid:a0af75a3-edde-4d47-b032-e0bc3252e077"
+* entry[observation][=].resource = cz-observation-mission-time-03-example
+* entry[observation][+].fullUrl = "urn:uuid:70b41272-758e-4d68-ae6a-dc0561de65b6"
+* entry[observation][=].resource = cz-observation-mission-time-04-example
+* entry[observation][+].fullUrl = "urn:uuid:802af9a8-6b97-4544-a49f-7d0f42697d58"
+* entry[observation][=].resource = cz-observation-mission-time-05-example
+* entry[observation][+].fullUrl = "urn:uuid:41a9abe1-fa00-481d-8da6-2a37e4c1cc90"
+* entry[observation][=].resource = cz-observation-mission-time-06-example
+* entry[observation][+].fullUrl = "urn:uuid:ed270185-1bb1-4d5f-9be1-268a293ebedc"
+* entry[observation][=].resource = cz-observation-mission-time-07-example
+* entry[observation][+].fullUrl = "urn:uuid:06cf5779-f301-4d44-818e-5ee74b63befa"
+* entry[observation][=].resource = cz-observation-mission-time-08-example
 
 * entry[attachment][+].fullUrl = "urn:uuid:040eb849-a513-4d74-b3f3-d2f246a26877"
 * entry[attachment][=].resource = cz-logo2-example
@@ -109,9 +124,6 @@ Usage: #example
 * entry[observation][+].fullUrl = "urn:uuid:e6d14fe5-fc02-46aa-942b-6559c9e644d2"
 * entry[observation][=].resource = cz-observation-smokinguse-ems-example
 
-* entry[observation][+].fullUrl = "urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab"
-* entry[observation][=].resource = cz-observation-arrival-at-destination-time-ems-example
-
 * entry[medication][+].fullUrl = "urn:uuid:782255e0-cd1d-4f31-ace3-08b278936b94"
 * entry[medication][=].resource = cz-medication-example
 
@@ -152,8 +164,6 @@ Usage: #example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[mission].title = "Mission details"
 * section[mission].code = $loinc#67664-3
-* section[mission].entry[missionEncounter] = Reference(urn:uuid:fb7cd123-6683-49e3-89cc-040ad008b922)
-* section[mission].entry[destinationArrivalTime] = Reference(urn:uuid:a2f5b4d0-1234-4cde-9abc-0123456789ab)
 * section[mission].entry[ambulance] = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)
 * section[dispatch].title = "Dispatch"
 * section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
@@ -166,7 +176,15 @@ Usage: #example
 * section[timeline].code = $loinc#67667-6 "EMS times Narrative NEMSIS"
 * section[timeline].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Časová osa výjezdu</div>"
 * section[timeline].text.status = #additional
-* section[timeline].entry[0] = Reference(urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:16921112-5aa4-4db1-82ac-ae1a878bb4d7)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:35f1f4e4-f41b-4328-a40a-a8db1a5d6b70)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:a0af75a3-edde-4d47-b032-e0bc3252e077)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:70b41272-758e-4d68-ae6a-dc0561de65b6)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:802af9a8-6b97-4544-a49f-7d0f42697d58)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:41a9abe1-fa00-481d-8da6-2a37e4c1cc90)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:ed270185-1bb1-4d5f-9be1-268a293ebedc)
+* section[timeline].entry[missionTime][+] = Reference(urn:uuid:06cf5779-f301-4d44-818e-5ee74b63befa)
+* section[timeline].entry[+] = Reference(urn:uuid:3acd2720-0bcf-41ca-bb17-7c64ac5b7682)
 * section[patientHx].title = "Patient history"
 * section[patientHx].code = $loinc#11329-0
 * section[patientHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anamnéza</div>"
@@ -455,16 +473,15 @@ Description: "Example of encounter for EMS document"
 * id = "cd343afa-039d-4576-b5e4-e89598aeb628"
 * identifier[dispatchNumber].value = "852699001"
 * identifier[dispatchNumber].use = #official
-* status = #in-progress
+* status = #finished
 * class = $v3-ActCode#EMER "emergency"
 * type.coding = $sct#56265001 "Heart disease"
-* type.text = "Arytmie" 
+* type.text = "Arytmie"
 * priority = $v3-ActPriority#UR "Urgent"
 * serviceProvider = Reference(urn:uuid:821077d6-ce17-4602-b3ad-d4bef845a950) // CZ_OrganizationWithLogo
-* period.start = "2025-05-20T10:35:00+01:00"
+// souhrnný interval výjezdu, jednotlivé časy viz cz-observation-mission-time-XX-example
+* period.start = "2025-05-20T10:30:00+01:00"
 * location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
-* location[scene].period.start = "2025-05-20T10:42:00+01:00"
-* location[scene].period.end = "2025-05-20T10:59:00+01:00"
 * location[scene].location = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
 * reasonCode.text = "Od večera 2.9.2025 pozoruje bušení srdce, při námaze se zadýchá, bolesti neguje."
 * hospitalization.extension[TerminationMethod].extension[code].valueCoding = TerminationMethodEmsCS#07 "předán CPALP"
@@ -472,9 +489,6 @@ Description: "Example of encounter for EMS document"
 * hospitalization.extension[TerminationMethod].extension[handingOverStaff].valueIdentifier.system = "https://ncez.mzcr.cz/fhir/sid/krzp"
 * hospitalization.extension[TerminationMethod].extension[receivingStaffText].valueString =  "Pavel Procházka"
 * hospitalization.destination = Reference(urn:uuid:821077d6-ce17-4602-b3ad-d4bef845a950)
-//* location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
-//* location[destination].period.start = "2025-05-20T11:10:00+01:00"
-//* location[destination].period.end = "2025-05-20T11:12:00+01:00"  Nelze zadat bez lokace???
 * period.end = "2025-05-20T11:20:00+01:00"
 
 Instance: cz-procedure-example
@@ -660,49 +674,70 @@ Description: "Example of observation - Smoking use"
 * performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 
 
-Instance: cz-encounter-mission-example
-InstanceOf: CZ_EncounterMissionEms
-Usage: #inline
-Title: "Encounter: EMS mission Novotný"
-Description: "Encounter representing the EMS mission for patient Novotný."
-* id = "fb7cd123-6683-49e3-89cc-040ad008b922"
-* status = #finished
-* class = $v3-ActCode#FLD "field"
-// odkaz na pacienta z bundle
-* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
-// ------------------------
-// Časy mise (A2.2.3 a A2.2.7)
-// ------------------------
-* period.start = "2022-10-07T08:05:00+01:00"   // A2.2.3 čas výjezdu – povinné
-* period.end   = "2022-10-07T10:15:00+01:00"   // A2.2.7 čas předání pacienta
-// ------------------------
-// Časy na místě události (scéna)
-// ------------------------
-// A2.2.4 příjezd na místo události
-* location[0].period.start = "2022-10-07T08:20:00+01:00"
-
-// A2.2.5 odjezd z místa události
-* location[0].period.end   = "2022-10-07T08:45:00+01:00"
-//místo události
-* location.location = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade) // CZ_LocationEmsScene
-
-Instance: cz-observation-arrival-at-destination-time-ems-example
-InstanceOf: CZ_ObservationArrivalAtDestinationTimeEMS
-Usage: #inline
-Title: "Observation: Arrival at destination time"
-Description: "Timestamp when the EMS unit arrived at the destination facility or transfer point."
-
-* id = "a2f5b4d0-1234-4cde-9abc-0123456789ab"
-
+// -------------------------------------------------------------
+// Časová osa výjezdu (A.2.2) - jeden časový bod = jedna Observation
+// -------------------------------------------------------------
+RuleSet: MissionTimeExample(id, code, display, time)
+* id = "{id}"
 * status = #final
-* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
-// A2.2.6 Čas příjezdu do místa předání
-* code = $loinc#69476-0
-* code.text = "Čas příjezdu do místa předání"
-// Pro kontext mise
-* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)        // Patient
-* encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)      // Encounter mission
+* code = MissionTimePointEmsCS#{code} "{display}"
+* subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)      // Patient
+* encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)    // Encounter
+* focus = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)        // Vozidlo
+* valueDateTime = "{time}"
 
-// Vlastní čas příjezdu na místo předání
-* valueDateTime = "2022-10-07T09:05:00+01:00"
-* effectiveDateTime = "2022-10-07T09:05:00+01:00"
+Instance: cz-observation-mission-time-01-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - event notification"
+Description: "A.2.2.1 - Time when the dispatch center received the incident notification."
+* insert MissionTimeExample(16921112-5aa4-4db1-82ac-ae1a878bb4d7, 01, Oznámení události, 2025-05-20T10:30:00+01:00)
+
+Instance: cz-observation-mission-time-02-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - dispatch notification"
+Description: "A.2.2.2 - Time when the dispatch order was communicated to the crew."
+* insert MissionTimeExample(35f1f4e4-f41b-4328-a40a-a8db1a5d6b70, 02, Výzva, 2025-05-20T10:31:00+01:00)
+
+Instance: cz-observation-mission-time-03-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - en route"
+Description: "A.2.2.3 - Time when the crew started the dispatch."
+* insert MissionTimeExample(a0af75a3-edde-4d47-b032-e0bc3252e077, 03, Výjezd, 2025-05-20T10:33:00+01:00)
+
+Instance: cz-observation-mission-time-04-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - arrival at scene"
+Description: "A.2.2.4 - Time when the crew arrived at the incident scene."
+* insert MissionTimeExample(70b41272-758e-4d68-ae6a-dc0561de65b6, 04, Příjezd na místo události, 2025-05-20T10:42:00+01:00)
+
+Instance: cz-observation-mission-time-05-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - left scene"
+Description: "A.2.2.5 - Time when the crew departed from the incident scene."
+* insert MissionTimeExample(802af9a8-6b97-4544-a49f-7d0f42697d58, 05, Odjezd z místa události, 2025-05-20T10:59:00+01:00)
+
+Instance: cz-observation-mission-time-06-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - arrival at destination"
+Description: "A.2.2.6 - Time when the crew arrived at the destination / transfer point."
+* insert MissionTimeExample(41a9abe1-fa00-481d-8da6-2a37e4c1cc90, 06, Příjezd do místa předání, 2025-05-20T11:10:00+01:00)
+
+Instance: cz-observation-mission-time-07-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - patient handover"
+Description: "A.2.2.7 - Time when the patient was handed over to the receiving facility (CPALP)."
+* insert MissionTimeExample(ed270185-1bb1-4d5f-9be1-268a293ebedc, 07, Předání pacienta, 2025-05-20T11:12:00+01:00)
+
+Instance: cz-observation-mission-time-08-example
+InstanceOf: CZ_ObservationMissionTimeEms
+Usage: #inline
+Title: "Observation: Mission time - back in service"
+Description: "A.2.2.8 - Time when the crew formally completed the dispatch."
+* insert MissionTimeExample(06cf5779-f301-4d44-818e-5ee74b63befa, 08, Ukončení výjezdu, 2025-05-20T11:20:00+01:00)

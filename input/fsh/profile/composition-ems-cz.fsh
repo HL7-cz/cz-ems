@@ -101,13 +101,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#67664-3 // "EMS response Narrative NEMSIS"
   * entry 
     * insert SliceElement( #profile, [[resolve()]] )
-  * entry contains 
-      missionEncounter 0..1 and 
-      destinationArrivalTime 0..1 and 
+  * entry contains
       ambulance 0..*
-  * entry[missionEncounter] only Reference(CZ_EncounterMissionEms) 
-  * entry[destinationArrivalTime] only Reference(CZ_ObservationArrivalAtDestinationTimeEMS)
-  * entry[ambulance] only Reference(CZ_VehicleLocationEms) 
+  * entry[ambulance] only Reference(CZ_VehicleLocationEms)
 
 
 ///////////////////////////////// Objective findings SECTION ///////////////////////////////////////
@@ -138,7 +134,13 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ServiceRequestEms or CZ_CommunicationEms)
+  * entry only Reference(CZ_ObservationMissionTimeEms or CZ_ServiceRequestEms or CZ_CommunicationEms)
+  * entry
+    * insert SliceElement( #profile, [[resolve()]] )
+  * entry contains
+      missionTime 0..*
+  * entry[missionTime] only Reference(CZ_ObservationMissionTimeEms)
+  * entry[missionTime] ^short = "Time points of the EMS mission (A.2.2)"
 
 ///////////////////////////////// PATIENT HISTORY SECTION ///////////////////////////////////////
 * section[patientHx]

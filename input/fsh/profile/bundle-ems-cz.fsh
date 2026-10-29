@@ -3,6 +3,11 @@ Description: "A EMS report bundle SHALL include one and only one Composition"
 Expression: "entry.resource.ofType(Composition).count() = 1"
 Severity:    #error
 
+Invariant: mission-time-required
+Description: "If the Composition contains the timeline section, the bundle SHALL include the mandatory mission time points 02, 03, 04, 05 and 07 (A.2.2.2 - A.2.2.5, A.2.2.7)"
+Expression: "entry.resource.ofType(Composition).section.where(code.coding.where(system = 'http://loinc.org' and code = '67667-6').exists()).exists() implies ('02' | '03' | '04' | '05' | '07').all(%resource.entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = $this).exists())"
+Severity:    #error
+
 //==========================
 // PROFILE
 //==========================
@@ -19,7 +24,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 
 * insert SetFmmandStatusRule ( 0, draft )
 
-* obeys one-comp
+* obeys one-comp and mission-time-required
 
 * identifier ^short = "Business identifier for this Imaging Report"
 * identifier 1..
@@ -59,9 +64,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains practitioner 0..*
 * entry[practitioner].resource only CZ_PractitionerCore
 
-* entry contains encounter 0..1 and missionEncounter 0..1
+* entry contains encounter 0..1
 * entry[encounter].resource only CZ_EncounterEms
-* entry[missionEncounter].resource only CZ_EncounterMissionEms
 
 * entry contains procedure 0..*
 * entry[procedure].resource only CZ_ProcedureEms
@@ -92,7 +96,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[allergy].resource only CZ_AllergyIntolerance
 
 * entry contains observation 0..*
-* entry[observation].resource only Observation or CZ_ObservationArrivalAtDestinationTimeEMS or CZ_ObservationTravelEms
+* entry[observation].resource only Observation or CZ_ObservationMissionTimeEms or CZ_ObservationTravelEms
 
 * entry contains medicationAdministration 0..*
 * entry[medicationAdministration].resource only MedicationAdministration

@@ -37,6 +37,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_ObservationSDOHEMS
   CZ_BundleEms *-- "0..*" CZ_ObservationTravelEms
   CZ_BundleEms *-- "0..*" CZ_ObservationVitalSignsEms
+  CZ_BundleEms *-- "0..*" CZ_ObservationMissionTimeEms
   CZ_BundleEms *-- "0..*" CZ_ObservationWeightEms
   
   CZ_TaskEms -->  CZ_CompositionEms: composition
@@ -67,7 +68,7 @@ classDiagram
   CZ_CompositionEms --> CZ_RelatedPerson: section[dispatch]
   CZ_CompositionEms --> CZ_TaskEms: section[timeline]
   CZ_CompositionEms --> CZ_CommunicationEms: section[timeline]
-  CZ_CompositionEms --> CZ_EncounterEms: section[timeline]
+  CZ_CompositionEms --> CZ_ObservationMissionTimeEms: section[timeline]
   CZ_CompositionEms --> CZ_ConditionEms: section[patientHx]
   CZ_CompositionEms --> CZ_MedicalDevice: section[medicalDevices]
   CZ_CompositionEms --> CZ_ProcedureEms: section[significantProcedures]
