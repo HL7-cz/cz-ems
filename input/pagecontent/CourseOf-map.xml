@@ -132,7 +132,7 @@
                         <td>Composition (cz-composition-ems)</td>
                         <td>CZ_CompositionEms.section:recommendations</td>
                         <td></td>
-                        <td>Composition.section:recommendations.entry.ofType(CZ_CarePlanEms)</td>
+                        <td>Composition.section:recommendations.entry.ofType(CZ_CarePlanCore)</td>
                     </tr>
                     <tr>
                         <td>Recommendations.courseOfTreatment.description</td>
@@ -156,8 +156,8 @@
                         <td>Recommendations.recommendations.description</td>
                         <td>A.2.9.2.1 - Recommendation Description</td>
                         <td>equivalent</td>
-                        <td>CarePlan (cz-carePlan-ems)</td>
-                        <td>CZ_CarePlanEms.description</td>
+                        <td>CarePlan (carePlan-cz-core)</td>
+                        <td>CZ_CarePlanCore.description</td>
                         <td></td>
                         <td></td>
                     </tr>

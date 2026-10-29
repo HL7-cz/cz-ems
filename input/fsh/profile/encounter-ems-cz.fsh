@@ -1,5 +1,5 @@
 Profile: CZ_EncounterEms
-Parent: Encounter
+Parent: CZ_EncounterCore
 Id: cz-encounter-ems
 Title: "Encounter: EMS Report (CZ)"
 Description: "This profile defines how to represent Encounter resource in HL7 FHIR for the scope of this guide."
@@ -59,10 +59,10 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
     destination 0..1           // CZ: místo předání (cílové pracoviště)
 
 * location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
-* location[scene].location only Reference(CZ_LocationEms)
+* location[scene].location only Reference(CZ_LocationCore)
 
 * location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
-* location[destination].location only Reference(CZ_LocationEms)
+* location[destination].location only Reference(CZ_LocationCore)
 
 // Časy příjezdu a odjezdu (A.2.2.4 - A.2.2.7) se nezapisují do location.period, ale jako CZ_ObservationMissionTimeEms
 * location.period ^short = "Not used for mission times - see CZ_ObservationMissionTimeEms"

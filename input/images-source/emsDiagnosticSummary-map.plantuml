@@ -15,7 +15,7 @@ endlegend
 
 class "Diagnostic summary" <<LogicalModel>> [[StructureDefinition-LogDiagnosticSummary.html]]
 
-class "cz-condition-ems" <<Profile>> [[StructureDefinition-cz-condition-ems.html]]
+class "condition-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-condition-cz-core.html]]
 
-"Diagnostic summary" <|. "cz-condition-ems"
+"Diagnostic summary" <|. "condition-cz-core"
 @enduml

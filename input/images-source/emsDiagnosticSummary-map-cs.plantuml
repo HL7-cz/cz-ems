@@ -15,7 +15,7 @@ endlegend
 
 class "Diagnostický souhrn" <<LogicalModel>> [[StructureDefinition-LogDiagnostickySouhrnCz.html]]
 
-class "cz-condition-ems" <<Profile>> [[StructureDefinition-cz-condition-ems.html]]
+class "condition-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-condition-cz-core.html]]
 
-"Diagnostický souhrn" <|. "cz-condition-ems"
+"Diagnostický souhrn" <|. "condition-cz-core"
 @enduml

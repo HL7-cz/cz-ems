@@ -1,5 +1,5 @@
 Profile: CZ_ConditionObligationsEms
-Parent: CZ_ConditionEms
+Parent: CZ_ConditionCore
 Id: cz-condition-obl-ems
 Title:    "Condition: Obligations"
 Description: "This profile defines obligations for a condition in FHIR for the purpose of this guide."

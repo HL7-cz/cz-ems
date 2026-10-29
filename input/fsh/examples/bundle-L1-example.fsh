@@ -29,6 +29,8 @@ Title: "Composition: Novotný EMS - L1"
 Description: "Example of composition for EMS document - L1"
 Usage: #example
 * id = "0bb51b84-6b1e-456f-bdce-ddcfab64d712"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:f9e2345b-9554-49d3-a30a-a707ed745923"
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Composition of EMS</div>"
 * status = #final

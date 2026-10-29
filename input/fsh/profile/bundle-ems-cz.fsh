@@ -96,7 +96,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[allergy].resource only CZ_AllergyIntolerance
 
 * entry contains observation 0..*
-// konkrétní profily (např. CZ_ObservationMissionTimeEms, CZ_ObservationTravelEms) se validují podle meta.profile
+// konkrétní profily (např. CZ_ObservationMissionTimeEms, CZ_ObservationTravelHdr) se validují podle meta.profile
 * entry[observation].resource only Observation
 
 * entry contains medicationAdministration 0..*
@@ -109,8 +109,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[device].resource only Device
 
 * entry contains condition 0..*
-* entry[condition].resource only CZ_ConditionEms
+* entry[condition].resource only CZ_ConditionCore
 
 * entry contains familyMemberHistory 0..*
-* entry[familyMemberHistory].resource only CZ_FamilyMemberHistoryEms
+* entry[familyMemberHistory].resource only CZ_FamilyMemberHistoryHdr
 

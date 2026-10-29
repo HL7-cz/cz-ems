@@ -17,13 +17,13 @@ class "Therapy" <<LogicalModel>> [[StructureDefinition-TherapyEmsCz.html]]
 
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
 class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
-class "cz-medication-administration" <<Profile>> [[StructureDefinition-cz-medication-administration.html]]
+class "MedicationAdministration-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-MedicationAdministration-cz-core.html]]
 
 "Therapy" <|. "cz-procedure-ems"
 "Therapy" <|. "cz-medical-device"
-"Therapy" <|. "cz-medication-administration"
+"Therapy" <|. "MedicationAdministration-cz-core"
 
 "cz-procedure-ems" -d[hidden]-> "cz-medical-device"
-"cz-medical-device" -d[hidden]-> "cz-medication-administration"
+"cz-medical-device" -d[hidden]-> "MedicationAdministration-cz-core"
 
 @enduml

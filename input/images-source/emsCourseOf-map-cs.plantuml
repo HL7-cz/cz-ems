@@ -17,13 +17,13 @@ class "Průběh ošetření" <<LogicalModel>> [[StructureDefinition-LogRecommend
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
-class "cz-carePlan-ems" <<Profile>> [[StructureDefinition-cz-carePlan-ems.html]]
+class "carePlan-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-carePlan-cz-core.html]]
 
 "Průběh ošetření" <|. "cz-composition-ems"
 "Průběh ošetření" <|. "cz-procedure-ems"
-"Průběh ošetření" <|. "cz-carePlan-ems"
+"Průběh ošetření" <|. "carePlan-cz-core"
 
 "cz-composition-ems" -d[hidden]-> "cz-procedure-ems"
-"cz-procedure-ems" -d[hidden]-> "cz-carePlan-ems"
+"cz-procedure-ems" -d[hidden]-> "carePlan-cz-core"
 
 @enduml

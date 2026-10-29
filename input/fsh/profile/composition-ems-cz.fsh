@@ -1,6 +1,6 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Profile: CZ_CompositionEms
-Parent: Composition
+Parent: CZ_CompositionCore
 Id: cz-composition-ems
 Title: "Composition: EMS Report (CZ)"
 Description: "This profile defines how to represent Composition resource in HL7 FHIR for the scope of this guide."
@@ -53,13 +53,11 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * attester.mode ^short = "The type of attestation"
 * attester.time ^short = "When the composition was attested."
 * attester.party ^short = "Who attested the composition."
-* attester.party only Reference( CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
 * custodian ^short = "Organization which is the custodian of the Composition"
 * custodian only Reference( CZ_OrganizationCore )
 
-* extension contains
-    $information-recipient-url  named informationRecipient 0..*
+// extenze informationRecipient je definována v CZ_CompositionCore (EU core), zde se pouze zužují odkazy
 * extension[informationRecipient].valueReference only Reference(CZ_PractitionerCore or CZ_DeviceObserver or CZ_PatientCore or CZ_RelatedPersonCore or CZ_PractitionerRoleCore or CZ_OrganizationCore)
 
 * insert SectionSliceComRules (Sections composing the Emergency Medical Services,
@@ -114,7 +112,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactEMS or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms or CZ_ObservationGCSEms or Observation)
+  * entry only Reference(CZ_ObservationBMIEms or CZ_ObservationHeightEms or CZ_ObservationInfectiousContactHdr or CZ_ObservationOtherOFEms or CZ_ObservationOxygenEms or CZ_ObservationVitalSignsEms or CZ_ObservationWeightEms or CZ_ObservationGCSEms or Observation)
 
 ///////////////////////////////// DISPATCH SECTION ///////////////////////////////////////
 * section[dispatch]
@@ -124,7 +122,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_LocationEms or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
+  * entry only Reference(CZ_LocationCore or CZ_CommunicationEms or CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_VehicleLocationEms)
 
 ///////////////////////////////// TIMELINE SECTION ///////////////////////////////////////
 * section[timeline]
@@ -149,7 +147,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     This Section describes all aspects of the medical history of the patient even if not pertinent to the current procedure\, and may include chief complaint\, past medical history\, social history\, family history\, surgical or procedure history\, medication history\, and other history information. The history may be limited to information pertinent to the current procedure or may be more comprehensive. The history may be reported as a collection of random clinical statements or it may be reported categorically. Categorical report formats may be divided into multiple subsections including Past Medical History\, Social History.,
     $loinc#11329-0 )
   // * entry 1..
-  // * entry only Reference(CZ_ConditionEms)
+  // * entry only Reference(CZ_ConditionCore)
 
 // SLICING PRO VNOŘENÉ SECTION
 * section[patientHx].section ^slicing.discriminator[0].type = #pattern
@@ -175,25 +173,25 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * title = "Infectious contacts"
   * code = TemporaryHDRSystem#infection-contact
   * entry 0..*
-  * entry only Reference(CZ_ObservationInfectiousContactEMS or DocumentReference)
+  * entry only Reference(CZ_ObservationInfectiousContactHdr or DocumentReference)
 
 * section[patientHx].section[TravelHx]
   * title = "Travel History Section"
   * code = $loinc#10182-4 "History of Travel note"
   * entry 0..*
-  * entry only Reference(CZ_ObservationTravelEms)
+  * entry only Reference(CZ_ObservationTravelHdr)
 
 * section[patientHx].section[SocialHistory]
   * title = "Social History Section"
   * code = $loinc#29762-2 "Social history note"
   * entry 0..*
-  * entry only Reference(CZ_ObservationSDOHEMS)
+  * entry only Reference(CZ_ObservationSdohHdr)
 
 * section[patientHx].section[PastIllnessHx]
   * title = "Past Illness History Section"
   * code = $loinc#11348-0 "History of Past illness note"
   * entry 0..*
-  * entry only Reference(CZ_ConditionEms or Condition)
+  * entry only Reference(CZ_ConditionCore or Condition)
 
 * section[patientHx].section[ProceduresHx]
   * title = "Procedures History Section"
@@ -205,13 +203,13 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * title = "Immunizations Section"
   * code = $loinc#11369-6 "History of Immunization note"
   * entry 0..*
-  * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
+  * entry only Reference(CZ_ImmunizationCore or CZ_ImmunizationRecommendationHdr or DocumentReference)
 
 * section[patientHx].section[FamilyHistory]
   * title = "Family History Section"
   * code = $loinc#10157-6
   * entry 0..*
-  * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
+  * entry only Reference(Observation or CZ_FamilyMemberHistoryHdr)
 
 * section[patientHx].section[SubstanceUse]
   * title = "Substance Use History Section"
@@ -267,7 +265,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 //       This Section describes the travel history relevant for the Patient Summary\, e.g.recent travel in a region of high prevalence of a specific infectious disease like Malaria,
 //       $loinc#10182-4 )
 //   * entry 0..*
-//   * entry only Reference(CZ_ObservationTravelEms)
+//   * entry only Reference(CZ_ObservationTravelHdr)
 
 // * section[immunizations]
 //   * insert SectionComRules (
@@ -275,7 +273,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 //       The Immunizations Section defines a patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\nThe section includes current immunization status\, and may contain the entire immunization history that is relevant to the period of time being summarized.,
 //       $loinc#11369-6 )
 //   * entry 0..*
-//   * entry only Reference(CZ_ImmunizationEMS or CZ_ImmunizationRecommendationEMS or DocumentReference)
+//   * entry only Reference(CZ_ImmunizationCore or CZ_ImmunizationRecommendationHdr or DocumentReference)
 
 // * section[infectiousContacts]
 //   * insert SectionComRules (
@@ -283,7 +281,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 //     Infectious contacts of the patient,
 //      TemporaryHDRSystem#infection-contact ) // $sct#444071008"Exposure to organism (event\)"
 //   * entry 0..*
-//   * entry only Reference(CZ_ObservationInfectiousContactEMS)
+//   * entry only Reference(CZ_ObservationInfectiousContactHdr)
 
 // * section[familyHistory]
 //   * insert SectionComRules (
@@ -291,7 +289,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 //     This section contains data defining the patient’s genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient’s healthcare risk profile.,
 //     http://loinc.org#10157-6  )
 //   * entry 0..*
-//   * entry only Reference(Observation or CZ_FamilyMemberHistoryEms)
+//   * entry only Reference(Observation or CZ_FamilyMemberHistoryHdr)
 
 // * section[socialHistory]
 //   * insert SectionComRules (
@@ -299,7 +297,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 //     The social history section contains a description of the person Health related lifestyle factors or lifestyle observations.   E.g. smoke habits; alcohol consumption; diets\, risky habits.,
 //     $loinc#29762-2)
 //   * entry 0..*
-//   * entry only Reference(CZ_ObservationSDOHEMS)
+//   * entry only Reference(CZ_ObservationSdohHdr)
 
 // * section[alcoholUse]
 //   * insert SectionComRules (
@@ -344,7 +342,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry 0..
   * insert SectionEntrySliceComRules(Alerts, Alerts)
   // entry slices
-  * insert SectionEntrySliceDefRules (flag, 0.. , Flags , Flags , CZ_FlagEms)
+  * insert SectionEntrySliceDefRules (flag, 0.. , Flags , Flags , CZ_FlagPatientCore)
   * insert SectionEntrySliceDefRules (detectedIssue, 0.. ,  Detected Issue,
     Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction\, Ineffective treatment frequency\, Procedure-condition conflict\, etc. ,
     DetectedIssue)
@@ -360,7 +358,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#11450-4
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 0..*
-  * entry only Reference(CZ_ConditionEms)
+  * entry only Reference(CZ_ConditionCore)
 
 ///////////////////////////////// ClinicalCourseAndRecommendations SECTION ///////////////////////////////////////
 * section[courseOfTreatment]
@@ -375,7 +373,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     Plan of Care Section,
     The plan of care section contains a narrative description of the expectations for care including proposals\, goals\, and order requests for monitoring\, tracking\, or improving the condition of the patient.,
     $loinc#18776-5 )
-  * entry only Reference( CZ_CarePlanEms)
+  * entry only Reference( CZ_CarePlanCore)
 
 ///////////////////////////////// PROCEDURE SECTION ///////////////////////////////////////
 * section[procedure]

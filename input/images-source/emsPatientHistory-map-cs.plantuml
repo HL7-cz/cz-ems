@@ -16,35 +16,35 @@ endlegend
 class "Anamnéza" <<LogicalModel>> [[StructureDefinition-LogPatientHistoryCz.html]]
 
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
-class "cz-immunizationRecommendation-ems" <<Profile>> [[StructureDefinition-cz-immunizationRecommendation-ems.html]]
+class "cz-immunizationrecommendation-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-immunizationrecommendation-hdr.html]]
 class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
 class "deviceusestatement" <<Profile>> [[https://hl7.org/fhir/R4/deviceusestatement.html]]
-class "cz-immunization-ems" <<Profile>> [[StructureDefinition-cz-immunization-ems.html]]
-class "cz-observation-sdoh-ems" <<Profile>> [[StructureDefinition-cz-observation-sdoh-ems.html]]
+class "immunization-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-immunization-cz-core.html]]
+class "cz-observation-sdoh-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-sdoh-hdr.html]]
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
 class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
 class "familymemberhistory" <<Profile>> [[https://hl7.org/fhir/R4/familymemberhistory.html]]
-class "cz-observation-infectious-contact-ems" <<Profile>> [[StructureDefinition-cz-observation-infectious-contact-ems.html]]
+class "cz-observation-infectious-contact-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html]]
 
 "Anamnéza" <|. "cz-composition-ems"
-"Anamnéza" <|. "cz-immunizationRecommendation-ems"
+"Anamnéza" <|. "cz-immunizationrecommendation-hdr"
 "Anamnéza" <|. "deviceusestatement"
-"Anamnéza" <|. "cz-immunization-ems"
-"Anamnéza" <|. "cz-observation-sdoh-ems"
+"Anamnéza" <|. "immunization-cz-core"
+"Anamnéza" <|. "cz-observation-sdoh-hdr"
 "Anamnéza" <|. "cz-procedure-ems"
 "Anamnéza" <|. "observation"
 "Anamnéza" <|. "familymemberhistory"
 "Anamnéza" <|. "cz-medical-device"
-"Anamnéza" <|. "cz-observation-infectious-contact-ems"
+"Anamnéza" <|. "cz-observation-infectious-contact-hdr"
 
-"cz-composition-ems" -d[hidden]-> "cz-immunizationRecommendation-ems"
-"cz-immunizationRecommendation-ems" -d[hidden]-> "deviceusestatement"
-"deviceusestatement" -d[hidden]-> "cz-observation-sdoh-ems"
-"cz-observation-sdoh-ems" -d[hidden]-> "cz-procedure-ems"
+"cz-composition-ems" -d[hidden]-> "cz-immunizationrecommendation-hdr"
+"cz-immunizationrecommendation-hdr" -d[hidden]-> "deviceusestatement"
+"deviceusestatement" -d[hidden]-> "cz-observation-sdoh-hdr"
+"cz-observation-sdoh-hdr" -d[hidden]-> "cz-procedure-ems"
 "cz-procedure-ems" -d[hidden]-> "observation"
 "observation" -d[hidden]-> "familymemberhistory"
-"familymemberhistory" -d[hidden]-> "cz-immunization-ems"
-"cz-immunization-ems" -d[hidden]-> "cz-medical-device"
-"cz-medical-device" -d[hidden]-> "cz-observation-infectious-contact-ems"
+"familymemberhistory" -d[hidden]-> "immunization-cz-core"
+"immunization-cz-core" -d[hidden]-> "cz-medical-device"
+"cz-medical-device" -d[hidden]-> "cz-observation-infectious-contact-hdr"
 
 @enduml

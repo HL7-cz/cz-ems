@@ -23,7 +23,7 @@ Title: "Vehicle: Dispatch"
 
 // Lokace místa události/zásahu
 Instance: cz-location-scene-example
-InstanceOf: CZ_LocationEms
+InstanceOf: CZ_LocationCore
 Usage: #example
 Description: "Example of scene location"
 Title: "Location: Scene"

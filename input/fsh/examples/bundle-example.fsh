@@ -151,6 +151,8 @@ Title: "Composition: Novotný EMS"
 Description: "Example of composition for EMS document"
 Usage: #example
 * id = "da3f987f-2a08-431a-92e3-129d7689e465"
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:d86ddf2c-1712-4653-89f9-9c0527c15595"
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Composition of EMS</div>"
 * status = #final
@@ -164,6 +166,8 @@ Usage: #example
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)
 * section[mission].title = "Mission details"
 * section[mission].code = $loinc#67664-3
+* section[mission].text.status = #additional
+* section[mission].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Údaje o misi</div>"
 * section[mission].entry[ambulance] = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)
 * section[dispatch].title = "Dispatch"
 * section[dispatch].code = $loinc#67660-1 "EMS dispatch Narrative NEMSIS"
@@ -598,7 +602,7 @@ Title: "Medication Administration: BETALOC"
 * effectiveDateTime = "2025-09-03T10:50:00+01:00"
 
 Instance: cz-condition-example
-InstanceOf: CZ_ConditionEms
+InstanceOf: CZ_ConditionCore
 Usage: #example
 Title: "Condition: Arterial hypertension"
 Description: "Example of condition - Arterial hypertension"
@@ -611,7 +615,7 @@ Description: "Example of condition - Arterial hypertension"
 * stage.summary.text = "kompenzováno medikací"
 
 Instance: cz-observation-travel-ems-example
-InstanceOf: CZ_ObservationTravelEms
+InstanceOf: CZ_ObservationTravelHdr
 Usage: #example
 Title: "Observation: Italy travel history"
 Description: "Example of observation - Italy travel history"
@@ -626,7 +630,7 @@ Description: "Example of observation - Italy travel history"
 * performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)
 
 Instance: cz-familyMemberHistory-ems
-InstanceOf: CZ_FamilyMemberHistoryEms
+InstanceOf: CZ_FamilyMemberHistoryHdr
 Usage: #example
 Title: "Family Member History: Father"
 Description: "Example of family member history - Father"
