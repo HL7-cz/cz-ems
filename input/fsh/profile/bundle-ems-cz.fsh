@@ -5,7 +5,7 @@ Severity:    #error
 
 Invariant: mission-time-required
 Description: "If the Composition contains the timeline section, the bundle SHALL include the mandatory mission time points 02, 03, 04, 05 and 07 (A.2.2.2 - A.2.2.5, A.2.2.7)"
-Expression: "entry.resource.ofType(Composition).section.where(code.coding.where(system = 'http://loinc.org' and code = '67667-6').exists()).exists() implies ('02' | '03' | '04' | '05' | '07').all(%resource.entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = $this).exists())"
+Expression: "entry.resource.ofType(Composition).section.where(code.coding.where(system = 'http://loinc.org' and code = '67667-6').exists()).exists() implies (entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '02').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '03').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '04').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '05').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '07').exists())"
 Severity:    #error
 
 //==========================
@@ -96,7 +96,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[allergy].resource only CZ_AllergyIntolerance
 
 * entry contains observation 0..*
-* entry[observation].resource only Observation or CZ_ObservationMissionTimeEms or CZ_ObservationTravelEms
+// konkrétní profily (např. CZ_ObservationMissionTimeEms, CZ_ObservationTravelEms) se validují podle meta.profile
+* entry[observation].resource only Observation
 
 * entry contains medicationAdministration 0..*
 * entry[medicationAdministration].resource only MedicationAdministration

@@ -684,6 +684,7 @@ RuleSet: MissionTimeExample(id, code, display, time)
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)      // Patient
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)    // Encounter
 * focus = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)        // Vozidlo
+* performer = Reference(urn:uuid:f64bef19-c377-404a-bac2-23d2bbac8f3e)    // PractitionerRole posádky
 * valueDateTime = "{time}"
 
 Instance: cz-observation-mission-time-01-example

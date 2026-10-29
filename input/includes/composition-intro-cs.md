@@ -1,12 +1,12 @@
-### Sekce a obsah
+#### Sekce a obsah
 
 Kompozice obsahuje základní komponenty a sekce. V rámci sekcí je rozdělena do sady povinných a nepovinných sekcí. V případě, že nejsou pro povinnou sekci k dispozici žádná data, lze odůvodnění vyjádřit v `composition.section.emptyReason`.
 
-### Struktura kompozice
+#### Struktura kompozice
 
 Záznam o výjezdu ZZS obsahuje základní elementy a následující sekce v pořadí v němž jsou popsány:
 
-#### Základní elementy
+##### Základní elementy
 
 Obecné informace o záznamu. Většina informačních prvků v této části kompozice je vyplněna podobně jako v ostatních typech zpráv. Obsahuje informace o pacientovi, zdrojové organizaci a autorovi.
 
@@ -14,7 +14,7 @@ Obecné informace o záznamu. Většina informačních prvků v této části ko
 
 Tento profil umožňuje propojení zprávy s jednou konkrétní misí, ke které se zpráva vztahuje.
 
-#### Sekce kompozice
+##### Sekce kompozice
 
 **Údaje o výjezdu (Dispatch)**
 Tato sekce je povinná a obsahuje veškeré údaje o výjezdu jako je identifikace výjezdu, vozidla, členů posádky, operátorů ZOS, místa začátku výjezdu a události.

@@ -1,12 +1,12 @@
-### Sections and content
+#### Sections and content
 
 The composition contains basic components and sections. Within the sections, it is divided into a set of mandatory and optional sections. If no data is available for a mandatory section, the reason can be stated in `composition.section.emptyReason`.
 
-### Composition structure
+#### Composition structure
 
 The EMS dispatch record contains basic elements and the following sections in the order in which they are described:
 
-#### Basic elements
+##### Basic elements
 
 General information about the record. Most of the information elements in this part of the composition are filled in similarly to other types of messages. It contains information about the patient, the source organization, and the author.
 
@@ -14,7 +14,7 @@ General information about the record. Most of the information elements in this p
 
 This profile allows the message to be linked to one specific mission to which the message relates.
 
-#### Composition section
+##### Composition section
 
 **Dispatch**
 This section is mandatory and contains all data about the dispatch, such as the identification of the dispatch, vehicle, ZOS operator, crew members, place of departure, and event.

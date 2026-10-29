@@ -18,3 +18,9 @@ No definition could be found for URL value 'https://opendata.sukl.cz/ValueSet/dl
 No definition could be found for URL value 'https://opendata.sukl.cz/ValueSet/dlp_formy'
 No definition could be found for URL value 'https://ncez.mzcr.cz/fhir/sid/licensePlate'
 No definition could be found for URL value 'https://www.nempriklad.cz/'
+No definition could be found for URL value 'https://ncez.mzcr.cz/fhir/sid/vin'
+No definition could be found for URL value 'https://ncez.mzcr.cz/fhir/sid/call-sign'
+No definition could be found for URL value 'https://ncez.mzcr.cz/fhir/sid/ico'
+
+# Mission time point observations carry the timestamp in valueDateTime (as in CH EMS), effective[x] is not used
+Best Practice Recommendation: In general, all observations should have an effective[x] ()
