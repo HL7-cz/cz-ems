@@ -114,3 +114,8 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains familyMemberHistory 0..*
 * entry[familyMemberHistory].resource only CZ_FamilyMemberHistoryHdr
 
+* entry contains provenance 0..*
+* entry[provenance].resource only CZ_Provenance
+* entry[provenance] ^short = "Provenance and signatures for resources in the document"
+* entry[provenance] ^definition = "Provenance resources recording the origin and signatures of document resources. Provenance.target identifies the signed resources; the Composition does not reference Provenance through a signature section."
+

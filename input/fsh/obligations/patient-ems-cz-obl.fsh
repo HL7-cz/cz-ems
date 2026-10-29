@@ -16,15 +16,18 @@ Description: "This profile defines obligations for an human Patient in FHIR for 
 * address insert OblConsumer(#SHALL:display,L1)
 
 // Creator Obligations L3 ============>
-* identifier insert OblCreator(#SHALL:able-to-populate,L3)
-* name.given insert OblCreator(#SHALL:able-to-populate,L3)
-* name.family insert OblCreator(#SHALL:able-to-populate,L3)
-* name.text insert OblCreator(#SHALL:able-to-populate,L3) //can-send
-* telecom insert OblCreator(#SHOULD:able-to-populate,L3) //can-send
-* gender insert OblCreator(#SHALL:able-to-populate,L3)
-* birthDate insert OblCreator(#SHALL:able-to-populate,L3)
-* generalPractitioner insert OblCreator(#SHOULD:able-to-populate,L3) //can-send
-* address insert OblCreator(#SHALL:able-to-populate,L3) //can-send
+* identifier insert OblCreator(#SHALL:populate,L3)
+* name.given insert OblCreator(#SHALL:populate,L3)
+* name.family insert OblCreator(#SHALL:populate,L3)
+* name.text insert OblCreator(#SHOULD:populate-if-known,L3) //can-send
+* telecom insert OblCreator(#SHALL:populate-if-known,L3) //can-send
+* gender insert OblCreator(#SHALL:populate,L3)
+* birthDate insert OblCreator(#SHALL:populate,L3)
+* generalPractitioner insert OblCreator(#SHALL:populate-if-known,L3) //can-send
+* address insert OblCreator(#SHALL:populate-if-known,L3) //can-send
+* communication.language insert OblCreator(#SHALL:populate-if-known,L3)   // A.1.1.7 Komunikační jazyk 0..1
+* contact insert OblCreator(#SHALL:populate-if-known,L3)                  // A.1.2.4 Zákonní zástupci a kontaktní osoby 0..*
+* extension[patient-citizenship] insert OblCreator(#SHALL:populate-if-known,L3) // A.1.1.5 Státní občanství 0..*
 
 // Consumer obligations L3
 * identifier insert OblConsumer(#SHALL:display,L3)
@@ -34,6 +37,9 @@ Description: "This profile defines obligations for an human Patient in FHIR for 
 * telecom insert OblConsumer(#SHALL:display,L3)
 * gender insert OblConsumer(#SHALL:display,L3)
 * birthDate insert OblConsumer(#SHALL:display,L3)
-* generalPractitioner insert OblConsumer(#SHOULD:display,L3)
+* generalPractitioner insert OblConsumer(#SHALL:display,L3)
 * address insert OblConsumer(#SHALL:display,L3)
+* communication.language insert OblConsumer(#SHALL:display,L3)
+* contact insert OblConsumer(#SHALL:display,L3)
+* extension[patient-citizenship] insert OblConsumer(#SHALL:display,L3)
 

@@ -38,6 +38,7 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_ObservationTravelHdr
   CZ_BundleEms *-- "0..*" CZ_ObservationVitalSignsEms
   CZ_BundleEms *-- "0..*" CZ_ObservationMissionTimeEms
+  CZ_BundleEms *-- "0..*" CZ_Provenance
   CZ_BundleEms *-- "0..*" CZ_ObservationWeightEms
   
   CZ_TaskEms --> CZ_CompositionEms: composition

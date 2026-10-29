@@ -8,7 +8,7 @@ Description: "This profile defines obligations for a procedure in FHIR for the p
 // Creator Obligations L3 ============>
 * code insert OblCreator(#SHALL:populate-if-known,L3)
 * text insert OblCreator(#SHALL:able-to-populate,L3)
-* performedDateTime insert OblCreator(#SHALL:able-to-populate,L3)
+* performedDateTime insert OblCreator(#SHALL:populate-if-known,L3)
 
 // Consumer obligations L3
 * code insert OblConsumer(#SHALL:display,L3)

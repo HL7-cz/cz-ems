@@ -385,6 +385,19 @@ groups:
       - StructureDefinition/cz-patient-obl-ems
       - StructureDefinition/cz-practitioner-obl-ems
       - StructureDefinition/cz-procedure-obl-ems
+      - StructureDefinition/cz-observation-mission-time-obl-ems
+      - StructureDefinition/cz-vehicle-location-obl-ems
+      - StructureDefinition/cz-careteam-obl-ems
+      - StructureDefinition/cz-communication-obl-ems
+      - StructureDefinition/cz-medication-administration-obl-ems
+      - StructureDefinition/cz-observation-vs-obl-ems
+      - StructureDefinition/cz-observation-gcs-obl-ems
+      - StructureDefinition/cz-observation-oxygen-obl-ems
+      - StructureDefinition/cz-observation-other-of-obl-ems
+      - StructureDefinition/cz-observation-height-obl-ems
+      - StructureDefinition/cz-observation-weight-obl-ems
+      - StructureDefinition/cz-observation-bmi-obl-ems
+      - StructureDefinition/cz-bundle-obl-ems
   czech-logical-model:
     name: Czech logical model (Informative)
     description: Logical model in czech language. Informative for this version of the guide.

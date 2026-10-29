@@ -12,9 +12,9 @@ Description: "This profile defines obligations for a practitioner in FHIR for th
 
 // creator obligations L3 ============>
 * identifier[KRZP] insert OblCreator(#SHALL:populate-if-known,L3)
-* name insert OblCreator(#SHALL:able-to-populate,L3)
-* telecom insert OblCreator(#SHOULD:able-to-populate,L3)
-* address insert OblCreator(#SHOULD:able-to-populate,L3)
+* name insert OblCreator(#SHALL:populate,L3)
+* telecom insert OblCreator(#SHOULD:populate-if-known,L3)
+* address insert OblCreator(#SHOULD:populate-if-known,L3)
 
 // consumer obligations L3 ===========>
 * identifier[KRZP] insert OblConsumer(#SHALL:process,L3)
