@@ -4,10 +4,10 @@ Id: cz-condition-obl-ems
 Title:    "Condition: Obligations"
 Description: "This profile defines obligations for a condition in FHIR for the purpose of this guide."
 // Creator Obligations L3 ============>
-* text insert OblCreator(#SHALL:populate,L3)
+* code.text insert OblCreator(#SHALL:populate,L3)
 * code insert OblCreator(#SHALL:populate,L3)
 
 // Consumer Obligations L3 ===========>
-* text insert OblConsumer(#SHALL:display,L3)
+* code.text insert OblConsumer(#SHALL:display,L3)
 * code insert OblConsumer(#SHALL:display,L3)
 

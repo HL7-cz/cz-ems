@@ -1,4 +1,4 @@
-// A.2.1 Údaje o výjezdu - vozidlo, posádka, operátor ZOS a volající
+// A.2.1 Údaje o výjezdu - vozidlo, operátor ZOS a volající (posádka je v Encounter.participant)
 
 Profile: CZ_VehicleLocationObligationsEms
 Parent: CZ_VehicleLocationEms
@@ -16,20 +16,6 @@ Description: "This profile defines obligations for an EMS vehicle in FHIR for th
 * identifier[callSign] insert OblConsumer(#SHOULD:display,L3)
 * identifier[helicopterId] insert OblConsumer(#SHOULD:display,L3)
 
-
-Profile: CZ_CareTeamObligationsEms
-Parent: CZ_CareTeamEms
-Id: cz-careteam-obl-ems
-Title:    "Care Team: Obligations"
-Description: "This profile defines obligations for an EMS crew in FHIR for the purpose of this guide."
-// Creator Obligations L3 ============>
-* participant insert OblCreator(#SHALL:populate,L3)                     // A.2.1.3 1..*
-* participant.member insert OblCreator(#SHALL:populate,L3)              // A.2.1.3.1 - A.2.1.3.3
-* participant.role insert OblCreator(#SHALL:populate,L3)                // A.2.1.3.4 1..1
-
-// Consumer Obligations L3 ===========>
-* participant.member insert OblConsumer(#SHALL:display,L3)
-* participant.role insert OblConsumer(#SHALL:display,L3)
 
 
 Profile: CZ_CommunicationObligationsEms

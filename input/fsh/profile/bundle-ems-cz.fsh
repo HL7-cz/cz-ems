@@ -80,12 +80,6 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains coverage 0..*
 * entry[coverage].resource only CZ_Coverage
 
-* entry contains serviceRequest 0..1
-* entry[serviceRequest].resource only CZ_ServiceRequestEms
-
-* entry contains careTeam 0..1
-* entry[careTeam].resource only CZ_CareTeamEms
-
 * entry contains communication 0..*
 * entry[communication].resource only CZ_CommunicationEms
 
@@ -100,7 +94,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry[observation].resource only Observation
 
 * entry contains medicationAdministration 0..*
-* entry[medicationAdministration].resource only MedicationAdministration
+* entry[medicationAdministration].resource only CZ_MedicationAdministrationCore
 
 * entry contains medication 0..*
 * entry[medication].resource only CZ_MedicationCore

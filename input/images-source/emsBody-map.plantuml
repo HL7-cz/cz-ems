@@ -1,0 +1,116 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "EMS Report Body" <<LogicalModel>> [[StructureDefinition-EmsReportCz.html]]
+
+class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
+class "cz-encounter-ems" <<Profile>> [[StructureDefinition-cz-encounter-ems.html]]
+class "cz-vehicle-location-ems" <<Profile>> [[StructureDefinition-cz-vehicle-location-ems.html]]
+class "cz-location-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-location-core.html]]
+class "cz-practitioner-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html]]
+class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
+class "cz-communication-ems" <<Profile>> [[StructureDefinition-cz-communication-ems.html]]
+class "cz-relatedPerson-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-relatedPerson-core.html]]
+class "cz-observation-mission-time-ems" <<Profile>> [[StructureDefinition-cz-observation-mission-time-ems.html]]
+class "cz-immunizationrecommendation-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-immunizationrecommendation-hdr.html]]
+class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
+class "deviceusestatement" <<Profile>> [[https://hl7.org/fhir/R4/deviceusestatement.html]]
+class "immunization-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-immunization-cz-core.html]]
+class "cz-observation-sdoh-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-sdoh-hdr.html]]
+class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
+class "observation" <<Profile>> [[https://hl7.org/fhir/R4/observation.html]]
+class "cz-familyMemberHistory-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html]]
+class "cz-observation-infectious-contact-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html]]
+class "allergyIntolerance-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-allergyIntolerance-cz-core.html]]
+class "flag-patient-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-flag-patient-cz-core.html]]
+class "cz-observation-height-ems" <<Profile>> [[StructureDefinition-cz-observation-height-ems.html]]
+class "cz-observation-weight-ems" <<Profile>> [[StructureDefinition-cz-observation-weight-ems.html]]
+class "cz-observation-BMI-ems" <<Profile>> [[StructureDefinition-cz-observation-BMI-ems.html]]
+class "cz-observation-vitalSigns-ems" <<Profile>> [[StructureDefinition-cz-observation-vitalSigns-ems.html]]
+class "cz-observation-oxygen-ems" <<Profile>> [[StructureDefinition-cz-observation-oxygen-ems.html]]
+class "cz-observation-OtherOF-ems" <<Profile>> [[StructureDefinition-cz-observation-OtherOF-ems.html]]
+class "MedicationAdministration-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-MedicationAdministration-cz-core.html]]
+class "condition-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-condition-cz-core.html]]
+class "carePlan-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-carePlan-cz-core.html]]
+class "cz-organization-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html]]
+class "cz-observation-gcs-ems" <<Profile>> [[StructureDefinition-cz-observation-gcs-ems.html]]
+class "cz-observation-travel-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-travel-hdr.html]]
+
+"EMS Report Body" <|. "cz-composition-ems"
+"EMS Report Body" <|. "cz-encounter-ems"
+"EMS Report Body" <|. "cz-vehicle-location-ems"
+"EMS Report Body" <|. "cz-location-core"
+"EMS Report Body" <|. "cz-practitioner-core"
+"EMS Report Body" <|. "cz-practitionerrole-core"
+"EMS Report Body" <|. "cz-communication-ems"
+"EMS Report Body" <|. "cz-relatedPerson-core"
+"EMS Report Body" <|. "cz-observation-mission-time-ems"
+"EMS Report Body" <|. "cz-immunizationrecommendation-hdr"
+"EMS Report Body" <|. "cz-medical-device"
+"EMS Report Body" <|. "deviceusestatement"
+"EMS Report Body" <|. "immunization-cz-core"
+"EMS Report Body" <|. "cz-observation-sdoh-hdr"
+"EMS Report Body" <|. "cz-procedure-ems"
+"EMS Report Body" <|. "observation"
+"EMS Report Body" <|. "cz-familyMemberHistory-hdr"
+"EMS Report Body" <|. "cz-observation-infectious-contact-hdr"
+"EMS Report Body" <|. "allergyIntolerance-cz-core"
+"EMS Report Body" <|. "flag-patient-cz-core"
+"EMS Report Body" <|. "cz-observation-height-ems"
+"EMS Report Body" <|. "cz-observation-weight-ems"
+"EMS Report Body" <|. "cz-observation-BMI-ems"
+"EMS Report Body" <|. "cz-observation-vitalSigns-ems"
+"EMS Report Body" <|. "cz-observation-oxygen-ems"
+"EMS Report Body" <|. "cz-observation-OtherOF-ems"
+"EMS Report Body" <|. "MedicationAdministration-cz-core"
+"EMS Report Body" <|. "condition-cz-core"
+"EMS Report Body" <|. "carePlan-cz-core"
+"EMS Report Body" <|. "cz-organization-core"
+"EMS Report Body" <|. "cz-observation-gcs-ems"
+"EMS Report Body" <|. "cz-observation-travel-hdr"
+
+"cz-composition-ems" -r[hidden]-> "cz-encounter-ems"
+"cz-encounter-ems" -r[hidden]-> "cz-vehicle-location-ems"
+"cz-vehicle-location-ems" -r[hidden]-> "cz-location-core"
+"cz-composition-ems" -d[hidden]-> "cz-practitioner-core"
+"cz-practitioner-core" -r[hidden]-> "cz-practitionerrole-core"
+"cz-practitionerrole-core" -r[hidden]-> "cz-communication-ems"
+"cz-communication-ems" -r[hidden]-> "cz-relatedPerson-core"
+"cz-relatedPerson-core" -r[hidden]-> "cz-observation-mission-time-ems"
+"cz-practitioner-core" -d[hidden]-> "cz-immunizationrecommendation-hdr"
+"cz-immunizationrecommendation-hdr" -r[hidden]-> "cz-medical-device"
+"cz-medical-device" -r[hidden]-> "deviceusestatement"
+"deviceusestatement" -r[hidden]-> "immunization-cz-core"
+"immunization-cz-core" -r[hidden]-> "cz-observation-sdoh-hdr"
+"cz-immunizationrecommendation-hdr" -d[hidden]-> "cz-procedure-ems"
+"cz-procedure-ems" -r[hidden]-> "observation"
+"observation" -r[hidden]-> "cz-familyMemberHistory-hdr"
+"cz-familyMemberHistory-hdr" -r[hidden]-> "cz-observation-infectious-contact-hdr"
+"cz-observation-infectious-contact-hdr" -r[hidden]-> "allergyIntolerance-cz-core"
+"cz-procedure-ems" -d[hidden]-> "flag-patient-cz-core"
+"flag-patient-cz-core" -r[hidden]-> "cz-observation-height-ems"
+"cz-observation-height-ems" -r[hidden]-> "cz-observation-weight-ems"
+"cz-observation-weight-ems" -r[hidden]-> "cz-observation-BMI-ems"
+"cz-observation-BMI-ems" -r[hidden]-> "cz-observation-vitalSigns-ems"
+"flag-patient-cz-core" -d[hidden]-> "cz-observation-oxygen-ems"
+"cz-observation-oxygen-ems" -r[hidden]-> "cz-observation-OtherOF-ems"
+"cz-observation-OtherOF-ems" -r[hidden]-> "MedicationAdministration-cz-core"
+"MedicationAdministration-cz-core" -r[hidden]-> "condition-cz-core"
+"condition-cz-core" -r[hidden]-> "carePlan-cz-core"
+"cz-observation-oxygen-ems" -d[hidden]-> "cz-organization-core"
+"cz-organization-core" -r[hidden]-> "cz-observation-gcs-ems"
+"cz-observation-gcs-ems" -r[hidden]-> "cz-observation-travel-hdr"
+"cz-location-core" -r[hidden]-> "cz-practitioner-core"
+@enduml

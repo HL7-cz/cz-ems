@@ -132,7 +132,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   //* text 1..
   * entry 0..*
-  * entry only Reference(CZ_ObservationMissionTimeEms or CZ_ServiceRequestEms or CZ_CommunicationEms)
+  * entry only Reference(CZ_ObservationMissionTimeEms or CZ_CommunicationEms)
   * entry
     * insert SliceElement( #profile, [[resolve()]] )
   * entry contains
@@ -366,6 +366,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * ^definition = "18682-5"
   * code = $loinc#18682-5 "Ambulance records"
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+  // A.2.9.1 Průběh ošetření se zapisuje jako narativní text sekce
+  * text ^short = "Course of treatment (A.2.9.1)"
+  * text ^definition = "Narrative description of the course of treatment including time stamps of the individual steps (A.2.9.1)."
   * entry only Reference( CZ_ProcedureEms)
 
 * section[recommendations]
@@ -382,7 +385,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * code = $loinc#29554-3
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
   * entry 0..*
-  * entry only Reference(CZ_ProcedureEms)
+  * entry only Reference(CZ_ProcedureEms or CZ_MedicationAdministrationCore) // A.2.7.1 Výkony, A.2.7.3 Medikace
 
 * section[payers]
   * insert SectionComRules (

@@ -1,0 +1,4101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- The page title is supplied by sushi-config.yaml. -->
+
+    <p>
+      This page explains how conceptual elements from the EMS report body logical model are expressed in the corresponding FHIR profiles used by this Implementation Guide.
+    </p>
+
+    <h3>Model Overview</h3>
+
+    <p>{% include emsBody-map.svg %}</p>
+
+    <div class="table-wrap">
+
+      <strong>Mapping Context</strong>
+
+      <ul>
+        <li><strong>Source logical model:</strong> <a href="StructureDefinition-EmsReportCz.html">EmsReportCz</a></li>
+        <li><strong>Mapping scope:</strong> A.2 Body of the EMS report</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Body -&gt; FHIR profiles (CZ EMS)">
+
+        <caption>Body -&gt; FHIR profiles (CZ EMS)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Body (Logical Model)</th>
+            <th class="relhead">Relationship</th>
+            <th colspan="4" class="tgt-head">FHIR Target</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Element</th>
+            <th class="src-sub">Description</th>
+            <th class="relsub">Relationship</th>
+            <th class="tgt-sub">Resource/Profile</th>
+            <th class="tgt-sub">Element</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Notes</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.dispatchData</a></td>
+            <td>
+            A.2.1 Dispatch Data
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:dispatch
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchIdentification</a></td>
+            <td>
+            A.2.1.1 Dispatch Identification
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            Encounter
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchIdentification.dispatchNumber</a></td>
+            <td>
+            A.2.1.1.1 Dispatch Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            identifier:dispatchNumber
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchIdentification.additionalDispatchIdentifier</a></td>
+            <td>
+            A.2.1.1.2 Additional Dispatch Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            identifier:otherId
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">vehicleIdentification</a></td>
+            <td>
+            A.2.1.2 Vehicle Identification
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-vehicle-location-ems.html">Location (cz-vehicle-location-ems)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[mission].entry[ambulance]
+            </td>
+            <td>
+            The vehicle is not referenced from the Encounter; mission time points reference it via Observation.focus.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">vehicleIdentification.licensePlate</a></td>
+            <td>
+            A.2.1.2.1 License Plate
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-vehicle-location-ems.html">Location (cz-vehicle-location-ems)</a></td>
+            <td>
+            identifier:licensePlate
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[mission].entry[ambulance]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">crewMemberIdentification</a></td>
+            <td>
+            A.2.1.3 Crew Member Identification
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            participant
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">crewMemberIdentification.crewMemberIdentifier</a></td>
+            <td>
+            A.2.1.3.1 Crew Member Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">crewMemberIdentification.firstName</a></td>
+            <td>
+            A.2.1.3.2 First Name
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">crewMemberIdentification.lastName</a></td>
+            <td>
+            A.2.1.3.3 Last Name
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">crewMemberIdentification.role</a></td>
+            <td>
+            A.2.1.3.4 Role
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            participant.type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchCenterOperator</a></td>
+            <td>
+            A.2.1.4 Dispatch Center Operator Identification
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-communication-ems.html">Communication (cz-communication-ems)</a></td>
+            <td>
+            recipient
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchCenterOperator.operatorIdentifier</a></td>
+            <td>
+            A.2.1.4.1 Operator Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-communication-ems.html">Communication (cz-communication-ems)</a></td>
+            <td>
+            recipient.identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchCenterOperator.firstName</a></td>
+            <td>
+            A.2.1.4.2 First Name
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchCenterOperator.lastName</a></td>
+            <td>
+            A.2.1.4.3 Last Name
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchCenterOperator.role</a></td>
+            <td>
+            A.2.1.4.4 Role
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (cz-practitionerrole-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchStartLocation</a></td>
+            <td>
+            A.2.1.5 Dispatch Start Location
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            The Encounter has no dedicated element for the dispatch start location.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchStartLocation.address</a></td>
+            <td>
+            A.2.1.5.1 Address
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">incidentLocation</a></td>
+            <td>
+            A.2.1.6 Incident Location
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">incidentLocation.gpsAddress</a></td>
+            <td>
+            A.2.1.6.1 GPS Address
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            position
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            Address type in the logical model, coordinates in Location.position in FHIR.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">incidentLocation.address</a></td>
+            <td>
+            A.2.1.6.2 Address
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchClassification</a></td>
+            <td>
+            A.2.1.7 Dispatch Classification
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            Encounter
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchClassification.dispatchUrgency</a></td>
+            <td>
+            A.2.1.7.1 Dispatch Urgency
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            priority
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            Value set UrgencyLevelEmsVS (levels 1–4).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">dispatchClassification.callClassification</a></td>
+            <td>
+            A.2.1.7.2 Call Classification
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">callerContact</a></td>
+            <td>
+            A.2.1.8 Caller Contact
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-relatedPerson-core.html">RelatedPerson (cz-relatedPerson-core)</a></td>
+            <td>
+            RelatedPerson
+            </td>
+            <td>
+            Communication (CZ_CommunicationEms).sender
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchDataCz.html">callerContact.phone</a></td>
+            <td>
+            A.2.1.8.1 Phone
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-relatedPerson-core.html">RelatedPerson (cz-relatedPerson-core)</a></td>
+            <td>
+            telecom
+            </td>
+            <td>
+            Communication (CZ_CommunicationEms).sender
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.dispatchTimeline</a></td>
+            <td>
+            A.2.2 Dispatch Timeline
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:timeline
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">callReceivedTime</a></td>
+            <td>
+            A.2.2.1 Event Notification Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 01)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            The same value is in Encounter.period.start.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">dispatchNotifiedTime</a></td>
+            <td>
+            A.2.2.2 Dispatch Notification Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 02)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">unitEnRouteTime</a></td>
+            <td>
+            A.2.2.3 En-Route Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 03)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">unitArrivedAtSceneTime</a></td>
+            <td>
+            A.2.2.4 Arrival at Scene Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 04)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">unitLeftSceneTime</a></td>
+            <td>
+            A.2.2.5 Left Scene Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 05)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">arrivedAtDestinationTime</a></td>
+            <td>
+            A.2.2.6 Arrival at Destination Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 06)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">patientTransferOfCareTime</a></td>
+            <td>
+            A.2.2.7 Patient Transfer of Care Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 07)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-DispatchTimelineCz.html">unitBackInServiceTime</a></td>
+            <td>
+            A.2.2.8 Back in Service Time
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 08)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            The same value is in Encounter.period.end.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.patientHistory</a></td>
+            <td>
+            A.2.3 Patient History
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory</a></td>
+            <td>
+            A.2.3.1 Medical history
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions</a></td>
+            <td>
+            A.2.3.1.1 History of problems
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.conditionSpecification</a></td>
+            <td>
+            A.2.3.1.1.1 Problem description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.conditionDetails</a></td>
+            <td>
+            A.2.3.1.1.2 Problem details
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.onsetDate</a></td>
+            <td>
+            A.2.3.1.1.3 Onset date
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            onset[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.endDate</a></td>
+            <td>
+            A.2.3.1.1.4 End date
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            abatement[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.clinicalStatus</a></td>
+            <td>
+            A.2.3.1.1.5 Clinical status
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            clinicalStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.resolution</a></td>
+            <td>
+            A.2.3.1.1.6 Resolution circumstances
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B2.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.severity</a></td>
+            <td>
+            A.2.3.1.1.7 Severity
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            severity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfConditions.stage</a></td>
+            <td>
+            A.2.3.1.1.8 Stage
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            stage.summary
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices</a></td>
+            <td>
+            A.2.3.1.2 Devices and Implants
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            Device
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices.description</a></td>
+            <td>
+            A.2.3.1.2.1 Device and implant description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices.identifier</a></td>
+            <td>
+            A.2.3.1.2.2 Device ID
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices.implantDate</a></td>
+            <td>
+            A.2.3.1.2.3 Implant date
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices.endDate</a></td>
+            <td>
+            A.2.3.1.2.4 End date
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.medicalDevices.reason</a></td>
+            <td>
+            A.2.3.1.2.5 Reason
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures</a></td>
+            <td>
+            A.2.3.1.3 History of procedures
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            Procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.procedureCode</a></td>
+            <td>
+            A.2.3.1.3.1 Procedure code
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.description</a></td>
+            <td>
+            A.2.3.1.3.2 Procedure description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.bodySite</a></td>
+            <td>
+            A.2.3.1.3.3 Body site
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            bodySite
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.date</a></td>
+            <td>
+            A.2.3.1.3.4 Procedure date
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            performed[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.reason</a></td>
+            <td>
+            A.2.3.1.3.5 Procedure reason
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            reasonCode
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.outcome</a></td>
+            <td>
+            A.2.3.1.3.6 Outcome
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            outcome
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.historyOfProcedures.focalDevice</a></td>
+            <td>
+            A.2.3.1.3.7 Focal device
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            focalDevice.manipulated
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination</a></td>
+            <td>
+            A.2.3.1.4 Vaccination
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            Immunization
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.diseaseOrAgent</a></td>
+            <td>
+            A.2.3.1.4.1 Disease or agent targeted
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            protocolApplied.targetDisease
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.vaccine</a></td>
+            <td>
+            A.2.3.1.4.2 Vaccine/prophylaxis
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            vaccineCode
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.productName</a></td>
+            <td>
+            A.2.3.1.4.4 Vaccine medicinal product
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            extension:administeredProduct
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            Reference to a Medication carrying the product name.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.manufacturerOrMAH</a></td>
+            <td>
+            A.2.3.1.4.5 Marketing Authorisation Holder
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            manufacturer
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.orderNumber</a></td>
+            <td>
+            A.2.3.1.4.6 Number in a series of vaccinations / doses
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            protocolApplied.doseNumber[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.vaccinationDate</a></td>
+            <td>
+            A.2.3.1.4.7 Date of vaccination
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            occurrence[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.vaccination.nextVaccinationDate</a></td>
+            <td>
+            A.2.3.1.4.8 Next vaccination date
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-immunizationrecommendation-hdr.html">ImmunizationRecommendation (cz-immunizationrecommendation-hdr)</a></td>
+            <td>
+            recommendation.dateCriterion.value
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory</a></td>
+            <td>
+            A.2.3.1.5 Epidemiological history
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx.section:InfectiousContacts / TravelHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts</a></td>
+            <td>
+            A.2.3.1.5.1 Infectious contacts
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts.period</a></td>
+            <td>
+            A.2.3.1.5.1.1 Time period
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts.infectiousAgent</a></td>
+            <td>
+            A.2.3.1.5.1.2 Infectious agent
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts.proximity</a></td>
+            <td>
+            A.2.3.1.5.1.3 Proximity
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B4.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts.country</a></td>
+            <td>
+            A.2.3.1.5.1.4 Country
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B4.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.infectiousContacts.note</a></td>
+            <td>
+            A.2.3.1.5.1.5 Additional information
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.travelHistory</a></td>
+            <td>
+            A.2.3.1.5.2 Travel history
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.travelHistory.period</a></td>
+            <td>
+            A.2.3.1.5.2.1 Time period
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.travelHistory.country</a></td>
+            <td>
+            A.2.3.1.5.2.2 Country visited
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">medicalHistory.epidemiologicalHistory.travelHistory.comment</a></td>
+            <td>
+            A.2.3.1.5.2.3 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory</a></td>
+            <td>
+            A.2.3.2 Family history
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            FamilyMemberHistory
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory.relationship</a></td>
+            <td>
+            A.2.3.2.1 Patient relationship
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            relationship
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory.birthDate</a></td>
+            <td>
+            A.2.3.2.2 Date of birth
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            born[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory.deathDateOrAge</a></td>
+            <td>
+            A.2.3.2.3 Age or date of death
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            deceased[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory.conditions</a></td>
+            <td>
+            A.2.3.2.5 Condition
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            condition.code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">familyHistory.causeOfDeath</a></td>
+            <td>
+            A.2.3.2.6 Cause of death
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            condition.code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            With condition.contributedToDeath = true.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants</a></td>
+            <td>
+            A.2.3.3 Social determinants of health
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            Each social history item is a separate Observation coded by the item.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.participationInSociety</a></td>
+            <td>
+            A.2.3.3.1 Participation in society
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.education</a></td>
+            <td>
+            A.2.3.3.2 Education
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.livingSituation</a></td>
+            <td>
+            A.2.3.3.3 Living situation
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation</a></td>
+            <td>
+            A.2.3.3.4 Family situation
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.participationInSociety.workSituation</a></td>
+            <td>
+            A.2.3.3.1.1 Work situation
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.participationInSociety.hobby</a></td>
+            <td>
+            A.2.3.3.1.2 Hobby
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.participationInSociety.socailNetwork</a></td>
+            <td>
+            A.2.3.3.1.3 Social network
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.education.level</a></td>
+            <td>
+            A.2.3.3.2.1 Education level
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.education.comment</a></td>
+            <td>
+            A.2.3.3.2.2 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.livingSituation.houseType</a></td>
+            <td>
+            A.2.3.3.3.1 House type
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.livingSituation.homeAdaption</a></td>
+            <td>
+            A.2.3.3.3.2 Home adaption
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.livingSituation.livingConditions</a></td>
+            <td>
+            A.2.3.3.3.3 Living conditions
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.comment</a></td>
+            <td>
+            A.2.3.3.4.1 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.familyComposition</a></td>
+            <td>
+            A.2.3.3.4.2 Family composition
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.maritalStatus</a></td>
+            <td>
+            A.2.3.3.4.3 Marital status
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.numberOfChildren</a></td>
+            <td>
+            A.2.3.3.4.4 Number of children
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.numberOfChildrenAtHome</a></td>
+            <td>
+            A.2.3.3.4.5 Number of children at home
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.childDetails</a></td>
+            <td>
+            A.2.3.3.4.6 Child details
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">socialDeterminants.familySituation.careResponsibility</a></td>
+            <td>
+            A.2.3.3.4.7 Care responsibility
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances</a></td>
+            <td>
+            A.2.3.4 Use of substances
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx.section:SubstanceUse
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.alcohol</a></td>
+            <td>
+            A.2.3.4.1 Alcohol use
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.alcohol.currentStatus</a></td>
+            <td>
+            A.2.3.4.1.1 Status
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.alcohol.periodAndQuantity</a></td>
+            <td>
+            A.2.3.4.1.2 Period and quantity
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.alcohol.comment</a></td>
+            <td>
+            A.2.3.4.1.3 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.tobacco</a></td>
+            <td>
+            A.2.3.4.2 Tobacco use
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.tobacco.currentStatus</a></td>
+            <td>
+            A.2.3.4.2.1 Status
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.tobacco.periodAndQuantity</a></td>
+            <td>
+            A.2.3.4.2.2 Period and quantity
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.tobacco.comment</a></td>
+            <td>
+            A.2.3.4.2.3 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption</a></td>
+            <td>
+            A.2.3.4.3 Drug consumption
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption.currentStatus</a></td>
+            <td>
+            A.2.3.4.3.1 Status
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption.periodAndQuantity</a></td>
+            <td>
+            A.2.3.4.3.2 Period and quantity
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption.drugType</a></td>
+            <td>
+            A.2.3.4.3.3 Drug or medication type
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption.route</a></td>
+            <td>
+            A.2.3.4.3.4 Route of administration
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PatientHistoryCz.html">useOfSubstances.drugConsumption.comment</a></td>
+            <td>
+            A.2.3.4.3.5 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.alerts</a></td>
+            <td>
+            A.2.4 Alerts
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:allergies
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy</a></td>
+            <td>
+            A.2.4.1 Allergy and Intolerance
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            AllergyIntolerance
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.description</a></td>
+            <td>
+            A.2.4.1.1 Allergy description
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.agent</a></td>
+            <td>
+            A.2.4.1.2 Agent or Allergen
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.typeOfPropensity</a></td>
+            <td>
+            A.2.4.1.3 Type of propensity
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.manifestation</a></td>
+            <td>
+            A.2.4.1.4 Allergy manifestation
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            reaction.manifestation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.criticality</a></td>
+            <td>
+            A.2.4.1.5 Criticality
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            criticality
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.onsetDate</a></td>
+            <td>
+            A.2.4.1.6 Onset date
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            onset[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.endDate</a></td>
+            <td>
+            A.2.4.1.7 End date
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            extension:abatement.value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.status</a></td>
+            <td>
+            A.2.4.1.8 Status
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            clinicalStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.certainty</a></td>
+            <td>
+            A.2.4.1.9 Certainty
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            verificationStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">allergy.lastOccurrence</a></td>
+            <td>
+            A.2.4.1.10 Last Occurrence
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            lastOccurrence
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.alerts</a></td>
+            <td>
+            A.2.4.2 Medical alerts
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:alert
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts</a></td>
+            <td>
+            A.2.4.2 Medical alerts
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            Flag
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.description</a></td>
+            <td>
+            A.2.4.2.1 Healthcare alert description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.code</a></td>
+            <td>
+            A.2.4.2.3 Code
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:flagDetailExt
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            Reference to a Condition describing the disease or condition.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.specialistPhysician</a></td>
+            <td>
+            A.2.4.2.4 Specialist physician
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            author
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.comment</a></td>
+            <td>
+            A.2.4.2.5 Comment
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.priority</a></td>
+            <td>
+            A.2.4.2.6 Priority
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:flagPriorityExt
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-AlertsCz.html">medicalAlerts.period</a></td>
+            <td>
+            A.2.4.2.7 Period
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            period
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.presentIllness</a></td>
+            <td>
+            A.2.5 Present Illness
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B6.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-PresentIllnessEmsCz.html">description</a></td>
+            <td>
+            A.2.5.1 Textual description
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B6.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.objectiveFindings</a></td>
+            <td>
+            A.2.6 Objective Findings
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:findings
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">antropometricData</a></td>
+            <td>
+            A.2.6.1 Anthropometric Data
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            Also cz-observation-weight-ems and cz-observation-BMI-ems.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">antropometricData.textResult</a></td>
+            <td>
+            A.2.6.1.1 Examination result text
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            A text result (valueString) is only allowed by the BMI profile; height and weight allow Quantity only.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">antropometricData.parametricRecord</a></td>
+            <td>
+            A.2.6.1.2 Parametric record of the examination
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">antropometricData.parametricRecord.description</a></td>
+            <td>
+            A.2.6.1.2.1 Examination description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            The code is fixed in the profile.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">antropometricData.parametricRecord.result</a></td>
+            <td>
+            A.2.6.1.2.2 Formalized examination result
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns</a></td>
+            <td>
+            A.2.6.2 Basic Vital Signs
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.type</a></td>
+            <td>
+            A.2.6.2.1 Examination type
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.textResult</a></td>
+            <td>
+            A.2.6.2.2 Examination result text
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.textResult.description</a></td>
+            <td>
+            A.2.6.2.2.1 Examination description
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            CodeableConcept in the logical model, string in FHIR.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.textResult.date</a></td>
+            <td>
+            A.2.6.2.2.2 Date and time of measurement
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord</a></td>
+            <td>
+            A.2.6.2.3 Parametric record of the examination result
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord.description</a></td>
+            <td>
+            A.2.6.2.3.1 Examination description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord.oxigenAdministration</a></td>
+            <td>
+            A.2.6.2.3.2 Oxygen administration
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-oxygen-ems.html">Observation (cz-observation-oxygen-ems)</a></td>
+            <td>
+            valueBoolean
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord.oxgenFlow</a></td>
+            <td>
+            A.2.6.2.3.3 Oxygen flow rate
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-oxygen-ems.html">Observation (cz-observation-oxygen-ems)</a></td>
+            <td>
+            component:OxygenFlowRate.valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord.result</a></td>
+            <td>
+            A.2.6.2.3.4 Formalized examination result
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">vitalSigns.parametricRecord.date</a></td>
+            <td>
+            A.2.6.2.3.5 Date and time of measurement
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters</a></td>
+            <td>
+            A.2.6.3 Other measured parameters
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters.textResult</a></td>
+            <td>
+            A.2.6.3.1 Examination result text
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters.parametricRecord</a></td>
+            <td>
+            A.2.6.3.2 Parametric record of the examination result
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters.parametricRecord.description</a></td>
+            <td>
+            A.2.6.3.2.1 Examination description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters.parametricRecord.result</a></td>
+            <td>
+            A.2.6.3.2.2 Formalized examination result
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherParameters.parametricRecord.date</a></td>
+            <td>
+            A.2.6.3.2.3 Date and time of measurement
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">somaticExamination</a></td>
+            <td>
+            A.2.6.4 Somatic examination
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">somaticExamination.description</a></td>
+            <td>
+            A.2.6.4.1 Examination description
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">somaticExamination.date</a></td>
+            <td>
+            A.2.6.4.2 Date and time of examination
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherExamination</a></td>
+            <td>
+            A.2.6.5 Other examinations
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherExamination.procedureName</a></td>
+            <td>
+            A.2.6.5.1 Name of procedure
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherExamination.date</a></td>
+            <td>
+            A.2.6.5.2 Date and time of performance
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ObjectiveFindingsEmsCz.html">otherExamination.description</a></td>
+            <td>
+            A.2.6.5.3 Description of the examination
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.therapy</a></td>
+            <td>
+            A.2.7 Therapy
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">procedures</a></td>
+            <td>
+            A.2.7.1 Procedures
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            Procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">procedures.name</a></td>
+            <td>
+            A.2.7.1.1 Procedure name
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">procedures.date</a></td>
+            <td>
+            A.2.7.1.2 Date and time of performance
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            performed[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medicalDevices</a></td>
+            <td>
+            A.2.7.2 Medical devices
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medicalDevices.description</a></td>
+            <td>
+            A.2.7.2.1 Description of the medical device
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medicalDevices.id</a></td>
+            <td>
+            A.2.7.2.2 Device identifier
+            </td>
+            <td>
+            to be decided
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            See open issue B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication</a></td>
+            <td>
+            A.2.7.3 Medication
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            MedicationAdministration
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.codeSUKL</a></td>
+            <td>
+            A.2.7.3.1 SUKL Code
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.medicinalProductName</a></td>
+            <td>
+            A.2.7.3.2 Name of the medicinal product
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.groupATC</a></td>
+            <td>
+            A.2.7.3.3 ATC group
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            extension:classification
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.activeSubstances</a></td>
+            <td>
+            A.2.7.3.4 Active substances
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            ingredient.item[x]
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.strength</a></td>
+            <td>
+            A.2.7.3.5 Strength
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            ingredient.strength
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.medicinalForm</a></td>
+            <td>
+            A.2.7.3.6 Form of the medicinal product
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            form
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.administeredQuantity</a></td>
+            <td>
+            A.2.7.3.7 Dosage
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            dosage.dose
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.routeOfAdministration</a></td>
+            <td>
+            A.2.7.3.8 Route of administration
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            dosage.route
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-TherapyEmsCz.html">medication.dateOfAdministration</a></td>
+            <td>
+            A.2.7.3.9 Date and time of administration
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.diagnosticSummary</a></td>
+            <td>
+            A.2.8 Diagnostic Summary
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:diagnosticSummary
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnosticSummary.html">diagnosticSummary</a></td>
+            <td>
+            A.2.8 Diagnostic summary
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnosticSummary.html">diagnosticSummary.specificationDiagnoses</a></td>
+            <td>
+            A.2.8.1 Specification of diagnoses in free text
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnosticSummary.html">diagnosticSummary.diagnosisFormalized</a></td>
+            <td>
+            A.2.8.2 Formalized diagnosis
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnosticSummary.html">diagnosticSummary.code</a></td>
+            <td>
+            A.2.8.2.1 Diagnosis by code
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnosticSummary.html">diagnosticSummary.text</a></td>
+            <td>
+            A.2.8.4 Dg. text representation
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.coding.display
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.clinicalCourseAndRecommendations</a></td>
+            <td>
+            A.2.9 Clinical Course, Recommendations
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment / section:recommendations
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendations.html">courseOfTreatment</a></td>
+            <td>
+            A.2.9.1 Course of Treatment
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendations.html">courseOfTreatment.description</a></td>
+            <td>
+            A.2.9.1.1 Course Description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendations.html">courseOfTreatment.timestamp</a></td>
+            <td>
+            A.2.9.1.2 Timestamp
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            Time stamps are part of the narrative text of the section.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendations.html">recommendations</a></td>
+            <td>
+            A.2.9.2 Recommendations
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-carePlan-cz-core.html">CarePlan (carePlan-cz-core)</a></td>
+            <td>
+            CarePlan
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[recommendations].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendations.html">recommendations.description</a></td>
+            <td>
+            A.2.9.2.1 Recommendation Description
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-carePlan-cz-core.html">CarePlan (carePlan-cz-core)</a></td>
+            <td>
+            description
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[recommendations].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-EmsReportCz.html">body.endOfCare</a></td>
+            <td>
+            A.2.10 End of Care
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification</a></td>
+            <td>
+            A.2.10.1 End of Care Specification
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.endOfCareMethod</a></td>
+            <td>
+            A.2.10.1.1 Method of End of Care
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.dateTimeOfDeath</a></td>
+            <td>
+            A.2.10.1.2 Date and Time of Death
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-patient-core.html">Patient (cz-patient-core)</a></td>
+            <td>
+            deceased[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.cpalpIdentifier</a></td>
+            <td>
+            A.2.10.1.3 CPALP Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-organization-core.html">Organization (cz-organization-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).hospitalization.destination -&gt; Location.managingOrganization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.departmentIdentifier</a></td>
+            <td>
+            A.2.10.1.4 Department Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).hospitalization.destination
+            </td>
+            <td>
+            The department is a Location; the healthcare provider (CPALP) is its managingOrganization.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.handingOverStaffZzs</a></td>
+            <td>
+            A.2.10.1.5 EMS Handing-Over Staff Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:handingOverStaff
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.receivingStaffCpalp</a></td>
+            <td>
+            A.2.10.1.6 Receiving CPALP Healthcare Professional Identifier
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:receivingStaffId
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCare.html">endOfCareSpecification.receivingStaffText</a></td>
+            <td>
+            A.2.10.1.7 Receiving CPALP Healthcare Professional (Text)
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:receivingStaffText
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+</div>

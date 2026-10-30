@@ -1,0 +1,4101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .model-map-block { margin: 0 0 1rem 0; }
+
+      .callout-wrapper {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f2f4f7;
+        padding: 10px 12px;
+      }
+
+      .callout-box { color: #222; }
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- Název stránky je doplněn ze sushi-config.yaml. -->
+
+    <p>
+      Tato stránka vysvětluje, jak jsou konceptuální prvky logického modelu těla Záznamu o výjezdu ZZS vyjádřeny v odpovídajících FHIR profilech použitých v této implementační příručce.
+    </p>
+
+    <h3>Přehled modelu</h3>
+
+    <p>{% include emsBody-map-cs.svg %}</p>
+
+    <div class="table-wrap">
+
+      <strong>Kontext mapování</strong>
+
+      <ul>
+        <li><strong>Zdrojový logický model:</strong> <a href="StructureDefinition-LogEmsReportCz.html">LogEmsReportCz</a></li>
+        <li><strong>Rozsah mapování:</strong> A.2 Tělo Záznamu o výjezdu ZZS</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Tělo -&gt; FHIR profily (CZ EMS)">
+
+        <caption>Tělo -&gt; FHIR profily (CZ EMS)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Tělo (Logický model)</th>
+            <th class="relhead">Vztah</th>
+            <th colspan="4" class="tgt-head">FHIR cíl</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Prvek</th>
+            <th class="src-sub">Popis</th>
+            <th class="relsub">Vztah</th>
+            <th class="tgt-sub">Zdroj/Profil</th>
+            <th class="tgt-sub">Prvek</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Poznámky</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.udajeOVyjezdu</a></td>
+            <td>
+            A.2.1 Údaje o výjezdu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:dispatch
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceVyjezdu</a></td>
+            <td>
+            A.2.1.1 Identifikace výjezdu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            Encounter
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceVyjezdu.cisloVyjezdu</a></td>
+            <td>
+            A.2.1.1.1 Číslo výjezdu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            identifier:dispatchNumber
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceVyjezdu.dalsiIdentifikatorVyjezdu</a></td>
+            <td>
+            A.2.1.1.2 Další identifikátor výjezdu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            identifier:otherId
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceVozidla</a></td>
+            <td>
+            A.2.1.2 Identifikace vozidla
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-vehicle-location-ems.html">Location (cz-vehicle-location-ems)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[mission].entry[ambulance]
+            </td>
+            <td>
+            Vozidlo není odkazováno z Encounter; časové body výjezdu na něj odkazují přes Observation.focus.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceVozidla.registracniZnacka</a></td>
+            <td>
+            A.2.1.2.1 Registrační značka
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-vehicle-location-ems.html">Location (cz-vehicle-location-ems)</a></td>
+            <td>
+            identifier:licensePlate
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[mission].entry[ambulance]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceClenuVyjezdoveSkupiny</a></td>
+            <td>
+            A.2.1.3 Identifikace členů výjezdové skupiny
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            participant
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceClenuVyjezdoveSkupiny.identifikatorClenaPosadky</a></td>
+            <td>
+            A.2.1.3.1 Identifikátor člena posádky
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceClenuVyjezdoveSkupiny.jmeno</a></td>
+            <td>
+            A.2.1.3.2 Jméno
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceClenuVyjezdoveSkupiny.prijmeni</a></td>
+            <td>
+            A.2.1.3.3 Příjmení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Encounter.participant.individual
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceClenuVyjezdoveSkupiny.role</a></td>
+            <td>
+            A.2.1.3.4 Role
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            participant.type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceOperatoruZOS</a></td>
+            <td>
+            A.2.1.4 Identifikace operátora ZOS
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-communication-ems.html">Communication (cz-communication-ems)</a></td>
+            <td>
+            recipient
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceOperatoruZOS.identifikatorOperatora</a></td>
+            <td>
+            A.2.1.4.1 Identifikátor operátora
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-communication-ems.html">Communication (cz-communication-ems)</a></td>
+            <td>
+            recipient.identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceOperatoruZOS.jmeno</a></td>
+            <td>
+            A.2.1.4.2 Jméno
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceOperatoruZOS.prijmeni</a></td>
+            <td>
+            A.2.1.4.3 Příjmení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitioner-core.html">Practitioner (cz-practitioner-core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">identifikaceOperatoruZOS.role</a></td>
+            <td>
+            A.2.1.4.4 Role
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (cz-practitionerrole-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Communication.recipient
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">mistoZacatkuVyjezdu</a></td>
+            <td>
+            A.2.1.5 Místo začátku výjezdu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            Encounter nemá pro místo začátku výjezdu samostatný prvek.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">mistoZacatkuVyjezdu.adresa</a></td>
+            <td>
+            A.2.1.5.1 Adresa
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[dispatch].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">mistoUdalosti</a></td>
+            <td>
+            A.2.1.6 Místo události
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            Location
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">mistoUdalosti.adresaGPS</a></td>
+            <td>
+            A.2.1.6.1 Adresa - GPS
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            position
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            V logickém modelu typ Address, ve FHIR souřadnice Location.position.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">mistoUdalosti.adresa</a></td>
+            <td>
+            A.2.1.6.2 Adresa
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).location[scene].location
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">klasifikaceVyjezdu</a></td>
+            <td>
+            A.2.1.7 Klasifikace výjezdu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            Encounter
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">klasifikaceVyjezdu.nalehavostVyjezdu</a></td>
+            <td>
+            A.2.1.7.1 Naléhavost výjezdu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            priority
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            Číselník UrgencyLevelEmsVS (stupně 1–4).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">klasifikaceVyjezdu.klasifikaceVyzvy</a></td>
+            <td>
+            A.2.1.7.2 Klasifikace výzvy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">kontaktVolajiciho</a></td>
+            <td>
+            A.2.1.8 Kontakt volajícího
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-relatedPerson-core.html">RelatedPerson (cz-relatedPerson-core)</a></td>
+            <td>
+            RelatedPerson
+            </td>
+            <td>
+            Communication (CZ_CommunicationEms).sender
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchDataCz.html">kontaktVolajiciho.telefon</a></td>
+            <td>
+            A.2.1.8.1 Telefon
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-relatedPerson-core.html">RelatedPerson (cz-relatedPerson-core)</a></td>
+            <td>
+            telecom
+            </td>
+            <td>
+            Communication (CZ_CommunicationEms).sender
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.casovaOsaVyjezdu</a></td>
+            <td>
+            A.2.2 Časová osa výjezdu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:timeline
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casOznameniUdalosti</a></td>
+            <td>
+            A.2.2.1 Čas oznámení události
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 01)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            Stejná hodnota je v Encounter.period.start.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casVyzvy</a></td>
+            <td>
+            A.2.2.2 Čas výzvy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 02)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casVyjezdu</a></td>
+            <td>
+            A.2.2.3 Čas výjezdu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 03)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casPrijezduNaMistoUdalosti</a></td>
+            <td>
+            A.2.2.4 Čas příjezdu na místo události
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 04)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casOdjezduZMistaUdalosti</a></td>
+            <td>
+            A.2.2.5 Čas odjezdu z místa události
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 05)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casPrijezduDoMistaPredani</a></td>
+            <td>
+            A.2.2.6 Čas příjezdu do místa předání
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 06)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casPredaniPacienta</a></td>
+            <td>
+            A.2.2.7 Čas předání pacienta
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 07)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDispatchTimelineCz.html">casUkonceniVyjezdu</a></td>
+            <td>
+            A.2.2.8 Čas ukončení výjezdu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-mission-time-ems.html">Observation (cz-observation-mission-time-ems)</a></td>
+            <td>
+            valueDateTime (code = 08)
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[timeline].entry[missionTime]
+            </td>
+            <td>
+            Stejná hodnota je v Encounter.period.end.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.anamneza</a></td>
+            <td>
+            A.2.3 Anamnéza pacienta
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni</a></td>
+            <td>
+            A.2.3.1 Osobní
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy</a></td>
+            <td>
+            A.2.3.1.1 Historie zdravotních problémů
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.popisProblemu</a></td>
+            <td>
+            A.2.3.1.1.1 Popis problému
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.kod</a></td>
+            <td>
+            A.2.3.1.1.2 Kód
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.datumVzniku</a></td>
+            <td>
+            A.2.3.1.1.3 Datum vzniku
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            onset[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.datumVyreseni</a></td>
+            <td>
+            A.2.3.1.1.4 Datum vyřešení či remise
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            abatement[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.klinickyStav</a></td>
+            <td>
+            A.2.3.1.1.5 Klinický stav problému
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            clinicalStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.okolnostiVyreseni</a></td>
+            <td>
+            A.2.3.1.1.6 Okolnosti vyřešení
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B2.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.zavaznost</a></td>
+            <td>
+            A.2.3.1.1.7 Závažnost
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            severity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zdravotniProblemy.stadiumOnemocneni</a></td>
+            <td>
+            A.2.3.1.1.8 Stadium onemocnění
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            stage.summary
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp</a></td>
+            <td>
+            A.2.3.1.2 Historie zdravotních pomůcek a implantátů
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            Device
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp.popis</a></td>
+            <td>
+            A.2.3.1.2.1 Popis zdravotnického prostředku
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp.idZP</a></td>
+            <td>
+            A.2.3.1.2.2 Identifikátor zdravotnického prostředku
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp.datumZavedeni</a></td>
+            <td>
+            A.2.3.1.2.3 Datum zavedení
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp.datumOdstraneni</a></td>
+            <td>
+            A.2.3.1.2.4 Datum odstranění
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.zp.duvod</a></td>
+            <td>
+            A.2.3.1.2.5 Důvod použití
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B3.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony</a></td>
+            <td>
+            A.2.3.1.3 Významné výkony
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            Procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.kodVykonu</a></td>
+            <td>
+            A.2.3.1.3.1 Kód výkonu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.popis</a></td>
+            <td>
+            A.2.3.1.3.2 Popis procedury
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.lokalizace</a></td>
+            <td>
+            A.2.3.1.3.3 Lokalizace
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            bodySite
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.datum</a></td>
+            <td>
+            A.2.3.1.3.4 Datum provedení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            performed[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.duvod</a></td>
+            <td>
+            A.2.3.1.3.5 Důvod provedení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            reasonCode
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.vysledek</a></td>
+            <td>
+            A.2.3.1.3.6 Výsledek
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            outcome
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.vyznamneVykony.pouzityZP</a></td>
+            <td>
+            A.2.3.1.3.7 Použitý zdravotnický prostředek
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            focalDevice.manipulated
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani</a></td>
+            <td>
+            A.2.3.1.4 Očkování
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            Immunization
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.puvodce</a></td>
+            <td>
+            A.2.3.1.4.1 Onemocnění či původce
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            protocolApplied.targetDisease
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.typVakciny</a></td>
+            <td>
+            A.2.3.1.4.2 Typ vakcíny
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            vaccineCode
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.ockovaciLatka</a></td>
+            <td>
+            A.2.3.1.4.4 Očkovací látka
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            extension:administeredProduct
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            Odkaz na Medication s názvem očkovací látky.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.vyrobceVakciny</a></td>
+            <td>
+            A.2.3.1.4.5 Držitel rozhodnutí
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            manufacturer
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.poradoveCislo</a></td>
+            <td>
+            A.2.3.1.4.6 Pořadové číslo dávky
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            protocolApplied.doseNumber[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.datumPodani</a></td>
+            <td>
+            A.2.3.1.4.7 Datum podání dávky
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-immunization-cz-core.html">Immunization (immunization-cz-core)</a></td>
+            <td>
+            occurrence[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.ockovani.pristiVakcinace</a></td>
+            <td>
+            A.2.3.1.4.8 Datum příští vakcinace
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-immunizationrecommendation-hdr.html">ImmunizationRecommendation (cz-immunizationrecommendation-hdr)</a></td>
+            <td>
+            recommendation.dateCriterion.value
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[ImmunizationHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza</a></td>
+            <td>
+            A.2.3.1.5 Epidemiologická anamnéza
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx.section:InfectiousContacts / TravelHx
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt</a></td>
+            <td>
+            A.2.3.1.5.1 Infekční kontakty
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt.period</a></td>
+            <td>
+            A.2.3.1.5.1.1 Období
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt.infectiousAgent</a></td>
+            <td>
+            A.2.3.1.5.1.2 Infekční onemocnění či agens
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt.proximity</a></td>
+            <td>
+            A.2.3.1.5.1.3 Vzdálenost
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B4.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt.zeme</a></td>
+            <td>
+            A.2.3.1.5.1.4 Země
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B4.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.infekcniKontakt.komentar</a></td>
+            <td>
+            A.2.3.1.5.1.5 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-infectious-contact-hdr.html">Observation (cz-observation-infectious-contact-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[InfectiousContacts].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.cestovatelskaAnamneza</a></td>
+            <td>
+            A.2.3.1.5.2 Cestovatelská anamnéza
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.cestovatelskaAnamneza.obdobi</a></td>
+            <td>
+            A.2.3.1.5.2.1 Období
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.cestovatelskaAnamneza.zeme</a></td>
+            <td>
+            A.2.3.1.5.2.2 Země
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">anamnezaOsobni.epidemiologickaAnamneza.cestovatelskaAnamneza.komentar</a></td>
+            <td>
+            A.2.3.1.5.2.3 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-travel-hdr.html">Observation (cz-observation-travel-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TravelHx].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza</a></td>
+            <td>
+            A.2.3.2 Rodinná anamnéza
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            FamilyMemberHistory
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza.vztahKPacientovi</a></td>
+            <td>
+            A.2.3.2.1 Vztah k pacientovi
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            relationship
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza.datumNarozeni</a></td>
+            <td>
+            A.2.3.2.2 Datum narození
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            born[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza.vekUmrti</a></td>
+            <td>
+            A.2.3.2.3 Věk úmrtí
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            deceased[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza.zdravotniProblemy</a></td>
+            <td>
+            A.2.3.2.5 Zdravotní problémy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            condition.code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">rodinnaAnamneza.duvodUmrti</a></td>
+            <td>
+            A.2.3.2.6 Důvod úmrtí
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-familyMemberHistory-hdr.html">FamilyMemberHistory (cz-familyMemberHistory-hdr)</a></td>
+            <td>
+            condition.code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[FamilyHistory].entry
+            </td>
+            <td>
+            S condition.contributedToDeath = true.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza</a></td>
+            <td>
+            A.2.3.3 Sociální anamnéza
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            Každá položka sociální anamnézy je samostatná Observation s kódem podle položky.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.spolecenskeUplatneni</a></td>
+            <td>
+            A.2.3.3.1 Společenské uplatnění
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.vzdelani</a></td>
+            <td>
+            A.2.3.3.2 Vzdělání
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.bydleni</a></td>
+            <td>
+            A.2.3.3.3 Bydlení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace</a></td>
+            <td>
+            A.2.3.3.4 Rodinná situace
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.spolecenskeUplatneni.pracovniZapojeni</a></td>
+            <td>
+            A.2.3.3.1.1 Pracovní zapojení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.spolecenskeUplatneni.konicky</a></td>
+            <td>
+            A.2.3.3.1.2 Koníčky
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.spolecenskeUplatneni.socialniSit</a></td>
+            <td>
+            A.2.3.3.1.3 Sociální síť
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.vzdelani.uroven</a></td>
+            <td>
+            A.2.3.3.2.1 Dosažený stupeň vzdělání
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.vzdelani.komentar</a></td>
+            <td>
+            A.2.3.3.2.2 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.bydleni.zpusobBydleni</a></td>
+            <td>
+            A.2.3.3.3.1 Způsob bydlení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.bydleni.prizpusobeni</a></td>
+            <td>
+            A.2.3.3.3.2 Přizpůsobení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.bydleni.bariery</a></td>
+            <td>
+            A.2.3.3.3.3 Bariéry
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.komentar</a></td>
+            <td>
+            A.2.3.3.4.1 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.slozeniRodiny</a></td>
+            <td>
+            A.2.3.3.4.2 Složení rodiny
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.rodinnyStav</a></td>
+            <td>
+            A.2.3.3.4.3 Rodinný stav
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.pocetDeti</a></td>
+            <td>
+            A.2.3.3.4.4 Počet dětí
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.pocetDetiDoma</a></td>
+            <td>
+            A.2.3.3.4.5 Počet dětí ve společné domácnosti
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.podrobnostiODiteti</a></td>
+            <td>
+            A.2.3.3.4.6 Podrobnosti o dítěti
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">socialniAnamneza.rodinnaSituace.pecujeO</a></td>
+            <td>
+            A.2.3.3.4.7 Pečuje o
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-observation-sdoh-hdr.html">Observation (cz-observation-sdoh-hdr)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[SocialHistory].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus</a></td>
+            <td>
+            A.2.3.4 Abusus
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:patientHx.section:SubstanceUse
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.alkohol</a></td>
+            <td>
+            A.2.3.4.1 Alkohol
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.alkohol.stav</a></td>
+            <td>
+            A.2.3.4.1.1 Stav
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.alkohol.mnozstvi</a></td>
+            <td>
+            A.2.3.4.1.2 Období a množství
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.alkohol.komentar</a></td>
+            <td>
+            A.2.3.4.1.3 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.koureni</a></td>
+            <td>
+            A.2.3.4.2 Kouření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.koureni.stav</a></td>
+            <td>
+            A.2.3.4.2.1 Stav
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.koureni.mnozstvi</a></td>
+            <td>
+            A.2.3.4.2.2 Období a průměrné množství.
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.koureni.komentar</a></td>
+            <td>
+            A.2.3.4.2.3 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy</a></td>
+            <td>
+            A.2.3.4.3 Drogy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy.stav</a></td>
+            <td>
+            A.2.3.4.3.1 Stav
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy.mnozstvi</a></td>
+            <td>
+            A.2.3.4.3.2 Období a množství
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy.typLatky</a></td>
+            <td>
+            A.2.3.4.3.3 Typ látky
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy.zpusobPodani</a></td>
+            <td>
+            A.2.3.4.3.4 Způsob podávání
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B5.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPatientHistoryCz.html">abusus.drogy.komentar</a></td>
+            <td>
+            A.2.3.4.3.5 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.urgentniInformace</a></td>
+            <td>
+            A.2.4 Urgentní informace
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:allergies
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie</a></td>
+            <td>
+            A.2.4.1 Alergie a intolerance
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            AllergyIntolerance
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.popis</a></td>
+            <td>
+            A.2.4.1.1 Popis alergie
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.puvodce</a></td>
+            <td>
+            A.2.4.1.2 Původce
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.typReakce</a></td>
+            <td>
+            A.2.4.1.3 Typ reakce
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.reakce</a></td>
+            <td>
+            A.2.4.1.4 Reakce
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            reaction.manifestation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.riziko</a></td>
+            <td>
+            A.2.4.1.5 Riziko
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            criticality
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.pocatekProjevu</a></td>
+            <td>
+            A.2.4.1.6 Počátek období projevu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            onset[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.konecProjevu</a></td>
+            <td>
+            A.2.4.1.7 Konec období projevu
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            extension:abatement.value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.stav</a></td>
+            <td>
+            A.2.4.1.8 Stav
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            clinicalStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.miraJistoty</a></td>
+            <td>
+            A.2.4.1.9 Míra jistoty
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            verificationStatus
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">alergie.posledniProjev</a></td>
+            <td>
+            A.2.4.1.10 Poslední projev
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
+            <td>
+            lastOccurrence
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[allergies].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.urgentniInformace</a></td>
+            <td>
+            A.2.4.2 Varování
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:alert
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani</a></td>
+            <td>
+            A.2.4.2 Varování
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            Flag
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.oznaceniVarovani</a></td>
+            <td>
+            A.2.4.2.1 Označení varování
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.kod</a></td>
+            <td>
+            A.2.4.2.3 Onemocnění či stav
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:flagDetailExt
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            Odkaz na Condition popisující onemocnění či stav.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.specializovanyLekar</a></td>
+            <td>
+            A.2.4.2.4 Specializovaný lékař
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            author
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.komentar</a></td>
+            <td>
+            A.2.4.2.5 Komentář
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:note
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.uroven</a></td>
+            <td>
+            A.2.4.2.6 Úroveň
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            extension:flagPriorityExt
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogAlertsCz.html">varovani.platnost</a></td>
+            <td>
+            A.2.4.2.7 Období platnosti varování
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-flag-patient-cz-core.html">Flag (flag-patient-cz-core)</a></td>
+            <td>
+            period
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[alert].entry[flag]
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.nynejsiOnemocneni</a></td>
+            <td>
+            A.2.5 Nynější onemocnění
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B6.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogPresentIllnessEmsCz.html">popis</a></td>
+            <td>
+            A.2.5.1 Textový popis
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B6.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.objektivniNalez</a></td>
+            <td>
+            A.2.6 Objektivní nález
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:findings
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">antropometrickeUdaje</a></td>
+            <td>
+            A.2.6.1 Antropometrické údaje
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            Také cz-observation-weight-ems a cz-observation-BMI-ems.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">antropometrickeUdaje.textovyVysledek</a></td>
+            <td>
+            A.2.6.1.1 Výsledek vyšetření textem
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            Textový výsledek (valueString) povoluje jen profil BMI; výška a váha jen Quantity.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">antropometrickeUdaje.parametrickyZaznam</a></td>
+            <td>
+            A.2.6.1.2 Parametrický záznam vyšetření
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">antropometrickeUdaje.parametrickyZaznam.popis</a></td>
+            <td>
+            A.2.6.1.2.1 Popis vyšetření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            Kód je v profilu pevně daný.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">antropometrickeUdaje.parametrickyZaznam.vysledek</a></td>
+            <td>
+            A.2.6.1.2.2 Výsledek vyšetření formalizovaný
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-height-ems.html">Observation (cz-observation-height-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce</a></td>
+            <td>
+            A.2.6.2 Základní životní funkce
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.typVysetreni</a></td>
+            <td>
+            A.2.6.2.1 Typ vyšetření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.textovyVysledek</a></td>
+            <td>
+            A.2.6.2.2 Výsledek vyšetření textem
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.textovyVysledek.popis</a></td>
+            <td>
+            A.2.6.2.2.1 Výsledek vyšetření textem
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            V logickém modelu CodeableConcept, ve FHIR string.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.textovyVysledek.datum</a></td>
+            <td>
+            A.2.6.2.2.2 Datum a čas měření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam</a></td>
+            <td>
+            A.2.6.2.3 Parametrický záznam výsledku vyšetření
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam.popis</a></td>
+            <td>
+            A.2.6.2.3.1 Popis vyšetření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam.podaniKysliku</a></td>
+            <td>
+            A.2.6.2.3.2 Podání kyslíku
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-oxygen-ems.html">Observation (cz-observation-oxygen-ems)</a></td>
+            <td>
+            valueBoolean
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam.prutokKysliku</a></td>
+            <td>
+            A.2.6.2.3.3 Průtok kyslíku
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-oxygen-ems.html">Observation (cz-observation-oxygen-ems)</a></td>
+            <td>
+            component:OxygenFlowRate.valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam.vysledek</a></td>
+            <td>
+            A.2.6.2.3.4 Výsledek vyšetření formalizovaný
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">zivotniFunkce.parametrickyZaznam.datum</a></td>
+            <td>
+            A.2.6.2.3.5 Datum a čas měření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-vitalSigns-ems.html">Observation (cz-observation-vitalSigns-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry</a></td>
+            <td>
+            A.2.6.3 Další měřené parametry
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry.textovyVysledek</a></td>
+            <td>
+            A.2.6.3.1 Výsledek vyšetření textem
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry.parametrickyZaznam</a></td>
+            <td>
+            A.2.6.3.2 Parametrický záznam výsledku vyšetření
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry.parametrickyZaznam.popis</a></td>
+            <td>
+            A.2.6.3.2.1 Popis vyšetření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry.parametrickyZaznam.vysledek</a></td>
+            <td>
+            A.2.6.3.2.2 Výsledek vyšetření formalizovaný
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            valueQuantity
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">dalsiParametry.parametrickyZaznam.datum</a></td>
+            <td>
+            A.2.6.3.2.3 Datum a čas měření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-OtherOF-ems.html">Observation (cz-observation-OtherOF-ems)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">somatickeVysetreni</a></td>
+            <td>
+            A.2.6.4 Somatické vyšetření
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">somatickeVysetreni.popis</a></td>
+            <td>
+            A.2.6.4.1 Výsledek vyšetření textem
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">somatickeVysetreni.datum</a></td>
+            <td>
+            A.2.6.4.2 Datum a čas vyšetření
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B7.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">jineVysetreni</a></td>
+            <td>
+            A.2.6.5 Jiná vyšetření
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">jineVysetreni.nazevVykonu</a></td>
+            <td>
+            A.2.6.5.1 Název výkonu
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">jineVysetreni.datum</a></td>
+            <td>
+            A.2.6.5.2 Datum a čas provedení
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogObjectiveFindingsEmsCz.html">jineVysetreni.popis</a></td>
+            <td>
+            A.2.6.5.3 Popis vyšetření
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B8.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.terapie</a></td>
+            <td>
+            A.2.7 Terapie
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">vykony</a></td>
+            <td>
+            A.2.7.1 Výkony
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            Procedure
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">vykony.nazev</a></td>
+            <td>
+            A.2.7.1.1 Název výkonu
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">vykony.datum</a></td>
+            <td>
+            A.2.7.1.2 Datum a čas provedení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
+            <td>
+            performed[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">zdravotnickeProstredky</a></td>
+            <td>
+            A.2.7.2 Zdravotnické prostředky
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">zdravotnickeProstredky.popis</a></td>
+            <td>
+            A.2.7.2.1 Popis zdravotnického prostředku
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">zdravotnickeProstredky.id</a></td>
+            <td>
+            A.2.7.2.2 Identifikátor prostředku
+            </td>
+            <td>
+            k rozhodnutí
+            </td>
+            <td></td>
+            <td>
+            
+            </td>
+            <td>
+            
+            </td>
+            <td>
+            Viz otevřený bod B9.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace</a></td>
+            <td>
+            A.2.7.3 Medikace
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            MedicationAdministration
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.kodSUKL</a></td>
+            <td>
+            A.2.7.3.1 Kód SUKL
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.nazevLecivehoPripravku</a></td>
+            <td>
+            A.2.7.3.2 Název léčivého přípravku
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.skupinaATC</a></td>
+            <td>
+            A.2.7.3.3 ATC skupina
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            extension:classification
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.aktivniLatky</a></td>
+            <td>
+            A.2.7.3.4 Aktivní látky
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            ingredient.item[x]
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.sila</a></td>
+            <td>
+            A.2.7.3.5 Síla
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            ingredient.strength
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.formaLeciva</a></td>
+            <td>
+            A.2.7.3.6 Forma léčiva
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-medication-cz-core.html">Medication (medication-cz-core)</a></td>
+            <td>
+            form
+            </td>
+            <td>
+            MedicationAdministration.medicationReference
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.podaneMnozstvi</a></td>
+            <td>
+            A.2.7.3.7 Dávkování
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            dosage.dose
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.cestaPodani</a></td>
+            <td>
+            A.2.7.3.8 Cesta podání
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            dosage.route
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogTherapyEmsCz.html">medikace.datumPodani</a></td>
+            <td>
+            A.2.7.3.9 Datum a čas podání
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-MedicationAdministration-cz-core.html">MedicationAdministration (MedicationAdministration-cz-core)</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[procedure].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.diagnostickySouhrn</a></td>
+            <td>
+            A.2.8 Diagnostický souhrn
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:diagnosticSummary
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnostickySouhrnCz.html">diagnostickySouhrn</a></td>
+            <td>
+            A.2.8 Diagnostický souhrn
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnostickySouhrnCz.html">diagnostickySouhrn.upresneniDiagnozy</a></td>
+            <td>
+            A.2.8.1 Upřesnění diagnźy volným textem
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnostickySouhrnCz.html">diagnostickySouhrn.diagnozaFormalizovana</a></td>
+            <td>
+            A.2.8.2 Diagnóza formalizovaná
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            Condition
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnostickySouhrnCz.html">diagnostickySouhrn.kod</a></td>
+            <td>
+            A.2.8.2.1 Dg. kódem
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogDiagnostickySouhrnCz.html">diagnostickySouhrn.text</a></td>
+            <td>
+            A.2.8.4 Dg. textová reprezentace
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
+            <td>
+            code.coding.display
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[diagnosticSummary].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.prubehDoporuceni</a></td>
+            <td>
+            A.2.9 Průběh, Doporučení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment / section:recommendations
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendationsCz.html">prubehOsetreni</a></td>
+            <td>
+            A.2.9.1 Průběh ošetření
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendationsCz.html">prubehOsetreni.popis</a></td>
+            <td>
+            A.2.9.1.1 Popis průběhu ošetření
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendationsCz.html">prubehOsetreni.casoveRazitko</a></td>
+            <td>
+            A.2.9.1.2 Časové razítko
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:courseOfTreatment.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            Časové údaje jsou součástí narativního textu sekce.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendationsCz.html">doporuceni</a></td>
+            <td>
+            A.2.9.2 Doporučení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-carePlan-cz-core.html">CarePlan (carePlan-cz-core)</a></td>
+            <td>
+            CarePlan
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[recommendations].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogRecommendationsCz.html">doporuceni.popis</a></td>
+            <td>
+            A.2.9.2.1 Popis doporučení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-carePlan-cz-core.html">CarePlan (carePlan-cz-core)</a></td>
+            <td>
+            description
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[recommendations].entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEmsReportCz.html">telo.ukonceni</a></td>
+            <td>
+            A.2.10 Ukončení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni</a></td>
+            <td>
+            A.2.10.1 Specifikace ukončení
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.zpusobUkonceni</a></td>
+            <td>
+            A.2.10.1.1 Způsob ukončení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.datumCasUmrti</a></td>
+            <td>
+            A.2.10.1.2 Datum a čas úmrtí
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-patient-core.html">Patient (cz-patient-core)</a></td>
+            <td>
+            deceased[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.identifikaceCpalp</a></td>
+            <td>
+            A.2.10.1.3 Identifikace CPALP
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-organization-core.html">Organization (cz-organization-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).hospitalization.destination -&gt; Location.managingOrganization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.identifikaceOddeleni</a></td>
+            <td>
+            A.2.10.1.4 Identifikace oddělení
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Encounter (CZ_EncounterEms).hospitalization.destination
+            </td>
+            <td>
+            Oddělení je Location; CPALP je jeho managingOrganization.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.identifikacePredavajiciPracovnikZzs</a></td>
+            <td>
+            A.2.10.1.5 Identifikace předávajícího pracovníka ZZS
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:handingOverStaff
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.identifikacePrebirajiciZdravotnikCpalp</a></td>
+            <td>
+            A.2.10.1.6 Identifikace přebírajícího zdravotníka CPALP
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:receivingStaffId
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogEndOfCareCz.html">specifikaceUkonceni.identifikacePrebirajiciZdravotnikText</a></td>
+            <td>
+            A.2.10.1.7 Identifikace přebírajícího zdravotníka CPALP textem
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-encounter-ems.html">Encounter (cz-encounter-ems)</a></td>
+            <td>
+            hospitalization.extension:terminationMethod.extension:receivingStaffText
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).encounter
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+</div>

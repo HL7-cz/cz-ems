@@ -30,8 +30,17 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 
 // A.2.1.7.1 Urgentnost výjezdu
 * priority 0..1
+* priority from UrgencyLevelEmsVS (extensible)
 * priority ^short = "Urgency level of the dispatch"
 * priority ^definition = "Indicates the urgency level assigned by the dispatch center."
+
+// A.2.1.3 Identifikace členů výjezdové skupiny
+* participant ^short = "EMS crew members"
+* participant ^definition = "Members of the emergency crew assigned to the mission, such as physician, paramedic or driver."
+* participant.type from https://ncez.mzcr.cz/fhir/ValueSet/nrzp-povolani-vs (extensible) // A.2.1.3.4 Role
+* participant.type ^short = "Crew member role"
+* participant.individual only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore) // A.2.1.3.1 - A.2.1.3.3
+* participant.individual ^short = "Crew member"
 
 // A.2.2 Časová osa výjezdu - jednotlivé časy jsou zaznamenány jako CZ_ObservationMissionTimeEms,
 // period je pouze souhrnný interval výjezdu
@@ -68,6 +77,9 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * location.period ^short = "Not used for mission times - see CZ_ObservationMissionTimeEms"
 
 * hospitalization ^short = "Destination of the mission"
+// A.2.10.1.3 / A.2.10.1.4 Identifikace CPALP a oddělení: oddělení je Location, CPALP je jeho managingOrganization
+* hospitalization.destination only Reference(CZ_LocationCore)
+* hospitalization.destination ^short = "Receiving department (Location) of the healthcare provider (CPALP)"
 * hospitalization.extension contains
     TerminationMethod named terminationMethod 1..1 
 

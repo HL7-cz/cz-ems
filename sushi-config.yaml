@@ -138,46 +138,10 @@ pages:
     title: Header Model map
   Header-map-cs.html:
     title: Mapování logického modelu hlavičky
-  Alerts-map.html:
-    title: Alerts Model map
-  Alerts-map-cs.html:
-    title: Mapování logického urgentních informací
-  CourseOf-map.html:
-    title: Course of Treatment and Recommendations Model map
-  CourseOf-map-cs.html:
-    title: Mapování logického modelu průběhu ošetření a doporučení
-  DiagnosticSummary-map.html:
-    title: Diagnostic Summary Model map
-  DiagnosticSummary-map-cs.html:
-    title: Mapování logického modelu diagnostického souhrnu
-  DispatchData-map.html:
-    title: Dispatch Data Model map
-  DispatchData-map-cs.html:
-    title: Mapování logického modelu údajů o výjezdu
-  DispatchTimeline-map.html:
-    title: Dispatch Timeline Model map
-  DispatchTimeline-map-cs.html:
-    title: Mapování logického modelu časové osy výjezdu
-  EndOfCare-map.html:
-    title: End of Care Model map
-  EndOfCare-map-cs.html:
-    title: Mapování logického modelu ukončení výjezdu
-  ObjectiveFindings-map.html:
-    title: Objective Findings Model map
-  ObjectiveFindings-map-cs.html:
-    title: Mapování logického modelu objektivních nálezů
-  PatientHistory-map.html:
-    title: Patient History Model map
-  PatientHistory-map-cs.html:
-    title: Mapování logického modelu anamnézy
-  PresentIllness-map.html:
-    title: Present Illness Model map
-  PresentIllness-map-cs.html:
-    title: Mapování logického modelu nynějších onemocnění
-  Therapy-map.html:
-    title: Therapy Model map
-  Therapy-map-cs.html:
-    title: Mapování logického modelu terapie
+  Body-map.html:
+    title: Body Model map
+  Body-map-cs.html:
+    title: Mapování logického modelu těla
   Attachment-map.html:
     title: Presented Form and Attachment Model map
   Attachment-map-cs.html:
@@ -387,7 +351,6 @@ groups:
       - StructureDefinition/cz-procedure-obl-ems
       - StructureDefinition/cz-observation-mission-time-obl-ems
       - StructureDefinition/cz-vehicle-location-obl-ems
-      - StructureDefinition/cz-careteam-obl-ems
       - StructureDefinition/cz-communication-obl-ems
       - StructureDefinition/cz-medication-administration-obl-ems
       - StructureDefinition/cz-observation-vs-obl-ems

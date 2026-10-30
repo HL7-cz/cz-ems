@@ -16,7 +16,6 @@ classDiagram
   CZ_BundleEms *-- "0..*" CZ_Practioner
   CZ_BundleEms *-- "0..*" CZ_DeviceObserver
   CZ_BundleEms *-- "0..*" CZ_OrganizationCore
-  CZ_BundleEms *-- "0..*" CZ_CareTeamEms
   CZ_BundleEms *-- "0..*" CZ_CarePlanCore
   CZ_BundleEms *-- "0..*" CZ_CommunicationEms
   CZ_BundleEms *-- "0..*" CZ_ConditionCore
@@ -63,7 +62,6 @@ classDiagram
   CZ_CompositionEms --> CZ_LocationCore: section[dispatch]
   CZ_CompositionEms --> CZ_CommunicationEms: section[dispatch]
   CZ_CompositionEms --> CZ_VehicleLocationEms: section[dispatch]
-  CZ_CompositionEms --> CZ_CareTeamEms: section[dispatch]
   CZ_CompositionEms --> CZ_Practioner: section[dispatch]
   CZ_CompositionEms --> CZ_PractionerRole: section[dispatch]
   CZ_CompositionEms --> CZ_RelatedPerson: section[dispatch]
