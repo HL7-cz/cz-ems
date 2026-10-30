@@ -102,6 +102,9 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 * entry contains device 0..*
 * entry[device].resource only Device
 
+* entry contains deviceUseStatement 0..*
+* entry[deviceUseStatement].resource only CZ_DeviceUseStatementHdr
+
 * entry contains condition 0..*
 * entry[condition].resource only CZ_ConditionCore
 

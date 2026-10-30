@@ -23,8 +23,8 @@ Description: "This profile defines obligations for a composition in FHIR for the
 * section[dispatch] insert OblCreator(#SHALL:populate,L3)                   // A.2.1 1..1
 * section[timeline] insert OblCreator(#SHALL:populate,L3)                   // A.2.2 1..1
 * section[patientHx] insert OblCreator(#SHALL:populate-if-known,L3)         // A.2.3 0..1
-* section[medicalDevices] insert OblCreator(#SHALL:populate-if-known,L3)    // A.2.3.1.2
-* section[significantProcedures] insert OblCreator(#SHALL:populate-if-known,L3) // A.2.3.1.3 0..*
+* section[medicalDevices] insert OblCreator(#SHALL:populate-if-known,L3)    // A.2.7.2 0..*
+* section[presentIllness] insert OblCreator(#SHALL:populate-if-known,L3)    // A.2.5 0..1
 * section[allergies] insert OblCreator(#SHALL:populate,L3)                  // A.2.4 / A.2.4.1 1..*
 * section[alert] insert OblCreator(#SHALL:populate-if-known,L3)             // A.2.4.2 0..*
 * section[findings] insert OblCreator(#SHALL:populate-if-known,L3)          // A.2.6 0..1
@@ -54,7 +54,7 @@ Description: "This profile defines obligations for a composition in FHIR for the
 * section[timeline] insert OblConsumer(#SHALL:display,L3)
 * section[patientHx] insert OblConsumer(#SHALL:display,L3)
 * section[medicalDevices] insert OblConsumer(#SHALL:display,L3)
-* section[significantProcedures] insert OblConsumer(#SHALL:display,L3)
+* section[presentIllness] insert OblConsumer(#SHALL:display,L3)
 * section[allergies] insert OblConsumer(#SHALL:display,L3)
 * section[alert] insert OblConsumer(#SHALL:display,L3)
 * section[findings] insert OblConsumer(#SHALL:display,L3)

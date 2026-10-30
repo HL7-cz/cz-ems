@@ -47,3 +47,19 @@ Title: "Location: Receiving department"
 * status = #active
 * name = "Interní klinika - urgentní příjem"
 * managingOrganization = Reference(urn:uuid:821077d6-ce17-4602-b3ad-d4bef845a950)
+
+// Místo začátku výjezdu (výjezdová základna) - A.2.1.5
+Instance: cz-location-start-example
+InstanceOf: CZ_LocationCore
+Usage: #example
+Description: "Example of the dispatch start location (EMS base station)"
+Title: "Location: Dispatch start"
+* id = "ed9f2174-6df9-483d-9e56-7a145f4a16f7"
+* status = #active
+* name = "Výjezdová základna ZZS Kamenný Újezd"
+* address
+  * text = "Nádražní 50, 373 81 Kamenný Újezd"
+  * line[0] = "Nádražní 50"
+  * city = "Kamenný Újezd"
+  * postalCode = "373 81"
+  * country = "CZ"

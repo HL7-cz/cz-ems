@@ -70,7 +70,6 @@ classDiagram
   CZ_CompositionEms --> CZ_ObservationMissionTimeEms: section[timeline]
   CZ_CompositionEms --> CZ_ConditionCore: section[patientHx]
   CZ_CompositionEms --> CZ_MedicalDevice: section[medicalDevices]
-  CZ_CompositionEms --> CZ_ProcedureEms: section[significantProcedures]
   CZ_CompositionEms --> CZ_ObservationTravelHdr: section[TravelHx]
   CZ_CompositionEms --> CZ_ImmunizationCore: section[immunizations]
   CZ_CompositionEms --> CZ_ImmunizationRecommendationHdr: section[immunizations]

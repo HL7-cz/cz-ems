@@ -26,7 +26,7 @@ class "cz-relatedPerson-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-
 class "cz-observation-mission-time-ems" <<Profile>> [[StructureDefinition-cz-observation-mission-time-ems.html]]
 class "cz-immunizationrecommendation-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-immunizationrecommendation-hdr.html]]
 class "cz-medical-device" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-medical-device.html]]
-class "deviceusestatement" <<Profile>> [[https://hl7.org/fhir/R4/deviceusestatement.html]]
+class "cz-deviceUseStatement-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-deviceUseStatement-hdr.html]]
 class "immunization-cz-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-immunization-cz-core.html]]
 class "cz-observation-sdoh-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/hdr/StructureDefinition-cz-observation-sdoh-hdr.html]]
 class "cz-procedure-ems" <<Profile>> [[StructureDefinition-cz-procedure-ems.html]]
@@ -59,7 +59,7 @@ class "cz-observation-travel-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz
 "Tělo zprávy o výjezdu" <|. "cz-observation-mission-time-ems"
 "Tělo zprávy o výjezdu" <|. "cz-immunizationrecommendation-hdr"
 "Tělo zprávy o výjezdu" <|. "cz-medical-device"
-"Tělo zprávy o výjezdu" <|. "deviceusestatement"
+"Tělo zprávy o výjezdu" <|. "cz-deviceUseStatement-hdr"
 "Tělo zprávy o výjezdu" <|. "immunization-cz-core"
 "Tělo zprávy o výjezdu" <|. "cz-observation-sdoh-hdr"
 "Tělo zprávy o výjezdu" <|. "cz-procedure-ems"
@@ -91,8 +91,8 @@ class "cz-observation-travel-hdr" <<Profile>> [[https://build.fhir.org/ig/HL7-cz
 "cz-relatedPerson-core" -r[hidden]-> "cz-observation-mission-time-ems"
 "cz-practitioner-core" -d[hidden]-> "cz-immunizationrecommendation-hdr"
 "cz-immunizationrecommendation-hdr" -r[hidden]-> "cz-medical-device"
-"cz-medical-device" -r[hidden]-> "deviceusestatement"
-"deviceusestatement" -r[hidden]-> "immunization-cz-core"
+"cz-medical-device" -r[hidden]-> "cz-deviceUseStatement-hdr"
+"cz-deviceUseStatement-hdr" -r[hidden]-> "immunization-cz-core"
 "immunization-cz-core" -r[hidden]-> "cz-observation-sdoh-hdr"
 "cz-immunizationrecommendation-hdr" -d[hidden]-> "cz-procedure-ems"
 "cz-procedure-ems" -r[hidden]-> "observation"

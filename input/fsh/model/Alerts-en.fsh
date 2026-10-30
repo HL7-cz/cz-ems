@@ -20,7 +20,7 @@ Description: """EMS Report - Alerts"""
 * allergy.certainty 0..1 CodeableConcept "A.2.4.1.9 - Certainty" """Assertion about the certainty associated with a propensity, or potential risk, of a reaction to the identified substance. Diagnostic and/or clinical evidence of condition."""
 //* allergy.agent 1..1 CodeableConcept "A.2.4.1.10 - Agent or Allergen" """A specific allergen or other agent/substance (drug, food, chemical agent, etc.) to which the patient has an adverse reaction propensity."""
 * allergy.lastOccurrence 0..1 dateTime "A.2.4.1.10 - Last Occurrence"
-* medicalAlerts 0..* Base "A.2.4.2 - Medical alerts (relevant for the respective hospital stay)" """Medical alerts (relevant for the respective hospital stay)"""
+* medicalAlerts 0..* Base "A.2.4.2 - Medical alerts" """Medical alerts"""
 * medicalAlerts.description 0..1 CodeableConcept "A.2.4.2.1 - Healthcare alert description" """A warning, other than included in allergies.
 The warning can be entered in code (there are codes for frequently used alerts) but seeing the dynamic nature of the warnings, these alerts will often be entered as free text.
 Any clinical information that is imperative to know so that the life or health of the patient does not come under threat.

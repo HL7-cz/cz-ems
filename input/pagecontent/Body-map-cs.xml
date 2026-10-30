@@ -412,17 +412,17 @@
             A.2.1.5 Místo začátku výjezdu
             </td>
             <td>
-            související
+            ekvivalentní
             </td>
             <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-location-core.html">Location (cz-location-core)</a></td>
             <td>
             Location
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[dispatch].entry
+            Encounter (CZ_EncounterEms).location[start].location
             </td>
             <td>
-            Encounter nemá pro místo začátku výjezdu samostatný prvek.
+            
             </td>
           </tr>
           <tr>
@@ -438,7 +438,7 @@
             address
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[dispatch].entry
+            Encounter (CZ_EncounterEms).location[start].location
             </td>
             <td>
             
@@ -830,11 +830,11 @@
             A.2.3.1.1.1 Popis problému
             </td>
             <td>
-            ekvivalentní
+            související
             </td>
             <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
             <td>
-            code.text
+            text
             </td>
             <td>
             Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
@@ -925,17 +925,17 @@
             A.2.3.1.1.6 Okolnosti vyřešení
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            text
             </td>
             <td>
-            Viz otevřený bod B2.
+            Composition (CZ_CompositionEms).section[patientHx].section[PastIllnessHx].entry
+            </td>
+            <td>
+            Okolnosti vyřešení se popisují v textu (shodně s HDR).
             </td>
           </tr>
           <tr>
@@ -989,7 +989,7 @@
             Device
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
             </td>
             <td>
             
@@ -1008,7 +1008,7 @@
             type
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
             </td>
             <td>
             
@@ -1027,7 +1027,7 @@
             identifier
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
             </td>
             <td>
             
@@ -1039,17 +1039,17 @@
             A.2.3.1.2.3 Datum zavedení
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-deviceUseStatement-hdr.html">DeviceUseStatement (cz-deviceUseStatement-hdr)</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            timing[x]
             </td>
             <td>
-            Viz otevřený bod B3.
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
+            </td>
+            <td>
+            Začátek období použití (timingPeriod.start).
             </td>
           </tr>
           <tr>
@@ -1058,17 +1058,17 @@
             A.2.3.1.2.4 Datum odstranění
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-deviceUseStatement-hdr.html">DeviceUseStatement (cz-deviceUseStatement-hdr)</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            timing[x]
             </td>
             <td>
-            Viz otevřený bod B3.
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
+            </td>
+            <td>
+            Konec období použití (timingPeriod.end).
             </td>
           </tr>
           <tr>
@@ -1077,17 +1077,17 @@
             A.2.3.1.2.5 Důvod použití
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/hdr/StructureDefinition-cz-deviceUseStatement-hdr.html">DeviceUseStatement (cz-deviceUseStatement-hdr)</a></td>
+            <td>
+            reasonCode
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[HistoryMedicalDevices].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B3.
             </td>
           </tr>
           <tr>
@@ -1103,7 +1103,7 @@
             Procedure
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1122,7 +1122,7 @@
             code
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1134,14 +1134,14 @@
             A.2.3.1.3.2 Popis procedury
             </td>
             <td>
-            ekvivalentní
+            související
             </td>
             <td><a href="StructureDefinition-cz-procedure-ems.html">Procedure (cz-procedure-ems)</a></td>
             <td>
-            code.text
+            text
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1160,7 +1160,7 @@
             bodySite
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1179,7 +1179,7 @@
             performed[x]
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1198,7 +1198,7 @@
             reasonCode
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1217,7 +1217,7 @@
             outcome
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1236,7 +1236,7 @@
             focalDevice.manipulated
             </td>
             <td>
-            Composition (CZ_CompositionEms).section[significantProcedures].entry
+            Composition (CZ_CompositionEms).section[patientHx].section[ProceduresHx].entry
             </td>
             <td>
             
@@ -1476,17 +1476,17 @@
             A.2.3.1.5.1.3 Vzdálenost
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            section:patientHx.section:InfectiousContacts.text
             </td>
             <td>
-            Viz otevřený bod B4.
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            V této verzi textem v sekci (shodně s HDR).
             </td>
           </tr>
           <tr>
@@ -1495,17 +1495,17 @@
             A.2.3.1.5.1.4 Země
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            section:patientHx.section:InfectiousContacts.text
             </td>
             <td>
-            Viz otevřený bod B4.
+            Composition (CZ_CompositionEms)
+            </td>
+            <td>
+            V této verzi textem v sekci (shodně s HDR).
             </td>
           </tr>
           <tr>
@@ -2141,17 +2141,17 @@
             A.2.3.4.1.1 Stav
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2160,17 +2160,17 @@
             A.2.3.4.1.2 Období a množství
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[AlcoholUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2217,17 +2217,17 @@
             A.2.3.4.2.1 Stav
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2236,17 +2236,17 @@
             A.2.3.4.2.2 Období a průměrné množství.
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[TobaccoUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2293,17 +2293,17 @@
             A.2.3.4.3.1 Stav
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2312,17 +2312,17 @@
             A.2.3.4.3.2 Období a množství
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2331,17 +2331,17 @@
             A.2.3.4.3.3 Typ látky
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2350,17 +2350,17 @@
             A.2.3.4.3.4 Způsob podávání
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            value[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[patientHx].section[DrugUse].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B5.
             </td>
           </tr>
           <tr>
@@ -2430,7 +2430,7 @@
             </td>
             <td><a href="https://hl7.cz/fhir/core/StructureDefinition-allergyIntolerance-cz-core.html">AllergyIntolerance (allergyIntolerance-cz-core)</a></td>
             <td>
-            note
+            text
             </td>
             <td>
             Composition (CZ_CompositionEms).section[allergies].entry
@@ -2768,17 +2768,17 @@
             A.2.5 Nynější onemocnění
             </td>
             <td>
-            k rozhodnutí
+            související
             </td>
-            <td></td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:presentIllness
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B6.
             </td>
           </tr>
           <tr>
@@ -2787,17 +2787,17 @@
             A.2.5.1 Textový popis
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="StructureDefinition-cz-composition-ems.html">Composition (cz-composition-ems)</a></td>
+            <td>
+            section:presentIllness.text
+            </td>
+            <td>
+            Composition (CZ_CompositionEms)
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B6.
             </td>
           </tr>
           <tr>
@@ -3243,17 +3243,17 @@
             A.2.6.4 Somatické vyšetření
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
             <td>
-            
-            </td>
-            <td>
-            
+            Observation
             </td>
             <td>
-            Viz otevřený bod B7.
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
+            <td>
+            Doporučený kód: SNOMED CT 5880005 Physical examination procedure.
             </td>
           </tr>
           <tr>
@@ -3262,17 +3262,17 @@
             A.2.6.4.1 Výsledek vyšetření textem
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B7.
             </td>
           </tr>
           <tr>
@@ -3281,17 +3281,17 @@
             A.2.6.4.2 Datum a čas vyšetření
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B7.
             </td>
           </tr>
           <tr>
@@ -3300,17 +3300,17 @@
             A.2.6.5 Jiná vyšetření
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            Observation
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B8.
             </td>
           </tr>
           <tr>
@@ -3319,17 +3319,17 @@
             A.2.6.5.1 Název výkonu
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B8.
             </td>
           </tr>
           <tr>
@@ -3338,17 +3338,17 @@
             A.2.6.5.2 Datum a čas provedení
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            effective[x]
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B8.
             </td>
           </tr>
           <tr>
@@ -3357,17 +3357,17 @@
             A.2.6.5.3 Popis vyšetření
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.org/fhir/R4/observation.html">Observation</a></td>
+            <td>
+            valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[findings].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B8.
             </td>
           </tr>
           <tr>
@@ -3452,17 +3452,17 @@
             A.2.7.2 Zdravotnické prostředky
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            Device
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B9.
             </td>
           </tr>
           <tr>
@@ -3471,17 +3471,17 @@
             A.2.7.2.1 Popis zdravotnického prostředku
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B9.
             </td>
           </tr>
           <tr>
@@ -3490,17 +3490,17 @@
             A.2.7.2.2 Identifikátor prostředku
             </td>
             <td>
-            k rozhodnutí
+            ekvivalentní
             </td>
-            <td></td>
+            <td><a href="https://hl7.cz/fhir/core/StructureDefinition-cz-medical-device.html">Device (cz-medical-device)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionEms).section[medicalDevices].entry
+            </td>
             <td>
             
-            </td>
-            <td>
-            
-            </td>
-            <td>
-            Viz otevřený bod B9.
             </td>
           </tr>
           <tr>
@@ -3737,11 +3737,11 @@
             A.2.8.1 Upřesnění diagnźy volným textem
             </td>
             <td>
-            ekvivalentní
+            související
             </td>
             <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
             <td>
-            code.text
+            text
             </td>
             <td>
             Composition (CZ_CompositionEms).section[diagnosticSummary].entry
@@ -3794,11 +3794,11 @@
             A.2.8.4 Dg. textová reprezentace
             </td>
             <td>
-            související
+            ekvivalentní
             </td>
             <td><a href="https://hl7.cz/fhir/core/StructureDefinition-condition-cz-core.html">Condition (condition-cz-core)</a></td>
             <td>
-            code.coding.display
+            code.text
             </td>
             <td>
             Composition (CZ_CompositionEms).section[diagnosticSummary].entry

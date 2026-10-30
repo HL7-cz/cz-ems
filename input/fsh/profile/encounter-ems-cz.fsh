@@ -62,16 +62,19 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * location ^slicing.discriminator.type = #value
 * location ^slicing.discriminator.path = "physicalType"
 * location ^slicing.rules = #open
-* location ^slicing.description = "Slicing of Encounter.location for scene and destination."
+* location ^slicing.description = "Slicing of Encounter.location for the incident scene and the dispatch start location."
 * location contains
-    scene 0..1 and             // CZ: místo zásahu (scéna)
-    destination 0..1           // CZ: místo předání (cílové pracoviště)
+    scene 0..1 and             // A.2.1.6 Místo události (scéna)
+    start 0..1                 // A.2.1.5 Místo začátku výjezdu
 
 * location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
 * location[scene].location only Reference(CZ_LocationCore)
 
-* location[destination].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
-* location[destination].location only Reference(CZ_LocationCore)
+* location[start].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
+* location[start].location only Reference(CZ_LocationCore)
+* location[start] ^short = "Dispatch start location (A.2.1.5)"
+* location[scene] ^short = "Incident scene (A.2.1.6)"
+// Místo předání (cíl) je v hospitalization.destination
 
 // Časy příjezdu a odjezdu (A.2.2.4 - A.2.2.7) se nezapisují do location.period, ale jako CZ_ObservationMissionTimeEms
 * location.period ^short = "Not used for mission times - see CZ_ObservationMissionTimeEms"

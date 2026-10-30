@@ -86,6 +86,9 @@ Usage: #example
 * entry[location][+].fullUrl = "urn:uuid:3936c640-8958-402f-b05e-c0aeab636927"
 * entry[location][=].resource = cz-location-department-example
 
+* entry[location][+].fullUrl = "urn:uuid:ed9f2174-6df9-483d-9e56-7a145f4a16f7"
+* entry[location][=].resource = cz-location-start-example
+
 * entry[communication][+].fullUrl = "urn:uuid:83c6052f-3e0d-4146-a789-c0ad61cb4cae"
 * entry[communication][=].resource = cz-communication-example
 
@@ -193,6 +196,10 @@ Usage: #example
 * section[patientHx].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anamnéza</div>"
 * section[patientHx].text.status = #additional
 * section[patientHx].entry[0] = Reference(urn:uuid:bccc3ea9-d77f-4253-88c3-53b886f5b425)
+* section[presentIllness].title = "Present illness"
+* section[presentIllness].code = $loinc#10164-2 "History of Present illness Narrative"
+* section[presentIllness].text.status = #additional
+* section[presentIllness].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Od večera 2.9.2025 pozoruje bušení srdce, při námaze se zadýchá, bolesti neguje.</div>"
 
 // * section[patientHx].section[HistoryMedicalDevices].title = "History of medical device use"
 // * section[patientHx].section[HistoryMedicalDevices].code = $loinc#46264-8
@@ -482,6 +489,8 @@ Description: "Example of encounter for EMS document"
 * period.start = "2025-05-20T10:30:00+01:00"
 * location[scene].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#si "Site"
 * location[scene].location = Reference(urn:uuid:3f4f637d-f274-40c5-87da-9a9c1ade3ade)
+* location[start].physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#bu "Building"
+* location[start].location = Reference(urn:uuid:ed9f2174-6df9-483d-9e56-7a145f4a16f7) // výjezdová základna
 * reasonCode.text = "Od večera 2.9.2025 pozoruje bušení srdce, při námaze se zadýchá, bolesti neguje."
 * hospitalization.extension[TerminationMethod].extension[code].valueCoding = TerminationMethodEmsCS#07 "předán CPALP"
 * hospitalization.extension[TerminationMethod].extension[handingOverStaff].valueIdentifier.value = "123456789"

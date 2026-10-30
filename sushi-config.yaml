@@ -361,6 +361,8 @@ groups:
       - StructureDefinition/cz-observation-weight-obl-ems
       - StructureDefinition/cz-observation-bmi-obl-ems
       - StructureDefinition/cz-bundle-obl-ems
+      - StructureDefinition/cz-location-obl-ems
+      - StructureDefinition/cz-deviceusestatement-obl-ems
   czech-logical-model:
     name: Czech logical model (Informative)
     description: Logical model in czech language. Informative for this version of the guide.

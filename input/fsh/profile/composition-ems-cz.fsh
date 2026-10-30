@@ -72,8 +72,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
     dispatch 0..1 and
     timeline 0..1 and
     patientHx 0..1 and
+    presentIllness 0..1 and
     medicalDevices 0..1 and
-    significantProcedures 0..1 and
     // travelHx 0..1 and
     // immunizations 0..1 and
     // infectiousContacts 0..1 and
@@ -239,25 +239,25 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * title = "Medical Devices History Section"
   * code = $loinc#46264-8 "History of medical device use"
   * entry 0..*
-  * entry only Reference(CZ_MedicalDevice or Device)
+  * entry only Reference(CZ_MedicalDevice or CZ_DeviceUseStatementHdr or Device)
 // END SLICING PRO VNOŘENÉ SECTION  
+
+///////////////////////////////// PRESENT ILLNESS SECTION ///////////////////////////////////////
+* section[presentIllness]
+  * insert SectionComRules (
+      Present illness,
+      Textual description of the present illness (A.2.5.1\).,
+      $loinc#10164-2 )
+  * entry 0..0
       
 
 * section[medicalDevices]
   * insert SectionComRules (
-      Medical devices and implants,
-      Implants and used medical devices that affected or may affect the provision of health services (diagnosis and treatment\). Also medical devices explanted\, or its use was stopped during hospitalisation. If the section is blank\, the reason must be explicitly stated using the IPS Absent and Unknown Data coding system.,
+      Medical devices used during the mission,
+      Medical devices used during the EMS mission (A.2.7.2\). Medical devices and implants from the patient history are recorded in the patient history section.,
       $loinc#57080-4 )
   * entry 0..*
   * entry only Reference(CZ_MedicalDevice)
-
-* section[significantProcedures]
-  * insert SectionComRules (
-    Significant procedures,
-    Significant surgical and non-surgical procedures performed during hospitalisation which are significant for continuity of care\, e.g. surgeries and other \"instrumental\"interventions (endoscopic\, intravascular\)\, chemotherapy\, radiotherapy\, purification methods (dialysis\, hemoperfusion\)\, circulation support methods (counterpulsation\, etc.\)\, administration of blood derivatives or others.\r\nThis section does not include purely diagnostic procedures (MRI\, CT\, etc.\). If no significant performance has been performed\, this fact must be explicitly stated using the IPS Absent and Unknown Data. ,
-    $loinc#10185-7)
-  * entry 1..
-  * entry only Reference(CZ_ProcedureEms)
 
 // * section[travelHx]
 //   * insert SectionComRules (
