@@ -6,14 +6,15 @@ Description: "This profile defines obligations for a composition in FHIR for the
 // Creator Obligations L3 ============>
 * encounter insert OblCreator(#SHALL:populate,L3)
 // A.1.6 Metadata dokumentu (A.1.6.1 ID dokumentu je na Bundle.identifier), A.1.4 Příjemce, A.1.5 Autor, A.3 Zobrazitelná forma
-* category insert OblCreator(#SHALL:populate,L3)                            // A.1.6.2 1..1
-* status insert OblCreator(#SHALL:populate,L3)                              // A.1.6.3 1..1
-* date insert OblCreator(#SHALL:populate,L3)                                // A.1.6.4 1..1
-* title insert OblCreator(#SHALL:populate,L3)                               // A.1.6.5 1..1
-* custodian insert OblCreator(#SHALL:populate-if-known,L3)                  // A.1.6.6 0..1
-* confidentiality insert OblCreator(#SHALL:populate,L3)                     // A.1.6.7 1..1
-* language insert OblCreator(#SHALL:populate,L3)                            // A.1.6.8 1..1
-* extension[version] insert OblCreator(#SHALL:populate-if-known,L3)            // A.1.6.9 Verze 0..1
+* type insert OblCreator(#SHALL:populate,L3)                                // A.1.6.2 1..1
+* category insert OblCreator(#SHALL:populate,L3)                            // A.1.6.3 1..1
+* status insert OblCreator(#SHALL:populate,L3)                              // A.1.6.4 1..1
+* date insert OblCreator(#SHALL:populate,L3)                                // A.1.6.5 1..1
+* title insert OblCreator(#SHALL:populate,L3)                               // A.1.6.6 1..1
+* custodian insert OblCreator(#SHALL:populate-if-known,L3)                          // A.1.6.7 0..1
+* confidentiality insert OblCreator(#SHALL:populate,L3)                     // A.1.6.8 1..1
+* language insert OblCreator(#SHALL:populate,L3)                            // A.1.6.9 1..1
+* extension[version] insert OblCreator(#SHALL:populate-if-known,L3)            // A.1.6.10 Verze 0..1
 * author insert OblCreator(#SHALL:populate,L3)                              // A.1.5 1..*
 * extension[informationRecipient] insert OblCreator(#SHALL:populate-if-known,L3) // A.1.4 0..*
 * extension[presentedForm] insert OblCreator(#SHALL:populate,L3)            // A.3 1..*
@@ -36,6 +37,7 @@ Description: "This profile defines obligations for a composition in FHIR for the
 
 // Consumer Obligations L3 ===========>
 * encounter insert OblConsumer(#SHALL:display,L3)
+* type insert OblConsumer(#SHALL:display,L3)
 * category insert OblConsumer(#SHALL:display,L3)
 * status insert OblConsumer(#SHALL:display,L3)
 * date insert OblConsumer(#SHALL:display,L3)

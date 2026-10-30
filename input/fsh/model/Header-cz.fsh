@@ -13,7 +13,7 @@ Description: "Záznam o výjezdu ZZS - Struktura hlavičky zprávy o výjezdu po
 * prijemce 0..* Base "A.1.4 Příjemce dokumentu" """Zamýšlený příjemce zprávy o výjezdu."""
   * idPrijemce 0..1 Identifier "A.1.4.1 ID příjemce" """Identifikační číslo zdravotnického pracovníka nebo osobní identifikátor pacienta."""
   * jmeno 0..1 HumanName "A.1.4.2 Jméno příjemce" """Jméno a příjmení osoby příjemce."""
-  * idOrganizace 0..1 Identifier "A.1.4.3 ID organizace příjemce" """Identifikátor organizace příjemce (např. NRPZS, IČO)."""
+  * idOrganizace 0..* Identifier "A.1.4.3 ID organizace příjemce" """Identifikátor organizace příjemce (např. NRPZS, IČO)."""
   * organizace 0..1 string "A.1.4.4 Organizace příjemce" """Název a identifikační údaje zařízení nebo pracoviště příjemce."""
 
 * autor 1..* Base "A.1.5 Autor dokumentu" """Osoba nebo systém, který dokument vytvořil."""
@@ -25,14 +25,15 @@ Description: "Záznam o výjezdu ZZS - Struktura hlavičky zprávy o výjezdu po
 
 * metadata 1..1 Base "A.1.6 Metadata dokumentu" """Technická metadata dokumentu."""
   * dokumentId 1..1 Identifier "A.1.6.1 ID dokumentu" """Jedinečný identifikátor dokumentu."""
-  * kategorie 1..1 CodeableConcept "A.1.6.2 Kategorie dokumentu" """Kategorie EHR."""
-  * stav 1..1 CodeableConcept "A.1.6.3 Stav dokumentu" """Stav dokumentu – předběžný, finální apod."""
-  * vytvoreni 1..1 dateTime "A.1.6.4 Datum a čas vytvoření" """Datum a čas vytvoření dokumentu."""
-  * nazevDokumentu 1..1 string "A.1.6.5 Název dokumentu" """Název dokumentu."""
-  * spravce 0..1 string "A.1.6.6 Správce dokumentu" """Technický správce dokumentu."""
-  * duveryhodnost 1..1 CodeableConcept "A.1.6.7 Důvěrnost dokumentu" """Stupeň důvěrnosti dokumentu."""
-  * jazyk 1..1 CodeableConcept "A.1.6.8 Jazyk dokumentu" """Jazyk dokumentu dle ISO kódu."""
-  * verze 0..1 string "A.1.6.9 Verze" """Verze dokumentu."""
+  * typ 1..1 CodeableConcept "A.1.6.2 Typ dokumentu" """Typ dokumentu – Záznam o výjezdu ZZS."""
+  * kategorie 1..1 CodeableConcept "A.1.6.3 Kategorie dokumentu" """Kategorie EHR."""
+  * stav 1..1 CodeableConcept "A.1.6.4 Stav dokumentu" """Stav dokumentu – předběžný, finální apod."""
+  * vytvoreni 1..1 dateTime "A.1.6.5 Datum a čas vytvoření" """Datum a čas vytvoření dokumentu."""
+  * nazevDokumentu 1..1 string "A.1.6.6 Název dokumentu" """Název dokumentu."""
+  * spravce 0..1 Base "A.1.6.7 Správce dokumentu" """Technický správce dokumentu."""
+  * duveryhodnost 1..1 CodeableConcept "A.1.6.8 Důvěrnost dokumentu" """Stupeň důvěrnosti dokumentu."""
+  * jazyk 1..1 CodeableConcept "A.1.6.9 Jazyk dokumentu" """Jazyk dokumentu dle ISO kódu."""
+  * verze 0..1 string "A.1.6.10 Verze" """Verze dokumentu."""
 
-* podpis 1..1 logDigitalSignatureCz "A.1.7 Elektronické podpisy" """Elektronické podepsání dokumentu dle zákona."""
+* podpis 1..* logDigitalSignatureCz "A.1.7 Elektronické podpisy" """Elektronické podepsání dokumentu dle zákona."""
 

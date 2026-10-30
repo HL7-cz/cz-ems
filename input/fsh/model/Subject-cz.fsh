@@ -27,7 +27,6 @@ Description: """Záznam o výjezdu ZZS - Identifikace pacienta a kontaktní info
 * kontakt.kontaktniOsoba 0..* Base "A.1.2.4 - Zákonní zástupci a další kontaktní osoby" """Zákonní zástupci a další kontaktní osoby"""
 * kontakt.kontaktniOsoba.typ 0..* CodeableConcept "A.1.2.4.1 - Typ kontaktu" """Typ kontaktní osoby rozlišující emergentní kontakty, zákonné zástupce a ostatní osoby se vztahem k pacientovi."""
 * kontakt.kontaktniOsoba.vztah 0..1 CodeableConcept "A.1.2.4.2 - Vztah k pacientovi" """Vztah osoby k pacientovi (otec, syn, dcera atp.)"""
-* kontakt.kontaktniOsoba.identifikator 0..* Identifier "A.1.2.4.3 - Identifikátor osoby" """Identifikátor kontaktní osoby"""
 * kontakt.kontaktniOsoba.jmeno 1..* string "A.1.2.4.4 - Jméno osoby" """Jméno kontaktní osoby."""
 * kontakt.kontaktniOsoba.prijmeni 1..* string "A.1.2.4.5 - Příjmení osoby" """Příjmení kontaktní osoby."""
 * kontakt.kontaktniOsoba.adresa 0..* Address "A.1.2.4.6 - Adresa" """Poštovní, domácí a/nebo kancelářské adresa. Adresy jsou vždy sekvence částí adresy (např. řádek adresy, země, PSČ, město), i když se formát poštovní adresy může lišit v závislosti na zemi. Adresa může obsahovat informaci o typu adresy; pokud tento atribut není přítomen, předpokládá se, že jde o výchozí adresu použitelnou pro jakýkoli účel."""

@@ -18,6 +18,8 @@ class "cz-organization-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-c
 class "cz-coverage" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-coverage.html]]
 class "cz-patient-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html]]
 class "cz-practitioner-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html]]
+class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
+class "cz-provenance" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html]]
 class "cz-bundle-ems" <<Profile>> [[StructureDefinition-cz-bundle-ems.html]]
 class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.html]]
 
@@ -27,10 +29,14 @@ class "cz-composition-ems" <<Profile>> [[StructureDefinition-cz-composition-ems.
 "EMS Report Header" <|. "cz-coverage"
 "EMS Report Header" <|. "cz-practitioner-core"
 "EMS Report Header" <|. "cz-organization-core"
+"EMS Report Header" <|. "cz-practitionerrole-core"
+"EMS Report Header" <|. "cz-provenance"
 
 "cz-bundle-ems" -d[hidden]-> "cz-composition-ems"
 "cz-composition-ems" -d[hidden]-> "cz-patient-core"
 "cz-patient-core" -d[hidden]-> "cz-coverage"
 "cz-coverage" -d[hidden]-> "cz-practitioner-core"
 "cz-practitioner-core" -d[hidden]-> "cz-organization-core"
+"cz-organization-core" -d[hidden]-> "cz-practitionerrole-core"
+"cz-practitionerrole-core" -d[hidden]-> "cz-provenance"
 @enduml
