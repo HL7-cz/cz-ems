@@ -9,3 +9,4 @@ template
 _*.*
 *.bak
 .index.*
+__pycache__/
