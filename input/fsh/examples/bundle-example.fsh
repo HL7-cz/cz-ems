@@ -638,7 +638,7 @@ InstanceOf: CZ_FamilyMemberHistoryHdr
 Usage: #example
 Title: "Family Member History: Father"
 Description: "Example of family member history - Father"
-* id = "9a26eaee-9315-420d-a47c-8e8329511aaf" 
+* id = "9a26eaee-9315-420d-a47c-8e8329511aaf"
 * relationship.coding = $v3-RoleCode#FTH
 * status = #completed
 * patient = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)
@@ -688,7 +688,7 @@ Description: "Example of observation - Smoking use"
 RuleSet: MissionTimeExample(id, code, display, time)
 * id = "{id}"
 * status = #final
-* code = MissionTimePointEmsCS#{code} "{display}"
+* code = EmsMissionTimePointCS#{code} "{display}"
 * subject = Reference(urn:uuid:3b46c18c-7e07-4232-af3e-f710dec8e766)      // Patient
 * encounter = Reference(urn:uuid:cd343afa-039d-4576-b5e4-e89598aeb628)    // Encounter
 * focus = Reference(urn:uuid:54d8ee67-8706-46a8-899e-12a54761d9d9)        // Vozidlo
