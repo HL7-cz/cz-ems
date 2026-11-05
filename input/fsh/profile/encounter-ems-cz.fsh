@@ -11,8 +11,8 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * identifier ^slicing.discriminator[0].path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains dispatchNumber 1..1 MS and otherId 0..* MS
-* identifier ^short = "Dispatch number"   
-* identifier ^definition = "Unique number identifying the emergency response. May include the main dispatch number and any additional identifiers assigned by the EMS system." 
+* identifier ^short = "Dispatch number"
+* identifier ^definition = "Unique number identifying the emergency response. May include the main dispatch number and any additional identifiers assigned by the EMS system."
 
 // A.2.1.1.1 Číslo výjezdu
 * identifier[dispatchNumber].use = #official // A.2.1.1.1
@@ -24,7 +24,7 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 
 // A.2.1.7 Klasifikace výjezdu
 * type 0..1 // A.2.1.7.2 Klasifikace výzvy (ZOS)
-* type from CallClassificationEmsVS (required)
+* type from EmsCallClassification (required)
 * type ^short = "Call classification (dispatch center classification)"
 * type ^definition = "Preliminary information about the patient’s condition – “working diagnosis” – reason for dispatch"
 
@@ -84,7 +84,7 @@ Description: "This profile defines how to represent Encounter resource in HL7 FH
 * hospitalization.destination only Reference(CZ_LocationCore)
 * hospitalization.destination ^short = "Receiving department (Location) of the healthcare provider (CPALP)"
 * hospitalization.extension contains
-    TerminationMethod named terminationMethod 1..1 
+    TerminationMethod named terminationMethod 1..1
 
 Extension: TerminationMethod
 Id: cz-ext-terminationMethod
@@ -114,10 +114,10 @@ Description: "Termination method for Encounter"
 * extension[receivingStaffId].url only uri
 * extension[receivingStaffId].valueIdentifier 1..
 * extension[receivingStaffId].valueIdentifier only Identifier
-* extension[receivingStaffId].valueIdentifier ^short = "identifier of receiving CPALP healthcare professional" 
+* extension[receivingStaffId].valueIdentifier ^short = "identifier of receiving CPALP healthcare professional"
 * extension[receivingStaffText] ^short = "Receiving CPALP healthcare professional (text)"
 * extension[receivingStaffText].url only uri
 * extension[receivingStaffText].valueString 1..
 * extension[receivingStaffText].valueString only string
-* extension[receivingStaffText].valueString ^short = "text name of receiving CPALP healthcare professional"   
+* extension[receivingStaffText].valueString ^short = "text name of receiving CPALP healthcare professional"
 * url only uri
