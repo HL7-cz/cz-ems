@@ -1,3 +1,8 @@
+Invariant: mission-time-single-code
+Description: "A mission time Observation SHALL identify exactly one time point from the EMS mission time point code system."
+Expression: "code.coding.where(system = 'https://ncez.mzcr.cz/terminology/CodeSystem/ems-mission-time-point-cs').count() = 1"
+Severity: #error
+
 Profile: CZ_ObservationMissionTimeEms
 Parent: Observation
 Id: cz-observation-mission-time-ems
@@ -7,10 +12,11 @@ Description: "Observation profile for recording one time point of the EMS missio
 * . ^short = "EMS mission: time point"
 
 * status = #final
+* obeys mission-time-single-code
 
 // A.2.2 Časový bod výjezdu
 * code 1..1 MS
-* code from MissionTimePointEmsVS (required)
+* code from EmsMissionTimePoint (required)
 * code ^short = "Mission time point"
 * code ^definition = "Identifies which time point of the EMS mission timeline is recorded (A.2.2.1 - A.2.2.8)."
 
