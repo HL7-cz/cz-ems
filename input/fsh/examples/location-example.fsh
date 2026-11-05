@@ -7,13 +7,13 @@ Usage: #inline
 Title: "Vehicle: Dispatch"
 * id = "54d8ee67-8706-46a8-899e-12a54761d9d9"
 // Povinné z profilu
-* mode = #instance 
+* mode = #instance
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#ve "Vehicle"
 
 // --- Identifiers (slices) ---
 // SPZ (registracni znacka)
 * identifier[licensePlate][+].system = "https://ncez.mzcr.cz/fhir/sid/licensePlate"
-* identifier[licensePlate][=].value = "8AB 1234"
+* identifier[licensePlate][=].value = "8AB1234"
 
 * identifier[VIN].system = "https://ncez.mzcr.cz/fhir/sid/vin"
 * identifier[VIN].value = "1HGCR2487M1234567"
