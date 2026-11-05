@@ -6,6 +6,7 @@ input-cache
 output
 temp
 template
+script
 _*.*
 *.bak
 .index.*
