@@ -3,11 +3,6 @@ Description: "A EMS report bundle SHALL include one and only one Composition"
 Expression: "entry.resource.ofType(Composition).count() = 1"
 Severity:    #error
 
-Invariant: mission-time-required
-Description: "If the Composition contains the timeline section, the bundle SHALL include the mandatory mission time points 02, 03, 04, 05 and 07 (A.2.2.2 - A.2.2.5, A.2.2.7)"
-Expression: "entry.resource.ofType(Composition).section.where(code.coding.where(system = 'http://loinc.org' and code = '67667-6').exists()).exists() implies (entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '02').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '03').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '04').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '05').exists() and entry.resource.ofType(Observation).code.coding.where(system = 'https://hl7.cz/fhir/cz-ems/CodeSystem/cz-mission-time-point-cs' and code = '07').exists())"
-Severity:    #error
-
 //==========================
 // PROFILE
 //==========================
@@ -24,7 +19,7 @@ Description: "Clinical document used to represent a EMS Report for the scope of 
 
 * insert SetFmmandStatusRule ( 0, draft )
 
-* obeys one-comp and mission-time-required
+* obeys one-comp
 
 * identifier ^short = "Business identifier for this Imaging Report"
 * identifier 1..
