@@ -65,7 +65,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section.author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
-* obeys text-or-section
+* obeys text-or-section and mission-time-required
 
 * section contains
     mission 0..1  and
@@ -408,3 +408,8 @@ Invariant: text-or-section
 Description: "A Composition SHALL have either text, at least one section, or both."
 Expression: "text.exists() or section.exists()"
 Severity: #error
+
+Invariant: mission-time-required
+Description: "If the Composition has status final or amended and contains the timeline section, that section SHALL reference separate Observations with a valueDateTime for each mandatory mission time point 02, 03, 04, 05 and 07 (A.2.2.2 - A.2.2.5, A.2.2.7). Each Observation SHALL identify exactly one mission time point."
+Expression: "(status = 'final' or status = 'amended') implies section.where(code.coding.where(system = 'http://loinc.org' and code = '67667-6').exists()).all(entry.resolve().ofType(Observation).where(value.ofType(dateTime).exists() and code.coding.where(system = 'https://ncez.mzcr.cz/terminology/CodeSystem/ems-mission-time-point-cs').count() = 1).code.coding.where(system = 'https://ncez.mzcr.cz/terminology/CodeSystem/ems-mission-time-point-cs').code.select(toString()).supersetOf('02' | '03' | '04' | '05' | '07'))"
+Severity:    #error
