@@ -1,5 +1,5 @@
-CodeSystem:   MissionTimePointEmsCS
-Id:         cz-mission-time-point-cs
+CodeSystem:   EmsMissionTimePointCS
+Id:         ems-mission-time-point-cs
 Title:      "Mission time point Code System"
 Description:  """Mission time point codesystem defines the time points of the EMS mission timeline (A.2.2)."""
 * ^language = #cs-CZ
@@ -10,6 +10,7 @@ Description:  """Mission time point codesystem defines the time points of the EM
 * ^caseSensitive = true
 * ^content = #complete
 * ^experimental = false
+* ^url = "https://ncez.mzcr.cz/terminology/CodeSystem/ems-mission-time-point-cs"
 
 * insert SetFmmandStatusRule (1, draft)
 
@@ -22,10 +23,10 @@ Description:  """Mission time point codesystem defines the time points of the EM
 * #07 "Předání pacienta" "Výjezdová skupina předala pacienta CPALP nebo ukončila péči o pacienta (A.2.2.7)."
 * #08 "Ukončení výjezdu" "Výjezdová skupina formálně ukončila výjezd (A.2.2.8)."
 
-ValueSet:   MissionTimePointEmsVS
-Id:         cz-mission-time-point-vs
+ValueSet:   EmsMissionTimePoint
+Id:         mission-time-point
 Title:      "Mission time point Value Set"
 Description:  """Mission time point value set includes all codes from Mission time point Code System."""
 * insert SetFmmandStatusRule (1, draft)
 * ^experimental = false
-* codes from system MissionTimePointEmsCS
+* codes from system EmsMissionTimePointCS
