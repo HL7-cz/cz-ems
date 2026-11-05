@@ -8,7 +8,7 @@ Usage: #definition
 * description = """CZ EMS Report Alerts Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/cz-ems/StructureDefinition/LogAlertsCz"
-* group[=].target = "https://hl7.cz/fhir/cz-ems/StructureDefinition/cz-allergyIntolerance-ems"
+* group[=].target = "https://hl7.cz/fhir/cz-core/StructureDefinition/allergyIntolerance-cz-core"
 
 * group[=].element[+].code = #LogAlertsCz.alergie
 * group[=].element[=].display = "A.2.4.1 - Alergie a intolerance"
