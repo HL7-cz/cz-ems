@@ -16,9 +16,9 @@ Alias: $CodeableConcept-uv-ips = http://hl7.org/fhir/uv/ips/StructureDefinition/
 
 // Valuesets:
 Alias: $hl7MedicationAdminStatus = http://hl7.org/fhir/ValueSet/medication-admin-status
-Alias: $dlp_lecprip = https://ncez.mzcr.cz/fhir/ValueSet/cz-dlplecivepripravky-vs
+Alias: $dlp_lecprip = https://sukl.cz/terminology/ValueSet/dlp-lecivepripravky
 Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
-Alias: $orpha = https://www.orpha.net
+//Alias: $orpha = https://www.orpha.net  // not used
 Alias: $hl7-observation-category = http://hl7.org/fhir/ValueSet/observation-category
 Alias: $MedicalDocumentType = https://ncez.mzcr.cz/terminology/ValueSet/medical-document-type
 Alias: $DocumentCategory = https://ncez.mzcr.cz/terminology/ValueSet/document-category
@@ -34,7 +34,7 @@ Alias: $mime = urn:ietf:bcp:13
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $allergyintolerance-certainty = http://terminology.hl7.org/CodeSystem/reaction-event-certainty
-Alias: $dlp_formy_cs = https://hl7.cz/fhir/core/CodeSystem/cz-dlpformy-cs
+Alias: $dlp_formy_cs = https://sukl.cz/terminology/CodeSystem/dlp-formy
 Alias: $ConditionClinicalStatusCodeSystem = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 Alias: $v3-ActPriority = http://terminology.hl7.org/CodeSystem/v3-ActPriority
